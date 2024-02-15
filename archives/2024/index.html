@@ -51,6 +51,8 @@
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
+          <a class="main-nav-link" href="/guestbook/%20%7C%7C%20fa%20fa-book">guestbook</a>
+        
       </nav>
       <nav id="sub-nav">
         
@@ -273,6 +275,8 @@
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
+    <a href="/guestbook/%20%7C%7C%20fa%20fa-book" class="mobile-nav-link">guestbook</a>
+  
 </nav>
     
 
@@ -292,6 +296,31 @@
 
 
 
+
+  
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+
+<script>
+    var GUEST_INFO = ['nick','mail','link'];
+    var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+        return GUEST_INFO.indexOf(item) > -1
+    });
+    var notify = 'false' == true;
+    var verify = 'false' == true;
+    new Valine({
+        el: '.vcomment',
+        notify: notify,
+        verify: verify,
+        appId: "roAKGMVGjOTZqTP1Wsfxs2qr-gzGzoHsz",
+        appKey: "hLDt4pnbOjyv8rnLljUjXedq",
+        placeholder: "输入你的评论
+昵称为必填项目，输入QQ号可以直接获取用户名和头像，并且省去了填写邮箱的麻烦！
+虽然email不是必选，但是填写了email可以收到推送通知哦！",
+        pageSize:'10',
+        avatar:'',
+        lang:'zh-cn'
+    });
+</script>
 
   </div>
 </body>
