@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>记第一次上链</title>
+      <link href="/2024/02/22/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%8A%E9%93%BE/"/>
+      <url>/2024/02/22/%E8%AE%B0%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%B8%8A%E9%93%BE/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>题目来源于SICTF2024 #Round 3 Blockchain方向的CheckinNewYear</p><p>当时这题没做出来，现在根据official writeup进行了一次复盘（</p></blockquote><p>题目</p><p>![](images\屏幕截图 2024-02-22 235215.png)</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Academic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Academic </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SICTF2024 Writeup</title>
       <link href="/2024/02/19/SICTF2024-Writeup/"/>
       <url>/2024/02/19/SICTF2024-Writeup/</url>
