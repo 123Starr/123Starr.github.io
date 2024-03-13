@@ -318,9 +318,9 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -329,9 +329,9 @@
     
     
     <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -362,9 +362,9 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
