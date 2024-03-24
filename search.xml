@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>NKCTF2024 Writeup</title>
+      <link href="/2024/03/24/NKCTF2024-Writeup/"/>
+      <url>/2024/03/24/NKCTF2024-Writeup/</url>
+      
+        <content type="html"><![CDATA[<h4 id="writeup"><ahref="NKCTF2024/NKCTF2024Writeup.pdf">Writeup</a></h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> CTF </tag>
+            
+            <tag> NKCTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>DES加密原理</title>
       <link href="/2024/03/20/DES%E5%8A%A0%E5%AF%86/"/>
       <url>/2024/03/20/DES%E5%8A%A0%E5%AF%86/</url>
@@ -345,22 +374,22 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>First Bloog! (lol)</p><p>Welcome to my site, everybodyyyyy!</p><p>I'm St4rr, just a noob in computer science now (T0T). Recently I'vebeen really into the field of cyber security and trying to become aCTFer.......</p><p>I'm planning to update some academic articles on this website<del>(using it as a diary (xD))</del>. It's welcome 4 everyone 2 read.And suggestions r appreciated.</p><p>Wish all the best!</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<p>First Bloog! (lol)</p><p>Welcome to my site, everybodyyyyy!</p><p>I'm St4rr, just a noob in computer science now (T0T). Recently I'vebeen really into the field of cyber security and trying to become aCTFer.......</p><p>I'm planning to update some academic articles on this website<del>(using it as a diary (xD))</del>. It's welcome 4 everyone 2 read.And suggestions r appreciated.</p><p>Wish all the best!</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
@@ -378,9 +407,9 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -389,9 +418,9 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
