@@ -13,14 +13,14 @@
       
       <categories>
           
-          <category> Academic </category>
+          <category> Writeup </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> Academic </tag>
+            <tag> Writeup </tag>
             
             <tag> Forensics </tag>
             
@@ -76,9 +76,9 @@
       
         <tags>
             
-            <tag> Academic </tag>
-            
             <tag> Crypto </tag>
+            
+            <tag> Academic </tag>
             
         </tags>
       
@@ -132,9 +132,9 @@
       
         <tags>
             
-            <tag> Academic </tag>
-            
             <tag> Crypto </tag>
+            
+            <tag> Academic </tag>
             
         </tags>
       
@@ -159,9 +159,9 @@
       
         <tags>
             
-            <tag> Academic </tag>
-            
             <tag> Crypto </tag>
+            
+            <tag> Academic </tag>
             
         </tags>
       
@@ -215,9 +215,9 @@
       
         <tags>
             
-            <tag> Academic </tag>
-            
             <tag> Crypto </tag>
+            
+            <tag> Academic </tag>
             
         </tags>
       
@@ -401,17 +401,6 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello, world!</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -434,9 +423,9 @@
     
     
     <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -448,6 +437,17 @@
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
