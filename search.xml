@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>jqctf2024初赛 Misc</title>
+      <link href="/2024/05/26/jqctf2024%E5%88%9D%E8%B5%9B-Misc/"/>
+      <url>/2024/05/26/jqctf2024%E5%88%9D%E8%B5%9B-Misc/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>这是一次X1cT34m前辈们的狂欢（竟然直接给干到第一了！！？），我只是做个misc给前辈们助助兴。。。</p></blockquote><h3 id="flag_video_version">flag_video_version</h3><figure><img src="/images/jqctf2024初赛-Misc/屏幕截图%202024-05-26%20202344.png"alt="屏幕截图 2024-05-26 202344" /><figcaption aria-hidden="true">屏幕截图 2024-05-26 202344</figcaption></figure><p>从sdp.txt中得知视频通过RTP传输，编码方式为H264</p><figure><img src="/images/jqctf2024初赛-Misc/屏幕截图%202024-05-26%20202557.png"alt="屏幕截图 2024-05-26 202557" /><figcaption aria-hidden="true">屏幕截图 2024-05-26 202557</figcaption></figure><p>wireshark中Decode As RTP</p><figure><img src="/images/jqctf2024初赛-Misc/屏幕截图%202024-05-26%20202921.png"alt="屏幕截图 2024-05-26 202921" /><figcaption aria-hidden="true">屏幕截图 2024-05-26 202921</figcaption></figure><p>从RTP流分析中可以看出序列存在问题，将每一个分组对应的序列保存进2.txt</p><figure><img src="/images/jqctf2024初赛-Misc/屏幕截图%202024-05-26%20203245.png"alt="屏幕截图 2024-05-26 203245" /><figcaption aria-hidden="true">屏幕截图 2024-05-26 203245</figcaption></figure><p>追踪UDP流，将传输的内容保存进1.txt</p><p><img src="/images/jqctf2024初赛-Misc/屏幕截图 2024-05-26 203444.png" alt="屏幕截图 2024-05-26 203444" style="zoom:50%;" /></p><p>写脚本将这些数据包按照正常的顺序拼接起来，最终保存为data.264</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">f1=<span class="built_in">open</span>(<span class="string">&quot;1.txt&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">f2=<span class="built_in">open</span>(<span class="string">&quot;2.txt&quot;</span>,<span class="string">&quot;r&quot;</span>)</span><br><span class="line">f3=<span class="built_in">open</span>(<span class="string">&quot;3.txt&quot;</span>,<span class="string">&quot;w&quot;</span>)</span><br><span class="line">num=[]</span><br><span class="line">ls=[]</span><br><span class="line">a=f2.readline().strip()</span><br><span class="line"><span class="keyword">while</span>(a):</span><br><span class="line">    num.append(<span class="built_in">int</span>(a))</span><br><span class="line">    a=f2.readline().strip()</span><br><span class="line">b=f1.readline().strip()</span><br><span class="line"><span class="keyword">while</span>(b):</span><br><span class="line">    ls.append(b)</span><br><span class="line">    b=f1.readline().strip()</span><br><span class="line">sorted_ls = [x <span class="keyword">for</span> _, x <span class="keyword">in</span> <span class="built_in">sorted</span>(<span class="built_in">zip</span>(num, ls))]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> sorted_ls:</span><br><span class="line">    f3.write(i)</span><br><span class="line">    f3.write(<span class="string">&quot;\n&quot;</span>)</span><br></pre></td></tr></table></figure><figure><img src="/images/jqctf2024初赛-Misc/image-20240526203853688.png"alt="image-20240526203853688" /><figcaption aria-hidden="true">image-20240526203853688</figcaption></figure><p>用MilkPlayer播放这个视频，视频展示了flag</p><figure><img src="/images/jqctf2024初赛-Misc/屏幕截图%202024-05-26%20204143.png"alt="屏幕截图 2024-05-26 204143" /><figcaption aria-hidden="true">屏幕截图 2024-05-26 204143</figcaption></figure><p>flag{ef051f0cd551650c8b6c9eac7b5ad861}</p><h3 id="checkin">checkin</h3><p>flag{605379906}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> Misc </tag>
+            
+            <tag> jqctf </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CISCN2024 Writeup</title>
       <link href="/2024/05/19/CISCN2024-Writeup/"/>
       <url>/2024/05/19/CISCN2024-Writeup/</url>
