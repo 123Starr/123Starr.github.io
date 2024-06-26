@@ -66,7 +66,7 @@
       <link href="/2024/05/19/CISCN2024-Writeup/"/>
       <url>/2024/05/19/CISCN2024-Writeup/</url>
       
-        <content type="html"><![CDATA[<h4 id="初赛writeup"><ahref="CISCN2024/CISCN2024Writeup.pdf">初赛Writeup</a></h4><p>Additional Statement:</p><p>这是一次由四个大一新生组成的X2cT34m的奇妙冒险，</p><p>我参与做了crypto和一部分的misc</p>]]></content>
+        <content type="html"><![CDATA[<h4 id="初赛writeup"><ahref="CISCN2024/CISCN2024Writeup.pdf">初赛Writeup</a></h4><p>Additional Statement:</p><p>这是一次由四个大一新生组成的X2cT34m的奇妙冒险，</p><p>我参与做了crypto和一部分的misc</p><h4 id="华东北赛区赛writeup"><ahref="CISCN2024/CISCN2024Writeup1.pdf">华东北赛区赛Writeup</a></h4><p>Additional Statement:</p><p>第一次打线下，AWDP模式。</p><p>太菜了，面对题目一脸懵（T0T）</p><p>但是听说是可以通过patch包传个马上去再攻击的（？？！），比赛时我们队虽然想到了但是没去试，还是打保守了。。。</p>]]></content>
       
       
       <categories>
@@ -544,17 +544,6 @@
     
     
     <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -580,6 +569,17 @@
       <title>links</title>
       <link href="/links/index.html"/>
       <url>/links/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
