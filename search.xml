@@ -516,7 +516,7 @@
       <link href="/2024/01/24/0xGame2023-Writeup/"/>
       <url>/2024/01/24/0xGame2023-Writeup/</url>
       
-        <content type="html"><![CDATA[<h4 id="week1-writeup"><a href="0xGame2023/Week1Writeup.pdf">Week1Writeup</a></h4><h4 id="week2-writeup"><a href="0xGame2023/Week2Writeup.pdf">Week2Writeup</a></h4><h4 id="week3-writeup"><a href="0xGame2023/Week3Writeup.pdf">Week3Writeup</a></h4><h4 id="week4-writeup"><a href="0xGame2023/Week4Writeup.pdf">Week4Writeup</a></h4>]]></content>
+        <content type="html"><![CDATA[<h4 id="week1-writeup"><a href="Week1Writeup.pdf">Week1 Writeup</a></h4><h4 id="week2-writeup"><a href="Week2Writeup.pdf">Week2 Writeup</a></h4><h4 id="week3-writeup"><a href="Week3Writeup.pdf">Week3 Writeup</a></h4><h4 id="week4-writeup"><a href="Week4Writeup.pdf">Week4 Writeup</a></h4>]]></content>
       
       
       <categories>
@@ -566,9 +566,9 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -588,9 +588,9 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
