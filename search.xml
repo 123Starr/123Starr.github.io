@@ -577,9 +577,9 @@
     
     
     <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -588,9 +588,9 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
