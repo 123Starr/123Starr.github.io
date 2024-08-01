@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>浅学AI</title>
+      <link href="/2024/07/31/%E6%B5%85%E5%AD%A6AI/"/>
+      <url>/2024/07/31/%E6%B5%85%E5%AD%A6AI/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>简单学点AI，防止以后CTF中遇到AI就寄。。。</p><p>本文内容多为搬运+修补，所搬运文章链接在文末</p></blockquote><h2 id="朴素感知机神经元">朴素感知机、神经元</h2><p>感知机接收多个输入信号，输出一个信号。感知机的信号只有“流 /不流”（1/0）两种取值。这里我们认为 0 对应“不传递信号”， 1对应“传递信号”。最简单的感知机就是将输入进行处理得到中间结果，再将结果经过非线性函数处理输出。一般的，我们也把上述的模型称为<strong>神经元</strong>，又称作<strong>节点</strong>(node)或<strong>单元</strong>(unit)。</p><h2 id="神经网络">神经网络</h2><p>由多个神经元可组成<strong>神经网络</strong>。每个节点可以从其他节点接收输入，或者从外部源接收输入，然后计算输出。每个输入都各自的<strong>权重</strong>（weight，即w），用于调节该输入对输出影响的大小，节点的结构如图所示：</p><figure><img src="/images/浅学AI/image-20240731212540830.png"alt="image-20240731212540830" /><figcaption aria-hidden="true">image-20240731212540830</figcaption></figure><p>其中 x1, x2 作为该节点的输入，其权重分别为 w1 和w2。同时，还有配有<strong>偏置</strong>b（bias）的输入，偏置的主要功能是为每一个节点提供可训练的常量值（在节点接收的正常输入以外）。</p><h2 id="多层感知机">多层感知机</h2><p>多层感知机（Multilayer Perceptron）缩写为MLP，也称作前馈神经网络（Feedforward NeuralNetwork）。它是一种基于神经网络的机器学习模型，通过多层非线性变换对输入数据进行高级别的抽象和分类。下图显示了一个最典型的MLP，它包括包括三层： <strong>输入层、隐层（全连接层）和输出层</strong>（全连接的意思就是：上一层的任何一个神经元与下一层的所有神经元都有连接）。</p><figure><img src="/images/浅学AI/v2-2110a4d62384a277ab700907e73e8721_b.gif"alt="动图" /><figcaption aria-hidden="true">动图</figcaption></figure><p>它的工作分为两部分:</p><ul><li><strong>前向传播</strong>：输入数据被馈送到输入层，然后传递到隐藏层，并最终生成输出层的输出。每一层的每一个神经元都会计算其加权输入和非线性激活函数的输出。</li><li><strong>反向传播</strong>：在训练过程中，输出与期望的输出进行比较，产生一个误差值。这个误差随后被反向传播到网络中，权重得到相应的更新。</li></ul><h3 id="向前传播的计算">向前传播的计算</h3><p>让我们把上面的 MLP 细节化：</p><figure><img src="/images/浅学AI/v2-5a81c06789ad5e9323f93c6540263327_r.jpg"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>在一般情况下，参与运算的各元素都是<strong>矩阵</strong>，其中的蓝色方块代表着<strong>激活函数</strong>，绿色方块代表着 <strong>权重 Weight</strong>和 <strong>偏置 Bias</strong> 。需要注意的是，*<strong>权重和偏置对应上图中不同神经元的连线*</strong>，例如 1-&gt; 3和 1-&gt; 4 的参数不同。详细计算方式如下图及下式：</p><figure><img src="/images/浅学AI/v2-ec822b0f10066f097a074e1ff09167b1_r.jpg"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>在分类问题中，最后的输出层元素个数一般等于分类数目，最终的结果代表着该输入被这个MLP分为某一类的可能性大小，指越大，代表越可能属于该类。为了便于观测，我们通常使用softmax 函数将将上一层的原始数据进行归一化，转化为一个(0,1)(0,1)之间的数值，这些数值可以被当做概率分布，用来作为多分类的目标预测值。</p><figure><img src="/images/浅学AI/v2-4452fdaaa04686aa270010f57f4db2aa_r.jpg"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><h3 id="激活函数">激活函数</h3><p>激活函数可为神经元引入非线性因素，使神经网络能够处理更复杂的问题。如果没有激活函数，那么神经网络将变为由一个巨大的线性组合构成。</p><h2 id="bp误差反向传播法">BP误差反向传播法</h2><p>反向传播算法的核心概念是：<strong>通过比较现实输出与期望输出之间的差异，根据差异来反向更新每一层的参数，从而使现实输出更加贴近于期望输出。</strong></p><p>损失对参数梯度的反向传播可以被这样直观解释：由 A 到传播 B，即由∂L/∂A∂L/∂A 得到 ∂L/∂B∂L/∂B ，由导数链式法则∂L/∂B=(∂L/∂A)⋅(∂A/∂B)∂L/∂B=(∂L/∂A)⋅(∂A/∂B)。所以神经网络的 BP就是通过链式法则求出L对所有参数梯度的过程。</p><p>如下图示例，输入x，经过网络的参数 w,b ，得到一系列中间结果 a,h 。</p><figure><img src="/images/浅学AI/v2-d38c136a7b018fb3ea7344a902d0e3d1_r.jpg"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>下面是具体的推导公式</p><p>右上角的h21到a21: <span class="math display">\[\frac{\partial l}{\partial a_{21}}=\frac{\partial l}{\partialh_{21}}*\frac{\partial h_{21}}{\partial a_{21}}=\frac{\partiall}{\partial h_{21}}*activate&#39;(a_{21})\]</span> a21到h11: <span class="math display">\[L=f(a_{21},a_{22},a_{23})\frac{\partial L}{\partialh_{11}}=\frac{\partial L}{\partial a_{21}}\frac{\partiala_{21}}{\partial h_{11}}+\frac{\partial L}{\partiala_{22}}\frac{\partial a_{22}}{\partial h_{11}}+\frac{\partialL}{\partial a_{21}}\frac{\partial a_{21}}{\partialh_{11}}=\frac{\partial L}{\partial a_{21}}w_1+\frac{\partial L}{\partiala_{22}}w_2+\frac{\partial L}{\partial a_{23}}w_3\]</span></p><p><span class="math display">\[\frac{\partial L}{\partial w_1}=\frac{\partial L}{\partiala_{21}}\frac{\partial a_{21}}{\partial w_1}=\frac{\partial L}{\partiala_{21}}h_{11}\]</span></p><p><span class="math display">\[\frac{\partial L}{\partial b_{21}}=\frac{\partial L}{\partiala_{21}}\frac{\partial a_{21}}{\partial b_{21}}=\frac{\partialL}{\partial a_{21}}\]</span></p><p>因此，我们可以如下图，将反向传播的表达式和代码如下。</p><figure><img src="/images/浅学AI/v2-4564c3328f7f007f2a046076cdac800a_r.jpg"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>当然并不是所有的反向传播都是如此即可，还有可能与向前传播时所用的激活函数有关，具体可查看<ahref="https://hello-ctf.com/HC_AI/MLP/#_11">原文</a></p><p>参考文章：</p><p><a href="https://hello-ctf.com/HC_AI/MLP/">传送门一</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Academic </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Academic </tag>
+            
+            <tag> AI </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2024暑假偷偷练习CTF</title>
       <link href="/2024/07/28/2024%E6%9A%91%E5%81%87%E5%81%B7%E5%81%B7%E7%BB%83%E4%B9%A0CTF/"/>
       <url>/2024/07/28/2024%E6%9A%91%E5%81%87%E5%81%B7%E5%81%B7%E7%BB%83%E4%B9%A0CTF/</url>
@@ -31,33 +58,6 @@
     
     
     <entry>
-      <title>Polaris 2024 Misc 招新题 第一题（需要密码）</title>
-      <link href="/2024/07/23/Polaris-2024-Misc-%E6%8B%9B%E6%96%B0%E9%A2%98-%E7%AC%AC%E4%B8%80%E9%A2%98/"/>
-      <url>/2024/07/23/Polaris-2024-Misc-%E6%8B%9B%E6%96%B0%E9%A2%98-%E7%AC%AC%E4%B8%80%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Sorry, wrong password, try again." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="91b868569fda2c683d2b1d637c71e801625293399c9b907682c042767ee96dec">825b23be34d6e48a379c92804d8d7913b80bfb012895b0b2a494eea7a99da8d9a8f92ba0a2640c516f4059eecd48968e09d7b3b1c9db24aac6327b82a3b813d8bd9ed1d83df9d509c685c5d2dcf92e56c7c84fcc5a7f3329e59af32b03165e8ee35b9196fcab97dedb6ded42c3e314b7e07d91d1e710dd5ef93aa1f9729687213ec945f244b41bc3e91b80b19231edd28d9dea71437f8ac7db1ec2e49e86adc28d1e553306f5dfeedfbec68f4d9f00c50364079928525a9362a11308f8bd38ca9f2c175e27ea0b0af3122a8b0e9dbed285b36233f08ebb7c07c10ce7b11007e5295ecff3a55c4e224dc02eda64b8a6ee0e2de92a87978b400255b1b00b5d431c74abed585645a22cb31682675d6ad41345ca72706c0949212e4366bec82437acedeb6fc9d51faca533213a946d623fcb5888863abdc092edb3a3380354b9110396762a1da382ea99e9980c9f9e02383d6baa46bbe7c81a0d65196377f9f9e40229c8b09723a6091717a4b355fed45c28a69a0d23a644a9638e4df547c68997e3e59d60173bb4ca3973eaea90cf76ded18375c731445a7146f203951fdec5baa5fa6cea4fd195661941bbc400778990bec828b1cb2f8e7ed096d5b078f87649b2804d751be49d6d9913f30655cb811ad05712ca1981956e4657be1846fb3709f0896e09bf8b80edbc274cfe5d5be9a039d0aa19749ffbe1276b734c37f8f8caaa927b50129bd8f6134b0b03d5015a6cbaf4fb797d777d77c372e6c0de66eeb5039861d4e8f4c86c5d041ac4934c162d8d992aaf8fae1a2c04376584aaf4f1ab842ee2901040905defbbf3e78b1a66ee442879bee78d8699a918f08952ff368cea7ee4d4a0165838cb21a824350c4308c02c77147196c6f957fb914749cc35dd909b29961b78d10121013b312700aa041c146af9e8eecdee4db58a96987eded5c05aedab96baf9ef93bf1bea1d69e019bc771e2d73e52e24e6a68c1dfc2e279236021da2f557017bda821c216632fe5186c3dc031a51e59aabe10a8993d6eff9dc70dcccd0e70f0951027b2a496e88aad187e7a38ad25a0088d6a0a0e6aec71289a7d7634dfee9d4e38c108c5f2092b8c96f653fb1cc9e13465dd7278acbd2d5cb24a70509c7872d9eae02274f9bf33d7bcd45bb055df4473218029d01ca954b9043ce7a5e517349670bb1d424adbe74be605f00d57668cc049849b83a56cc251d937cf2022ebcb65c251d236025ca718cf37c61caf097c348f0885804f86764597f6d12b718a0dd9fe114b0b1421f120131fcec69d327a6339095d0ceaa68932b017e9d51ecf3de0a55e2c2085ecf70cccbe89a8616e33c56859612471e378a9b33db6349b0bfeba6dab7694695311db4344bbd04f4bdcc33778b5b8172befa9145baa33f4dc1b2ce5040c3b484f713642d8ae3564e8aec8a0ae27a48b00725f675bc881ae1f978f896e9914a41bdefde4f16a23a661f83d69d6af99a8e742288d901e68e3c750319e697afc40f37a81b7dd51a7cd7f744b7e876e6c707afc4e60ea374348a198ac7a16d648e60cf13ace84bd2ab9061ff012be6fe1368ba2a2b41cc9d5833e9178138b62f1d257154de87e10d6987f7f5d4f7e957652251c67ca5fccbdbf04d10e53b583ac51985e95d303a66773a21f633f3b4447202b9903f05e625d5d034ad8dc923dc5af8d5e52eec5b48fdeea6b755970e619477aa48617a2e5443b6ffc6a2bf7c5a3c963880885beb8c8311e6232c04fa49800402b244a1c5929dfe82cc79225a714cb375b170090fac62bfc3c2af129317d7710a88a4861bd75ea728b84b5f6d889e1e0a7ddf2f00f3ebafed17265eb432cc0d2918f59ebb605bdd771c32c46789035ad05db2006d580fae54089ce848aea7ce726dc553816297462e0b4e82a4497c5b9f0bb46f405fe358982989da2e43ec5702015ae92594f037fea651c11a46ef9271d4a5e1b1d04a753f2e9fc710c3fdda1f103898bd462d617dc74c86ae9ce9ddff017031c4a433bb648f45acf01d394af1d91cd5a87e56460efd725592dd83a754a9f1de0347d2992bbe0dfaa405aab09a091aaeecdc0992faa44b9cc2753a672c77d1f5ed78a187be35317c4137a6d88ec47d4c654113541f0824f407e79dd0cd7886184c04113ad12758008d26d5368c92aac8deca8f28f8b48ed39fc6f19c78f48b576a81f35e47c9efed3228fc35d45d53c06e701a64f78d932c9f7398ac52fda37dcf4ebf68eaa885059e9c2e32938d30e35f50281d57ff33bf5130bf7aec79583a91c5ac6b98e75e3aa83ff0d4c6d992833824c7933a4ce7cb58ab7c7597e92ab211cf8f5946c89fb3848b54764c5823715626137057a844ffeeb463941c7a0e5619516a06a1bd29ca842115dbd6942069652158d8a6e0e8197f5ac812a55c341b17a1842ebfbbf3f6b0fcb1da9149d69821071b348509ef9260103ee7ebb6e757070bff2e1612b6d83f3904c371271de52fac3020daba373f402d2bd9235ab37f5ecc2c0cc982bb5a9d283fea376d96ec6b8fe3fa34cba6a69e4378b7c966959d4d103bd96efa6eb118db189214de7cbf55506533de48c01e793e4860b12ccc69c01b49bcb10514b3f012a05fc6f1dae901522b78216787a541fb1dbdae8c80ac52e4a1a463da274488b71402ca6b6572cafecaa008482260a28bf9e0f94eacb3b492ab1126c294a292988d5f5485d13d938ae2841a28f2057bcebe2cf62923099d04c0c553d4138bcaffdcafcf46ab1c9dbc81c8d79de736a65824a278a300cb6943f1827e406c704cca8330ddbbc5eceb3a3772e6fbeddbec57fde5ff4b67f40106451c3e6f9b381e0f9f273ae35ac7d0515aabf61600bc5ef185d9cf4fca6c99722fa526611c23336298d9b224ee3df8273fd45f0be16832138d29decfc29ae70462a74ddc2f5ca5c4b76eb2974d394c8006a44e33651b8b4c92f9a4ef966d6d133080c35f964d84e33355e2d9b1235d8ec774328f85e0bc74dcad650b4e7815b51afc20f03ea398ad3632356fecb157377022312d74c210e64113dff5195b84b3e14dbf19e129410f9fe9b6af35968b3a007fd46a8cba8ff73d85cf24cfba93ede6f98f13aad5f1d3505835fd053f6a458e2be7708d8b68893d25a25d6270c07d754e5edb54e95bee9213ac78b0c4a26927bf9fae3cf0703d9456d2363cb673bd93637ea72cf2aa4bc7e87a46430c86ffd1a61283df12c5a8294e8ff80a062c8e75db16504a07200e892d0d2d3798b914b2d5bff0f0970ae39152ab9a7c492ab1e68983a7a6cdd4b813343625611eaeb79a8daebbdb1d735f155f36fa47115edeba53285f7c8ae08e55e7bd39b44f8f7b9a89d02d34c19c3375c5f736f5b65f3253b09f70779365c4b49bfa8db547d02dbf509abd608eba5f63cfd1bb13847c1cb838086e43d55eba75303db7ad4572cd4ff254819021cbd45d12a4d4641c62560c7bc6131c8af9c3483cff5f52046f1e267cc1b149126512edcff57bd53e3ae3b90b92a7906a671a6b5edd8c067ae2bd10f08026f078bb38e0385e1170982946bf74465725b245ec5473cc3295384f8245c309019d5aa8ef2a4bfcf6f3e80ee29b6dc23469d3428d22e5cbf2847350bf24f6421ab0767c66b9ccaf3259147fde89476447d7de18186af28ac8e49b0feb130b2f9beaba84f12377f87ba8afecc4ef7bef774171022872499d144db51ed4f05c005e90cec1cddd5b2221a02cf78681159c929f6f2b72a28110472c114a2fd1f4a02882a97475fc01b6cde1455ed2649c6668a8b1ec08e24ac3700390e35ec044b0c0fb0f2a9224524ccf733852b6b18e9a8a88c20e932391c32c600db5dbdf08214d46f5a773427382728d2a65ec87bd89f196e3c2c4cc04c11a097bc3e2d0d10abd6dddd3b6a585daa95cff358cdea962711b933a6410bc6881faff2e8fda7fd0cc2a044e21d08d28af3d871f5dac7b21c63db90dd8828aad277c2886679552a4659acc6c15ee8c8124531396b4d85df9851ba4d70420fcbf291f78a27b1b64c41a8f391dd7da9dfdcf34</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Plz enter the password.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      
-      
-      <categories>
-          
-          <category> Writeup </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Writeup </tag>
-            
-            <tag> Misc </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Polaris 2024 Misc 招新题 第二题（需要密码）</title>
       <link href="/2024/07/23/Polaris-2024-Misc-%E6%8B%9B%E6%96%B0%E9%A2%98-%E7%AC%AC%E4%BA%8C%E9%A2%98/"/>
       <url>/2024/07/23/Polaris-2024-Misc-%E6%8B%9B%E6%96%B0%E9%A2%98-%E7%AC%AC%E4%BA%8C%E9%A2%98/</url>
@@ -77,6 +77,33 @@
             <tag> Writeup </tag>
             
             <tag> Forensics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Polaris 2024 Misc 招新题 第一题（需要密码）</title>
+      <link href="/2024/07/23/Polaris-2024-Misc-%E6%8B%9B%E6%96%B0%E9%A2%98-%E7%AC%AC%E4%B8%80%E9%A2%98/"/>
+      <url>/2024/07/23/Polaris-2024-Misc-%E6%8B%9B%E6%96%B0%E9%A2%98-%E7%AC%AC%E4%B8%80%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Sorry, wrong password, try again." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="91b868569fda2c683d2b1d637c71e801625293399c9b907682c042767ee96dec">825b23be34d6e48a379c92804d8d7913b80bfb012895b0b2a494eea7a99da8d9a8f92ba0a2640c516f4059eecd48968e09d7b3b1c9db24aac6327b82a3b813d8bd9ed1d83df9d509c685c5d2dcf92e56c7c84fcc5a7f3329e59af32b03165e8ee35b9196fcab97dedb6ded42c3e314b7e07d91d1e710dd5ef93aa1f9729687213ec945f244b41bc3e91b80b19231edd28d9dea71437f8ac7db1ec2e49e86adc28d1e553306f5dfeedfbec68f4d9f00c50364079928525a9362a11308f8bd38ca9f2c175e27ea0b0af3122a8b0e9dbed285b36233f08ebb7c07c10ce7b11007e5295ecff3a55c4e224dc02eda64b8a6ee0e2de92a87978b400255b1b00b5d431c74abed585645a22cb31682675d6ad41345ca72706c0949212e4366bec82437acedeb6fc9d51faca533213a946d623fcb5888863abdc092edb3a3380354b9110396762a1da382ea99e9980c9f9e02383d6baa46bbe7c81a0d65196377f9f9e40229c8b09723a6091717a4b355fed45c28a69a0d23a644a9638e4df547c68997e3e59d60173bb4ca3973eaea90cf76ded18375c731445a7146f203951fdec5baa5fa6cea4fd195661941bbc400778990bec828b1cb2f8e7ed096d5b078f87649b2804d751be49d6d9913f30655cb811ad05712ca1981956e4657be1846fb3709f0896e09bf8b80edbc274cfe5d5be9a039d0aa19749ffbe1276b734c37f8f8caaa927b50129bd8f6134b0b03d5015a6cbaf4fb797d777d77c372e6c0de66eeb5039861d4e8f4c86c5d041ac4934c162d8d992aaf8fae1a2c04376584aaf4f1ab842ee2901040905defbbf3e78b1a66ee442879bee78d8699a918f08952ff368cea7ee4d4a0165838cb21a824350c4308c02c77147196c6f957fb914749cc35dd909b29961b78d10121013b312700aa041c146af9e8eecdee4db58a96987eded5c05aedab96baf9ef93bf1bea1d69e019bc771e2d73e52e24e6a68c1dfc2e279236021da2f557017bda821c216632fe5186c3dc031a51e59aabe10a8993d6eff9dc70dcccd0e70f0951027b2a496e88aad187e7a38ad25a0088d6a0a0e6aec71289a7d7634dfee9d4e38c108c5f2092b8c96f653fb1cc9e13465dd7278acbd2d5cb24a70509c7872d9eae02274f9bf33d7bcd45bb055df4473218029d01ca954b9043ce7a5e517349670bb1d424adbe74be605f00d57668cc049849b83a56cc251d937cf2022ebcb65c251d236025ca718cf37c61caf097c348f0885804f86764597f6d12b718a0dd9fe114b0b1421f120131fcec69d327a6339095d0ceaa68932b017e9d51ecf3de0a55e2c2085ecf70cccbe89a8616e33c56859612471e378a9b33db6349b0bfeba6dab7694695311db4344bbd04f4bdcc33778b5b8172befa9145baa33f4dc1b2ce5040c3b484f713642d8ae3564e8aec8a0ae27a48b00725f675bc881ae1f978f896e9914a41bdefde4f16a23a661f83d69d6af99a8e742288d901e68e3c750319e697afc40f37a81b7dd51a7cd7f744b7e876e6c707afc4e60ea374348a198ac7a16d648e60cf13ace84bd2ab9061ff012be6fe1368ba2a2b41cc9d5833e9178138b62f1d257154de87e10d6987f7f5d4f7e957652251c67ca5fccbdbf04d10e53b583ac51985e95d303a66773a21f633f3b4447202b9903f05e625d5d034ad8dc923dc5af8d5e52eec5b48fdeea6b755970e619477aa48617a2e5443b6ffc6a2bf7c5a3c963880885beb8c8311e6232c04fa49800402b244a1c5929dfe82cc79225a714cb375b170090fac62bfc3c2af129317d7710a88a4861bd75ea728b84b5f6d889e1e0a7ddf2f00f3ebafed17265eb432cc0d2918f59ebb605bdd771c32c46789035ad05db2006d580fae54089ce848aea7ce726dc553816297462e0b4e82a4497c5b9f0bb46f405fe358982989da2e43ec5702015ae92594f037fea651c11a46ef9271d4a5e1b1d04a753f2e9fc710c3fdda1f103898bd462d617dc74c86ae9ce9ddff017031c4a433bb648f45acf01d394af1d91cd5a87e56460efd725592dd83a754a9f1de0347d2992bbe0dfaa405aab09a091aaeecdc0992faa44b9cc2753a672c77d1f5ed78a187be35317c4137a6d88ec47d4c654113541f0824f407e79dd0cd7886184c04113ad12758008d26d5368c92aac8deca8f28f8b48ed39fc6f19c78f48b576a81f35e47c9efed3228fc35d45d53c06e701a64f78d932c9f7398ac52fda37dcf4ebf68eaa885059e9c2e32938d30e35f50281d57ff33bf5130bf7aec79583a91c5ac6b98e75e3aa83ff0d4c6d992833824c7933a4ce7cb58ab7c7597e92ab211cf8f5946c89fb3848b54764c5823715626137057a844ffeeb463941c7a0e5619516a06a1bd29ca842115dbd6942069652158d8a6e0e8197f5ac812a55c341b17a1842ebfbbf3f6b0fcb1da9149d69821071b348509ef9260103ee7ebb6e757070bff2e1612b6d83f3904c371271de52fac3020daba373f402d2bd9235ab37f5ecc2c0cc982bb5a9d283fea376d96ec6b8fe3fa34cba6a69e4378b7c966959d4d103bd96efa6eb118db189214de7cbf55506533de48c01e793e4860b12ccc69c01b49bcb10514b3f012a05fc6f1dae901522b78216787a541fb1dbdae8c80ac52e4a1a463da274488b71402ca6b6572cafecaa008482260a28bf9e0f94eacb3b492ab1126c294a292988d5f5485d13d938ae2841a28f2057bcebe2cf62923099d04c0c553d4138bcaffdcafcf46ab1c9dbc81c8d79de736a65824a278a300cb6943f1827e406c704cca8330ddbbc5eceb3a3772e6fbeddbec57fde5ff4b67f40106451c3e6f9b381e0f9f273ae35ac7d0515aabf61600bc5ef185d9cf4fca6c99722fa526611c23336298d9b224ee3df8273fd45f0be16832138d29decfc29ae70462a74ddc2f5ca5c4b76eb2974d394c8006a44e33651b8b4c92f9a4ef966d6d133080c35f964d84e33355e2d9b1235d8ec774328f85e0bc74dcad650b4e7815b51afc20f03ea398ad3632356fecb157377022312d74c210e64113dff5195b84b3e14dbf19e129410f9fe9b6af35968b3a007fd46a8cba8ff73d85cf24cfba93ede6f98f13aad5f1d3505835fd053f6a458e2be7708d8b68893d25a25d6270c07d754e5edb54e95bee9213ac78b0c4a26927bf9fae3cf0703d9456d2363cb673bd93637ea72cf2aa4bc7e87a46430c86ffd1a61283df12c5a8294e8ff80a062c8e75db16504a07200e892d0d2d3798b914b2d5bff0f0970ae39152ab9a7c492ab1e68983a7a6cdd4b813343625611eaeb79a8daebbdb1d735f155f36fa47115edeba53285f7c8ae08e55e7bd39b44f8f7b9a89d02d34c19c3375c5f736f5b65f3253b09f70779365c4b49bfa8db547d02dbf509abd608eba5f63cfd1bb13847c1cb838086e43d55eba75303db7ad4572cd4ff254819021cbd45d12a4d4641c62560c7bc6131c8af9c3483cff5f52046f1e267cc1b149126512edcff57bd53e3ae3b90b92a7906a671a6b5edd8c067ae2bd10f08026f078bb38e0385e1170982946bf74465725b245ec5473cc3295384f8245c309019d5aa8ef2a4bfcf6f3e80ee29b6dc23469d3428d22e5cbf2847350bf24f6421ab0767c66b9ccaf3259147fde89476447d7de18186af28ac8e49b0feb130b2f9beaba84f12377f87ba8afecc4ef7bef774171022872499d144db51ed4f05c005e90cec1cddd5b2221a02cf78681159c929f6f2b72a28110472c114a2fd1f4a02882a97475fc01b6cde1455ed2649c6668a8b1ec08e24ac3700390e35ec044b0c0fb0f2a9224524ccf733852b6b18e9a8a88c20e932391c32c600db5dbdf08214d46f5a773427382728d2a65ec87bd89f196e3c2c4cc04c11a097bc3e2d0d10abd6dddd3b6a585daa95cff358cdea962711b933a6410bc6881faff2e8fda7fd0cc2a044e21d08d28af3d871f5dac7b21c63db90dd8828aad277c2886679552a4659acc6c15ee8c8124531396b4d85df9851ba4d70420fcbf291f78a27b1b64c41a8f391dd7da9dfdcf34</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Plz enter the password.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> Misc </tag>
             
         </tags>
       
@@ -652,20 +679,20 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>Welcome to my site, everybodyyyyy!</p><p>我是St4rr，一个刚刚入门的网安新手。最近在<del>当一个赛棍</del>打CTF，目前是X1cT34m和Polaris的一个misc手，也稍微（真的很稍微！）懂一点点crypto。希望未来能再了解点web，对web真的是一窍不通。。。</p><p>虽然现在还是一个realvegetable，但是有句老话说的好，菜就多练。。。现阶段想先多参加点比赛，并多向师傅们学习，争取多练点技术出来吧。</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -696,11 +723,11 @@
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to my site, everybodyyyyy!</p><p>我是St4rr，一个刚刚入门的网安新手。最近在<del>当一个赛棍</del>打CTF，目前是X1cT34m和Polaris的一个misc手，也稍微（真的很稍微！）懂一点点crypto。希望未来能再了解点web，对web真的是一窍不通。。。</p><p>虽然现在还是一个realvegetable，但是有句老话说的好，菜就多练。。。现阶段想先多参加点比赛，并多向师傅们学习，争取多练点技术出来吧。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
