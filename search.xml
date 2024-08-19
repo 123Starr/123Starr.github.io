@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>巅峰极客2024初赛 Misc 简历复现</title>
+      <link href="/2024/08/19/%E5%B7%85%E5%B3%B0%E6%9E%81%E5%AE%A22024%E5%88%9D%E8%B5%9B-Misc-%E7%AE%80%E5%8E%86%E5%A4%8D%E7%8E%B0/"/>
+      <url>/2024/08/19/%E5%B7%85%E5%B3%B0%E6%9E%81%E5%AE%A22024%E5%88%9D%E8%B5%9B-Misc-%E7%AE%80%E5%8E%86%E5%A4%8D%E7%8E%B0/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>又是被暴打的一集。。。跟上次京麒ctf一样，盯着下面这道misc看了一天，然后成功爆零。。。不想说什么了（T0T）</p><p>后来通过与<del>从某些途径搞来的</del>官方wp比对，发现——还是和上次京麒ctf一样，就差最后一步了。。。已经到了flag跟前，然后不会了。。。不说了，开始复现（T0T）</p></blockquote><h2 id="题目">题目</h2><p>题目给了一个叫做张小可 英语教师简历.png.exe的程序</p><h2 id="与答案相同部分">与答案相同部分</h2><p>先对这个程序进行查壳（这里改名为了1.exe）</p><p><img src="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819213235689.png" alt="image-20240819213235689" style="zoom: 67%;" /></p><p>upx脱壳</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819213332522.png"alt="image-20240819213332522" /><figcaption aria-hidden="true">image-20240819213332522</figcaption></figure><p>接下来的步骤正常应该是通过对1.exe逆向，来分析其进行的恶意行为。但是多捣鼓捣鼓也不难弄出来，下面就写我比赛时<del>瞎捣鼓</del>的做法了。</p><h2 id="我的方法">我的方法</h2><p>foremost分解1.exe，得到简历图片</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819214026169.png"alt="image-20240819214026169" /><figcaption aria-hidden="true">image-20240819214026169</figcaption></figure><p><img src="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819214120025.png" alt="image-20240819214120025" style="zoom:67%;" /></p><p>发现存在lsb隐写，得到一个网址</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819214347437.png"alt="image-20240819214347437" /><figcaption aria-hidden="true">image-20240819214347437</figcaption></figure><p>直接访问，下载得到一个default.a文件</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819214517377.png"alt="image-20240819214517377" /><figcaption aria-hidden="true">image-20240819214517377</figcaption></figure><p>拖进010</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819214817604.png"alt="image-20240819214817604" /><figcaption aria-hidden="true">image-20240819214817604</figcaption></figure><p>可以看到其中存在大量的yyttddd，所以肯定是整体异或yyttddd（这里生成的文件命名为download.exe）</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819215052897.png"alt="image-20240819215052897" /><figcaption aria-hidden="true">image-20240819215052897</figcaption></figure><p>binwalk一下，得到一个叫做14728.7z的文件</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819221321688.png"alt="image-20240819221321688" /><figcaption aria-hidden="true">image-20240819221321688</figcaption></figure><p>7zip识别不出来，用trid识别一下，应该是个lzma压缩文件，改一下后缀</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819221534911.png"alt="image-20240819221534911" /><figcaption aria-hidden="true">image-20240819221534911</figcaption></figure><p>当时比赛的时候我就是卡在这儿了。。。</p><p>实际上，只要写个python脚本加载一下数据就行了。。。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> marshal</span><br><span class="line"><span class="keyword">import</span> pylzma</span><br><span class="line"></span><br><span class="line">filename = <span class="string">&#x27;14728.lzma&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.read()</span><br><span class="line">data = pylzma.decompress(data)</span><br><span class="line">tmp = marshal.loads(data)</span><br><span class="line"><span class="built_in">print</span>(tmp)</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819221819896.png"alt="image-20240819221819896" /><figcaption aria-hidden="true">image-20240819221819896</figcaption></figure><p>可以看出c2服务器的ip地址就是60.177.118.44:3432</p><h2 id="预期方法后半部分">预期方法（后半部分）</h2><p>前面已经说过了，到异或yyttddd其实都可以通过对1.exe进行逆向推出来，因此这里就不说了，从得到download.exe开始说。</p><p>我们将download.exe丢进virustotal分析一下可以发现这其实是一个pupyrat的马</p><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819223954231.png"alt="image-20240819223954231" /><figcaption aria-hidden="true">image-20240819223954231</figcaption></figure><p>download.exe实际上后面跟着一个lzma格式的配置文件，提取出来就行</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> marshal</span><br><span class="line"><span class="keyword">import</span> pylzma</span><br><span class="line"></span><br><span class="line">filename = <span class="string">&#x27;final.exe&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data = f.read()</span><br><span class="line"></span><br><span class="line">index = data.find(<span class="string">b&#x27;\x5d\x00\x00\x80\x00\x00&#x27;</span>)</span><br><span class="line"><span class="keyword">if</span> index == -<span class="number">1</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;LZMA signature not found, skipped&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    data = pylzma.decompress(data[index:])</span><br><span class="line">    tmp = marshal.loads(data)</span><br><span class="line">    <span class="built_in">print</span>(tmp)</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/巅峰极客2024初赛-Misc-简历复现/image-20240819224318318.png"alt="image-20240819224318318" /><figcaption aria-hidden="true">image-20240819224318318</figcaption></figure><p>可以看出c2服务器的ip地址就是60.177.118.44:3432</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> Misc </tag>
+            
+            <tag> 巅峰极客 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MoeCTF2024-Writeup</title>
       <link href="/2024/08/16/MoeCTF2024-Writeup/"/>
       <url>/2024/08/16/MoeCTF2024-Writeup/</url>
@@ -33,9 +62,9 @@
     
     
     <entry>
-      <title>jqctf决赛 Misc kerberoasting复现</title>
-      <link href="/2024/08/08/jqctf%E5%86%B3%E8%B5%9B-Misc-kerberoasting%E5%A4%8D%E7%8E%B0/"/>
-      <url>/2024/08/08/jqctf%E5%86%B3%E8%B5%9B-Misc-kerberoasting%E5%A4%8D%E7%8E%B0/</url>
+      <title>jqctf2024决赛 Misc kerberoasting复现</title>
+      <link href="/2024/08/08/jqctf2024%E5%86%B3%E8%B5%9B-Misc-kerberoasting%E5%A4%8D%E7%8E%B0/"/>
+      <url>/2024/08/08/jqctf2024%E5%86%B3%E8%B5%9B-Misc-kerberoasting%E5%A4%8D%E7%8E%B0/</url>
       
         <content type="html"><![CDATA[<blockquote><p>有幸跟着X1cT34m的学长们京东总部打了京麒CTF的决赛，结果我盯着下面这道misc题看了一天，然后爆零了(T0T)，队伍排名也不理想，给队里的师傅们磕一个了(T0T)。。。Orz</p><p>赛后我找了出题人，询问后发现，我最最开始得到的答案三问有两问是对的（这题总共有三个问题）。。。结果后面越改越离谱，错的那问仍然一直是错的。。。我还是再沉淀沉淀吧(</p><p>下面是对这题的复现</p></blockquote><p>题目给了一个流量包kerberoasting.pcapng，要求找出以下三问的答案，拼起来求md5值就是flag：</p><p>1、总共枚举到了几个kerberoastable的用户</p><p>2、攻击者得到的kerberoastable的用户的密码</p><p>3、攻击者通过kerberoasting攻击得到权限后进行了约束委派攻击，找出与服务端存在委派关系的用户名称</p><p>首先过滤一下ldap流，可以看到其中有一条查询请求查询到了4个用户</p><figure><imgsrc="/images/jqctf决赛-Misc-kerberoasting复现/image-20240808152623844.png"alt="image-20240808152623844" /><figcaption aria-hidden="true">image-20240808152623844</figcaption></figure><p>进一步展开可以看到，这些用户都设置了SPN，因此可以判定他们就是kerberoastable的用户</p><figure><imgsrc="/images/jqctf决赛-Misc-kerberoasting复现/image-20240808152809412.png"alt="image-20240808152809412" /><figcaption aria-hidden="true">image-20240808152809412</figcaption></figure><p>接下来过滤一下krb5流翻找，很快就可以看到这四个用户返回的TGS-REP</p><figure><imgsrc="/images/jqctf决赛-Misc-kerberoasting复现/image-20240808153013132.png"alt="image-20240808153013132" /><figcaption aria-hidden="true">image-20240808153013132</figcaption></figure><p>展开可以看到返回的票据，其中可以找到enc-part的cipher部分，这一部分其实就是用户密码的hash值</p><figure><imgsrc="/images/jqctf决赛-Misc-kerberoasting复现/image-20240808163841079.png"alt="image-20240808163841079" /><figcaption aria-hidden="true">image-20240808163841079</figcaption></figure><p>但是直接用这个值肯定是不行的，需要爆破需要有一定的格式，我们可以用下面的脚本去生成正确的格式</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">encType = <span class="string">&quot;23&quot;</span></span><br><span class="line">userName = <span class="string">&quot;&quot;</span></span><br><span class="line">domain = <span class="string">&quot;&quot;</span></span><br><span class="line">spn = <span class="string">&quot;&quot;</span></span><br><span class="line">cipherText = <span class="string">&quot;&quot;</span></span><br><span class="line">formatted_string = <span class="string">&quot;$krb5tgs$&#123;0&#125;$*&#123;1&#125;$&#123;2&#125;$&#123;3&#125;*$&#123;4&#125;$&#123;5&#125;&quot;</span>.<span class="built_in">format</span>(encType, userName, domain, spn, cipherText[:<span class="number">32</span>],</span><br><span class="line">                                                               cipherText[<span class="number">32</span>:])</span><br><span class="line"><span class="built_in">print</span>(formatted_string)</span><br></pre></td></tr></table></figure><p>对于用户VictoriaOrbit，我们可以得到如下的1.hash文件</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$krb5tgs$23$*VictoriaOrbit$WHOAMIANONY.COM$whoamianony.com/VictoriaOrbit*$4f5376a8c1190acb1dfb054d25a6e75d$c7a192b7cf3277dff22d0580cb58ea74b6d329823b8e2f0b6eb6cf6b9da5b02e4eb2c4c3aee69dfaff8d7c6d6fa6a7790b565d360864049e647164c51ea1840e5a9a9d14e046848a7e406ec2d2b35966b515b1a18d2805207b3142b6e160884a99e4b823682759d69ad4d83ab5eb3112997507c3deb60e035091aecd215684a719796b87b430d79b47e93a6b205ee42d2a74f3f0a5d2266fb6bc081e346b2f1fc15dc07b1bec60b02d03e9bbc1db72c1c4baa2d16c4f2d001d4fb43f881d1d4d8f1b768c18e01b925fb034d86020380c2cebce4bd0486c223f7f5acb065272c1f7dad806f10f940fbf916861395f766fec9b018a5456cd6a236c314fb8691698dc2c8f41c4ba496a5c33b2dcc97223c6f067c0f10b890668921b34f5d53f42f768086cb2466bd2e15bf18859064d1e7f7282513f5ddefa4dc5e03e29b3f040b35c2342ca833108a3ead9a515a29fd515c63696caedad27ff3de3ead2dbd20619ca743f2797d91a3f4a77a763c9cabf09106887c0d9f02c8a572cb5763c3cbd10e026a69e25b8953dfec41320f42928ae79df79afb8031201264d9c4d22ecc2aaddda2a249ebd1deb89948deb39b485b7870c103ffc667e803a2a2ea99c549274baa3b68d59e6e4865302ed4cd78887255584b91453185aefa3f98e95107c83a9891fc26332e5f2ba71b3f48af6e698176fb7e1304406d10c76343e2e7bc72c948ca93da839629d4f107fad8bc7b5a062fae5ef4f7afbe46862c61b8113bc9ec844d8638c4cebc6b0609d3ad4fb70042b537dba62b58ade791629e342a634e6906711c6e64360ae36aa479a7fcfa6cb3ef7725a74620ddcec820bc56b8975943bb9b89d9dec3a85e2159e15b3dbccfe3d44ef9e6c690287af61271f3250b983f5c266a45444e228e1409c537bb8c00a2cb416597305a0f16443028e6bd35126d77a759b353b4a082810ba4f19b0981dd28aa185628b3a4756b2ec3a39adbc1db2c3d4667b98d306fe668a2316d21029e5070c67fea7737bf174b9dac48f8bd717685c9623f595b0201504b416285b333f073da88d47f7af8ab74b712c08073fc34dabfdaa5d952c070e93e4303287ae420752633d4115caf697eaf75b06277601961476ad0b05ff2679259443486512c90d032945a1f8a3e6707af0e23b6958ea758fbaf46034cddc42a9f38f213806d96aecf6868f0dde4acc3c522c2e337af2215d7eebe0792d4b8151a221e9465bd49058551dc8023a036448b43aab5b8afc7a3615b4d39e97c3efdb455f11c36ddc1172e51a6fabda60573452b23c338d335a7d5b3a6f8cced00b83232331add275432e837b197cee6d095f6ae95e95107c50c0e1532b4445db8395f08594c0e4682d521c2580cdf1452426af7278a4e0dbbbba0d87a926c16249a0ff5976eb65d0ee6603803e57b7621d632f048a4cd5852acdb3be2860806efca2fb616c609ff6e383289c1a232df775992edbe8c7ee2f6915ab8d807d41f00a6618062a2425b40421c45a1eae5d86af38b8</span><br></pre></td></tr></table></figure><p>接下来就是经典操作，用工具john theripper，字典rockyou.txt进行爆破，得到明文密码4xVictoriax4</p><figure><imgsrc="/images/jqctf决赛-Misc-kerberoasting复现/image-20240809000422154.png"alt="image-20240809000422154" /><figcaption aria-hidden="true">image-20240809000422154</figcaption></figure><p>最后就是找存在委派关系的用户，当时比赛时我就是卡在这里了。。。然而事实上这很简单。。。</p><p>还是过滤ldap流，查看msDS-AllowedToDelegatedTo的部分，即可找到用户名WIN-CORP16</p><figure><imgsrc="/images/jqctf决赛-Misc-kerberoasting复现/image-20240809001029442.png"alt="image-20240809001029442" /><figcaption aria-hidden="true">image-20240809001029442</figcaption></figure><p>所以最终答案是4_4xVictoriax4_WIN-CORP16</p>]]></content>
       
@@ -737,17 +766,6 @@
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to my site, everybodyyyyy!</p><p>我是St4rr，一个刚刚入门的网安新手。最近在<del>当一个赛棍</del>打CTF，目前是X1cT34m和Polaris的一个misc手，也稍微（真的很稍微！）懂一点点crypto。希望未来能再了解点web，对web真的是一窍不通。。。</p><p>虽然现在还是一个realvegetable，但是有句老话说的好，菜就多练。。。现阶段想先多参加点比赛，并多向师傅们学习，争取多练点技术出来吧。</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -759,9 +777,20 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to my site, everybodyyyyy!</p><p>我是St4rr，一个刚刚入门的网安新手。最近在<del>当一个赛棍</del>打CTF，目前是X1cT34m和Polaris的一个misc手，也稍微（真的很稍微！）懂一点点crypto。希望未来能再了解点web，对web真的是一窍不通。。。</p><p>虽然现在还是一个realvegetable，但是有句老话说的好，菜就多练。。。现阶段想先多参加点比赛，并多向师傅们学习，争取多练点技术出来吧。</p>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -781,9 +810,9 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
