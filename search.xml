@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ubuntu双系统安装记录</title>
+      <link href="/2024/11/24/ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+      <url>/2024/11/24/ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>之前装过双系统没有写记录，导致现在又需要装就不得不又到处找文章。遂决定这一次写一下记录，方便之后查找。。。</p></blockquote><p>参考文章：</p><p><ahref="https://blog.csdn.net/sslFxxx/article/details/140161076?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-140161076.142%5Ev100%5Epc_search_result_base1&amp;spm=1018.2226.3001.4187">传送门一</a>，<ahref="https://blog.csdn.net/weixin_65688914/article/details/132661114?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522cb99f07ca56697c5ff7a5b882bb2ea53%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=cb99f07ca56697c5ff7a5b882bb2ea53&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-132661114-null-null.142%5Ev100%5Epc_search_result_base1&amp;utm_term=ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85&amp;spm=1018.2226.3001.4187">传送门二</a>，<ahref="https://blog.csdn.net/weixin_65688914/article/details/132661114?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522cb99f07ca56697c5ff7a5b882bb2ea53%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=cb99f07ca56697c5ff7a5b882bb2ea53&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-2-132661114-null-null.142%5Ev100%5Epc_search_result_base1&amp;utm_term=ubuntu%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85&amp;spm=1018.2226.3001.4187">传送门三</a></p><p>首先在<ahref="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/24.10/">清华镜像源</a>下载需要的镜像，这里我下载的是ubuntu24.10</p><figure><img src="/images/ubuntu双系统安装记录/image-20241124184845671.png"alt="image-20241124184845671" /><figcaption aria-hidden="true">image-20241124184845671</figcaption></figure><p>接下来需要准备一个8G以上的空U盘，用来制作启动盘。这里我用的是rufus4.6.exe。</p><p><img src="/images/ubuntu双系统安装记录/image-20241124185224489.png" alt="image-20241124185224489" style="zoom:50%;" /></p><p><img src="/images/ubuntu双系统安装记录/image-20241124185302414.png" alt="image-20241124185302414" style="zoom:50%;" /></p><p>在要安装双系统的电脑本身的windows上打开开始-磁盘管理，右键打算从中分出分出空间给ubuntu的磁盘，选择压缩卷</p><p><img src="/images/ubuntu双系统安装记录/image-20241124191552068.png" alt="image-20241124191552068" style="zoom:50%;" /></p><p>输入要分配出的空间大小，这里我分配了200个G，点击压缩</p><p><img src="/images/ubuntu双系统安装记录/image-20241124191739330.png" alt="image-20241124191739330" style="zoom:50%;" /></p><p>由于我的电脑是联想的，开机的时候按F12进入Boot Menu，选择USBHDD回车</p><figure><img src="/images/ubuntu双系统安装记录/image-20241124192853905.png"alt="image-20241124192853905" /><figcaption aria-hidden="true">image-20241124192853905</figcaption></figure><p>直接选第一个回车</p><figure><imgsrc="/images/ubuntu双系统安装记录/0420f115bee9524fc5ff603f74dbe65.jpg"alt="0420f115bee9524fc5ff603f74dbe65" /><figcaptionaria-hidden="true">0420f115bee9524fc5ff603f74dbe65</figcaption></figure><p>进入后进行一系列配置，如下</p><figure><img src="/images/ubuntu双系统安装记录/image-20241124202556638.png"alt="image-20241124202556638" /><figcaption aria-hidden="true">image-20241124202556638</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202602331.png"alt="image-20241124202602331" /><figcaption aria-hidden="true">image-20241124202602331</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202607349.png"alt="image-20241124202607349" /><figcaption aria-hidden="true">image-20241124202607349</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202615933.png"alt="image-20241124202615933" /><figcaption aria-hidden="true">image-20241124202615933</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202620614.png"alt="image-20241124202620614" /><figcaption aria-hidden="true">image-20241124202620614</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202626786.png"alt="image-20241124202626786" /><figcaption aria-hidden="true">image-20241124202626786</figcaption></figure><p><img src="/images/ubuntu双系统安装记录/image-20241124202632823.png"alt="image-20241124202632823" /><imgsrc="/images/ubuntu双系统安装记录/image-20241124202640936.png"alt="image-20241124202640936" /></p><figure><img src="/images/ubuntu双系统安装记录/image-20241124202647820.png"alt="image-20241124202647820" /><figcaption aria-hidden="true">image-20241124202647820</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202652450.png"alt="image-20241124202652450" /><figcaption aria-hidden="true">image-20241124202652450</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202658499.png"alt="image-20241124202658499" /><figcaption aria-hidden="true">image-20241124202658499</figcaption></figure><figure><img src="/images/ubuntu双系统安装记录/image-20241124202704096.png"alt="image-20241124202704096" /><figcaption aria-hidden="true">image-20241124202704096</figcaption></figure><p>接下来等待一会儿，点击重启，拔掉U盘后按enter即可。</p><p>如有问题欢迎留言或者联系作者交流()</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Technology </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Technology </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>极客大挑战2024 Writeup</title>
       <link href="/2024/11/19/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982024-Writeup/"/>
       <url>/2024/11/19/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%982024-Writeup/</url>
@@ -596,8 +621,6 @@
             
             <tag> Technology </tag>
             
-            <tag> Docker </tag>
-            
         </tags>
       
     </entry>
@@ -1145,9 +1168,9 @@
     
     
     <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1167,9 +1190,9 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1178,9 +1201,9 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
