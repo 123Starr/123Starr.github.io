@@ -1309,22 +1309,22 @@
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<p>在下St4rr。</p><p>目前南邮大二在读，网安新手。</p><p>一个CTF赛棍，misc手，略懂一点crypto。</p><p>已加入CTF战队X1cT34m和Polaris，给大佬们端茶。</p><p>努力学习中，争取不拖大佬们的后腿Orz。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>在下St4rr。</p><p>目前南邮大二在读，网安新手。</p><p>一个CTF赛棍，misc手，略懂一点crypto。</p><p>已加入CTF战队X1cT34m和Polaris，给大佬们端茶。</p><p>努力学习中，争取不拖大佬们的后腿Orz。</p>]]></content>
       
     </entry>
     
