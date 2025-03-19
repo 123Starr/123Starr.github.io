@@ -2,35 +2,35 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://123Starr.github.io/</loc>
+        <loc>https://blog.st4rr.top/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
 
 
     <url>
-        <loc>https://123starr.github.io/categories/Academic/</loc>
+        <loc>https://blog.st4rr.top/categories/Academic/</loc>
         <lastmod>2025-03-19T07:33:55.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://123starr.github.io/categories/Writeup/</loc>
+        <loc>https://blog.st4rr.top/categories/Writeup/</loc>
         <lastmod>2025-03-19T07:33:55.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://123starr.github.io/categories/Technology/</loc>
+        <loc>https://blog.st4rr.top/categories/Technology/</loc>
         <lastmod>2025-03-19T07:33:54.985Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://123starr.github.io/categories/Life/</loc>
+        <loc>https://blog.st4rr.top/categories/Life/</loc>
         <lastmod>2025-03-19T07:33:54.847Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
