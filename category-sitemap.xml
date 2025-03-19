@@ -9,29 +9,29 @@
 
 
     <url>
-        <loc>https://123starr.blog.io/categories/Writeup/</loc>
-        <lastmod>2025-03-13T12:37:11.487Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://123starr.blog.io/categories/Life/</loc>
-        <lastmod>2025-03-04T07:29:24.994Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://123starr.blog.io/categories/Academic/</loc>
-        <lastmod>2025-02-25T12:10:53.667Z</lastmod>
+        <lastmod>2025-03-19T07:33:55.056Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://123starr.blog.io/categories/Writeup/</loc>
+        <lastmod>2025-03-19T07:33:55.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://123starr.blog.io/categories/Technology/</loc>
-        <lastmod>2025-01-28T09:34:00.838Z</lastmod>
+        <lastmod>2025-03-19T07:33:54.985Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://123starr.blog.io/categories/Life/</loc>
+        <lastmod>2025-03-19T07:33:54.847Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
