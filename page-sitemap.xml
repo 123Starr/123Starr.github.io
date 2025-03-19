@@ -2,7 +2,7 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://123Starr.blog.io/</loc>
+        <loc>https://123Starr.github.io/</loc>
         <changefreq>daily</changefreq>
         <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     
     
     <url>
-        <loc>https://123starr.blog.io/about/</loc>
+        <loc>https://123starr.github.io/about/</loc>
         <lastmod>2025-03-17T07:12:21.412Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -19,7 +19,7 @@
     
     
     <url>
-        <loc>https://123starr.blog.io/links/</loc>
+        <loc>https://123starr.github.io/links/</loc>
         <lastmod>2024-05-27T12:26:22.517Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
     
     
     <url>
-        <loc>https://123starr.blog.io/comment/</loc>
+        <loc>https://123starr.github.io/comment/</loc>
         <lastmod>2024-02-21T08:50:28.141Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -37,7 +37,7 @@
     
     
     <url>
-        <loc>https://123starr.blog.io/categories/</loc>
+        <loc>https://123starr.github.io/categories/</loc>
         <lastmod>2024-02-21T08:40:57.435Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -46,7 +46,7 @@
     
     
     <url>
-        <loc>https://123starr.blog.io/tags/</loc>
+        <loc>https://123starr.github.io/tags/</loc>
         <lastmod>2024-02-21T08:38:06.841Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

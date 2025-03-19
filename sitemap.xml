@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>https://123Starr.blog.io/post-sitemap.xml</loc>
+        <loc>https://123Starr.github.io/post-sitemap.xml</loc>
         <lastmod>2025-03-19T07:33:55.056Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://123Starr.blog.io/page-sitemap.xml</loc>
+        <loc>https://123Starr.github.io/page-sitemap.xml</loc>
         <lastmod>2025-03-17T07:12:21.412Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://123Starr.blog.io/category-sitemap.xml</loc>
+        <loc>https://123Starr.github.io/category-sitemap.xml</loc>
         <lastmod>2025-03-19T07:33:55.056Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>https://123Starr.blog.io/tag-sitemap.xml</loc>
+        <loc>https://123Starr.github.io/tag-sitemap.xml</loc>
         <lastmod>2025-03-19T07:33:55.056Z</lastmod>
     </sitemap>
 
