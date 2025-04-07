@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>XYCTF2025 Writeup</title>
+      <link href="/posts/359b65ed/"/>
+      <url>/posts/359b65ed/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>仍然是没有web没有pwn，全靠其他方向硬抗((</p></blockquote><h4 id="writeup"><ahref="https://www.blog.st4rr.top/writeups/XYCTF2025Writeup.pdf">Writeup</a></h4><p>Additional Statement:</p><p>Cooperated with <strong>w8nn9z</strong>, <strong>1n1t</strong>,<strong>Hibiscus</strong>.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> CTF </tag>
+            
+            <tag> XYCTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数字中国2025 数字产业安全积分争夺赛初赛 数据分析 Writeup+复现</title>
       <link href="/posts/cac6789/"/>
       <url>/posts/cac6789/</url>
@@ -1539,9 +1568,20 @@
     
     
     <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -1561,31 +1601,20 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
