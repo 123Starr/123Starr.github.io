@@ -4,21 +4,21 @@
 
     <url>
         <loc>https://www.blog.st4rr.top/tags/TGCTF/</loc>
-        <lastmod>2025-04-16T12:08:21.860Z</lastmod>
+        <lastmod>2025-04-18T09:40:24.953Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.blog.st4rr.top/tags/CTF/</loc>
-        <lastmod>2025-04-16T12:08:21.860Z</lastmod>
+        <lastmod>2025-04-18T09:40:24.953Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://www.blog.st4rr.top/tags/Writeup/</loc>
-        <lastmod>2025-04-16T12:08:21.860Z</lastmod>
+        <lastmod>2025-04-18T09:40:24.953Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -94,14 +94,14 @@
     </url>
 
     <url>
-        <loc>https://www.blog.st4rr.top/tags/AI/</loc>
+        <loc>https://www.blog.st4rr.top/tags/%E7%BE%8A%E5%9F%8E%E6%9D%AF/</loc>
         <lastmod>2025-03-19T07:33:55.046Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.blog.st4rr.top/tags/%E7%BE%8A%E5%9F%8E%E6%9D%AF/</loc>
+        <loc>https://www.blog.st4rr.top/tags/AI/</loc>
         <lastmod>2025-03-19T07:33:55.046Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -129,14 +129,14 @@
     </url>
 
     <url>
-        <loc>https://www.blog.st4rr.top/tags/%E5%B7%85%E5%B3%B0%E6%9E%81%E5%AE%A2/</loc>
+        <loc>https://www.blog.st4rr.top/tags/%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81/</loc>
         <lastmod>2025-03-19T07:33:55.011Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.blog.st4rr.top/tags/%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81/</loc>
+        <loc>https://www.blog.st4rr.top/tags/%E5%B7%85%E5%B3%B0%E6%9E%81%E5%AE%A2/</loc>
         <lastmod>2025-03-19T07:33:55.011Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -304,14 +304,14 @@
     </url>
 
     <url>
-        <loc>https://www.blog.st4rr.top/tags/BuildCTF/</loc>
+        <loc>https://www.blog.st4rr.top/tags/BeginCTF/</loc>
         <lastmod>2025-03-19T07:33:54.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://www.blog.st4rr.top/tags/BeginCTF/</loc>
+        <loc>https://www.blog.st4rr.top/tags/BuildCTF/</loc>
         <lastmod>2025-03-19T07:33:54.857Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
