@@ -1,5 +1,15 @@
 User-agent: *
 Allow: /
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
+Allow: /about/
 
-Sitemap: https://123Starr.github.io/sitemap.xml
-Sitemap: https://123Starr.github.io/baidusitemap.xml
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+
+Sitemap: https://www.blog.st4rr.top/sitemap.xml
