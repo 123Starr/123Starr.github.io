@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>R3CTF2025 Writeup</title>
+      <link href="/posts/ca458d1f/"/>
+      <url>/posts/ca458d1f/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>R3的题还是太顶了，题量大但只会签到（</p></blockquote><h2 id="forensics">Forensics</h2><h3 id="the-r3-pig-problem">The R3 Pig Problem</h3><p>打开可以看到很多tcp流，这些tcp流的时间戳存在规律</p><figure><img src="/images/R3CTF2025-Writeup/image-20250706142646509.png"alt="image-20250706142646509" /><figcaption aria-hidden="true">image-20250706142646509</figcaption></figure><p>提取出来，计算时间差，接近0.02的记为0，接近0.1的记为1</p><figure><img src="/images/R3CTF2025-Writeup/image-20250706142756381.png"alt="image-20250706142756381" /><figcaption aria-hidden="true">image-20250706142756381</figcaption></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">classify_time_diff</span>(<span class="params">diff</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">abs</span>(diff - <span class="number">0.02</span>) &lt; <span class="built_in">abs</span>(diff - <span class="number">0.1</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;0&#x27;</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;1&#x27;</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">process_file</span>(<span class="params">filename</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = f.readlines()</span><br><span class="line"></span><br><span class="line">    result = []</span><br><span class="line"></span><br><span class="line">    i = <span class="number">1</span> </span><br><span class="line">    <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(lines)-<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            current = <span class="built_in">float</span>(lines[i+<span class="number">2</span>].strip())</span><br><span class="line">            previous = <span class="built_in">float</span>(lines[i].strip())</span><br><span class="line">            diff = current - previous</span><br><span class="line">            bit = classify_time_diff(diff)</span><br><span class="line">            result.append(bit)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;跳过无效行: 第 <span class="subst">&#123;i+<span class="number">1</span>&#125;</span> 行&quot;</span>)</span><br><span class="line">        i += <span class="number">2</span> </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(result)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    input_file = <span class="string">&#x27;output.txt&#x27;</span> </span><br><span class="line">    binary_string = process_file(input_file)</span><br><span class="line">    <span class="built_in">print</span>(binary_string)</span><br></pre></td></tr></table></figure><p>cyberchef转换一下</p><figure><img src="/images/R3CTF2025-Writeup/image-20250706143021382.png"alt="image-20250706143021382" /><figcaption aria-hidden="true">image-20250706143021382</figcaption></figure><h2 id="misc">Misc</h2><blockquote><p>一个签到一个签退就不写了（</p></blockquote><h3 id="r3girl-in-paris">R3GIRL In Paris</h3><p>不难找到这个地方在巴黎的china town</p><figure><img src="/images/R3CTF2025-Writeup/image-20250706143424357.png"alt="image-20250706143424357" /><figcaption aria-hidden="true">image-20250706143424357</figcaption></figure><figure><img src="/images/R3CTF2025-Writeup/image-20250706143449758.png"alt="image-20250706143449758" /><figcaption aria-hidden="true">image-20250706143449758</figcaption></figure><p>在这些网站上都能找到艺术家名称</p><p>https://www.tripadvisor.fr/ShowUserReviews-g187147-d16881390-r661798726-Fresque_De_tous_pays_viendront_tes_enfants-Paris_Ile_de_France.html</p><p>https://www.trompe-l-oeil.info/Murspeints/details.php?image_id=9303</p><p>R3CTF{Eglise-Notre-Dame-de-Chine-Cyril-David}</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> CTF </tag>
+            
+            <tag> R3CTF </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>春秋云境-Brute4Road</title>
       <link href="/posts/b6e8119b/"/>
       <url>/posts/b6e8119b/</url>
