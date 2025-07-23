@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>春秋云境-Hospital</title>
+      <link href="/posts/494627a/"/>
+      <url>/posts/494627a/</url>
+      
+        <content type="html"><![CDATA[<p>先上fscan扫一遍，发现有heapdump泄露</p><figure><imgsrc="/images/春秋云境-Hospital/1753191352788-a364d2e2-7ccb-46f1-bc64-f89e6c3339fc.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>访问/actuator/heapdump下载</p><p>用工具分析，得到shirokey</p><figure><imgsrc="/images/春秋云境-Hospital/1753191675654-59219e78-d396-440a-b505-39439ad1c8a5.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>直接弹shell</p><figure><imgsrc="/images/春秋云境-Hospital/1753193436806-e3f135be-a1dc-4e52-b30b-8b0c6827afc0.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753193453717-10c5125a-ea95-4c4f-84eb-e67e01904660.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>这里是suid提权，查找这个vim.basic</p><figure><imgsrc="/images/春秋云境-Hospital/1753193716105-668a1b17-d2ca-4936-88de-e22ee38f51f6.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>根据gtfobins上查到的进行利用</p><figure><imgsrc="/images/春秋云境-Hospital/1753194946680-6a1f269e-e35d-44cb-9794-1bb790e18c8b.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753195027194-46d845c9-9162-4aef-9eb8-150143607e36.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>再写个ssh公钥进去，方便后面的操作</p><figure><imgsrc="/images/春秋云境-Hospital/1753196235325-a8d2bff8-d27a-41b8-b3ee-4ed92882e2b2.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>传fscan扫内网，除本机外还有两台机器</p><figure><imgsrc="/images/春秋云境-Hospital/1753195169689-c6fc7673-43f1-4cb4-a114-6c7c22ae962f.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>搭建frp</p><figure><imgsrc="/images/春秋云境-Hospital/1753195454547-30ff1e9c-e083-4518-9a97-3e8da65ac294.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753195467871-e0c0380b-a700-42b0-8cca-94ddd3003f1b.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>可以看到有台机器上面有nacos存在漏洞，这里打snakeyaml</p><p>修改AwesomeScriptEngineFactory.java，改为添加一个管理员用户</p><figure><imgsrc="/images/春秋云境-Hospital/1753196946272-d78ccea2-25e6-4a2d-ae45-e3017e2b6f00.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>点击生成jar.bat生成恶意jar包</p><figure><imgsrc="/images/春秋云境-Hospital/1753197018739-5a01d268-3104-4796-b26e-aaea1f376539.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>将payload上传到刚刚打下来的机器中</p><figure><imgsrc="/images/春秋云境-Hospital/1753197280768-4c7c63b6-4deb-4bef-9264-2f8f88571356.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>在/tmp下开启web服务</p><figure><imgsrc="/images/春秋云境-Hospital/1753197397049-ddbcf853-3f12-4ca1-a95f-fa0d8db65afe.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>先访问这台服务器</p><figure><imgsrc="/images/春秋云境-Hospital/1753201017057-53b3a3d7-e4e1-4ef0-9927-d18d4a6440e4.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>nacos/nacos弱口令登录，得到dataid和group</p><figure><imgsrc="/images/春秋云境-Hospital/1753201034194-52f1a044-4c26-474e-bb0d-2dfa8d5c1741.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>用gui加载恶意jar包</p><figure><imgsrc="/images/春秋云境-Hospital/1753203343543-37e39d8c-62d7-4f93-b2e2-1bad41cf2d79.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>rdp连接上，得到flag</p><figure><imgsrc="/images/春秋云境-Hospital/1753203352429-9bab3129-0880-460d-80f9-19595ff63d68.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>接下来打另一台机器</p><p>给bp配一下代理</p><figure><imgsrc="/images/春秋云境-Hospital/1753204216965-74da9fd6-0176-4218-97d7-3e67f57fc4fb.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>用bp的浏览器访问一下，是一个后台</p><figure><imgsrc="/images/春秋云境-Hospital/1753204291882-49bf438c-60cd-46b4-b6e2-16276e94babb.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>随便输点什么，抓个包</p><figure><imgsrc="/images/春秋云境-Hospital/1753204304586-c064486d-c67d-4fc2-bff4-1bd855c71121.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>用fastjson-exp插件打fastjsonecho拿到flag3</p><figure><imgsrc="/images/春秋云境-Hospital/1753204515365-44e4a909-8eb7-43bb-b9ac-aed0e5fdee3d.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753204532925-136c1735-598b-45a7-85db-558af00c99ad.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753204557844-3b5570b5-1549-4109-84d8-9feb80f69e8a.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>写个ssh公钥进去，方便后续操作</p><figure><imgsrc="/images/春秋云境-Hospital/1753204645015-21dfac9a-6b3b-4bbf-8ebb-8e331d9999b7.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>可以看到这台机器是多网卡</p><figure><imgsrc="/images/春秋云境-Hospital/1753204726766-b4e5901f-0a01-476c-b454-8458c153c26a.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>传个fscan上去扫下另一张网卡所在的网段</p><figure><imgsrc="/images/春秋云境-Hospital/1753205165149-dd6c26bd-0fad-472c-a88d-d122c4a53752.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>继续搭frp，配置代理链</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 172.30.12.5</span><br><span class="line">server_port = 7000</span><br><span class="line"></span><br><span class="line">[socks_proxy]</span><br><span class="line">type = tcp</span><br><span class="line">remote_port =6000</span><br><span class="line">plugin = socks5</span><br><span class="line">[common]</span><br><span class="line">bindPort = 7000</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/春秋云境-Hospital/1753263306026-372c10a3-ed04-41a7-baa3-eb059ab00b10.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753263312455-87650cff-22c8-4bf1-aea4-d450ccb3f238.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753263323574-77d2458b-4eac-489b-aa4d-476f238b3600.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>访问过去是个grafana</p><figure><imgsrc="/images/春秋云境-Hospital/1753263330548-9e54a67f-fed2-4628-b4bf-c3ee6dea3f6f.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>是CVE-2021-43798，用现成exp打。但是不知道为什么我这里显示的是乱码，好像是exp版本的原因，但是找不到以前的版本了（查了下正确的密码应该是Postgres@123</p><figure><imgsrc="/images/春秋云境-Hospital/1753263391999-d90284a0-a6b2-48c7-9954-bb467a5b4e03.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>用navicat连接上去</p><figure><imgsrc="/images/春秋云境-Hospital/1753263409466-c9df4f50-9106-48a3-8735-1e8ef7e504e2.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>修改一下root密码，创建函数并用perl弹shell</p><figure><imgsrc="/images/春秋云境-Hospital/1753263451517-533f1269-e470-4d62-952f-ebfdaed7e1a8.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753263457259-59375568-4b91-409d-9e43-469519de062d.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>这里可以利用psql进行sudo提权</p><figure><imgsrc="/images/春秋云境-Hospital/1753263464769-9d541d63-728b-4d5c-8f34-9306e80bed60.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753263529557-6dfd89ad-8b2d-4545-b8c8-5df4cc1a1fef.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>起个tty，然后读flag</p><figure><imgsrc="/images/春秋云境-Hospital/1753263541189-f25a45d3-e271-40af-8d11-e10903d79f29.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-Hospital/1753263557535-d3175b6d-4b05-4831-a23a-0b19e9881acc.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 春秋云境 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>春秋云境-Exchange</title>
       <link href="/posts/952d1a58/"/>
       <url>/posts/952d1a58/</url>
@@ -2221,17 +2250,6 @@
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>在下St4rr。</p><p>目前南邮大二在读，网安新手。</p><p>一个菜狗CTFer，misc手。</p><p>已加入CTF战队X1cT34m和Polaris，主要职责是给大佬们端茶。</p><p>努力学习中，争取不拖大佬们的后腿Orz。</p><p>这里是本菜狗的博客，技能有限，认识尚浅，如有问题欢迎指出 :)</p><p>有几篇博客是加密的，如想查看，可以联系我要密码()</p><p>联系方式：</p><p>QQ: 3092158216</p><p>邮箱：3092158216@qq.com</p><p>​ st4rr2333@gmail.com</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Comment</title>
       <link href="/comment/index.html"/>
       <url>/comment/index.html</url>
@@ -2243,11 +2261,11 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>在下St4rr。</p><p>目前南邮大二在读，网安新手。</p><p>一个菜狗CTFer，misc手。</p><p>已加入CTF战队X1cT34m和Polaris，主要职责是给大佬们端茶。</p><p>努力学习中，争取不拖大佬们的后腿Orz。</p><p>这里是本菜狗的博客，技能有限，认识尚浅，如有问题欢迎指出 :)</p><p>有几篇博客是加密的，如想查看，可以联系我要密码()</p><p>联系方式：</p><p>QQ: 3092158216</p><p>邮箱：3092158216@qq.com</p><p>​ st4rr2333@gmail.com</p>]]></content>
       
     </entry>
     
@@ -2257,6 +2275,17 @@
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
