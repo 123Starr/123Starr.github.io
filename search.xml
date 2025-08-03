@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>春秋云境-2022网鼎杯半决赛复盘</title>
+      <link href="/posts/5f82f87d/"/>
+      <url>/posts/5f82f87d/</url>
+      
+        <content type="html"><![CDATA[<figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754122647766-235bd3fd-78d8-4da4-b0ae-16cdb5247299.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>给404页面写个马进去</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754122805757-def7e024-a9d9-4281-b22b-63ec34629c2e.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>蚁剑连上去，拿到第一个flag</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754122896307-928e85f8-41b8-495f-a099-6b82bf41e861.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754122937091-ae21ae36-00ac-4a7b-a6fd-e5041bd3e00e.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>fscan扫内网，除了本机还有四台机器</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754123143384-38d0d46b-732b-4938-9c73-f0e029a9bae3.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>搭建frp</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754123236788-57527b61-bad8-4115-8e30-d8c2ae588cb0.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754123248653-d697b3e2-c009-4143-9268-71e490700e56.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>先打永恒之蓝</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proxychains4 msfconsole</span><br><span class="line">use exploit/windows/smb/ms17_010_eternalblue</span><br><span class="line"><span class="built_in">set</span> payload windows/x64/meterpreter/bind_tcp_uuid</span><br><span class="line"><span class="built_in">set</span> RHOSTS 172.22.15.24</span><br><span class="line">exploit</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754124628045-fbe3eada-6982-4c9d-be75-853f9c4b4626.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>dump哈希</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754124703935-18b0edd4-f535-4111-a2f7-5f4927794c2b.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>打pth拿到第二个flag</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754124876741-6cf0ae1c-bbcd-4ede-b0b5-4255c2bc6f60.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>访问这台我们打下来的机器，admin/123456弱口令进后台</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754125300505-33b0d378-7452-4747-bd6e-ba5156906972.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>这里有很多邮箱，全部复制下来去掉xiaorang.lab的后缀做成一个字典</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754125613163-1b409ffc-544a-4912-99c3-721e153fac5c.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>接下来打AS-REP Roasting</p><p>找一下有spn的用户，有两个</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754126058657-6837f8da-4cea-45f7-83b4-3b7c9ced917e.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>hashcat分别爆破出密码</p><p>lixiuying/winniethepooh</p><p>huachunmei/1qaz2wsx</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754126464812-71f5e647-618f-4f5b-9e8f-44199e97286d.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754126541817-d4dd66f5-ed39-4312-9cdb-dde87d883aa2.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>bloodhound收集信息</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754127134585-b8fce09d-b23d-4308-ac83-a20ce6237933.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>用户lixiuying有GenericWrite权限</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754128451784-1fb9b6a1-8657-49db-acbf-e0945dae127e.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>接下来打RBCD</p><p>创建一个机器账户</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754128009563-b22d28e3-dedb-47da-8d03-9157b05f77e0.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>配置属性指向域控机器账户</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754128383111-14eb15d9-95b4-4668-bc55-bd00bbd91350.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>获取ST</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754128725881-430b6e2a-1306-4316-bc2c-c67d6c2df10f.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>ptt拿flag</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754128880929-e095ee11-5c25-4734-a553-0b35d5e316e9.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754128904207-a755f532-1291-4748-8b17-8013379a36af.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>创建一个机器账号</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754143298044-6a272d46-e4fe-4359-9712-8691cfe6a862.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>看一下证书信息</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754143324633-f8023e01-ed05-4ece-9dbe-b32aa49b6e3d.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>接下来打AD CS</p><p>申请模板伪造证书</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754143535712-6c09c2a2-b8e6-4218-9063-1ed916c4e7bf.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>尝试获取TGT和NTLM hash，发生报错</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754143648275-4ee61b33-e4aa-41f1-99ee-de56062d285a.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>这个报错之前在做certify靶标的时候也遇到过，但是在重启了N次以后就成功了。在这里看来是题目本身缺少了智能卡身份验证证书的配置，因此无法通过重启解决。看了大佬们的博客，这里有一种替代方法，可以将问题转化为BCD来解决。</p><p>导出.crt和.key</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754143985670-82554ccc-811d-49db-a662-170f00235185.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>配置RBCD</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754144071206-085d0221-8f8f-4aa9-85c5-b5b795162549.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>申请ST</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754144244490-f1c92e3d-27df-4ea3-9692-09a120e5e968.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>最后对域控打ptt即可</p><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754144435031-3cb7cbaa-be83-496e-81db-567790156ad6.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><figure><imgsrc="/images/春秋云境-2022网鼎杯半决赛复盘/1754144492544-5edb27d9-204d-47ee-b900-c6d77bc9f9b2.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> 春秋云境 </tag>
+            
+            <tag> 网鼎杯 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>NepCTF2025 Writeup</title>
       <link href="/posts/d9c744c2/"/>
       <url>/posts/d9c744c2/</url>
@@ -414,6 +445,8 @@
       <categories>
           
           <category> Writeup </category>
+          
+          <category> 春秋云境 </category>
           
       </categories>
       
@@ -2291,17 +2324,6 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello, world!</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -2324,9 +2346,9 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -2338,6 +2360,17 @@
       <title>links</title>
       <link href="/links/index.html"/>
       <url>/links/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
