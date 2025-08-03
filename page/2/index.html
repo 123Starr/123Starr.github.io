@@ -61,7 +61,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-08-03 17:02:15'
+  postUpdate: '2025-08-03 17:05:22'
 }</script><script>(win=>{
       win.saveToLocal = {
         set: (key, value, ttl) => {
@@ -161,396 +161,200 @@
     })(window)</script><meta name="generator" content="Hexo 7.1.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/starry.jpeg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">St4rr's Blog</h1><div id="site-subtitle"><span id="subtitle"></span></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/ca458d1f/" title="R3CTF2025 Writeup">R3CTF2025 Writeup</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-06T16:00:00.000Z" title="Created 2025-07-07 00:00:00">2025-07-07</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-07-07T07:34:26.671Z" title="Updated 2025-07-07 15:34:26">2025-07-07</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/R3CTF/">R3CTF</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/ca458d1f/#post-comment"><span class="valine-comment-count" data-xid="/posts/ca458d1f/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
 R3的题还是太顶了，题量大但只会签到（
 
-Forensics
-The R3 Pig Problem
-打开可以看到很多tcp流，这些tcp流的时间戳存在规律
-
-
-image-20250706142646509
+ForensicsThe R3 Pig Problem打开可以看到很多tcp流，这些tcp流的时间戳存在规律
 
 提取出来，计算时间差，接近0.02的记为0，接近0.1的记为1
 
-
-image-20250706142756381
-
-1234567891011121314151617181920212223242526272829def classify_time_diff(diff):    if abs(diff - 0.02) &lt; abs(diff - 0.1):        return &#x27;0&#x27;    else:        return &#x27;1&#x27;def process_file(filename):    with open(filename, &#x27;r&#x27;) as f:        lines = f.readlines()    result = []    i = 1     whi ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/b6e8119b/" title="春秋云境-Brute4Road">春秋云境-Brute4Road</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-05T16:00:00.000Z" title="Created 2025-07-06 00:00:00">2025-07-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:34:38.949Z" title="Updated 2025-08-03 10:34:38">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/b6e8119b/#post-comment"><span class="valine-comment-count" data-xid="/posts/b6e8119b/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">fscan扫一遍，发现存在redis未授权漏洞
-
-
-img
+1234567891011121314151617181920212223242526272829def classify_time_diff(diff):    if abs(diff - 0.02) &lt; abs(diff - 0.1):        return &#x27;0&#x27;    else:        return &#x27;1&#x27;def process_file(filename):    with open(filename, &#x27;r&#x27;) as f:        lines = f.readlines()    result = []    i = 1     while i &lt; len(lines)-1:        try:            current = float(lines[ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/b6e8119b/" title="春秋云境-Brute4Road">春秋云境-Brute4Road</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-05T16:00:00.000Z" title="Created 2025-07-06 00:00:00">2025-07-06</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:34:38.949Z" title="Updated 2025-08-03 10:34:38">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/b6e8119b/#post-comment"><span class="valine-comment-count" data-xid="/posts/b6e8119b/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">fscan扫一遍，发现存在redis未授权漏洞
 
 用脚本getshell
-
-
-img
 
 发现没有权限读flag，发现可以利用base64命令suid提权
 
 
-img
-
-
-
-img
-
-
-
-img
 
 传个fscan上去扫一下内网
-
-
-img
 
 搭建frp
 
 
-img
-
-
-
-img
-
 先尝试攻击搭建了wordpress的那台主机
 wpscan扫一遍，扫出来有个wpcargo插件
 
-
-img
-
 用脚本写入木马
-12345678910111213141516171819202122232425import sysimport binasciiimport requests# This is a magic string that when treated as pixels and compressed using the png# algorithm, will cause &lt;?=$_GET[1]($_POST[2]);?&gt; to be written to the png file ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/9aa9ec9/" title="春秋云境-Time">春秋云境-Time</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-03T16:00:00.000Z" title="Created 2025-07-04 00:00:00">2025-07-04</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:26.581Z" title="Updated 2025-08-03 10:33:26">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/9aa9ec9/#post-comment"><span class="valine-comment-count" data-xid="/posts/9aa9ec9/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">Time
-fscan扫一遍
-
-
-img
+12345678910111213141516171819202122232425import sysimport binasciiimport requests# This is a magic string that when treated as pixels and compressed using the png# algorithm, will cause &lt;?=$_GET[1]($_POST[2]);?&gt; to be written to the png filepayload = &#x27;2f49cf97546f2c24152b216712546f112e29152b1967226b6f5f50&#x27;def encode_character_c ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/9aa9ec9/" title="春秋云境-Time">春秋云境-Time</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-03T16:00:00.000Z" title="Created 2025-07-04 00:00:00">2025-07-04</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:26.581Z" title="Updated 2025-08-03 10:33:26">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/9aa9ec9/#post-comment"><span class="valine-comment-count" data-xid="/posts/9aa9ec9/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">Timefscan扫一遍
 
 有7687端口，这是neo4j的端口。这里存在CVE-2021-34371未授权RCE，我们可以以此反弹shell
 
 
-img
-
-
-
-img
-
 拿到flag1和提示kerberos的认证过程
 
-
-img
-
 上传fscan扫一下，扫出来还有三台主机
-
-
-img
 
 搭建frp，访问搭建了web服务的那台主机
 
 
-img
-
-
-
-img
-
-
-
-img
 
 这里可以用sqlmap一把梭，找到第二个flag
 
-
-img
-
 读取数据库中的用户表，总共有500个用户，把这些用户的名称都dump下来做成一个字典
 
-
-img
-
-12345678910import csvinput_csv = &#x27;oa_users.csv&#x27;output_txt = &#x27;usernames.txt&#x27;with open(input_csv, mode=&#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as csvfile: ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/a0288562/" title="春秋云境-Tsclient">春秋云境-Tsclient</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-02T16:00:00.000Z" title="Created 2025-07-03 00:00:00">2025-07-03</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:17.432Z" title="Updated 2025-08-03 10:33:17">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/a0288562/#post-comment"><span class="valine-comment-count" data-xid="/posts/a0288562/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">fscan扫出来有mssql数据库，有了账号密码
-
-
-img
+12345678910import csvinput_csv = &#x27;oa_users.csv&#x27;output_txt = &#x27;usernames.txt&#x27;with open(input_csv, mode=&#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as csvfile:    reader = csv.DictReader(csvfile)    with open(output_txt, mode=&#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/a0288562/" title="春秋云境-Tsclient">春秋云境-Tsclient</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-07-02T16:00:00.000Z" title="Created 2025-07-03 00:00:00">2025-07-03</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:17.432Z" title="Updated 2025-08-03 10:33:17">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/a0288562/#post-comment"><span class="valine-comment-count" data-xid="/posts/a0288562/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">fscan扫出来有mssql数据库，有了账号密码
 
 用MUDT连接，先激活一下xpshell组件
 
 
-img
-
-
-
-img
-
 上传SweetPotato成功提权
 
-
-img
-
-
-
-img
 
 添加用户，开启远程登陆
 
 
-img
-
-
-
-img
-
 开启远程桌面
-REG ADD HKLMServer /v fDenyTSConnections /t REG_DWORD /d 00000000
-/f
-
-
-img
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server &#x2F;v fDenyTSConnections &#x2F;t REG_DWORD &#x2F;d 00000000 &#x2F;f
 
 远程桌面连接上，找到第一个flag
-
-
-img
 
 查看ip，上传fscan扫内网
 
 
-img
-
-
-
-img
-
 可以看到除了打下来的这台以外还有三台机器，一台域控，两台域内机器。
 quser看到还有一个叫做john的用户通过rdp连接了
 
-
-img
-
 netstat查看网络连接状态，看到是来自域内另一个主机
-
-
-img
 
 到这里歇了歇，下次再做。
 上传cs的后门并执行
 
-
-img
-
 注入进程
 
 
-img
+用户存在共享文件
+
+底下有个文件读取一下，给了一个账号密码以及提示
 
 
+用chisel搭建隧道
 
-img
 
- ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/70e1ab73/" title="能源安全大赛2025 线下个人赛 Writeup">能源安全大赛2025 线下个人赛 Writeup</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-10T16:00:00.000Z" title="Created 2025-06-11 00:00:00">2025-06-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-07-02T05:22:50.205Z" title="Updated 2025-07-02 13:22:50">2025-07-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E8%83%BD%E6%BA%90%E5%AE%89%E5%85%A8/">能源安全</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/70e1ab73/#post-comment"><span class="valine-comment-count" data-xid="/posts/70e1ab73/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+配置proxychains4
+
+密钥喷洒发现密码过期了
+
+随便选一台机器rdesktop登录修改密码
+
+经过尝试，能远程桌面 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/70e1ab73/" title="能源安全大赛2025 线下个人赛 Writeup">能源安全大赛2025 线下个人赛 Writeup</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-10T16:00:00.000Z" title="Created 2025-06-11 00:00:00">2025-06-11</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-07-02T05:22:50.205Z" title="Updated 2025-07-02 13:22:50">2025-07-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E8%83%BD%E6%BA%90%E5%AE%89%E5%85%A8/">能源安全</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/70e1ab73/#post-comment"><span class="valine-comment-count" data-xid="/posts/70e1ab73/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
 这次没有得奖（
 做出来了一半的题目，都是各个方向比较基本的题。有一题比较遗憾，由于时间原因倒在了出答案的前一步，不然应该就能拿到奖了（
 这次又成功面基了几位星盟的师傅:)
 
-Crypto
-crypto1
-
-
-image-20250611141724525
-
-Misc
-Misc1
-找到一个表格
-
-
-image-20250611145820652
+Cryptocrypto1
+MiscMisc1找到一个表格
 
 在cmdscan中找到密码
 
-
-image-20250611145820652
-
 隐藏文字
-
-
-image-20250611145840515
 
 UTF-7
 
-
-image-20250611145857308
-
-Crypto
-Crypto1
-指数很小，爆破就行
-1234567891011121314from Crypto.Util.number import *import gmpy2n=933132591603649661272081363592225803528096281299294958684014567416493105150760078378922298065 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/c1334500/" title="春秋云境-Initial">春秋云境-Initial</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-08T16:00:00.000Z" title="Created 2025-06-09 00:00:00">2025-06-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:36.293Z" title="Updated 2025-08-03 10:33:36">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/c1334500/#post-comment"><span class="valine-comment-count" data-xid="/posts/c1334500/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">先上fscan扫一遍，扫出thinkphp一个rce的洞
-
-
-img
+CryptoCrypto1指数很小，爆破就行
+1234567891011121314from Crypto.Util.number import *import gmpy2n=9331325916036496612720813635922258035280962812992949586840145674164931051507600783789222980650176801919878600008643559216407763411533381234754171656299952289485028219127499891446457980739880461801890066726815374085563241886502309603183517843971285910052682542705013 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/c1334500/" title="春秋云境-Initial">春秋云境-Initial</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-08T16:00:00.000Z" title="Created 2025-06-09 00:00:00">2025-06-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:36.293Z" title="Updated 2025-08-03 10:33:36">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/c1334500/#post-comment"><span class="valine-comment-count" data-xid="/posts/c1334500/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">先上fscan扫一遍，扫出thinkphp一个rce的洞
 
 用工具，getshell
 
-
-img
-
 写个马进去
-
-
-img
 
 蚁剑连接
 
-
-img
-
-
-
-img
 
 当前用户是www-data，需要提权
 发现可以sudo提权，mysql被配置了root权限，去gtfobins上查一下
 
 
-img
-
-
-
-img
-
 查找所有名字含flag的文件，找到flag01.txt
 
 
-img
-
-
-
-img
-
 看下内网ip
 
-
-img
-
 用蚁剑传个fscan上去扫描一下（记得chmod 777 fscan）
-
-
-img
 
 可以看到除了我们打下来的这台主机外，还有三台主机：一台是信呼OA服务器，一台是DC域控，一台是个有永恒之蓝的洞的windows
 接下来配置frp转发流量
 frpc.ini
-12345678[common]serverAddr = &quot;60.204.245.37&quot;serverPort = 7000[socks_proxy]type = tcprem ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/3d82d740/" title="春秋云境-漏洞靶标">春秋云境-漏洞靶标</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-04T16:00:00.000Z" title="Created 2025-06-05 00:00:00">2025-06-05</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:27:42.416Z" title="Updated 2025-08-03 10:27:42">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/3d82d740/#post-comment"><span class="valine-comment-count" data-xid="/posts/3d82d740/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">CVE-2022-32991
-靶标介绍：
+12345678[common]serverAddr = &quot;60.204.245.37&quot;serverPort = 7000[socks_proxy]type = tcpremote_port =6000plugin = socks5
+
+frps.ini
+12[common]bindPort = 7000
+
+frpc通过蚁剑上传，frps上传到自己的vps上
+
+用msf弹shell
+
+将reverse.elf用蚁剑上 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/3d82d740/" title="春秋云境-漏洞靶标">春秋云境-漏洞靶标</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-04T16:00:00.000Z" title="Created 2025-06-05 00:00:00">2025-06-05</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:27:42.416Z" title="Updated 2025-08-03 10:27:42">2025-08-03</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/3d82d740/#post-comment"><span class="valine-comment-count" data-xid="/posts/3d82d740/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">CVE-2022-32991靶标介绍：
 该CMS的welcome.php中存在SQL注入攻击。
 随便注册一个账号先登录一下，来到题目所说的welcome.php
 
-
-img
-
 点start可以发现有很多的get参数
-
-
-img
 
 拿上cookie，用sqlmap能一把梭（）
 
 
-img
 
-
-
-img
-
-
-
-img
-
-CVE-2022-30887
-靶标介绍：
-多语言药房管理系统 (MPMS) 是用 PHP 和 MySQL 开发的,
-该软件的主要目的是在药房和客户之间提供一套接口，客户是该软件的主要用户。该软件有助于为药房业务创建一个综合数据库，并根据到期、产品等各种参数提供各种报告。
-该CMS中php_action/editProductImage.php存在任意文件上传漏洞，进而导致任意代码执行。
+CVE-2022-30887靶标介绍：
+多语言药房管理系统 (MPMS) 是用 PHP 和 MySQL 开发的, 该软件的主要目的是在药房和客户之间提供一套接口，客户是该软件的主要用户。该软件有助于为药房业务创建一个综合数据库，并根据到期、产品等各种参数提供各种报告。 该CMS中php_action&#x2F;editProductImage.php存在任意文件上传漏洞，进而导致任意代码执行。
 原来似乎可以通过访问网站开发者的个人网站找到其邮箱，现在好像删掉了。
 密码则是弱口令，作者名字mayurik
-成功登录后，由题目找到Medicine-Manage
-Medicine下存在文件上传漏洞，直接写一个一句话木马传 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/3dfad485/" title="关于如何科学上网">关于如何科学上网</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-26T16:00:00.000Z" title="Created 2025-05-27 00:00:00">2025-05-27</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-27T08:29:18.868Z" title="Updated 2025-05-27 16:29:18">2025-05-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Technology/">Technology</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Technology/">Technology</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/3dfad485/#post-comment"><span class="valine-comment-count" data-xid="/posts/3dfad485/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
-  237c7b37fdf7fec26f51a8dc4d10e6e5690f222e5e2c25948d9574ab25f1b4d68d6446c5e34e4f112c1d85e203c1fbb46563a71302a8074bb129bcec0aef458e19341d1c0dc38a42ba715fa5b08bd30fa436f81fa2ee7035c351ce921882e3ff62debdfdc978714deb3ee7124698f814fcd02cf5bd9e32e5a70c5d49fb16a81046a34cf4e4ebb24073a8ca2f96a621f2125a3054256a13a396e9ef0009f83a926c311cf5ba38f0cb5a4f85a228ee22c33e1240dcbb4e26aeb5ff1873663f263504d5b8f9ae24590fd7ea2c7acd8965d95f83c7e370b18d891359db3065556439d348e9d0f303fa7d7cdc7e0f940eb62e8e973a76c09f0fa98 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/f6af6eda/" title="Parloo杯2025初赛 writeup+复现">Parloo杯2025初赛 writeup+复现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-22T16:00:00.000Z" title="Created 2025-05-23 00:00:00">2025-05-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-26T14:53:26.055Z" title="Updated 2025-05-26 22:53:26">2025-05-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Parloo%E6%9D%AF/">Parloo杯</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/">应急响应</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/f6af6eda/#post-comment"><span class="valine-comment-count" data-xid="/posts/f6af6eda/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+成功登录后，由题目找到Medicine-Manage Medicine下存在文件上传漏洞，直接写一个一句话木马传上去
+
+然后用蚁剑连接即可
+
+CVE-2022-28512靶标介绍：
+Fantastic Blog (CMS)是一个绝对出 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/3dfad485/" title="关于如何科学上网">关于如何科学上网</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-26T16:00:00.000Z" title="Created 2025-05-27 00:00:00">2025-05-27</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-27T08:29:18.868Z" title="Updated 2025-05-27 16:29:18">2025-05-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Technology/">Technology</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Technology/">Technology</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">科学上网</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/3dfad485/#post-comment"><span class="valine-comment-count" data-xid="/posts/3dfad485/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+  237c7b37fdf7fec26f51a8dc4d10e6e5690f222e5e2c25948d9574ab25f1b4d6da3b4ee596272775f3d8948083836143f3927bb4981c2e5863d239f9cc06ace5367c3b9468276ec03d4cdf06d45c600ab491027a5ef268d24d67e48bd5576e0c89ff0c01f36d8680eb129521356e1f78d4db2e6ab046d3a4c69fe148f0924144595951ec110af6432a6264b55e2662971ed10358db7b6dd5e8766f27ed3d4962c0359bc2a7fefccb633df8bdb43857d08cca598f9fbb0403d8f7c9432895d061860c875885b5cf41f94205b333fb00ffa6d263867dfb6ba31628db73b90558e189663c103e24d1d8144ac889f9c8455ef22cbdf29a22415d2 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/f6af6eda/" title="Parloo杯2025初赛 writeup+复现">Parloo杯2025初赛 writeup+复现</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-22T16:00:00.000Z" title="Created 2025-05-23 00:00:00">2025-05-23</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-26T14:53:26.055Z" title="Updated 2025-05-26 22:53:26">2025-05-26</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Parloo%E6%9D%AF/">Parloo杯</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/">应急响应</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/f6af6eda/#post-comment"><span class="valine-comment-count" data-xid="/posts/f6af6eda/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
 这波Aura✌tql，仅凭一己之力干完了应急响应，本菜鸡直接被带飞OrzOrz
 比赛的时候根本跟不上aura✌的进度，虽说看了题但是没做几道，现在好好复现一下。
 除了应急响应以外的题就不复现了，都是musc。。。
 
-主线
-第二届“Parloo”CTF应急响应挑战赛应急响应场景挑战说明手册.pdf
-1
-提交堡垒机中留下的flag 附件下载地址：百度网盘
-https://pan.baidu.com/s/1otqDnpKTOEsPZQiWSE8ECg?pwd=6666 提取码: 6666
-夸克网盘 https://pan.quark.cn/s/46653bd06cca 123云盘
-https://www.123865.com/s/qDVvjv-zVBod 提取码:6666
-**解压密码：应急响应环境解压密码网络拓扑环境 Skills@@@Skills@@@Skills 畸行的爱
-Parloo&amp;zgsfsys&amp;onefox&amp;solar**juyt**
+主线第二届“Parloo”CTF应急响应挑战赛应急响应场景挑战说明手册.pdf
+1 **提交堡垒机中留下的flag****附件下载地址：百度网盘 https://pan.baidu.com/s/1otqDnpKTOEsPZQiWSE8ECg?pwd=6666 提取码: 6666 夸克网盘 https://pan.quark.cn/s/46653bd06cca 123云盘 https://www.123865.com/s/qDVvjv-zVBod 提取码:6666***解压密码：应急响应环境解压密码网络拓扑环境 Skills@@@Skills@@@Skills 畸行的爱 Parloo&amp;zgsfsys&amp;onefox&amp;solar*juyt  
 登录面板即可看到flag
 
-
-img
-
-palu{2025_qiandao_fl ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）">盘古石杯2025初赛 Writeup+复现（断更中）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-19T16:00:00.000Z" title="Created 2025-05-20 00:00:00">2025-05-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-23T13:24:33.149Z" title="Updated 2025-05-23 21:24:33">2025-05-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Forensics/">Forensics</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%9B%98%E5%8F%A4%E7%9F%B3%E6%9D%AF/">盘古石杯</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/56d4296b/#post-comment"><span class="valine-comment-count" data-xid="/posts/56d4296b/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
-这次混了个预赛二等奖，但同样未能成功晋级，菜炸了（（
-唉好好复现学习一下吧
-以下是在w8nn9z、1n1t两位爷的帮助下一起尝试完成的复现Orz
+palu{2025_qiandao_flag}
+2 提交WAF中隐藏的flag
+进入 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）">盘古石杯2025初赛 Writeup+复现（断更中）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-05-19T16:00:00.000Z" title="Created 2025-05-20 00:00:00">2025-05-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-23T13:24:33.149Z" title="Updated 2025-05-23 21:24:33">2025-05-23</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Writeup/">Writeup</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Writeup/">Writeup</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/CTF/">CTF</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Forensics/">Forensics</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/%E7%9B%98%E5%8F%A4%E7%9F%B3%E6%9D%AF/">盘古石杯</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/posts/56d4296b/#post-comment"><span class="valine-comment-count" data-xid="/posts/56d4296b/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> comments</span></span></div><div class="content">
+这次混了个预赛二等奖，但同样未能成功晋级，菜炸了（（唉好好复现学习一下吧以下是在w8nn9z、1n1t两位爷的帮助下一起尝试完成的复现Orz
 
 
 服务器取证部分复现起来有点耗时耗力，暂时先搁置了。。。也许等下一次打取证比赛前会想起更新吧（）
 数据取证部分在网上没找到标准答案，就不复现了。
 
-手机取证
-1
-分析安卓手机检材，手机的IMSI是？
-
-
-img
+手机取证1分析安卓手机检材，手机的IMSI是？
 
 460036641292715
-2
-养鱼诈骗投资1000，五天后收益是？
+2养鱼诈骗投资1000，五天后收益是？
 在QQ聊天记录里可以找到
 
-
-img
-
 175
-3
-分析苹果手机检材，手机的IDFA是？
-
-
-img
+3分析苹果手机检材，手机的IDFA是？
 
 E477D4C7-BD02-4979-BC9D-5C5DE7BD1F17
-4
-Telegram应用的卸载时间是？
+4Telegram应用的卸载时间是？
 过滤卸载记录
 
-
-img
-
 2025-04-17-10:51:39
-5
-机主hotmail邮箱地址是？
+5机主hotmail邮箱地址是？
 telegram聊天记录中有提到
 
-
-img
-
-hostsixer@hotmail.com
-6
-苹果电脑开机密码是？
-在手机截屏里
-
- ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">想学一门技术(</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">由于博客内部路径更新，之前的一些评论及博客查看次数可能被吞:( 另外如果想联系作者，请移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/cb0f9c73/" title="春秋云境-Privilege">春秋云境-Privilege</a><time datetime="2025-08-02T16:00:00.000Z" title="Created 2025-08-03 00:00:00">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/5f82f87d/" title="春秋云境-2022网鼎杯半决赛复盘">春秋云境-2022网鼎杯半决赛复盘</a><time datetime="2025-08-01T16:00:00.000Z" title="Created 2025-08-02 00:00:00">2025-08-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d9c744c2/" title="NepCTF2025 Writeup">NepCTF2025 Writeup</a><time datetime="2025-07-27T16:00:00.000Z" title="Created 2025-07-28 00:00:00">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/71974631/" title="春秋云境-Delivery">春秋云境-Delivery</a><time datetime="2025-07-24T16:00:00.000Z" title="Created 2025-07-25 00:00:00">2025-07-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/494627a/" title="春秋云境-Hospital">春秋云境-Hospital</a><time datetime="2025-07-22T16:00:00.000Z" title="Created 2025-07-23 00:00:00">2025-07-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+&#104;&#111;&#x73;&#x74;&#x73;&#x69;&#x78;&#x65;&#x72;&#x40;&#x68;&#x6f;&#x74;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;
+6苹果电脑开机密 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#content-inner">9</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">想学一门技术(</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">82</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">60</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">由于博客内部路径更新，之前的一些评论及博客查看次数可能被吞:( 另外如果想联系作者，请移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/cb0f9c73/" title="春秋云境-Privilege">春秋云境-Privilege</a><time datetime="2025-08-02T16:00:00.000Z" title="Created 2025-08-03 00:00:00">2025-08-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/5f82f87d/" title="春秋云境-2022网鼎杯半决赛复盘">春秋云境-2022网鼎杯半决赛复盘</a><time datetime="2025-08-01T16:00:00.000Z" title="Created 2025-08-02 00:00:00">2025-08-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/d9c744c2/" title="NepCTF2025 Writeup">NepCTF2025 Writeup</a><time datetime="2025-07-27T16:00:00.000Z" title="Created 2025-07-28 00:00:00">2025-07-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/71974631/" title="春秋云境-Delivery">春秋云境-Delivery</a><time datetime="2025-07-24T16:00:00.000Z" title="Created 2025-07-25 00:00:00">2025-07-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/494627a/" title="春秋云境-Hospital">春秋云境-Hospital</a><time datetime="2025-07-22T16:00:00.000Z" title="Created 2025-07-23 00:00:00">2025-07-23</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>Categories</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
             <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Academic/"><span class="card-category-list-name">Academic</span><span class="card-category-list-count">7</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Life/"><span class="card-category-list-name">Life</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Technology/"><span class="card-category-list-name">Technology</span><span class="card-category-list-count">4</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Writeup/"><span class="card-category-list-name">Writeup</span><span class="card-category-list-count">70</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/"><span class="card-category-list-name">春秋云境</span><span class="card-category-list-count">12</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/WMCTF/" style="font-size: 1.1em; color: #999">WMCTF</a> <a href="/tags/%E5%BC%BA%E7%BD%91%E6%9D%AF/" style="font-size: 1.1em; color: #999">强网杯</a> <a href="/tags/VNCTF/" style="font-size: 1.1em; color: #999">VNCTF</a> <a href="/tags/%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81/" style="font-size: 1.1em; color: #999">强网拟态</a> <a href="/tags/%E5%9B%BD%E5%9F%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">国城杯</a> <a href="/tags/BuildCTF/" style="font-size: 1.1em; color: #999">BuildCTF</a> <a href="/tags/%E6%95%B0%E5%AD%97%E4%B8%AD%E5%9B%BD/" style="font-size: 1.15em; color: #999b9e">数字中国</a> <a href="/tags/Misc/" style="font-size: 1.35em; color: #99a3b1">Misc</a> <a href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" style="font-size: 1.1em; color: #999">应急响应</a> <a href="/tags/Academic/" style="font-size: 1.3em; color: #99a1ac">Academic</a> <a href="/tags/NepCTF/" style="font-size: 1.15em; color: #999b9e">NepCTF</a> <a href="/tags/aliyunCTF/" style="font-size: 1.1em; color: #999">aliyunCTF</a> <a href="/tags/Parloo%E6%9D%AF/" style="font-size: 1.1em; color: #999">Parloo杯</a> <a href="/tags/NKCTF/" style="font-size: 1.1em; color: #999">NKCTF</a> <a href="/tags/Writeup/" style="font-size: 1.5em; color: #99a9bf">Writeup</a> <a href="/tags/%E8%83%BD%E6%BA%90%E5%AE%89%E5%85%A8/" style="font-size: 1.15em; color: #999b9e">能源安全</a> <a href="/tags/HSCCTF/" style="font-size: 1.1em; color: #999">HSCCTF</a> <a href="/tags/TGCTF/" style="font-size: 1.1em; color: #999">TGCTF</a> <a href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/" style="font-size: 1.4em; color: #99a5b6">春秋云境</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/TPCTF/" style="font-size: 1.1em; color: #999">TPCTF</a> <a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" style="font-size: 1.1em; color: #999">年度总结</a> <a href="/tags/CTF/" style="font-size: 1.45em; color: #99a7ba">CTF</a> <a href="/tags/Technology/" style="font-size: 1.25em; color: #999fa7">Technology</a> <a href="/tags/jqctf/" style="font-size: 1.15em; color: #999b9e">jqctf</a> <a href="/tags/%E7%BD%91%E9%BC%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">网鼎杯</a> <a href="/tags/HGame/" style="font-size: 1.15em; color: #999b9e">HGame</a> <a href="/tags/BeginCTF/" style="font-size: 1.1em; color: #999">BeginCTF</a> <a href="/tags/CISCN/" style="font-size: 1.1em; color: #999">CISCN</a> <a href="/tags/%E5%BE%A1%E5%AE%9B%E6%9D%AF/" style="font-size: 1.1em; color: #999">御宛杯</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 1.4em; color: #99a5b6">渗透</a> <a href="/tags/Web/" style="font-size: 1.1em; color: #999">Web</a> <a href="/tags/L3HCTF/" style="font-size: 1.1em; color: #999">L3HCTF</a> <a href="/tags/Blockchain/" style="font-size: 1.2em; color: #999da3">Blockchain</a> <a href="/tags/qsnCTF/" style="font-size: 1.1em; color: #999">qsnCTF</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size: 1.1em; color: #999">科学上网</a> <a href="/tags/RDCTF/" style="font-size: 1.1em; color: #999">RDCTF</a> <a href="/tags/%E7%BE%8A%E5%9F%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">羊城杯</a> <a href="/tags/FIC/" style="font-size: 1.1em; color: #999">FIC</a> <a href="/tags/ACTF/" style="font-size: 1.1em; color: #999">ACTF</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="View More">
-    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">August 2025</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">July 2025</span><span class="card-archive-list-count">12</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/06/"><span class="card-archive-list-date">June 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">May 2025</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">April 2025</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">March 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">February 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">January 2025</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">82</div></div><div class="webinfo-item"><div class="item-name">Runtime :</div><div class="item-count" id="runtimeshow" data-publishDate="2024-01-23T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">102.9k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-08-03T09:02:14.383Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/" style="font-size: 1.1em; color: #999">年度总结</a> <a href="/tags/%E9%95%BF%E5%9F%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">长城杯</a> <a href="/tags/L3HCTF/" style="font-size: 1.1em; color: #999">L3HCTF</a> <a href="/tags/Technology/" style="font-size: 1.27em; color: #99a0a9">Technology</a> <a href="/tags/FIC/" style="font-size: 1.1em; color: #999">FIC</a> <a href="/tags/MC/" style="font-size: 1.1em; color: #999">MC</a> <a href="/tags/MoeCTF/" style="font-size: 1.1em; color: #999">MoeCTF</a> <a href="/tags/ISCC/" style="font-size: 1.1em; color: #999">ISCC</a> <a href="/tags/R3CTF/" style="font-size: 1.1em; color: #999">R3CTF</a> <a href="/tags/0xGame/" style="font-size: 1.16em; color: #999b9e">0xGame</a> <a href="/tags/%E6%95%B0%E5%AD%97%E4%B8%AD%E5%9B%BD/" style="font-size: 1.16em; color: #999b9e">数字中国</a> <a href="/tags/BeginCTF/" style="font-size: 1.1em; color: #999">BeginCTF</a> <a href="/tags/Blockchain/" style="font-size: 1.21em; color: #999ea4">Blockchain</a> <a href="/tags/aliyunCTF/" style="font-size: 1.1em; color: #999">aliyunCTF</a> <a href="/tags/NCTF/" style="font-size: 1.16em; color: #999b9e">NCTF</a> <a href="/tags/qsnCTF/" style="font-size: 1.1em; color: #999">qsnCTF</a> <a href="/tags/%E5%BA%94%E6%80%A5%E5%93%8D%E5%BA%94/" style="font-size: 1.1em; color: #999">应急响应</a> <a href="/tags/RDCTF/" style="font-size: 1.1em; color: #999">RDCTF</a> <a href="/tags/%E7%9B%98%E5%8F%A4%E7%9F%B3%E6%9D%AF/" style="font-size: 1.1em; color: #999">盘古石杯</a> <a href="/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" style="font-size: 1.1em; color: #999">科学上网</a> <a href="/tags/SCTF/" style="font-size: 1.1em; color: #999">SCTF</a> <a href="/tags/%E7%BD%91%E9%BC%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">网鼎杯</a> <a href="/tags/LitCTF/" style="font-size: 1.16em; color: #999b9e">LitCTF</a> <a href="/tags/Web/" style="font-size: 1.1em; color: #999">Web</a> <a href="/tags/%E6%9E%81%E5%AE%A2%E5%A4%A7%E6%8C%91%E6%88%98/" style="font-size: 1.1em; color: #999">极客大挑战</a> <a href="/tags/AI/" style="font-size: 1.1em; color: #999">AI</a> <a href="/tags/Parloo%E6%9D%AF/" style="font-size: 1.1em; color: #999">Parloo杯</a> <a href="/tags/CTF/" style="font-size: 1.5em; color: #99a9bf">CTF</a> <a href="/tags/%E5%9B%BD%E5%9F%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">国城杯</a> <a href="/tags/TPCTF/" style="font-size: 1.1em; color: #999">TPCTF</a> <a href="/tags/%E5%90%BE%E6%9D%AF/" style="font-size: 1.1em; color: #999">吾杯</a> <a href="/tags/Academic/" style="font-size: 1.33em; color: #99a2af">Academic</a> <a href="/tags/CISCN/" style="font-size: 1.1em; color: #999">CISCN</a> <a href="/tags/%E7%BE%8A%E5%9F%8E%E6%9D%AF/" style="font-size: 1.1em; color: #999">羊城杯</a> <a href="/tags/SICTF/" style="font-size: 1.1em; color: #999">SICTF</a> <a href="/tags/%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81/" style="font-size: 1.1em; color: #999">强网拟态</a> <a href="/tags/%E6%B8%97%E9%80%8F/" style="font-size: 1.44em; color: #99a7ba">渗透</a> <a href="/tags/VNCTF/" style="font-size: 1.1em; color: #999">VNCTF</a> <a href="/tags/Misc/" style="font-size: 1.39em; color: #99a4b4">Misc</a> <a href="/tags/%E5%BE%A1%E5%AE%9B%E6%9D%AF/" style="font-size: 1.1em; color: #999">御宛杯</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span><a class="card-more-btn" href="/archives/" title="View More">
+    <i class="fas fa-angle-right"></i></a></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/08/"><span class="card-archive-list-date">August 2025</span><span class="card-archive-list-count">2</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/07/"><span class="card-archive-list-date">July 2025</span><span class="card-archive-list-count">12</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/06/"><span class="card-archive-list-date">June 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/05/"><span class="card-archive-list-date">May 2025</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">April 2025</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/03/"><span class="card-archive-list-date">March 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/02/"><span class="card-archive-list-date">February 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/01/"><span class="card-archive-list-date">January 2025</span><span class="card-archive-list-count">3</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">82</div></div><div class="webinfo-item"><div class="item-name">Runtime :</div><div class="item-count" id="runtimeshow" data-publishDate="2024-01-23T16:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Total Count :</div><div class="item-count">101.7k</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">Last Update :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-08-03T09:05:22.205Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
   function loadValine () {
     function initValine () {
       let initData = {
