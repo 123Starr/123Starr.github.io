@@ -1853,33 +1853,6 @@
     
     
     <entry>
-      <title>星盟 2024 Misc 招新题 第二题</title>
-      <link href="/posts/c81e8560/"/>
-      <url>/posts/c81e8560/</url>
-      
-        <content type="html"><![CDATA[<p>一个内存取证题，题目如下：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明在电脑上画了一幅图，这幅图的内容是什么，请提交其内容的md5值（32位小写）。</span><br></pre></td></tr></table></figure><p>经典起手式imageinfo</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104201276.png"alt="image-20240723104201276" /><figcaption aria-hidden="true">image-20240723104201276</figcaption></figure><p>既然要求我们找图片，那就直接filescan出所有png，jpg，bmp，gif后缀名的文件</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104602194.png"alt="image-20240723104602194" /><figcaption aria-hidden="true">image-20240723104602194</figcaption></figure><p>下面那个admin.bmp没法dump下来，上面这个jpg图片可以</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104804628.png"alt="image-20240723104804628" /><figcaption aria-hidden="true">image-20240723104804628</figcaption></figure><p>dump下来是这么一张图</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104828121.png"alt="image-20240723104828121" /><figcaption aria-hidden="true">image-20240723104828121</figcaption></figure><p>在乱翻cmd记录时看到他执行过这样一个命令</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105020025.png"alt="image-20240723105020025" /><figcaption aria-hidden="true">image-20240723105020025</figcaption></figure><p>看来他对这个字符串进行过Atbash，那么cyberchef启动</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105218652.png"alt="image-20240723105218652" /><figcaption aria-hidden="true">image-20240723105218652</figcaption></figure><p>要求提交的是md5值（32位小写）</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105317395.png"alt="image-20240723105317395" /><figcaption aria-hidden="true">image-20240723105317395</figcaption></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> Writeup </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Writeup </tag>
-            
-            <tag> Forensics </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>星盟 2024 Misc 招新题 第一题</title>
       <link href="/posts/c06ae389/"/>
       <url>/posts/c06ae389/</url>
@@ -1899,6 +1872,33 @@
             <tag> Writeup </tag>
             
             <tag> Misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>星盟 2024 Misc 招新题 第二题</title>
+      <link href="/posts/c81e8560/"/>
+      <url>/posts/c81e8560/</url>
+      
+        <content type="html"><![CDATA[<p>一个内存取证题，题目如下：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明在电脑上画了一幅图，这幅图的内容是什么，请提交其内容的md5值（32位小写）。</span><br></pre></td></tr></table></figure><p>经典起手式imageinfo</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104201276.png"alt="image-20240723104201276" /><figcaption aria-hidden="true">image-20240723104201276</figcaption></figure><p>既然要求我们找图片，那就直接filescan出所有png，jpg，bmp，gif后缀名的文件</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104602194.png"alt="image-20240723104602194" /><figcaption aria-hidden="true">image-20240723104602194</figcaption></figure><p>下面那个admin.bmp没法dump下来，上面这个jpg图片可以</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104804628.png"alt="image-20240723104804628" /><figcaption aria-hidden="true">image-20240723104804628</figcaption></figure><p>dump下来是这么一张图</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104828121.png"alt="image-20240723104828121" /><figcaption aria-hidden="true">image-20240723104828121</figcaption></figure><p>在乱翻cmd记录时看到他执行过这样一个命令</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105020025.png"alt="image-20240723105020025" /><figcaption aria-hidden="true">image-20240723105020025</figcaption></figure><p>看来他对这个字符串进行过Atbash，那么cyberchef启动</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105218652.png"alt="image-20240723105218652" /><figcaption aria-hidden="true">image-20240723105218652</figcaption></figure><p>要求提交的是md5值（32位小写）</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105317395.png"alt="image-20240723105317395" /><figcaption aria-hidden="true">image-20240723105317395</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> Forensics </tag>
             
         </tags>
       
@@ -2472,17 +2472,6 @@
     
     
     <entry>
-      <title>Hello, world!</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      
-        <content type="html"><![CDATA[<p>在下St4rr。</p><p>目前南邮大三在读，网安新手。</p><p>一个菜狗CTFer，misc手。</p><p>已加入CTF战队X1cT34m和Polaris，主要职责是给大佬们端茶。</p><p>努力学习中，争取不拖大佬们的后腿Orz。</p><p>这里是本菜狗的博客，技能有限，认识尚浅，如有问题欢迎指出 :)</p><p>有几篇博客是加密的，如想查看，可以联系我要密码()</p><p>联系方式：</p><p>QQ: 3092158216</p><p>邮箱：3092158216@qq.com</p><p>​ st4rr2333@gmail.com</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -2494,11 +2483,11 @@
     
     
     <entry>
-      <title>Tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Hello, world!</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>在下St4rr。</p><p>目前南邮大三在读，网安新手。</p><p>一个菜狗CTFer，misc手。</p><p>已加入CTF战队X1cT34m和Polaris，主要职责是给大佬们端茶。</p><p>努力学习中，争取不拖大佬们的后腿Orz。</p><p>这里是本菜狗的博客，技能有限，认识尚浅，如有问题欢迎指出 :)</p><p>有几篇博客是加密的，如想查看，可以联系我要密码()</p><p>联系方式：</p><p>QQ: 3092158216</p><p>邮箱：3092158216@qq.com</p><p>​ st4rr2333@gmail.com</p>]]></content>
       
     </entry>
     
@@ -2519,6 +2508,17 @@
       <title>links</title>
       <link href="/links/index.html"/>
       <url>/links/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
