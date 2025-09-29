@@ -1965,33 +1965,6 @@
     
     
     <entry>
-      <title>星盟 2024 Misc 招新题 第一题</title>
-      <link href="/posts/c06ae389/"/>
-      <url>/posts/c06ae389/</url>
-      
-        <content type="html"><![CDATA[<p>题目是给了一个pcapng文件，要求找出用户wangkai的明文密码（字典使用rockyou）。</p><p>打开pcapng文件，可以看到很多SMB2协议，看起来是几个用户在尝试登录账号，找到其中与wangkai有关的一条（可以用ntlmssp过滤，或者直接过滤smb2找起来也不麻烦）</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723101622388.png"alt="image-20240723101622388" /><figcaption aria-hidden="true">image-20240723101622388</figcaption></figure><p>接下来就是构造hash文件，先点开查看底下SMB2协议的报文</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723102229716.png"alt="image-20240723102229716" /><figcaption aria-hidden="true">image-20240723102229716</figcaption></figure><p>找到其中的相关信息，拼凑成如下格式：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username::domain:ntlmv2_response.chall:ntproofstr:不包含ntproofstr的ntlmv2_response值</span><br></pre></td></tr></table></figure><p>命名为abc.hash（名字随意，后缀是.hash即可），得到hash文件</p><p>但是这样拼凑比较复杂，而且这里的NTLMv2Response显示truncated，说明还得去其他地方找到剩余部分，比较麻烦。现有一自动化提取NTLMv2的工具，我们可以直接一把而梭之。</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723102916191.png"alt="image-20240723102916191" /><figcaption aria-hidden="true">image-20240723102916191</figcaption></figure><p>打开abc.hash，稍稍编辑一下，把其他用户的hash都删掉，只留一条wangkai的hash即可</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723103114511.png"alt="image-20240723103114511" /><figcaption aria-hidden="true">image-20240723103114511</figcaption></figure><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723103211205.png"alt="image-20240723103211205" /><figcaption aria-hidden="true">image-20240723103211205</figcaption></figure><p>接下来就是hashcat的事了，题目中给出了hint字典用rockyou。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hashcat -a 0 abc.hash /usr/share/wordlists/rockyou.txt --force</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723103618235.png"alt="image-20240723103618235" /><figcaption aria-hidden="true">image-20240723103618235</figcaption></figure><p>得到明文密码：1qaz!QAZ</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Writeup </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Writeup </tag>
-            
-            <tag> Misc </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>星盟 2024 Misc 招新题 第二题</title>
       <link href="/posts/c81e8560/"/>
       <url>/posts/c81e8560/</url>
@@ -2011,6 +1984,33 @@
             <tag> Writeup </tag>
             
             <tag> Forensics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>星盟 2024 Misc 招新题 第一题</title>
+      <link href="/posts/c06ae389/"/>
+      <url>/posts/c06ae389/</url>
+      
+        <content type="html"><![CDATA[<p>题目是给了一个pcapng文件，要求找出用户wangkai的明文密码（字典使用rockyou）。</p><p>打开pcapng文件，可以看到很多SMB2协议，看起来是几个用户在尝试登录账号，找到其中与wangkai有关的一条（可以用ntlmssp过滤，或者直接过滤smb2找起来也不麻烦）</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723101622388.png"alt="image-20240723101622388" /><figcaption aria-hidden="true">image-20240723101622388</figcaption></figure><p>接下来就是构造hash文件，先点开查看底下SMB2协议的报文</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723102229716.png"alt="image-20240723102229716" /><figcaption aria-hidden="true">image-20240723102229716</figcaption></figure><p>找到其中的相关信息，拼凑成如下格式：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">username::domain:ntlmv2_response.chall:ntproofstr:不包含ntproofstr的ntlmv2_response值</span><br></pre></td></tr></table></figure><p>命名为abc.hash（名字随意，后缀是.hash即可），得到hash文件</p><p>但是这样拼凑比较复杂，而且这里的NTLMv2Response显示truncated，说明还得去其他地方找到剩余部分，比较麻烦。现有一自动化提取NTLMv2的工具，我们可以直接一把而梭之。</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723102916191.png"alt="image-20240723102916191" /><figcaption aria-hidden="true">image-20240723102916191</figcaption></figure><p>打开abc.hash，稍稍编辑一下，把其他用户的hash都删掉，只留一条wangkai的hash即可</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723103114511.png"alt="image-20240723103114511" /><figcaption aria-hidden="true">image-20240723103114511</figcaption></figure><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723103211205.png"alt="image-20240723103211205" /><figcaption aria-hidden="true">image-20240723103211205</figcaption></figure><p>接下来就是hashcat的事了，题目中给出了hint字典用rockyou。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hashcat -a 0 abc.hash /usr/share/wordlists/rockyou.txt --force</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/星盟-2024-Misc-招新题-第一题/image-20240723103618235.png"alt="image-20240723103618235" /><figcaption aria-hidden="true">image-20240723103618235</figcaption></figure><p>得到明文密码：1qaz!QAZ</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> Misc </tag>
             
         </tags>
       
@@ -2595,17 +2595,6 @@
     
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Comment</title>
       <link href="/comment/index.html"/>
       <url>/comment/index.html</url>
@@ -2617,9 +2606,9 @@
     
     
     <entry>
-      <title>links</title>
-      <link href="/links/index.html"/>
-      <url>/links/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
@@ -2631,6 +2620,17 @@
       <title>Tags</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>links</title>
+      <link href="/links/index.html"/>
+      <url>/links/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
