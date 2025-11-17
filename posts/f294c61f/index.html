@@ -1,11 +1,11 @@
-<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数证杯2025 部分writeup+复现 | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="又是拖队友后腿的一集，给磕了orzorzorz 现在根据网上有的一些答案复现一下吧，以及记录一些题我的做法，争取下次不再拖后腿了orzorzorz 由于至今不会逆向，“ APK程序分析 ”“ 二进制程序分析”两部分就不复现了（（ “数据分析”部分也不复现了，做这部分题全靠AI（  服务器取证重建服务器集群将四个镜像分别仿真起来，然后配到192.168.50.*的网段下  查看所有pod  访问k">
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>数证杯2025 部分writeup+复现 | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="又是拖队友后腿的一集，给磕了orzorzorz 现在根据网上有的一些答案复现一下吧，以及记录一些题我的做法，争取下次不再拖后腿了orzorzorz 由于至今不会逆向，“ APK程序分析 ”“ 二进制程序分析”两部分就不复现了（（ “数据分析”部分也不复现了，做这部分题全靠AI（  服务器取证 重建服务器集群 将四个镜像分别仿真起来，然后配到192.168.50.*的网段下">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数证杯2025 部分writeup+复现">
 <meta property="og:url" content="https://www.blog.st4rr.top/posts/f294c61f/index.html">
 <meta property="og:site_name" content="St4rr&#39;s Blog">
-<meta property="og:description" content="又是拖队友后腿的一集，给磕了orzorzorz 现在根据网上有的一些答案复现一下吧，以及记录一些题我的做法，争取下次不再拖后腿了orzorzorz 由于至今不会逆向，“ APK程序分析 ”“ 二进制程序分析”两部分就不复现了（（ “数据分析”部分也不复现了，做这部分题全靠AI（  服务器取证重建服务器集群将四个镜像分别仿真起来，然后配到192.168.50.*的网段下  查看所有pod  访问k">
+<meta property="og:description" content="又是拖队友后腿的一集，给磕了orzorzorz 现在根据网上有的一些答案复现一下吧，以及记录一些题我的做法，争取下次不再拖后腿了orzorzorz 由于至今不会逆向，“ APK程序分析 ”“ 二进制程序分析”两部分就不复现了（（ “数据分析”部分也不复现了，做这部分题全靠AI（  服务器取证 重建服务器集群 将四个镜像分别仿真起来，然后配到192.168.50.*的网段下">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://www.blog.st4rr.top/img/article/Black_hole.jpg">
+<meta property="og:image" content="https://www.blog.st4rr.top/img/article/Pillars_of_creation.jpg">
 <meta property="article:published_time" content="2025-11-06T16:00:00.000Z">
 <meta property="article:modified_time" content="2025-11-07T07:37:47.370Z">
 <meta property="article:author" content="St4rr">
@@ -14,7 +14,7 @@
 <meta property="article:tag" content="Forensics">
 <meta property="article:tag" content="数证杯">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.blog.st4rr.top/img/article/Black_hole.jpg"><link rel="shortcut icon" href="/img/galaxy.jpeg"><link rel="canonical" href="https://www.blog.st4rr.top/posts/f294c61f/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+<meta name="twitter:image" content="https://www.blog.st4rr.top/img/article/Pillars_of_creation.jpg"><link rel="shortcut icon" href="/img/galaxy.jpeg"><link rel="canonical" href="https://www.blog.st4rr.top/posts/f294c61f/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?11ae8bff5150c46570a0a934313effe5";
@@ -174,402 +174,1040 @@ gtag('config', 'G-MGDNR814PE');
 document.addEventListener('pjax:send', () => {
   Pace.restart()
 })
-</script><link rel="stylesheet" href="/css/center-atom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/article/Black_hole.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><img class="site-icon" src="/img/earth.png"/><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数证杯2025 部分writeup+复现</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-06T16:00:00.000Z" title="Created 2025-11-07 00:00:00">2025-11-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-11-07T07:37:47.370Z" title="Updated 2025-11-07 15:37:47">2025-11-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">4.3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>15mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/f294c61f/" data-flag-title="数证杯2025 部分writeup+复现"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/f294c61f/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/f294c61f/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+</script><link rel="stylesheet" href="/css/center-atom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/article/Pillars_of_creation.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><img class="site-icon" src="/img/earth.png"/><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数证杯2025 部分writeup+复现</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-06T16:00:00.000Z" title="Created 2025-11-07 00:00:00">2025-11-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-11-07T07:37:47.370Z" title="Updated 2025-11-07 15:37:47">2025-11-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">4.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>16mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/f294c61f/" data-flag-title="数证杯2025 部分writeup+复现"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/f294c61f/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/f294c61f/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
 <p>又是拖队友后腿的一集，给磕了orzorzorz</p>
 <p>现在根据网上有的一些答案复现一下吧，以及记录一些题我的做法，争取下次不再拖后腿了orzorzorz</p>
-<p>由于至今不会逆向，“ APK程序分析 ”“ 二进制程序分析”两部分就不复现了（（</p>
+<p>由于至今不会逆向，“ APK程序分析 ”“
+二进制程序分析”两部分就不复现了（（</p>
 <p>“数据分析”部分也不复现了<del>，做这部分题全靠AI（</del></p>
 </blockquote>
-<h1 id="服务器取证"><a href="#服务器取证" class="headerlink" title="服务器取证"></a>服务器取证</h1><h2 id="重建服务器集群"><a href="#重建服务器集群" class="headerlink" title="重建服务器集群"></a>重建服务器集群</h2><p>将四个镜像分别仿真起来，然后配到192.168.50.*的网段下</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762432942718-68bdca1f-51d4-4d35-b468-9b46ebc300ef.png" alt="img"></p>
+<h1 id="服务器取证">服务器取证</h1>
+<h2 id="重建服务器集群">重建服务器集群</h2>
+<p>将四个镜像分别仿真起来，然后配到192.168.50.*的网段下</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762432942718-68bdca1f-51d4-4d35-b468-9b46ebc300ef.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>查看所有pod</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762433058286-16546bee-06c4-4736-a694-e785042683f5.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762433058286-16546bee-06c4-4736-a694-e785042683f5.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>访问kubernetes的dashboard</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762433226456-28b674e6-749f-4ed5-855c-e4a64e19de2b.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762433226456-28b674e6-749f-4ed5-855c-e4a64e19de2b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl create token dashboard-admin --namespace kube-system</span><br></pre></td></tr></table></figure>
-
 <p>获取到token，登录进去，看到pods是有问题的状态</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762434377698-1e012dad-5cfe-4a0c-8a89-af8ed2861f65.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762434377698-1e012dad-5cfe-4a0c-8a89-af8ed2861f65.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>去第四台机器上关一下防火墙</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld</span><br></pre></td></tr></table></figure>
-
 <p>redis活了</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762434630966-e7ba8b12-1e5b-46d4-9d29-16a3534990fb.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762434630966-e7ba8b12-1e5b-46d4-9d29-16a3534990fb.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>master上有mysql80的配置文件，可从中得知存储目录叫mysql80</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762435062904-46071323-15fe-49ca-8ea6-4c37fdc73681.png" alt="img"></p>
-<p>可以在第四台机器上通过暴力搜索mysql80这个文件夹找到&#x2F;data&#x2F;k8s_data&#x2F;default&#x2F;mysql80，数据还在，因此我们创建一下pod</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762435062904-46071323-15fe-49ca-8ea6-4c37fdc73681.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>可以在第四台机器上通过暴力搜索mysql80这个文件夹找到/data/k8s_data/default/mysql80，数据还在，因此我们创建一下pod</p>
 <p>回到master新建pvc卷</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f mysql80-pvc.yaml</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762435357134-03f088b3-8cc6-4fe4-a307-49f8a7db444b.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762435357134-03f088b3-8cc6-4fe4-a307-49f8a7db444b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>创建mysql的pod</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f mysql-d.yaml</span><br></pre></td></tr></table></figure>
-
 <p>至此mysql的pod恢复完毕</p>
 <p>继续恢复发卡网站，看起来网站源码已经被删除，但是pvc中仍有这个卷</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762435658156-00ba73e2-6c07-4833-8c99-e41e467d7d89.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762435658156-00ba73e2-6c07-4833-8c99-e41e467d7d89.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>第四台机器上有这个网站的源码备份</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762435724245-a681e95d-8a44-435c-a46c-c0e206c199a7.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762435724245-a681e95d-8a44-435c-a46c-c0e206c199a7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>解压后移动至原目录下</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762435876925-10535f7e-9923-4cbd-ac1f-fd257d57da76.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762435876925-10535f7e-9923-4cbd-ac1f-fd257d57da76.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>回到master，查看php-nginx-deployment.yaml</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762436094952-ac1ccc1a-0021-4f3d-afae-468c1dc37a09.png" alt="img"></p>
-<p>发现除了master都没有webdevops&#x2F;php-nginx:7.4这个镜像，因此打包传给node1和node2</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762436407185-41647c8b-18d2-409c-a7eb-cfb7274ebddc.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762436557905-4304f45d-b0c5-4a08-b4b0-efe5686310d9.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762436574419-fab4b049-0370-4bc7-ac8f-afbc96445352.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762436094952-ac1ccc1a-0021-4f3d-afae-468c1dc37a09.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>发现除了master都没有webdevops/php-nginx:7.4这个镜像，因此打包传给node1和node2</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762436407185-41647c8b-18d2-409c-a7eb-cfb7274ebddc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762436557905-4304f45d-b0c5-4a08-b4b0-efe5686310d9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762436574419-fab4b049-0370-4bc7-ac8f-afbc96445352.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>创建pod</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f php-nginx-deployment.yaml</span><br></pre></td></tr></table></figure>
-
 <p>报错缺少configmap</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762436801133-bd5dfc09-c566-4e82-9b8d-074ca115a82d.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762436801133-bd5dfc09-c566-4e82-9b8d-074ca115a82d.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>创建configmap</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl apply -f dujiaoka-c.yam</span><br></pre></td></tr></table></figure>
-
 <p>仍然有报错，是连接不到dockerhub，那么看来是镜像名字有问题导致的</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762437221441-ed880bf9-89e7-402b-8285-3c1d94fd2e5c.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762437221441-ed880bf9-89e7-402b-8285-3c1d94fd2e5c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>修改一下镜像的tag</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag ac0 webdevops/php-nginx:7.4</span><br></pre></td></tr></table></figure>
-
 <p>captcha-bot由于没有联网所以显示有问题，这无需处理</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762437564666-5fcdc1b7-3dd8-4c61-9c02-13117effac8c.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762437564666-5fcdc1b7-3dd8-4c61-9c02-13117effac8c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>网站访问成功</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762437595837-dbb22448-36a8-4c19-a33f-31b5e708b30e.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762437595837-dbb22448-36a8-4c19-a33f-31b5e708b30e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>至此服务器集群恢复完毕</p>
-<h2 id="1"><a href="#1" class="headerlink" title="1"></a>1</h2><p>node1节点的磁盘设备SHA256值前六位是？(字母全大写，答案格式：AAAAAA)</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762429392281-eff17f80-7f4a-4692-a51d-028bd195cef8.png" alt="img"></p>
+<h2 id="section">1</h2>
+<p>node1节点的磁盘设备SHA256值前六位是？(字母全大写，答案格式：AAAAAA)</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762429392281-eff17f80-7f4a-4692-a51d-028bd195cef8.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>7C9A34</p>
-<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><p>集群配置了多少个node节点？（答案格式：1）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762433614897-1be9a9c2-36bd-4004-ada1-c9999e4d6f17.png" alt="img"></p>
+<h2 id="section-1">2</h2>
+<p>集群配置了多少个node节点？（答案格式：1）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762433614897-1be9a9c2-36bd-4004-ada1-c9999e4d6f17.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>2</p>
-<h2 id="3"><a href="#3" class="headerlink" title="3"></a>3</h2><p>嫌疑人于什么时间修改master节点的root密码？（使用双位数格式，答案格式：00:00:00）</p>
+<h2 id="section-2">3</h2>
+<p>嫌疑人于什么时间修改master节点的root密码？（使用双位数格式，答案格式：00:00:00）</p>
 <p>看日志可以找到</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762437700366-1b6a847b-f8f2-4e97-9316-1f630ccce4fb.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762437700366-1b6a847b-f8f2-4e97-9316-1f630ccce4fb.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>09:35:59</p>
-<h2 id="4"><a href="#4" class="headerlink" title="4"></a>4</h2><p>Docker的安装日期是？（使用双位数格式，答案格式：01月01日）</p>
+<h2 id="section-3">4</h2>
+<p>Docker的安装日期是？（使用双位数格式，答案格式：01月01日）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /var/log/yum.log</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762438036166-e650a2dd-f8c9-42db-96ee-09105911c057.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762438036166-e650a2dd-f8c9-42db-96ee-09105911c057.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>04月08日</p>
-<h2 id="5"><a href="#5" class="headerlink" title="5"></a>5</h2><p>Docker通过配置守护进程以使用全局代理，该代理地址的端口是？（答案格式：1）</p>
+<h2 id="section-4">5</h2>
+<p>Docker通过配置守护进程以使用全局代理，该代理地址的端口是？（答案格式：1）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /lib/systemd/system/docker.service</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762438129627-a0cd02b3-329d-4c01-b625-e971bcd10d0f.png" alt="img"></p>
-<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>发卡网站使用的Mysql数据库对外访问端口是？（答案格式：1）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762438129627-a0cd02b3-329d-4c01-b625-e971bcd10d0f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="section-5">6</h2>
+<p>发卡网站使用的Mysql数据库对外访问端口是？（答案格式：1）</p>
 <p>由前面的重建过程知</p>
 <p>30627</p>
-<h2 id="7"><a href="#7" class="headerlink" title="7"></a>7</h2><p>发卡网站部署使用的镜像名称是？（答案格式：root&#x2F;root）</p>
+<h2 id="section-6">7</h2>
+<p>发卡网站部署使用的镜像名称是？（答案格式：root/root）</p>
 <p>由前面的重建过程知</p>
-<p>webdevops&#x2F;php-nginx</p>
-<h2 id="8"><a href="#8" class="headerlink" title="8"></a>8</h2><p>当前Telegram群管机器人使用的容器ID的前六位是？（答案格式：123abc）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762438510178-1fa2baa8-8315-4022-bb80-48b862e68a22.png" alt="img"></p>
+<p>webdevops/php-nginx</p>
+<h2 id="section-7">8</h2>
+<p>当前Telegram群管机器人使用的容器ID的前六位是？（答案格式：123abc）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762438510178-1fa2baa8-8315-4022-bb80-48b862e68a22.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>8fadf5</p>
-<h2 id="9"><a href="#9" class="headerlink" title="9"></a>9</h2><p>发卡网站使用的缓存数据库是？（答案格式：mysql）</p>
+<h2 id="section-8">9</h2>
+<p>发卡网站使用的缓存数据库是？（答案格式：mysql）</p>
 <p>由前面的重建过程知</p>
 <p>redis</p>
-<h2 id="10"><a href="#10" class="headerlink" title="10"></a>10</h2><p>集群中配置的发卡网站代码运行所在的物理目录是？（答案格式：&#x2F;root&#x2F;root）</p>
+<h2 id="section-9">10</h2>
+<p>集群中配置的发卡网站代码运行所在的物理目录是？（答案格式：/root/root）</p>
 <p>由前面的重建过程知</p>
-<p>&#x2F;data&#x2F;k8s_data&#x2F;default&#x2F;dujiaoka</p>
-<h2 id="11"><a href="#11" class="headerlink" title="11"></a>11</h2><p>Telegram群管机器人配置的API代理域名是？（答案格式：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.xxx.com)/">www.xxx.com）</a></p>
-<p>在第四台机器上找到配置文件&#x2F;data&#x2F;k8s_data&#x2F;default&#x2F;captchaBot&#x2F;config&#x2F;config.toml</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762438922439-f17ff7ee-5f37-4dfd-ae7d-337e65be6aec.png" alt="img"></p>
+<p>/data/k8s_data/default/dujiaoka</p>
+<h2 id="section-10">11</h2>
+<p>Telegram群管机器人配置的API代理域名是？（答案格式：www.xxx.com）</p>
+<p>在第四台机器上找到配置文件/data/k8s_data/default/captchaBot/config/config.toml</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762438922439-f17ff7ee-5f37-4dfd-ae7d-337e65be6aec.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>kk.xilika.cc</p>
-<h2 id="12"><a href="#12" class="headerlink" title="12"></a>12</h2><p>嫌疑人在Telegram上创建的群名称是？（答案格式：比武群）</p>
+<h2 id="section-11">12</h2>
+<p>嫌疑人在Telegram上创建的群名称是？（答案格式：比武群）</p>
 <p>在前面的网站上看到了“交流群唯一地址”，访问一下</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762439154663-e28a2699-96bb-43f0-bc02-5aef8104bc78.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762439154663-e28a2699-96bb-43f0-bc02-5aef8104bc78.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>西门庆交流群</p>
-<h2 id="13"><a href="#13" class="headerlink" title="13"></a>13</h2><p>统计嫌疑人在Telegram上创建的群中2025年6月之后成功入群的人数为？（答案格式：1）</p>
+<h2 id="section-12">13</h2>
+<p>统计嫌疑人在Telegram上创建的群中2025年6月之后成功入群的人数为？（答案格式：1）</p>
 <p>查看之前我们重建的数据库的pod，可以看到数据库的密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762439441282-8f8522ab-1343-491f-89ae-da87c98cc027.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762439441282-8f8522ab-1343-491f-89ae-da87c98cc027.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>连接上数据库</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762439581019-ac46aa18-dfb3-413f-9739-0097fee1c980.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762439581019-ac46aa18-dfb3-413f-9739-0097fee1c980.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>按要求查询人数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">count</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> captchabot.user_captcha_record <span class="keyword">AS</span> ucr <span class="keyword">WHERE</span> captcha_status <span class="operator">=</span> <span class="number">1</span> <span class="keyword">AND</span> captcha_success_time <span class="operator">&gt;=</span> <span class="string">&#x27;2025-06-01 00:00:00&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762439661770-802cbc4d-74b4-4638-a51b-bab71001385c.png" alt="img"></p>
-<h2 id="14"><a href="#14" class="headerlink" title="14"></a>14</h2><p>据嫌疑人交代曾在发卡网上删除过一条订单数据，请找出该删除订单的订单号是？（答案格式：请按实际值填写）</p>
-<p>找到&#x2F;data&#x2F;k8s_data&#x2F;default&#x2F;mysql80，导出整个目录，丢给数据库取证工具</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762439661770-802cbc4d-74b4-4638-a51b-bab71001385c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="section-13">14</h2>
+<p>据嫌疑人交代曾在发卡网上删除过一条订单数据，请找出该删除订单的订单号是？（答案格式：请按实际值填写）</p>
+<p>找到/data/k8s_data/default/mysql80，导出整个目录，丢给数据库取证工具</p>
 <p>binlog.000002的最后一条就是</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762444969186-41ffac36-12dd-4288-9afe-2329a66dd0f4.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762444969186-41ffac36-12dd-4288-9afe-2329a66dd0f4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>4V8XNK8Q02MD5D2R</p>
-<h2 id="15"><a href="#15" class="headerlink" title="15"></a>15</h2><p>发卡网站上2025年6月之后订单交易成功的总金额是？忽略被删除的数据（答案格式：1）</p>
+<h2 id="section-14">15</h2>
+<p>发卡网站上2025年6月之后订单交易成功的总金额是？忽略被删除的数据（答案格式：1）</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">sum</span>(actual_price) <span class="keyword">from</span> `orders` <span class="keyword">where</span> `status` <span class="operator">=</span> <span class="number">4</span> <span class="keyword">and</span> updated_at <span class="operator">&gt;=</span> <span class="string">&#x27;2025-06-01 00:00:00&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762445380500-790e19a3-b43d-4fae-859a-e74c67ee9acc.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762445380500-790e19a3-b43d-4fae-859a-e74c67ee9acc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>295202</p>
-<h2 id="16"><a href="#16" class="headerlink" title="16"></a>16</h2><p>发卡网站的后台访问路径是？（答案格式：&#x2F;root）</p>
+<h2 id="section-15">16</h2>
+<p>发卡网站的后台访问路径是？（答案格式：/root）</p>
 <p>查看网站根目录的.env文件</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762445511496-f69f790b-8698-48b3-a80c-2a05518d8a22.png" alt="img"></p>
-<p>&#x2F;admin</p>
-<h2 id="17"><a href="#17" class="headerlink" title="17"></a>17</h2><p>计算出用户密码算法中Salt的值，并进行Base64编码，结果是？（答案格式：请按实际值填写）</p>
-<p>去&#x2F;data&#x2F;k8s_data&#x2F;default&#x2F;dujiaoka&#x2F;vendor&#x2F;laravel&#x2F;framework&#x2F;src&#x2F;Illuminate&#x2F;Hashing&#x2F;BcryptHasher.php查看加密函数</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762445511496-f69f790b-8698-48b3-a80c-2a05518d8a22.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>/admin</p>
+<h2 id="section-16">17</h2>
+<p>计算出用户密码算法中Salt的值，并进行Base64编码，结果是？（答案格式：请按实际值填写）</p>
+<p>去/data/k8s_data/default/dujiaoka/vendor/laravel/framework/src/Illuminate/Hashing/BcryptHasher.php查看加密函数</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">Illuminate</span>\<span class="title class_">Hashing</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Contracts</span>\<span class="title">Hashing</span>\<span class="title">Hasher</span> <span class="keyword">as</span> <span class="title">HasherContract</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">RuntimeException</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BcryptHasher</span> <span class="keyword">extends</span> <span class="title">AbstractHasher</span> <span class="keyword">implements</span> <span class="title">HasherContract</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * The default cost factor.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@var</span> int</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$rounds</span> = <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Indicates whether to perform an algorithm check.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@var</span> bool</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="variable">$verifyAlgorithm</span> = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Create a new hasher instance.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  array  $options</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> void</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">__construct</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$options</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;rounds = <span class="variable">$options</span>[<span class="string">&#x27;rounds&#x27;</span>] ?? <span class="variable language_">$this</span>-&gt;rounds;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;verifyAlgorithm = <span class="variable">$options</span>[<span class="string">&#x27;verify&#x27;</span>] ?? <span class="variable language_">$this</span>-&gt;verifyAlgorithm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Hash the given value.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  string  $value</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  array  $options</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> \RuntimeException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">make</span>(<span class="params"><span class="variable">$value</span>, <span class="keyword">array</span> <span class="variable">$options</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">	<span class="variable">$value</span> .= <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">getSalt</span>();</span><br><span class="line">        <span class="variable">$hash</span> = <span class="title function_ invoke__">password_hash</span>(<span class="variable">$value</span>, PASSWORD_BCRYPT, [</span><br><span class="line">            <span class="string">&#x27;cost&#x27;</span> =&gt; <span class="variable">$this</span>-&gt;<span class="title function_ invoke__">cost</span>(<span class="variable">$options</span>),</span><br><span class="line">        ]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable">$hash</span> === <span class="literal">false</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">RuntimeException</span>(<span class="string">&#x27;Bcrypt hashing not supported.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$hash</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check the given plain value against a hash.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  string  $value</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  string  $hashedValue</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  array  $options</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> bool</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> \RuntimeException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params"><span class="variable">$value</span>, <span class="variable">$hashedValue</span>, <span class="keyword">array</span> <span class="variable">$options</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">	<span class="variable">$value</span> .= <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">getSalt</span>();</span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;verifyAlgorithm &amp;&amp; <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">info</span>(<span class="variable">$hashedValue</span>)[<span class="string">&#x27;algoName&#x27;</span>] !== <span class="string">&#x27;bcrypt&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">RuntimeException</span>(<span class="string">&#x27;This password does not use the Bcrypt algorithm.&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">parent</span>::<span class="title function_ invoke__">check</span>(<span class="variable">$value</span>, <span class="variable">$hashedValue</span>, <span class="variable">$options</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Check if the given hash has been hashed using the given options.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  string  $hashedValue</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  array  $options</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> bool</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">needsRehash</span>(<span class="params"><span class="variable">$hashedValue</span>, <span class="keyword">array</span> <span class="variable">$options</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="title function_ invoke__">password_needs_rehash</span>(<span class="variable">$hashedValue</span>, PASSWORD_BCRYPT, [</span><br><span class="line">            <span class="string">&#x27;cost&#x27;</span> =&gt; <span class="variable">$this</span>-&gt;<span class="title function_ invoke__">cost</span>(<span class="variable">$options</span>),</span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Set the default password work factor.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  int  $rounds</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> $this</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setRounds</span>(<span class="params"><span class="variable">$rounds</span></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;rounds = (<span class="keyword">int</span>) <span class="variable">$rounds</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">$this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Extract the cost value from the options array.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span>  array  $options</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> int</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">cost</span>(<span class="params"><span class="keyword">array</span> <span class="variable">$options</span> = []</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$options</span>[<span class="string">&#x27;rounds&#x27;</span>] ?? <span class="variable language_">$this</span>-&gt;rounds;</span><br><span class="line">    &#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> <span class="function"><span class="keyword">function</span> <span class="title">getSalt</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">	<span class="variable">$a</span> = <span class="string">&#x27;sdahjklhl212jkljass&#x27;</span>;</span><br><span class="line">        <span class="variable">$b</span> = <span class="title function_ invoke__">hash</span>(<span class="string">&#x27;sha256&#x27;</span>, <span class="variable">$a</span>, <span class="literal">true</span>);</span><br><span class="line">        <span class="variable">$c</span> = <span class="title function_ invoke__">substr</span>(<span class="variable">$b</span>, <span class="number">0</span>, <span class="number">16</span>);</span><br><span class="line">        <span class="variable">$d</span> = <span class="title function_ invoke__">base64_decode</span>(<span class="string">&#x27;xPfGJQaE1zE5d+8=&#x27;</span>);</span><br><span class="line">        <span class="variable">$e</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="title function_ invoke__">strlen</span>(<span class="variable">$d</span>);<span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$e</span> .= <span class="title function_ invoke__">chr</span>(<span class="title function_ invoke__">ord</span>(<span class="variable">$d</span>[<span class="variable">$i</span>]) ^ <span class="title function_ invoke__">ord</span>(<span class="variable">$c</span>[<span class="variable">$i</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$e</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>稍作修改后运行得到结果</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSalt</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">	<span class="variable">$a</span> = <span class="string">&#x27;sdahjklhl212jkljass&#x27;</span>;</span><br><span class="line">        <span class="variable">$b</span> = <span class="title function_ invoke__">hash</span>(<span class="string">&#x27;sha256&#x27;</span>, <span class="variable">$a</span>, <span class="literal">true</span>);</span><br><span class="line">        <span class="variable">$c</span> = <span class="title function_ invoke__">substr</span>(<span class="variable">$b</span>, <span class="number">0</span>, <span class="number">16</span>);</span><br><span class="line">        <span class="variable">$d</span> = <span class="title function_ invoke__">base64_decode</span>(<span class="string">&#x27;xPfGJQaE1zE5d+8=&#x27;</span>);</span><br><span class="line">        <span class="variable">$e</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="variable">$i</span>=<span class="number">0</span>;<span class="variable">$i</span>&lt;<span class="title function_ invoke__">strlen</span>(<span class="variable">$d</span>);<span class="variable">$i</span>++) &#123;</span><br><span class="line">            <span class="variable">$e</span> .= <span class="title function_ invoke__">chr</span>(<span class="title function_ invoke__">ord</span>(<span class="variable">$d</span>[<span class="variable">$i</span>]) ^ <span class="title function_ invoke__">ord</span>(<span class="variable">$c</span>[<span class="variable">$i</span>]));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$e</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">echo</span> <span class="title function_ invoke__">base64_encode</span>(<span class="title function_ invoke__">getSalt</span>());</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762446222584-2958757c-47f8-45e2-8899-4c47db918d4f.png" alt="img"></p>
-<p>lAID2ktDeRlGbcg&#x3D;</p>
-<h2 id="18"><a href="#18" class="headerlink" title="18"></a>18</h2><p>发卡网站配置的邮件发送人地址是？（答案格式：<a href="mailto:&#x61;&#x62;&#x63;&#64;&#97;&#98;&#x63;&#46;&#99;&#x6f;&#x6d;" rel="external nofollow noreferrer">&#x61;&#x62;&#x63;&#64;&#97;&#98;&#x63;&#46;&#99;&#x6f;&#x6d;</a>）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762446222584-2958757c-47f8-45e2-8899-4c47db918d4f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>lAID2ktDeRlGbcg=</p>
+<h2 id="section-17">18</h2>
+<p>发卡网站配置的邮件发送人地址是？（答案格式：abc@abc.com）</p>
 <p>对上题的文件稍作修改，这样就可以任意密码登录</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762446800631-544fef9f-ef20-46d3-979e-8a2d090238ee.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762446800631-544fef9f-ef20-46d3-979e-8a2d090238ee.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>在后台可以查看到邮箱</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762446943881-e58e4c17-9e5c-48ce-8ed9-93a2ec8c45dc.png" alt="img"></p>
-<p><a href="mailto:&#105;&#116;&#117;&#x7a;&#x7a;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;" rel="external nofollow noreferrer">&#105;&#116;&#117;&#x7a;&#x7a;&#x40;&#x71;&#x71;&#x2e;&#99;&#x6f;&#109;</a></p>
-<h2 id="19"><a href="#19" class="headerlink" title="19"></a>19</h2><p>当前发卡网站首页仪表盘中显示的发卡网站版本为？（答案格式：1.1.1）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762447028522-8e8ef107-018c-4dec-99a9-efa965e3d575.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762446943881-e58e4c17-9e5c-48ce-8ed9-93a2ec8c45dc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>ituzz@qq.com</p>
+<h2 id="section-18">19</h2>
+<p>当前发卡网站首页仪表盘中显示的发卡网站版本为？（答案格式：1.1.1）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762447028522-8e8ef107-018c-4dec-99a9-efa965e3d575.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>2.0.5</p>
-<h2 id="20"><a href="#20" class="headerlink" title="20"></a>20</h2><p>当前发卡网站中绑定的订单推送Telegram用户id为（答案格式：请按实际值填写）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762447076764-92d361c2-5724-4533-bef6-408b49f5d490.png" alt="img"></p>
+<h2 id="section-19">20</h2>
+<p>当前发卡网站中绑定的订单推送Telegram用户id为（答案格式：请按实际值填写）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762447076764-92d361c2-5724-4533-bef6-408b49f5d490.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>6213151597</p>
-<h1 id="流量包分析"><a href="#流量包分析" class="headerlink" title="流量包分析"></a>流量包分析</h1><h2 id="21"><a href="#21" class="headerlink" title="21"></a>21</h2><p>黑客攻击的目标路由器SSID为(答案格式:请按实际值填写)</p>
+<h1 id="流量包分析">流量包分析</h1>
+<h2 id="section-20">21</h2>
+<p>黑客攻击的目标路由器SSID为(答案格式:请按实际值填写)</p>
 <p>过滤eapol，看到黑客捕获的wpa协议包</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762406049018-6441b450-1f5e-462c-8bfc-64673fe1f807.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762406049018-6441b450-1f5e-462c-8bfc-64673fe1f807.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>对mac地址过滤，看到ssid</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762406320049-62ff6bfe-83d1-49c2-9ac1-ff119e75b54b.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762406320049-62ff6bfe-83d1-49c2-9ac1-ff119e75b54b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>laozhaoWIFI</p>
-<h2 id="22"><a href="#22" class="headerlink" title="22"></a>22</h2><p>黑客成功捕获了WIFI中WPA协议握手包，其中有效握手包组数为(完整握手为一组)(答案格式:1)</p>
+<h2 id="section-21">22</h2>
+<p>黑客成功捕获了WIFI中WPA协议握手包，其中有效握手包组数为(完整握手为一组)(答案格式:1)</p>
 <p>由上题顾虑的eapol可见，有四个有效握手包组</p>
 <p>4</p>
-<h2 id="23"><a href="#23" class="headerlink" title="23"></a>23</h2><p>黑客爆破得出的WiFi密码为(提示:密码由小写英文字母和数字组成)(答案格式:abcd1234)</p>
+<h2 id="section-22">23</h2>
+<p>黑客爆破得出的WiFi密码为(提示:密码由小写英文字母和数字组成)(答案格式:abcd1234)</p>
 <p>过滤http流，在其中发现了路由器的密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762406698431-eb08a0e9-840c-44f0-9b26-b4bc4ff071af.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762406698431-eb08a0e9-840c-44f0-9b26-b4bc4ff071af.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>password1110</p>
-<h2 id="24"><a href="#24" class="headerlink" title="24"></a>24</h2><p>黑客成功连接Wifi后，发现路由器操作系统为?(答案格式:请按实际值填写)</p>
+<h2 id="section-23">24</h2>
+<p>黑客成功连接Wifi后，发现路由器操作系统为?(答案格式:请按实际值填写)</p>
 <p>在流量里可以看到是ImmortalWrt</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762416282405-e9eb7093-e6d6-45de-af09-b30ded73cc19.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762416282405-e9eb7093-e6d6-45de-af09-b30ded73cc19.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>ImmortalWrt</p>
-<h2 id="25"><a href="#25" class="headerlink" title="25"></a>25</h2><p>黑客对路由器后台进行爆破攻击，该路由器后台密码为(答案格式:请按实际值填写)</p>
+<h2 id="section-24">25</h2>
+<p>黑客对路由器后台进行爆破攻击，该路由器后台密码为(答案格式:请按实际值填写)</p>
 <p>networkminer一把梭</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762417411066-effbcbfc-0a9c-4cca-a67c-10aec647e2ef.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762417411066-effbcbfc-0a9c-4cca-a67c-10aec647e2ef.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>password</p>
-<h2 id="26"><a href="#26" class="headerlink" title="26"></a>26</h2><p>黑客通过修改路由器设置，将被劫持的域名为（答案格式：<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.xxx.com)/">www.xxx.com）</a></p>
-<p>过滤dns流，发现<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.qq.com被解析为了一个内网地址,说明其被劫持/">www.qq.com被解析为了一个内网地址，说明其被劫持</a></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762417701299-e8c38a16-77d1-4d67-b347-91b2057305e4.png" alt="img"></p>
-<p><a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.qq.com/">www.qq.com</a></p>
-<h2 id="27"><a href="#27" class="headerlink" title="27"></a>27</h2><p>黑客在路由器管理后台发现FTP服务配置，FTP登录密码为?(答案格式:请按实际值填写)</p>
+<h2 id="section-25">26</h2>
+<p>黑客通过修改路由器设置，将被劫持的域名为（答案格式：www.xxx.com）</p>
+<p>过滤dns流，发现www.qq.com被解析为了一个内网地址，说明其被劫持</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762417701299-e8c38a16-77d1-4d67-b347-91b2057305e4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>www.qq.com</p>
+<h2 id="section-26">27</h2>
+<p>黑客在路由器管理后台发现FTP服务配置，FTP登录密码为?(答案格式:请按实际值填写)</p>
 <p>过滤ftp流就能看到密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762417779576-cfa52a29-e5ce-490c-854b-2f0c55c9cde7.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762417779576-cfa52a29-e5ce-490c-854b-2f0c55c9cde7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>mast</p>
-<h2 id="28"><a href="#28" class="headerlink" title="28"></a>28</h2><p>黑客通过FTP上传了一个压缩包文件，该文件内容为(答案格式:请按实际值填写)</p>
+<h2 id="section-27">28</h2>
+<p>黑客通过FTP上传了一个压缩包文件，该文件内容为(答案格式:请按实际值填写)</p>
 <p>可以看到通过ftp上传了一个压缩包</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762417883627-e7bba67d-cd63-4e22-bd96-25498e92406f.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762417883627-e7bba67d-cd63-4e22-bd96-25498e92406f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>爆破得到这个压缩包的密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762418097035-bb75d002-ca8a-4170-8edf-b8b8bd81121f.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762418115628-72ff0666-2865-4a70-aa81-bec66bd7aeac.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762418097035-bb75d002-ca8a-4170-8edf-b8b8bd81121f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762418115628-72ff0666-2865-4a70-aa81-bec66bd7aeac.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>code:123456789</p>
-<h2 id="29"><a href="#29" class="headerlink" title="29"></a>29</h2><p>黑客通过路由器执行she1l脚本，反弹shell的监听端口为(答案格式:1)</p>
+<h2 id="section-28">29</h2>
+<p>黑客通过路由器执行she1l脚本，反弹shell的监听端口为(答案格式:1)</p>
 <p>tcp流量中可以看到是4445</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762418263704-af5ab23c-bfca-4c56-96f1-15ee8df85a15.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762418263704-af5ab23c-bfca-4c56-96f1-15ee8df85a15.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>4445</p>
-<h2 id="30"><a href="#30" class="headerlink" title="30"></a>30</h2><p>黑客通过反弹she1l成功控制目标路由器后，总共执行了多少条命令(答案格式:1)</p>
+<h2 id="section-29">30</h2>
+<p>黑客通过反弹she1l成功控制目标路由器后，总共执行了多少条命令(答案格式:1)</p>
 <p>从ftp传压缩包的流量往后开始找tcp流</p>
-<p>先后执行了ifconfig、uname -a、cd &#x2F;root、ls</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762418579107-435eb645-f4dc-42ea-9661-9db3a46ed618.png" alt="img"></p>
+<p>先后执行了ifconfig、uname -a、cd /root、ls</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762418579107-435eb645-f4dc-42ea-9661-9db3a46ed618.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>4</p>
-<h1 id="计算机取证"><a href="#计算机取证" class="headerlink" title="计算机取证"></a>计算机取证</h1><h2 id="41"><a href="#41" class="headerlink" title="41"></a>41</h2><p>操作系统的Build版本号是？（答案格式：1）（ ）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762069409767-589e613b-2eae-4e7e-8569-8a63cdcd0995.png" alt="img"></p>
+<h1 id="计算机取证">计算机取证</h1>
+<h2 id="section-30">41</h2>
+<p>操作系统的Build版本号是？（答案格式：1）（ ）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762069409767-589e613b-2eae-4e7e-8569-8a63cdcd0995.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>19044.1381</p>
-<h2 id="42"><a href="#42" class="headerlink" title="42"></a>42</h2><p>操作系统设置的账户密码最长存留期为多少天？（答案格式：1）</p>
+<h2 id="section-31">42</h2>
+<p>操作系统设置的账户密码最长存留期为多少天？（答案格式：1）</p>
 <p>仿真一下找</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762165161575-05b7f8da-77d2-4e90-bf67-4c0f7fcdc7a4.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762165161575-05b7f8da-77d2-4e90-bf67-4c0f7fcdc7a4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>68</p>
-<h2 id="43"><a href="#43" class="headerlink" title="43"></a>43</h2><p>用户2登录密码NT哈希值后六位是？（字母全大写，答案格式：AAAAAA）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762166672997-1ea86eb2-450c-4595-a83d-cc5c9ee15243.png" alt="img"></p>
+<h2 id="section-32">43</h2>
+<p>用户2登录密码NT哈希值后六位是？（字母全大写，答案格式：AAAAAA）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762166672997-1ea86eb2-450c-4595-a83d-cc5c9ee15243.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>A9C708</p>
-<h2 id="44"><a href="#44" class="headerlink" title="44"></a>44</h2><p>蓝牙mac地址是多少？（答案格式：AA-AA-AA-AA-AA-AA）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762169575850-b506585c-554e-4864-b41f-aa6461274710.png" alt="img"></p>
+<h2 id="section-33">44</h2>
+<p>蓝牙mac地址是多少？（答案格式：AA-AA-AA-AA-AA-AA）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762169575850-b506585c-554e-4864-b41f-aa6461274710.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>9C-B6-D0-04-C9-CC</p>
-<h2 id="45"><a href="#45" class="headerlink" title="45"></a>45</h2><p>SafeImager的产品序列号后四位是？（字母全大写，答案格式：AAAAAA）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762169646754-3abd6e28-77e1-400d-8ac6-681257fa2bf7.png" alt="img"></p>
+<h2 id="section-34">45</h2>
+<p>SafeImager的产品序列号后四位是？（字母全大写，答案格式：AAAAAA）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762169646754-3abd6e28-77e1-400d-8ac6-681257fa2bf7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>09C4</p>
-<h2 id="46"><a href="#46" class="headerlink" title="46"></a>46</h2><p>123.VHD所处的结束扇区是？</p>
+<h2 id="section-35">46</h2>
+<p>123.VHD所处的结束扇区是？</p>
 <p>查看123.vhd尾部的标识性字节</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762347050463-b103be51-b0c6-4e9b-97e9-bb82784674a9.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762347050463-b103be51-b0c6-4e9b-97e9-bb82784674a9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>用xwf搜到这一段</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762347015983-95cf0374-a5b8-4d4a-afab-f5fdf776a995.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762347015983-95cf0374-a5b8-4d4a-afab-f5fdf776a995.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>一个簇8个扇区，因此还得逻辑扇区号+7</p>
 <p>27445255</p>
-<h2 id="47"><a href="#47" class="headerlink" title="47"></a>47</h2><p>用户在BitLocker加密分区最后修改的文件是?（答案格式：abcd.txt）</p>
+<h2 id="section-36">47</h2>
+<p>用户在BitLocker加密分区最后修改的文件是?（答案格式：abcd.txt）</p>
 <p>把提取出来的1.vhd挂起来，在里面发现了bitlocker密钥</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762176707278-6f50812d-8381-4778-b6b2-fc2028101e71.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762176707278-6f50812d-8381-4778-b6b2-fc2028101e71.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>对磁盘进行解密，按修改时间排序文件</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762176786238-0aba992d-9cbf-4222-a922-294554b82662.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762176786238-0aba992d-9cbf-4222-a922-294554b82662.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>资料1.txt</p>
-<h2 id="48"><a href="#48" class="headerlink" title="48"></a>48</h2><p>用户连接 192.168.114.129 时用的会话名称是？（答案格式：按照实际情况填写）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762177095372-905e8771-d1fb-4bc5-bb78-94afa211621a.png" alt="img"></p>
+<h2 id="section-37">48</h2>
+<p>用户连接 192.168.114.129
+时用的会话名称是？（答案格式：按照实际情况填写）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762177095372-905e8771-d1fb-4bc5-bb78-94afa211621a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>连接阿里云</p>
-<h2 id="49"><a href="#49" class="headerlink" title="49"></a>49</h2><p>用户创建存储虚拟币钱包地址页面的时间是？（使用双位数格式，答案格式：01 月 01 日）</p>
+<h2 id="section-38">49</h2>
+<p>用户创建存储虚拟币钱包地址页面的时间是？（使用双位数格式，答案格式：01
+月 01 日）</p>
 <p>仿真看到桌面有个叫anytype的类似备忘录的软件，打开可以看到一篇笔记</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762177342297-4524fa5f-b364-47cd-82e0-8f154a61978a.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762177342297-4524fa5f-b364-47cd-82e0-8f154a61978a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>10月07日</p>
-<h2 id="50"><a href="#50" class="headerlink" title="50"></a>50</h2><p>用户的虚拟币钱包地址是？（答案格式：按照实际情况填写）</p>
+<h2 id="section-39">50</h2>
+<p>用户的虚拟币钱包地址是？（答案格式：按照实际情况填写）</p>
 <p>文档中有hint说是总共34个字母，拿出来多解几次base64正好得到</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762177540187-a67c805f-d407-433c-af8b-2ea6d4739c5e.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762177540187-a67c805f-d407-433c-af8b-2ea6d4739c5e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>3HrdpWM8ZrBVw9yu8jx1RoNNK6BZxwsHd9</p>
-<h2 id="51"><a href="#51" class="headerlink" title="51"></a>51</h2><p>用户 VC 加密容器的密码是？（答案格式：按照实际情况填写）</p>
+<h2 id="section-40">51</h2>
+<p>用户 VC 加密容器的密码是？（答案格式：按照实际情况填写）</p>
 <p>解密磁盘后重新分析，可以看到foxmail中有三个附件</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762178245500-a4f4149e-5d8c-4c82-9a4d-edeebe5404c3.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762178245500-a4f4149e-5d8c-4c82-9a4d-edeebe5404c3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>以及解压密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762178292117-ede7f732-abe9-4ea4-b3fe-335860498e84.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762178292117-ede7f732-abe9-4ea4-b3fe-335860498e84.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>另外还有两部分，用户LXM的回收站里有一部分，用户2的文档中有一部分</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762178739926-04487be6-f407-4fb6-a6c9-4ab59e8272f6.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762178560520-e9455dad-c5db-490b-b83c-fd3c89aa682e.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762178739926-04487be6-f407-4fb6-a6c9-4ab59e8272f6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762178560520-e9455dad-c5db-490b-b83c-fd3c89aa682e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>解压出来有个联系人.docx，把整个文档标红可以看到VC密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762179112517-4e783a8d-313f-4f54-8192-ab111f8865ac.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762179112517-4e783a8d-313f-4f54-8192-ab111f8865ac.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>SHUZHENGBEIctzy2025</p>
-<h2 id="52"><a href="#52" class="headerlink" title="52"></a>52</h2><p>用户在生活中使用的代号是？（答案格式：按照实际情况填写）</p>
+<h2 id="section-41">52</h2>
+<p>用户在生活中使用的代号是？（答案格式：按照实际情况填写）</p>
 <p>桌面有个代号.wav，拿出来扔进audicity看频谱图就能看到代号</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762179271355-fdba1956-d26e-4471-84ba-7412a3c8b83e.png" alt="img"></p>
-<h2 id="53"><a href="#53" class="headerlink" title="53"></a>53</h2><p>李安东的银行卡归属哪个银行？（答案格式：农业银行）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762179271355-fdba1956-d26e-4471-84ba-7412a3c8b83e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="section-42">53</h2>
+<p>李安东的银行卡归属哪个银行？（答案格式：农业银行）</p>
 <p>有个银行卡6位纯数字.xls，爆破其密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762179718992-e77a35c8-84fa-4e5c-ad18-872ac14e009a.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762179752370-85c827e8-ca44-41c9-ac41-8e34c81cf6ef.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762179718992-e77a35c8-84fa-4e5c-ad18-872ac14e009a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762179752370-85c827e8-ca44-41c9-ac41-8e34c81cf6ef.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>交通银行</p>
-<h2 id="54"><a href="#54" class="headerlink" title="54"></a>54</h2><p>请分析某市 10 月 6 日最高气温是？（答案格式：1）</p>
+<h2 id="section-43">54</h2>
+<p>请分析某市 10 月 6 日最高气温是？（答案格式：1）</p>
 <p>找到气温加密.zip，实际上是伪加密</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762180000736-05396b74-217e-48d3-9c55-ec93621c0248.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762180011826-7eb969b2-9758-4488-9c6f-532f2fcdd319.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762180000736-05396b74-217e-48d3-9c55-ec93621c0248.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762180011826-7eb969b2-9758-4488-9c6f-532f2fcdd319.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>21</p>
-<h2 id="55"><a href="#55" class="headerlink" title="55"></a>55</h2><p>用户的 BitLocker 密码是？（答案格式：按照实际情况填写）</p>
+<h2 id="section-44">55</h2>
+<p>用户的 BitLocker 密码是？（答案格式：按照实际情况填写）</p>
 <p>foxmail中还有传过一个附件叫扬帆起航.png</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762180175168-8c651638-481b-457f-9165-837d2c6937d9.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762180175168-8c651638-481b-457f-9165-837d2c6937d9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>这个图片存在隐写，要用administrator下载过的这个工具才能提取</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762180467120-5d32f561-1bcb-4a20-9d35-1c4c1f9c5ce5.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762180515942-853ad70a-fad8-49de-bf7c-4a7ad4d7d0c5.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762180467120-5d32f561-1bcb-4a20-9d35-1c4c1f9c5ce5.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762180515942-853ad70a-fad8-49de-bf7c-4a7ad4d7d0c5.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>SZBJSJTM2025</p>
-<h2 id="56"><a href="#56" class="headerlink" title="56"></a>56</h2><p>用户办公室的门禁密码是？（答案格式：按照实际情况填写）</p>
+<h2 id="section-45">56</h2>
+<p>用户办公室的门禁密码是？（答案格式：按照实际情况填写）</p>
 <p>之前挂载的123.vhd中有个secretNew，用之前解得的VC密码挂载，里面有个办公室密码锁.jpg.enc</p>
 <p>用前面得到的DecryptionTool.exe对其进行解密</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762181080670-a9e30243-55c4-4576-9ca6-0b9fc1519691.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762181080670-a9e30243-55c4-4576-9ca6-0b9fc1519691.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>图片后面跟了密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762181130670-c4e68079-1416-4030-956f-398aee7bc04b.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762181130670-c4e68079-1416-4030-956f-398aee7bc04b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>147963258</p>
-<h2 id="57"><a href="#57" class="headerlink" title="57"></a>57</h2><p>用户使用的以 D 开头的解密程序的 MD5 值后六位是？（字母全大写，答案格式：AAAAAA）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762181239054-231cb81c-8032-42d0-ac82-3aa184b646bc.png" alt="img"></p>
+<h2 id="section-46">57</h2>
+<p>用户使用的以 D 开头的解密程序的 MD5
+值后六位是？（字母全大写，答案格式：AAAAAA）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762181239054-231cb81c-8032-42d0-ac82-3aa184b646bc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>3A892E</p>
-<h2 id="58"><a href="#58" class="headerlink" title="58"></a>58</h2><p>木马程序运行至系统断点前加载了几个动态链接库？（答案格式：1）</p>
+<h2 id="section-47">58</h2>
+<p>木马程序运行至系统断点前加载了几个动态链接库？（答案格式：1）</p>
 <p>不会逆向，但交给逆向手调试看日志是5个</p>
 <p>5</p>
-<h2 id="59"><a href="#59" class="headerlink" title="59"></a>59</h2><p>木马产生的程序名称是什么？（答案格式：abcd.txt）</p>
+<h2 id="section-48">59</h2>
+<p>木马产生的程序名称是什么？（答案格式：abcd.txt）</p>
 <p>扔进微步云沙箱就能看到</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762185365382-cb9b4536-37de-4e9d-9871-1fe1a9d0775f.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762185365382-cb9b4536-37de-4e9d-9871-1fe1a9d0775f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>wins.exe</p>
-<h2 id="60"><a href="#60" class="headerlink" title="60"></a>60</h2><p>木马尝试访问的域名是什么？（答案格式：按照实际情况填写）</p>
+<h2 id="section-49">60</h2>
+<p>木马尝试访问的域名是什么？（答案格式：按照实际情况填写）</p>
 <p>微步云沙箱神力</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762185411312-4ed82fe5-fbc4-47a0-8ec0-fb0bc3340e71.png" alt="img"></p>
-<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://x.threatbook.com/v5/domain/edu-image.nosdn.127.net">edu-image.nosdn.127.net</a></p>
-<h2 id="61"><a href="#61" class="headerlink" title="61"></a>61</h2><p>分析计算机内存检材，此内存镜像制作时的系统时间是？（使用双位数格式，答案格式：01 月 01 日）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762185411312-4ed82fe5-fbc4-47a0-8ec0-fb0bc3340e71.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><a
+target="_blank" rel="noopener" href="https://x.threatbook.com/v5/domain/edu-image.nosdn.127.net">edu-image.nosdn.127.net</a></p>
+<h2 id="section-50">61</h2>
+<p>分析计算机内存检材，此内存镜像制作时的系统时间是？（使用双位数格式，答案格式：01
+月 01 日）</p>
 <p>直接lovelymem梭了</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762185633714-cf3474c6-0797-4b9b-9d76-60003e2cc5fb.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762185633714-cf3474c6-0797-4b9b-9d76-60003e2cc5fb.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>10月16日</p>
-<h2 id="62"><a href="#62" class="headerlink" title="62"></a>62</h2><p>分析计算机内存检材，用户 Yiyelin 的用户表示后 4 位是？</p>
+<h2 id="section-51">62</h2>
+<p>分析计算机内存检材，用户 Yiyelin 的用户表示后 4 位是？</p>
 <p>由上图</p>
 <p>1002</p>
-<h2 id="63"><a href="#63" class="headerlink" title="63"></a>63</h2><p>分析计算机内存检材，计算机的 CPU 型号是什么？（答案格式： i9-1110U）</p>
+<h2 id="section-52">63</h2>
+<p>分析计算机内存检材，计算机的 CPU 型号是什么？（答案格式：
+i9-1110U）</p>
 <p>由上图</p>
 <p>i7-1165G7</p>
-<h2 id="64"><a href="#64" class="headerlink" title="64"></a>64</h2><p>分析计算机内存检材，wps.exe 的 PID 是？</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762186129205-6cf4ddec-69f6-4c96-8727-5cd0c5999c95.png" alt="img"></p>
+<h2 id="section-53">64</h2>
+<p>分析计算机内存检材，wps.exe 的 PID 是？</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762186129205-6cf4ddec-69f6-4c96-8727-5cd0c5999c95.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>5888</p>
-<h2 id="65"><a href="#65" class="headerlink" title="65"></a>65</h2><p>分析计算机内存检材，此计算机开机自启动的远控软件名称是？</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762186166508-9301f9a5-0f78-4044-87b7-a6719a8dda50.png" alt="img"></p>
+<h2 id="section-54">65</h2>
+<p>分析计算机内存检材，此计算机开机自启动的远控软件名称是？</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762186166508-9301f9a5-0f78-4044-87b7-a6719a8dda50.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>SunloginClient.exe</p>
-<h1 id="物联网取证"><a href="#物联网取证" class="headerlink" title="物联网取证"></a>物联网取证</h1><h2 id="66"><a href="#66" class="headerlink" title="66"></a>66</h2><p>打印机的主机名称是什么？</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762340235772-6d1a1c9d-ba73-417d-80f3-ad3569b03f51.png" alt="img"></p>
+<h1 id="物联网取证">物联网取证</h1>
+<h2 id="section-55">66</h2>
+<p>打印机的主机名称是什么？</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762340235772-6d1a1c9d-ba73-417d-80f3-ad3569b03f51.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>print</p>
-<h2 id="67"><a href="#67" class="headerlink" title="67"></a>67</h2><p>打印文件存储在哪个目录？(答案格式：&#x2F;root&#x2F;root)</p>
+<h2 id="section-56">67</h2>
+<p>打印文件存储在哪个目录？(答案格式：/root/root)</p>
 <p>查看打印机的配置文件</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762347557951-7df836be-6a13-4c30-bff6-b8c615dcea18.png" alt="img"></p>
-<p>&#x2F;var&#x2F;spool&#x2F;cups</p>
-<h2 id="68"><a href="#68" class="headerlink" title="68"></a>68</h2><p>同一天，打印两份文件的用户是谁？(答案格式：root)</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762347557951-7df836be-6a13-4c30-bff6-b8c615dcea18.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>/var/spool/cups</p>
+<h2 id="section-57">68</h2>
+<p>同一天，打印两份文件的用户是谁？(答案格式：root)</p>
 <p>查看日志</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762347635835-72aa24d4-8c90-4032-8f15-9acc64774ee5.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762347635835-72aa24d4-8c90-4032-8f15-9acc64774ee5.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>alice</p>
-<h2 id="69"><a href="#69" class="headerlink" title="69"></a>69</h2><p>分析物联网检材，木马运行后，自身产生的进程 ID 是多少？（答案格式：1）</p>
+<h2 id="section-58">69</h2>
+<p>分析物联网检材，木马运行后，自身产生的进程 ID
+是多少？（答案格式：1）</p>
 <p>查看系统日志</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762347760231-c4c7c2eb-2aba-4e20-b886-1c79ce16ba6e.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762347760231-c4c7c2eb-2aba-4e20-b886-1c79ce16ba6e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>2177</p>
-<h2 id="70"><a href="#70" class="headerlink" title="70"></a>70</h2><p>分析物联网检材，系统中存在一个非标定时任务，这个任务每隔多少分钟执行？（答案格式：1）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762347886443-741484b4-0a5a-4e45-8ab4-9b7b7d471fff.png" alt="img"></p>
+<h2 id="section-59">70</h2>
+<p>分析物联网检材，系统中存在一个非标定时任务，这个任务每隔多少分钟执行？（答案格式：1）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762347886443-741484b4-0a5a-4e45-8ab4-9b7b7d471fff.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>10</p>
-<h2 id="71"><a href="#71" class="headerlink" title="71"></a>71</h2><p>分析物联网检材，木马程序会窃取文档暂存在隐藏目录，这个目录的绝对路径？（&#x2F;root&#x2F;root&#x2F;）</p>
+<h2 id="section-60">71</h2>
+<p>分析物联网检材，木马程序会窃取文档暂存在隐藏目录，这个目录的绝对路径？（/root/root/）</p>
 <p>根据上题找到木马文件</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762348869673-8efe8c1e-fa36-479f-8e75-91de1e675781.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762348869673-8efe8c1e-fa36-479f-8e75-91de1e675781.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>文件开头有个base32是hint</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762348927265-38522f7c-3c14-4e13-90a8-d3c599d70f76.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762348927265-38522f7c-3c14-4e13-90a8-d3c599d70f76.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>找到STAGING_DIR</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762348963882-dc96c870-c44b-4d0a-b0d5-f466e38e8da9.png" alt="img"></p>
-<p>&#x2F;tmp&#x2F;.cache&#x2F;</p>
-<h2 id="72"><a href="#72" class="headerlink" title="72"></a>72</h2><p>分析物联网检材，木马程序将数据上传到的服务器的 IP 地址是多少？（答案格式：1.1.1.1）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762348963882-dc96c870-c44b-4d0a-b0d5-f466e38e8da9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>/tmp/.cache/</p>
+<h2 id="section-61">72</h2>
+<p>分析物联网检材，木马程序将数据上传到的服务器的 IP
+地址是多少？（答案格式：1.1.1.1）</p>
 <p>由69题</p>
 <p>185.199.108.153</p>
-<h2 id="73"><a href="#73" class="headerlink" title="73"></a>73</h2><p>根据木马程序，它监视的关键字是什么？（答案格式：按照实际情况填写）</p>
+<h2 id="section-62">73</h2>
+<p>根据木马程序，它监视的关键字是什么？（答案格式：按照实际情况填写）</p>
 <p>对木马中WATCHED_KEYWORD解密</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762349329422-aeeefbb9-608a-4904-a525-0b89382e2612.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762349329422-aeeefbb9-608a-4904-a525-0b89382e2612.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>Project Dragonfire</p>
-<h1 id="移动终端取证"><a href="#移动终端取证" class="headerlink" title="移动终端取证"></a>移动终端取证</h1><h2 id="74"><a href="#74" class="headerlink" title="74"></a>74</h2><p>分析检材中微信ID:wxid_f4s0jmpvrc522对应的手机号后四位为（答案格式：1111）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762351996442-6569a1c5-2486-4cc3-9004-576b9ee2ede2.png" alt="img"></p>
+<h1 id="移动终端取证">移动终端取证</h1>
+<h2 id="section-63">74</h2>
+<p>分析检材中微信ID:wxid_f4s0jmpvrc522对应的手机号后四位为（答案格式：1111）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762351996442-6569a1c5-2486-4cc3-9004-576b9ee2ede2.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>8390</p>
-<h2 id="75"><a href="#75" class="headerlink" title="75"></a>75</h2><p>分析检材中“华为应用市场”第一次安装日期为（使用双位数格式，答案格式：01月01日）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352189995-c503bd02-759e-4abb-bfb6-6a53060964e0.png" alt="img"></p>
+<h2 id="section-64">75</h2>
+<p>分析检材中“华为应用市场”第一次安装日期为（使用双位数格式，答案格式：01月01日）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352189995-c503bd02-759e-4abb-bfb6-6a53060964e0.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>09月24日</p>
-<h2 id="76"><a href="#76" class="headerlink" title="76"></a>76</h2><p>找出检材中钱包APP，请列出该APP中ETH地址后六位是（字母全大写，答案格式：AAAAAA）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352330780-f502d966-d292-4277-919f-b8d56bd40054.png" alt="img"></p>
+<h2 id="section-65">76</h2>
+<p>找出检材中钱包APP，请列出该APP中ETH地址后六位是（字母全大写，答案格式：AAAAAA）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352330780-f502d966-d292-4277-919f-b8d56bd40054.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>3FE61F</p>
-<h2 id="77"><a href="#77" class="headerlink" title="77"></a>77</h2><p>分析出检材中包含“南昌西站”的图片，计算该图片的MD5后六位？（字母全大写，答案格式：AAAAAA）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352658639-1c1b3078-e80b-4dac-b120-969c9d1f9a20.png" alt="img"></p>
+<h2 id="section-66">77</h2>
+<p>分析出检材中包含“南昌西站”的图片，计算该图片的MD5后六位？（字母全大写，答案格式：AAAAAA）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352658639-1c1b3078-e80b-4dac-b120-969c9d1f9a20.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>85A51D</p>
-<h2 id="78"><a href="#78" class="headerlink" title="78"></a>78</h2><p>手机相册中有张“imtoken助记词1.PNG”图片被破坏，请修复该图片，列出该图片中第三个单词。（答案格式：按照实际情况填写）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352785613-e8779210-37ba-4963-b808-1e6aeaed38b6.png" alt="img"></p>
+<h2 id="section-67">78</h2>
+<p>手机相册中有张“imtoken助记词1.PNG”图片被破坏，请修复该图片，列出该图片中第三个单词。（答案格式：按照实际情况填写）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352785613-e8779210-37ba-4963-b808-1e6aeaed38b6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>随波逐流一把梭</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352843200-058cac7a-56eb-49ec-9c5f-4f9d29a9f6e8.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352850180-dd56d80d-389b-4898-98ea-53f720ccb277.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352843200-058cac7a-56eb-49ec-9c5f-4f9d29a9f6e8.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352850180-dd56d80d-389b-4898-98ea-53f720ccb277.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>boost</p>
-<h2 id="79"><a href="#79" class="headerlink" title="79"></a>79</h2><p>找出一张PNG图片，该图片上显示“助记词2”，请列出该图片上显示的第二个单词。（答案格式：按照实际情况填写）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762352998920-e2ac5939-2892-4695-bd38-4229ba314e16.png" alt="img"></p>
+<h2 id="section-68">79</h2>
+<p>找出一张PNG图片，该图片上显示“助记词2”，请列出该图片上显示的第二个单词。（答案格式：按照实际情况填写）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762352998920-e2ac5939-2892-4695-bd38-4229ba314e16.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>delay</p>
-<h2 id="80"><a href="#80" class="headerlink" title="80"></a>80</h2><p>找出检材中显示“助记词3”的文档，列出该文档中记录的第三个助记词单词。（答案格式：按照实际情况填写）</p>
+<h2 id="section-69">80</h2>
+<p>找出检材中显示“助记词3”的文档，列出该文档中记录的第三个助记词单词。（答案格式：按照实际情况填写）</p>
 <p>直接全局搜索</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762353614189-3005154c-c116-4d4b-adb1-8c6e418b3a35.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762353685475-9307a057-1b7b-48c0-bc15-51b22f26f858.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762353614189-3005154c-c116-4d4b-adb1-8c6e418b3a35.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762353685475-9307a057-1b7b-48c0-bc15-51b22f26f858.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>quarter</p>
-<h2 id="81"><a href="#81" class="headerlink" title="81"></a>81</h2><p>分析出该组助记词正常顺序中最后一个单词（已知助记词1、助记词2、助记词3中的单词顺序有被调整）。（答案格式：按照实际情况填写）</p>
+<h2 id="section-70">81</h2>
+<p>分析出该组助记词正常顺序中最后一个单词（已知助记词1、助记词2、助记词3中的单词顺序有被调整）。（答案格式：按照实际情况填写）</p>
 <p>用工具梭</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762357728762-3266ed64-f676-4f1a-a464-218c738ca6bf.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762357728762-3266ed64-f676-4f1a-a464-218c738ca6bf.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>segment</p>
-<h2 id="82"><a href="#82" class="headerlink" title="82"></a>82</h2><p>分析出邮箱中收件人 QQ 号为 “850563586” 的姓名（答案格式：按照实际情况填写）</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762357833715-5998bdaf-d024-4322-a952-485656d4854f.png" alt="img"></p>
+<h2 id="section-71">82</h2>
+<p>分析出邮箱中收件人 QQ 号为 “850563586”
+的姓名（答案格式：按照实际情况填写）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762357833715-5998bdaf-d024-4322-a952-485656d4854f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>刘佳雨</p>
-<h2 id="83"><a href="#83" class="headerlink" title="83"></a>83</h2><p>得知机主通过某个应用给 HHshAL 发送了一个文档，该应用的数据包名是什么？（答案格式：com.test）</p>
+<h2 id="section-72">83</h2>
+<p>得知机主通过某个应用给 HHshAL
+发送了一个文档，该应用的数据包名是什么？（答案格式：com.test）</p>
 <p>看到一个特殊软件，可合理猜测</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762358247562-66f417cc-6cb9-46a8-920a-e07c1590c8e5.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762358247562-66f417cc-6cb9-46a8-920a-e07c1590c8e5.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>dingtong.saichuang</p>
-<h2 id="84"><a href="#84" class="headerlink" title="84"></a>84</h2><p>接上题，该应用聊天记录数据库的打开密码是什么？（答案格式：按照实际情况填写）</p>
+<h2 id="section-73">84</h2>
+<p>接上题，该应用聊天记录数据库的打开密码是什么？（答案格式：按照实际情况填写）</p>
 <p>把上面这个程序的base.apk拿出来逆向一下，全局搜索dingtong.db，找到密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762358804433-e4126f1b-c60e-4b0e-936b-452a59946e4f.png" alt="img"></p>
-<p>@1@#!aajsk1*JKJ</p>
-<h2 id="85"><a href="#85" class="headerlink" title="85"></a>85</h2><p>接上题，机主发送的这个加密文档，打开密码是什么？（答案格式：按照实际情况填写）</p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762358804433-e4126f1b-c60e-4b0e-936b-452a59946e4f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><span class="citation" data-cites="1">@1</span>@#!aajsk1*JKJ</p>
+<h2 id="section-74">85</h2>
+<p>接上题，机主发送的这个加密文档，打开密码是什么？（答案格式：按照实际情况填写）</p>
 <p>解密数据库，在其中可以找到密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762359320572-d8fa32c2-54ea-4196-879e-cabf36580759.png" alt="img"></p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762359357135-7fbbc4c6-6fc8-45fb-a099-fec016446226.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762359320572-d8fa32c2-54ea-4196-879e-cabf36580759.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762359357135-7fbbc4c6-6fc8-45fb-a099-fec016446226.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>QWERT666</p>
-<h2 id="86"><a href="#86" class="headerlink" title="86"></a>86</h2><p>厉明的身份证地址登记的门牌号是多少？（答案格式：1）</p>
+<h2 id="section-75">86</h2>
+<p>厉明的身份证地址登记的门牌号是多少？（答案格式：1）</p>
 <p>在mxt.db中找到密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762359688349-c5abe9c3-a47f-4947-a32d-7d70edf57d9b.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762359688349-c5abe9c3-a47f-4947-a32d-7d70edf57d9b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>在密信通中找到身份证文件</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762359839065-f2f531fb-f528-4a6a-a887-8a98efcce1b0.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762359839065-f2f531fb-f528-4a6a-a887-8a98efcce1b0.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>后缀名改为zip输入密码解压，找到身份证</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762360008452-485a1e13-d9b3-4289-9c4e-7406dd26802f.jpeg" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762360008452-485a1e13-d9b3-4289-9c4e-7406dd26802f.jpeg"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>四川省成都市武侯区益州大道中段722号复城国际</p>
-<h2 id="87"><a href="#87" class="headerlink" title="87"></a>87</h2><p>分析出 “important1.xlsx” 文件中体现的 “金达欣” 银行卡后六位？（答案格式：111111）</p>
+<h2 id="section-76">87</h2>
+<p>分析出 “important1.xlsx” 文件中体现的 “金达欣”
+银行卡后六位？（答案格式：111111）</p>
 <p>前面数据库中找到的密码另一个就是这个表格的密码</p>
-<p><img src="/images/%E6%95%B0%E8%AF%81%E6%9D%AF2025-%E9%83%A8%E5%88%86writeup-%E5%A4%8D%E7%8E%B0/1762360371085-84f5403e-da52-4c06-ae08-f725b6044e0c.png" alt="img"></p>
+<figure>
+<img
+src="/images/数证杯2025-部分writeup-复现/1762360371085-84f5403e-da52-4c06-ae08-f725b6044e0c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
 <p>935629</p>
-<h2 id="88"><a href="#88" class="headerlink" title="88"></a>88</h2><p>接上题，保存“important1.xlsx”打开密码数据的应用，该应用的启动密码是什么？</p>
+<h2 id="section-77">88</h2>
+<p>接上题，保存“important1.xlsx”打开密码数据的应用，该应用的启动密码是什么？</p>
 <p>不懂逆向（ 但是大概思路就是安装下来这个apk然后去调试</p>
 <p>1596</p>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/f294c61f/">https://www.blog.st4rr.top/posts/f294c61f/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/Forensics/">Forensics</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E8%AF%81%E6%9D%AF/">数证杯</a></div><div class="post_share"><div class="social-share" data-image="/img/article/Black_hole.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img class="cover" src="/img/article/Orion_Nebula.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">龙信杯2025 部分writeup+复现</div></div></a></div><div class="next-post pull-right"><a href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img class="cover" src="/img/article/Crab_Nebula.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">0xGame2025 大而美 Official Writeup</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img class="cover" src="/img/article/Orion_Nebula.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-15</div><div class="title">龙信杯2025 部分writeup+复现</div></div></a></div><div><a href="/posts/24543801/" title="FIC2025初赛 writeup+复现"><img class="cover" src="/img/article/vega.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-28</div><div class="title">FIC2025初赛 writeup+复现</div></div></a></div><div><a href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-20</div><div class="title">盘古石杯2025初赛 Writeup+复现（断更中）</div></div></a></div><div><a href="/posts/58e12fb0/" title="0xGame2023 Writeup"><img class="cover" src="/img/article/sirius.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-24</div><div class="title">0xGame2023 Writeup</div></div></a></div><div><a href="/posts/511d172f/" title="0xGame2024 Misc Official Writeup"><img class="cover" src="/img/article/Crab_Nebula.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-11</div><div class="title">0xGame2024 Misc Official Writeup</div></div></a></div><div><a href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img class="cover" src="/img/article/Crab_Nebula.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-31</div><div class="title">0xGame2025 大而美 Official Writeup</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">A human, not a robot, I guess.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">人生如戏，幕起缘来，欢迎光临寒舍:) 本站大多是对一些比赛的记录和一些胡言乱语，教学意义并不大，因此感谢每一个愿意读完本站文章的师傅orz 如果想联系作者，可移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%96%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">服务器取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%9B%86%E7%BE%A4"><span class="toc-number">1.1.</span> <span class="toc-text">重建服务器集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1"><span class="toc-number">1.2.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2"><span class="toc-number">1.3.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3"><span class="toc-number">1.4.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4"><span class="toc-number">1.5.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5"><span class="toc-number">1.6.</span> <span class="toc-text">5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6"><span class="toc-number">1.7.</span> <span class="toc-text">6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7"><span class="toc-number">1.8.</span> <span class="toc-text">7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8"><span class="toc-number">1.9.</span> <span class="toc-text">8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9"><span class="toc-number">1.10.</span> <span class="toc-text">9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10"><span class="toc-number">1.11.</span> <span class="toc-text">10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11"><span class="toc-number">1.12.</span> <span class="toc-text">11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12"><span class="toc-number">1.13.</span> <span class="toc-text">12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13"><span class="toc-number">1.14.</span> <span class="toc-text">13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14"><span class="toc-number">1.15.</span> <span class="toc-text">14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15"><span class="toc-number">1.16.</span> <span class="toc-text">15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16"><span class="toc-number">1.17.</span> <span class="toc-text">16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#17"><span class="toc-number">1.18.</span> <span class="toc-text">17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#18"><span class="toc-number">1.19.</span> <span class="toc-text">18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19"><span class="toc-number">1.20.</span> <span class="toc-text">19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#20"><span class="toc-number">1.21.</span> <span class="toc-text">20</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E5%8C%85%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">流量包分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21"><span class="toc-number">2.1.</span> <span class="toc-text">21</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22"><span class="toc-number">2.2.</span> <span class="toc-text">22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23"><span class="toc-number">2.3.</span> <span class="toc-text">23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24"><span class="toc-number">2.4.</span> <span class="toc-text">24</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25"><span class="toc-number">2.5.</span> <span class="toc-text">25</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26"><span class="toc-number">2.6.</span> <span class="toc-text">26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27"><span class="toc-number">2.7.</span> <span class="toc-text">27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28"><span class="toc-number">2.8.</span> <span class="toc-text">28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29"><span class="toc-number">2.9.</span> <span class="toc-text">29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#30"><span class="toc-number">2.10.</span> <span class="toc-text">30</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">计算机取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#41"><span class="toc-number">3.1.</span> <span class="toc-text">41</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#42"><span class="toc-number">3.2.</span> <span class="toc-text">42</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#43"><span class="toc-number">3.3.</span> <span class="toc-text">43</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#44"><span class="toc-number">3.4.</span> <span class="toc-text">44</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#45"><span class="toc-number">3.5.</span> <span class="toc-text">45</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#46"><span class="toc-number">3.6.</span> <span class="toc-text">46</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#47"><span class="toc-number">3.7.</span> <span class="toc-text">47</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#48"><span class="toc-number">3.8.</span> <span class="toc-text">48</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#49"><span class="toc-number">3.9.</span> <span class="toc-text">49</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#50"><span class="toc-number">3.10.</span> <span class="toc-text">50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#51"><span class="toc-number">3.11.</span> <span class="toc-text">51</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#52"><span class="toc-number">3.12.</span> <span class="toc-text">52</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#53"><span class="toc-number">3.13.</span> <span class="toc-text">53</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#54"><span class="toc-number">3.14.</span> <span class="toc-text">54</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#55"><span class="toc-number">3.15.</span> <span class="toc-text">55</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#56"><span class="toc-number">3.16.</span> <span class="toc-text">56</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#57"><span class="toc-number">3.17.</span> <span class="toc-text">57</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#58"><span class="toc-number">3.18.</span> <span class="toc-text">58</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#59"><span class="toc-number">3.19.</span> <span class="toc-text">59</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#60"><span class="toc-number">3.20.</span> <span class="toc-text">60</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#61"><span class="toc-number">3.21.</span> <span class="toc-text">61</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#62"><span class="toc-number">3.22.</span> <span class="toc-text">62</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#63"><span class="toc-number">3.23.</span> <span class="toc-text">63</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#64"><span class="toc-number">3.24.</span> <span class="toc-text">64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#65"><span class="toc-number">3.25.</span> <span class="toc-text">65</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%8F%96%E8%AF%81"><span class="toc-number">4.</span> <span class="toc-text">物联网取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#66"><span class="toc-number">4.1.</span> <span class="toc-text">66</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#67"><span class="toc-number">4.2.</span> <span class="toc-text">67</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#68"><span class="toc-number">4.3.</span> <span class="toc-text">68</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#69"><span class="toc-number">4.4.</span> <span class="toc-text">69</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#70"><span class="toc-number">4.5.</span> <span class="toc-text">70</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#71"><span class="toc-number">4.6.</span> <span class="toc-text">71</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#72"><span class="toc-number">4.7.</span> <span class="toc-text">72</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#73"><span class="toc-number">4.8.</span> <span class="toc-text">73</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%BB%88%E7%AB%AF%E5%8F%96%E8%AF%81"><span class="toc-number">5.</span> <span class="toc-text">移动终端取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#74"><span class="toc-number">5.1.</span> <span class="toc-text">74</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#75"><span class="toc-number">5.2.</span> <span class="toc-text">75</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#76"><span class="toc-number">5.3.</span> <span class="toc-text">76</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#77"><span class="toc-number">5.4.</span> <span class="toc-text">77</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#78"><span class="toc-number">5.5.</span> <span class="toc-text">78</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#79"><span class="toc-number">5.6.</span> <span class="toc-text">79</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#80"><span class="toc-number">5.7.</span> <span class="toc-text">80</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#81"><span class="toc-number">5.8.</span> <span class="toc-text">81</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#82"><span class="toc-number">5.9.</span> <span class="toc-text">82</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#83"><span class="toc-number">5.10.</span> <span class="toc-text">83</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#84"><span class="toc-number">5.11.</span> <span class="toc-text">84</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#85"><span class="toc-number">5.12.</span> <span class="toc-text">85</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#86"><span class="toc-number">5.13.</span> <span class="toc-text">86</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#87"><span class="toc-number">5.14.</span> <span class="toc-text">87</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#88"><span class="toc-number">5.15.</span> <span class="toc-text">88</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img src="/img/article/Orion_Nebula.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="龙信杯2025 部分writeup+复现"/></a><div class="content"><a class="title" href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现">龙信杯2025 部分writeup+复现</a><time datetime="2025-11-14T16:00:00.000Z" title="Created 2025-11-15 00:00:00">2025-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现"><img src="/img/article/Black_hole.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数证杯2025 部分writeup+复现"/></a><div class="content"><a class="title" href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现">数证杯2025 部分writeup+复现</a><time datetime="2025-11-06T16:00:00.000Z" title="Created 2025-11-07 00:00:00">2025-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img src="/img/article/Crab_Nebula.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0xGame2025 大而美 Official Writeup"/></a><div class="content"><a class="title" href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup">0xGame2025 大而美 Official Writeup</a><time datetime="2025-10-30T16:00:00.000Z" title="Created 2025-10-31 00:00:00">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d2d3541f/" title="hackmyvm Machines-Easy"><img src="/img/article/sirius.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hackmyvm Machines-Easy"/></a><div class="content"><a class="title" href="/posts/d2d3541f/" title="hackmyvm Machines-Easy">hackmyvm Machines-Easy</a><time datetime="2025-10-30T16:00:00.000Z" title="Created 2025-10-31 00:00:00">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f8a60ebc/" title="春秋云境-GreatWall"><img src="/img/article/vega.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云境-GreatWall"/></a><div class="content"><a class="title" href="/posts/f8a60ebc/" title="春秋云境-GreatWall">春秋云境-GreatWall</a><time datetime="2025-10-23T16:00:00.000Z" title="Created 2025-10-24 00:00:00">2025-10-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/f294c61f/">https://www.blog.st4rr.top/posts/f294c61f/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/Forensics/">Forensics</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E8%AF%81%E6%9D%AF/">数证杯</a></div><div class="post_share"><div class="social-share" data-image="/img/article/Pillars_of_creation.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img class="cover" src="/img/article/Black_hole.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous</div><div class="prev_info">龙信杯2025 部分writeup+复现</div></div></a></div><div class="next-post pull-right"><a href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img class="cover" src="/img/article/sirius.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">0xGame2025 大而美 Official Writeup</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img class="cover" src="/img/article/Black_hole.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-15</div><div class="title">龙信杯2025 部分writeup+复现</div></div></a></div><div><a href="/posts/24543801/" title="FIC2025初赛 writeup+复现"><img class="cover" src="/img/article/vega.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-28</div><div class="title">FIC2025初赛 writeup+复现</div></div></a></div><div><a href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-20</div><div class="title">盘古石杯2025初赛 Writeup+复现（断更中）</div></div></a></div><div><a href="/posts/58e12fb0/" title="0xGame2023 Writeup"><img class="cover" src="/img/article/sirius.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-24</div><div class="title">0xGame2023 Writeup</div></div></a></div><div><a href="/posts/e41c2619/" title="2024暑假偷偷练习CTF"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-28</div><div class="title">2024暑假偷偷练习CTF</div></div></a></div><div><a href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img class="cover" src="/img/article/sirius.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-31</div><div class="title">0xGame2025 大而美 Official Writeup</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">A human, not a robot, I guess.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">人生如戏，幕起缘来，欢迎光临寒舍:) 本站大多是对一些比赛的记录和一些胡言乱语，教学意义并不大，因此感谢每一个愿意读完本站文章的师傅orz 如果想联系作者，可移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%96%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">服务器取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%9B%86%E7%BE%A4"><span class="toc-number">1.1.</span> <span class="toc-text">重建服务器集群</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section"><span class="toc-number">1.2.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-1"><span class="toc-number">1.3.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-2"><span class="toc-number">1.4.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-3"><span class="toc-number">1.5.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-4"><span class="toc-number">1.6.</span> <span class="toc-text">5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-5"><span class="toc-number">1.7.</span> <span class="toc-text">6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-6"><span class="toc-number">1.8.</span> <span class="toc-text">7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-7"><span class="toc-number">1.9.</span> <span class="toc-text">8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-8"><span class="toc-number">1.10.</span> <span class="toc-text">9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-9"><span class="toc-number">1.11.</span> <span class="toc-text">10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-10"><span class="toc-number">1.12.</span> <span class="toc-text">11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-11"><span class="toc-number">1.13.</span> <span class="toc-text">12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-12"><span class="toc-number">1.14.</span> <span class="toc-text">13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-13"><span class="toc-number">1.15.</span> <span class="toc-text">14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-14"><span class="toc-number">1.16.</span> <span class="toc-text">15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-15"><span class="toc-number">1.17.</span> <span class="toc-text">16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-16"><span class="toc-number">1.18.</span> <span class="toc-text">17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-17"><span class="toc-number">1.19.</span> <span class="toc-text">18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-18"><span class="toc-number">1.20.</span> <span class="toc-text">19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-19"><span class="toc-number">1.21.</span> <span class="toc-text">20</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E5%8C%85%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">流量包分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-20"><span class="toc-number">2.1.</span> <span class="toc-text">21</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-21"><span class="toc-number">2.2.</span> <span class="toc-text">22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-22"><span class="toc-number">2.3.</span> <span class="toc-text">23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-23"><span class="toc-number">2.4.</span> <span class="toc-text">24</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-24"><span class="toc-number">2.5.</span> <span class="toc-text">25</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-25"><span class="toc-number">2.6.</span> <span class="toc-text">26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-26"><span class="toc-number">2.7.</span> <span class="toc-text">27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-27"><span class="toc-number">2.8.</span> <span class="toc-text">28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-28"><span class="toc-number">2.9.</span> <span class="toc-text">29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-29"><span class="toc-number">2.10.</span> <span class="toc-text">30</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">计算机取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-30"><span class="toc-number">3.1.</span> <span class="toc-text">41</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-31"><span class="toc-number">3.2.</span> <span class="toc-text">42</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-32"><span class="toc-number">3.3.</span> <span class="toc-text">43</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-33"><span class="toc-number">3.4.</span> <span class="toc-text">44</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-34"><span class="toc-number">3.5.</span> <span class="toc-text">45</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-35"><span class="toc-number">3.6.</span> <span class="toc-text">46</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-36"><span class="toc-number">3.7.</span> <span class="toc-text">47</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-37"><span class="toc-number">3.8.</span> <span class="toc-text">48</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-38"><span class="toc-number">3.9.</span> <span class="toc-text">49</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-39"><span class="toc-number">3.10.</span> <span class="toc-text">50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-40"><span class="toc-number">3.11.</span> <span class="toc-text">51</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-41"><span class="toc-number">3.12.</span> <span class="toc-text">52</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-42"><span class="toc-number">3.13.</span> <span class="toc-text">53</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-43"><span class="toc-number">3.14.</span> <span class="toc-text">54</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-44"><span class="toc-number">3.15.</span> <span class="toc-text">55</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-45"><span class="toc-number">3.16.</span> <span class="toc-text">56</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-46"><span class="toc-number">3.17.</span> <span class="toc-text">57</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-47"><span class="toc-number">3.18.</span> <span class="toc-text">58</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-48"><span class="toc-number">3.19.</span> <span class="toc-text">59</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-49"><span class="toc-number">3.20.</span> <span class="toc-text">60</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-50"><span class="toc-number">3.21.</span> <span class="toc-text">61</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-51"><span class="toc-number">3.22.</span> <span class="toc-text">62</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-52"><span class="toc-number">3.23.</span> <span class="toc-text">63</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-53"><span class="toc-number">3.24.</span> <span class="toc-text">64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-54"><span class="toc-number">3.25.</span> <span class="toc-text">65</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%A9%E8%81%94%E7%BD%91%E5%8F%96%E8%AF%81"><span class="toc-number">4.</span> <span class="toc-text">物联网取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-55"><span class="toc-number">4.1.</span> <span class="toc-text">66</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-56"><span class="toc-number">4.2.</span> <span class="toc-text">67</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-57"><span class="toc-number">4.3.</span> <span class="toc-text">68</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-58"><span class="toc-number">4.4.</span> <span class="toc-text">69</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-59"><span class="toc-number">4.5.</span> <span class="toc-text">70</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-60"><span class="toc-number">4.6.</span> <span class="toc-text">71</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-61"><span class="toc-number">4.7.</span> <span class="toc-text">72</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-62"><span class="toc-number">4.8.</span> <span class="toc-text">73</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E7%BB%88%E7%AB%AF%E5%8F%96%E8%AF%81"><span class="toc-number">5.</span> <span class="toc-text">移动终端取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-63"><span class="toc-number">5.1.</span> <span class="toc-text">74</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-64"><span class="toc-number">5.2.</span> <span class="toc-text">75</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-65"><span class="toc-number">5.3.</span> <span class="toc-text">76</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-66"><span class="toc-number">5.4.</span> <span class="toc-text">77</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-67"><span class="toc-number">5.5.</span> <span class="toc-text">78</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-68"><span class="toc-number">5.6.</span> <span class="toc-text">79</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-69"><span class="toc-number">5.7.</span> <span class="toc-text">80</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-70"><span class="toc-number">5.8.</span> <span class="toc-text">81</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-71"><span class="toc-number">5.9.</span> <span class="toc-text">82</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-72"><span class="toc-number">5.10.</span> <span class="toc-text">83</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-73"><span class="toc-number">5.11.</span> <span class="toc-text">84</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-74"><span class="toc-number">5.12.</span> <span class="toc-text">85</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-75"><span class="toc-number">5.13.</span> <span class="toc-text">86</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-76"><span class="toc-number">5.14.</span> <span class="toc-text">87</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-77"><span class="toc-number">5.15.</span> <span class="toc-text">88</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img src="/img/article/Black_hole.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="龙信杯2025 部分writeup+复现"/></a><div class="content"><a class="title" href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现">龙信杯2025 部分writeup+复现</a><time datetime="2025-11-14T16:00:00.000Z" title="Created 2025-11-15 00:00:00">2025-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现"><img src="/img/article/Pillars_of_creation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数证杯2025 部分writeup+复现"/></a><div class="content"><a class="title" href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现">数证杯2025 部分writeup+复现</a><time datetime="2025-11-06T16:00:00.000Z" title="Created 2025-11-07 00:00:00">2025-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img src="/img/article/sirius.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0xGame2025 大而美 Official Writeup"/></a><div class="content"><a class="title" href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup">0xGame2025 大而美 Official Writeup</a><time datetime="2025-10-30T16:00:00.000Z" title="Created 2025-10-31 00:00:00">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d2d3541f/" title="hackmyvm Machines-Easy"><img src="/img/article/sirius.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hackmyvm Machines-Easy"/></a><div class="content"><a class="title" href="/posts/d2d3541f/" title="hackmyvm Machines-Easy">hackmyvm Machines-Easy</a><time datetime="2025-10-30T16:00:00.000Z" title="Created 2025-10-31 00:00:00">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f8a60ebc/" title="春秋云境-GreatWall"><img src="/img/article/vega.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云境-GreatWall"/></a><div class="content"><a class="title" href="/posts/f8a60ebc/" title="春秋云境-GreatWall">春秋云境-GreatWall</a><time datetime="2025-10-23T16:00:00.000Z" title="Created 2025-10-24 00:00:00">2025-10-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],

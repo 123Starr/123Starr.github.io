@@ -1,0 +1,1374 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>龙信杯2025 部分writeup+复现 | St4rr's Blog</title><meta name="author" content="St4rr"><meta name="copyright" content="St4rr"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="不会的还是太多了，根据网上佬们的wp好好复现一下吧 （又来吃百家饭了）  手机取证 1 分析手机镜像，请问机身的Wi-Fi 信号源的物理地址是什么？[标准格式:01:02:03:04:05:06] 在&#x2F;misc&#x2F;wifi&#x2F;WifiConfigStore.xml中可找到   img  00:db:60:6e:86:13 2 分析手机镜像，请问张大的手机号码尾号是380">
+<meta property="og:type" content="article">
+<meta property="og:title" content="龙信杯2025 部分writeup+复现">
+<meta property="og:url" content="https://www.blog.st4rr.top/posts/6fbde62c/index.html">
+<meta property="og:site_name" content="St4rr&#39;s Blog">
+<meta property="og:description" content="不会的还是太多了，根据网上佬们的wp好好复现一下吧 （又来吃百家饭了）  手机取证 1 分析手机镜像，请问机身的Wi-Fi 信号源的物理地址是什么？[标准格式:01:02:03:04:05:06] 在&#x2F;misc&#x2F;wifi&#x2F;WifiConfigStore.xml中可找到   img  00:db:60:6e:86:13 2 分析手机镜像，请问张大的手机号码尾号是380">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.blog.st4rr.top/img/article/Black_hole.jpg">
+<meta property="article:published_time" content="2025-11-14T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-11-17T09:36:36.507Z">
+<meta property="article:author" content="St4rr">
+<meta property="article:tag" content="Writeup">
+<meta property="article:tag" content="CTF">
+<meta property="article:tag" content="Forensics">
+<meta property="article:tag" content="数证杯">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.blog.st4rr.top/img/article/Black_hole.jpg"><link rel="shortcut icon" href="/img/galaxy.jpeg"><link rel="canonical" href="https://www.blog.st4rr.top/posts/6fbde62c/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.12.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?11ae8bff5150c46570a0a934313effe5";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-MGDNR814PE"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MGDNR814PE');
+</script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","languages":{"hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":200,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: 'days',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.0/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '龙信杯2025 部分writeup+复现',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-11-17 17:36:36'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.0"></head><body><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+document.addEventListener('pjax:send', () => {
+  Pace.restart()
+})
+</script><link rel="stylesheet" href="/css/center-atom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/grey_bwm.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/article/Black_hole.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="St4rr's Blog"><img class="site-icon" src="/img/earth.png"/><span class="site-name">St4rr's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> Search</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fa fa-graduation-cap"></i><span> Articles</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> categories</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> tags</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> archives</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> Links</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> Comment</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">龙信杯2025 部分writeup+复现</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-11-14T16:00:00.000Z" title="Created 2025-11-15 00:00:00">2025-11-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-11-17T09:36:36.507Z" title="Updated 2025-11-17 17:36:36">2025-11-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Writeup/">Writeup</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">7.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">Reading Time:</span><span>31mins</span></span><span class="post-meta-separator">|</span><span class="leancloud_visitors" id="/posts/6fbde62c/" data-flag-title="龙信杯2025 部分writeup+复现"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span class="leancloud-visitors-count"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/posts/6fbde62c/#post-comment" itemprop="discussionUrl"><span class="valine-comment-count" data-xid="/posts/6fbde62c/" itemprop="commentCount"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>不会的还是太多了，根据网上佬们的wp好好复现一下吧
+<del>（又来吃百家饭了）</del></p>
+</blockquote>
+<h1 id="手机取证">手机取证</h1>
+<h2 id="section">1</h2>
+<p>分析手机镜像，请问机身的Wi-Fi
+信号源的物理地址是什么？[标准格式:01:02:03:04:05:06]</p>
+<p>在/misc/wifi/WifiConfigStore.xml中可找到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762862746060-84a0912c-3ac3-41fd-be8d-2ccb72c2c5b3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>00:db:60:6e:86:13</p>
+<h2 id="section-1">2</h2>
+<p>分析手机镜像，请问张大的手机号码尾号是3807的手机号码是多少？[标准格式：15599005009]</p>
+<p>全局搜索</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762864037607-8fccdbf0-eec4-49e0-9533-c10b44bdf397.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>15680193807</p>
+<h2 id="section-2">3</h2>
+<p>分析手机镜像，分析手机镜像，其通讯录中号码归属地最多的直辖市是哪里？[标准格式：天津市]</p>
+<p>排个序不难发现明显北京市最多</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762864157011-127c3843-cada-48b9-964e-398d17d91b19.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>北京市</p>
+<h2 id="section-3">4</h2>
+<p>分析手机镜像，嫌疑人最近卸载过的的一款小说APP的名字是什么？[标准格式：com.tencent.mm]</p>
+<p>查看包的缓存/system/package_cache/1，找到有个com.kmxs.reader未在APP列表中出现</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762866989459-2d8a3098-d5a1-45e4-94e1-15ffd1c16516.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762867007330-60af5614-37c8-4b58-bfc0-8e58c0b1aee4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>七猫免费小说</p>
+<h2 id="section-4">5</h2>
+<p>分析手机镜像，嫌疑人使用“逐浪小说”应用最近一次搜索小说书名叫什么？[标准格式：斗破苍穹]</p>
+<p>可以看到手机上有个小黄鸟，这是个抓包工具，找到其数据库并导出</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762867561672-671ca39a-6aa1-408f-968c-0038178eb1ad.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>过滤出逐浪APP最新的一条搜索记录</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762868082925-4b77654e-9e63-44cb-89f6-81e2ef2dfca0.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762868112779-60f45433-0a54-44bf-857d-52058f154015.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>从斗罗开始无敌</p>
+<h2 id="section-5">6</h2>
+<p>分析手机镜像，嫌疑人曾使用“QQ浏览器”使用过的搜索关键词有几个？[标准格式：1个]</p>
+<p>过滤出相应的包，其中URL的keyword后面就是搜索的关键词</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762870269957-c91923fc-49c9-4825-8c43-7a10f5130323.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>去重一下，提取出来共27条</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762870727798-a9bc047e-f4f4-467b-a3c6-4fbcdde84231.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>27</p>
+<h2 id="section-6">7</h2>
+<p>分析手机镜像，嫌疑人曾经安装过的一款AI软件登录的用户名是什么？[标准格式：用户123456]</p>
+<p>在前面的package_cache里面还可以找到有个com.larus.nova，同样也是被删除了的app，搜索后得知这是豆包AI</p>
+<p>过滤出相关且用户登陆状态为1的记录，可以得到用户的uid</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762878795369-a0e009b3-7362-4e0d-bb29-76b6797bdd62.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>根据给出的答案格式用正则表达式进行全局暴搜</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1197846826330169.*用户</span><br><span class="line">用户.*1197846826330169</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762880623330-508d3884-a75d-4d52-8ec8-5e54ad9c7b69.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>用户885861</p>
+<h2 id="section-7">8</h2>
+<p>接上问，嫌疑人在此AI软件中最后一次提问的内容是什么？[按照实际值填写]</p>
+<p>在上题暴搜到的记录中可以零碎的看到一些与AI之间的问答内容</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762929401823-bbba7c0b-ee83-4b59-aab7-fa1d867a7d16.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>这个是响应包，根据其文件名找到对应的请求包</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762930140145-20abecac-32e7-4e05-a114-1832f3463d91.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>在数据库中搜索含有这个路由的URL，并按照时间排序</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762930236597-521eaac3-095a-47f3-bfd8-0496c4ed175e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>用session id搜索最新的那一条，找到其响应包</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762930338881-7d9cd5bd-b04b-41a8-9da3-ab8e034019f3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>小说爬取设计侵权吗</p>
+<h2 id="section-8">9</h2>
+<p>分析手机镜像，嫌疑人花费多少元购买小说网站源码？[标准格式：2000]</p>
+<p>电鸽聊天记录里面有提到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762930444734-97ff4030-7c3a-45e5-bc0d-6b25f5a0331e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>1300</p>
+<h2 id="section-9">10</h2>
+<p>接上问，嫌疑人购买的小说网站源码的MD5值后六位是什么？[标准格式：12a34b]</p>
+<p>导出上题中看到的源码计算MD5</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762930650595-596a170e-5b44-4c94-8e82-ba2000691428.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>d9ed2d</p>
+<h2 id="section-10">11</h2>
+<p>分析手机镜像，嫌疑人的虚拟钱包地址是什么？[按照实际值填写]</p>
+<p>聊天记录中可以看到对方的账户</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762930800792-264d0877-36a9-408e-a284-d50ce995df2f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>在区块链浏览器上查询，找到交易时间内的交易记录</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762931058013-bb98ca8e-e7e3-4947-821a-5c0e2ac8ceb0.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>0x2a80985eea4283fdebddc5ec25c15d8cb5bcc09f</p>
+<h2 id="section-11">12</h2>
+<p>分析手机镜像，嫌疑人购买视频网站源码花费了多少USDT？[标准格式：500]</p>
+<p>根据上题聊天记录</p>
+<p>1000</p>
+<h2 id="section-12">13</h2>
+<p>分析手机镜像，其接受过一个远控木马程序（exe），请问其MD5值后六位是多少？[标准格式：12a34b]</p>
+<p>同样在前面的聊天记录中可以找到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762931212917-9af149b0-5bcc-42d3-b3ca-b309e71d0de1.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762932201249-4c37fc9a-d7ed-4428-99e7-46598fbd669f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>e4a090</p>
+<h2 id="section-13">14</h2>
+<p>接上题，该exe使用了哪种压缩方式？[标准格式：TAR]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762932264264-ce49b620-389e-4c43-93a7-ba648663d6b9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>UPX</p>
+<h2 id="section-14">15</h2>
+<p>接上题，该exe使用的压缩方式修改了几处特征？[标准格式：5]</p>
+<p>明显UPX被改为了VMP</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762932473086-84ef2207-7c2d-4743-860b-9f10d08701f7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>3</p>
+<h2 id="section-15">16</h2>
+<p>接上题，该exe外联的端口号是多少？[标准格式：3306]</p>
+<p>上面的三处改回去以后upx脱壳</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762950544452-244f3936-5459-42cf-8e2b-3baec642fd80.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>逆向一下可以看见端口是4444</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762950669533-c382dfaf-a5af-4779-b2ac-3406388706bc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>4444</p>
+<h2 id="section-16">17</h2>
+<p>接上题，该exe会搜索并加密几种类型的文件？[标准格式：5]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762950839437-06336403-aa11-44e9-9442-9edaa0a67da3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>3</p>
+<h2 id="section-17">18</h2>
+<p>接上题，该exe会释放一个新的exe，请问新的exe是用哪种编程语言编写的？[标准格式：php]</p>
+<p>用resource hacker可以看到有个exe</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762951195863-44e1c637-1737-4103-8285-13a80e9b661a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>到处以后这个程序直接就是python的图标</p>
+<p>python</p>
+<h2 id="section-18">19</h2>
+<p>接上题，释放出的exe使用的邮件服务器的授权码是？[标准格式：scxcsaafas]</p>
+<p>python逆向</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762951298179-ce8245b3-4c53-4bb1-8d46-18904399fd91.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>找到test.pyc，反编译一下</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762951445054-b030b856-c119-40f8-9475-16ac664985bd.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>qycirqwzxogjdgbh</p>
+<h2 id="section-19">20</h2>
+<p>分析手机镜像，嫌疑人发布的抖音作品是参考哪篇文学巨著生成的？[标准格式：三国演义]</p>
+<p>在kimi的对话中可以看到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762951913828-4678aa97-6d7d-4947-bf17-560b3ba74fc4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>钢铁是怎样炼成的</p>
+<h2 id="section-20">21</h2>
+<p>分析手机镜像，嫌疑人通过抖音发布了几个作品？[标准格式：6]</p>
+<p>直接找到这个用户</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762952041577-54715870-7821-4465-95cf-91bf6e3cd3a3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>2</p>
+<h2 id="section-21">22</h2>
+<p>接上题，作品ID为 7564293625007115554
+的观众浏览量为几次？[标准格式：5]</p>
+<p>全局暴搜这个ID</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762953928249-b3ee5a8d-d18b-478f-afa4-d8782c1173a4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>导出这个文件，在其中搜索这个ID，附近找到play_count</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762953908666-b28243d8-dcd3-41f7-9f1d-82c0ef679f50.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>23</p>
+<h2 id="section-22">23</h2>
+<p>分析手机镜像，嫌疑人相册中的图片为其非法所得（不考虑重复），请分析其总收益为多少元？[标准格式：12345]</p>
+<p>找到这些图片</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762954701946-d5322eca-0d8d-42e0-b950-27bc9873cdfa.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>手动全部加起来</p>
+<p>6577</p>
+<h2 id="section-23">24</h2>
+<p>分析手机镜像，嫌疑人电脑的开机密码是多少？[按照实际值填写]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762957233654-cb1b2776-bb5a-4c8b-9179-b71a1a1a0daf.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>qwe321@@@</p>
+<h1 id="计算机取证">计算机取证</h1>
+<h2 id="section-24">25</h2>
+<p>分析Windows检材，PowerShell中多少个命令关联URL地址(不去重)？[标准格式：123]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762957841770-4d79a391-897b-4a56-8187-ff4e9df786d8.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>5</p>
+<h2 id="section-25">26</h2>
+<p>分析Windows检材，VeraCrypt加密容器密码是什么？[标准格式：根据实际值填写]</p>
+<p>win+v查看剪贴板</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762962421535-d14fef00-eb91-4146-aa8a-fbaf6b11ce83.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>UJw4FspAsmNVRACWf4GQazvd</p>
+<h2 id="section-26">27</h2>
+<p>分析Windows检材，加密容器中“密码本.txt”文件的SHA-256哈希值后6位是多少？[标准格式：全大写]</p>
+<p>可以找到有个1.png，看起来是个VC容器</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762962603844-21bd1368-a21f-492d-95a2-67327b90b5cc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>把磁盘添加到火眼，能直接分析出有个被删除的文件密码本.txt</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762962969625-2ca26d17-a531-4fda-b7bc-ce6a338bdf3d.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762963151952-cc6935f5-0abd-4ab9-8aee-1dc5df0abe6e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>8E3FC7</p>
+<h2 id="section-27">28</h2>
+<p>分析Windows检材，接上题,根据“密码本.txt”文件对账单数据压缩包进行解密，其密码是多少？[标准格式：根据实际值填写]</p>
+<p>字典爆破</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762963295165-270f9d1a-1636-41ae-b5db-db40b5a8cf24.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>VteGElLDQu</p>
+<h2 id="section-28">29</h2>
+<p>分析Windows检材，接上题，分析其账单数据中哪个类别的金额最多？[标准格式：根据实际值填写]</p>
+<p>让AI写个脚本</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> datetime <span class="keyword">import</span> datetime</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成从 2023-01 到 2025-06 的所有月份字符串</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_month_range</span>(<span class="params">start, end</span>):</span><br><span class="line">    start = datetime.strptime(start, <span class="string">&quot;%Y-%m&quot;</span>)</span><br><span class="line">    end = datetime.strptime(end, <span class="string">&quot;%Y-%m&quot;</span>)</span><br><span class="line">    months = []</span><br><span class="line">    current = start</span><br><span class="line">    <span class="keyword">while</span> current &lt;= end:</span><br><span class="line">        months.append(current.strftime(<span class="string">&quot;%Y-%m&quot;</span>))</span><br><span class="line">        <span class="keyword">if</span> current.month == <span class="number">12</span>:</span><br><span class="line">            current = current.replace(year=current.year + <span class="number">1</span>, month=<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            current = current.replace(month=current.month + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> months</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取所有需要处理的文件名</span></span><br><span class="line">months = generate_month_range(<span class="string">&quot;2023-01&quot;</span>, <span class="string">&quot;2025-06&quot;</span>)</span><br><span class="line">files = [<span class="string">f&quot;<span class="subst">&#123;month&#125;</span>.xlsx&quot;</span> <span class="keyword">for</span> month <span class="keyword">in</span> months]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 汇总所有数据</span></span><br><span class="line">all_data = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> filepath <span class="keyword">in</span> files:</span><br><span class="line">    <span class="keyword">if</span> os.path.exists(filepath):</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            df = pd.read_excel(filepath, engine=<span class="string">&#x27;openpyxl&#x27;</span>)</span><br><span class="line">            <span class="comment"># 确保有必要的列</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">&#x27;项目&#x27;</span> <span class="keyword">in</span> df.columns <span class="keyword">and</span> <span class="string">&#x27;金额&#x27;</span> <span class="keyword">in</span> df.columns:</span><br><span class="line">                all_data.append(df[[<span class="string">&#x27;项目&#x27;</span>, <span class="string">&#x27;金额&#x27;</span>]])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;⚠️ 跳过 <span class="subst">&#123;file&#125;</span>：缺少必要列&quot;</span>)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;❌ 读取 <span class="subst">&#123;file&#125;</span> 出错: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;📁 文件不存在: <span class="subst">&#123;file&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并所有数据</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> all_data:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;没有找到有效数据。&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    combined_df = pd.concat(all_data, ignore_index=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按“项目”分组求和</span></span><br><span class="line">    summary = combined_df.groupby(<span class="string">&#x27;项目&#x27;</span>)[<span class="string">&#x27;金额&#x27;</span>].<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 输出结果</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n📊 各项目总金额排名（从高到低）：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(summary.to_string())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 输出金额最多的类别</span></span><br><span class="line">    top_category = summary.index[<span class="number">0</span>]</span><br><span class="line">    top_amount = summary.iloc[<span class="number">0</span>]</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n🏆 金额最多的类别是：<span class="subst">&#123;top_category&#125;</span>，总计：<span class="subst">&#123;top_amount:<span class="number">.2</span>f&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762963710562-9e723051-71ec-4a26-bc5d-e1d3dae5a027.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>小说网站</p>
+<h2 id="section-29">30</h2>
+<p>分析Windows检材，Bitlocker的恢复密钥前6位是什么？[标准格式：123456]</p>
+<p>前面的1.png同一目录下的3.png高被修改过，改回去得到bitlocker密钥</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762964141312-8c1c1162-d3e1-4487-a908-796c062a318a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762964157798-04fc4ac1-5358-4f5c-b477-ac57da7858c5.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>541079</p>
+<h2 id="section-30">31</h2>
+<p>分析Windows检材，嫌疑人使用的Windows激活工具的版本是什么？[标准格式：v10.1.1]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762964207184-3406fec9-9a30-4735-9daa-68c6c8ff87de.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>v4.2.8</p>
+<h2 id="section-31">32</h2>
+<p>分析Windows检材，嫌疑人电脑中安装的加密软件（非VeraCrypt）版本是多少？[标准格式：1.2.3]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762964253064-ccad03bf-2688-4497-8578-ebb40ed7465b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>1.17.1</p>
+<h2 id="section-32">33</h2>
+<p>分析Windows检材，接上题，该加密软件恢复秘钥文件最后一个单词是什么？[标准格式：根据实际值填写]</p>
+<p>太阴了，后面还有被涂成白色的隐藏内容</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762964562762-58215c16-1649-4fd1-a7bf-0c3f531a303e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>accent</p>
+<h2 id="section-33">34</h2>
+<p>分析Windows检材，mysql的数据库路径是什么？[标准格式：C:.26]</p>
+<p>看到装了个phpstudy，那多半就是这个了</p>
+<p>D:_pro.26</p>
+<h2 id="section-34">35</h2>
+<p>分析Windows检材，数据库中novel_id为3的爬虫代码其爬取的网站域名地址是什么？[标准格式：https://www.baidu.com]</p>
+<p>用前面的道德恢复密钥重置一下cryptomator的密码，然后解密磁盘，里面都是爬虫脚本</p>
+<p>找到url</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762965107823-9d8a5a19-1237-41e0-a452-773f9203a104.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>https://www.shuzhige.com</p>
+<h2 id="section-35">36</h2>
+<p>分析Windows检材，对比数据库与爬去小说数据，数据库中缺少的小说其共有多少章节？[标准格式：123]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762965434409-cb791cd6-a04f-4c8e-a270-82df003b9829.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1762965414095-5d500ccd-6c76-46b9-be2a-2402967adc7f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>3</p>
+<h2 id="section-36">37</h2>
+<p>分析Windows检材，嫌疑人爬取的小说共有多少汉字（包括繁体汉字，不计标点符号）？[标准格式：123]</p>
+<p>写脚本计算</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">countt</span>(<span class="params">path, max_chapter</span>):</span><br><span class="line">    total_count = <span class="number">0</span></span><br><span class="line">    chinese_pattern = re.<span class="built_in">compile</span>(<span class="string">r&#x27;[\u4e00-\u9fff\u3400-\u4dbf\U00020000-\U0002a6df\U0002a700-\U0002b73f\U0002b740-\U0002b81f\U0002b820-\U0002ceaf]&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, max_chapter + <span class="number">1</span>):</span><br><span class="line">        filename = <span class="string">f&quot;第<span class="subst">&#123;i:04d&#125;</span>章.txt&quot;</span></span><br><span class="line">        filepath = os.path.join(path, filename)</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(filepath):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;警告：文件 <span class="subst">&#123;filepath&#125;</span> 不存在，跳过。&quot;</span>)</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">with</span> <span class="built_in">open</span>(filepath, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                content = f.read()</span><br><span class="line">                matches = chinese_pattern.findall(content)</span><br><span class="line">                total_count += <span class="built_in">len</span>(matches)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;错误：读取文件 <span class="subst">&#123;filepath&#125;</span> 时出错：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> total_count</span><br><span class="line"><span class="built_in">print</span>(countt(<span class="string">&quot;hongloumeng&quot;</span>,<span class="number">120</span>)+countt(<span class="string">&quot;liaozhaizhiyi&quot;</span>,<span class="number">499</span>)+countt(<span class="string">&quot;sanguoyanyi&quot;</span>,<span class="number">120</span>)+countt(<span class="string">&quot;shuihuzhuan&quot;</span>,<span class="number">121</span>)+countt(<span class="string">&quot;xiyouji&quot;</span>,<span class="number">101</span>))</span><br></pre></td></tr></table></figure>
+<p>2946354</p>
+<h2 id="section-37">38</h2>
+<p>分析Windows检材，嫌疑人为躲避侵权，将爬取文本中多个不同汉字分别替换成另一些汉字（如“我”→“窝”），分析共有多少个不同汉字被替换（相同字仅计一次）？[标准格式：123]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_chinese_char</span>(<span class="params">c</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;\u4e00&#x27;</span> &lt;= c &lt;= <span class="string">&#x27;\u9fff&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compare_files</span>(<span class="params">original_path, replaced_path</span>):</span><br><span class="line">    replacements = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(original_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">        <span class="built_in">open</span>(replaced_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">            content1 = f1.read()</span><br><span class="line">            content2 = f2.read()</span><br><span class="line"></span><br><span class="line">        min_len = <span class="built_in">min</span>(<span class="built_in">len</span>(content1), <span class="built_in">len</span>(content2))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(min_len):</span><br><span class="line">            c1, c2 = content1[i], content2[i]</span><br><span class="line">            <span class="keyword">if</span> c1 != c2 <span class="keyword">and</span> is_chinese_char(c1) <span class="keyword">and</span> is_chinese_char(c2):</span><br><span class="line">                replacements.add((c1, c2))</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;警告：无法比较文件 <span class="subst">&#123;original_path&#125;</span> 和 <span class="subst">&#123;replaced_path&#125;</span>，错误：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> replacements</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    original_root = <span class="string">&quot;爬取-原本&quot;</span></span><br><span class="line">    replaced_root = <span class="string">&quot;爬取-替换&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(original_root):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;错误：目录 &#x27;<span class="subst">&#123;original_root&#125;</span>&#x27; 不存在&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(replaced_root):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;错误：目录 &#x27;<span class="subst">&#123;replaced_root&#125;</span>&#x27; 不存在&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    all_replacements = <span class="built_in">set</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(original_root):</span><br><span class="line">        rel_path = os.path.relpath(root, original_root)</span><br><span class="line">        replaced_dir = replaced_root <span class="keyword">if</span> rel_path == <span class="string">&quot;.&quot;</span> <span class="keyword">else</span> os.path.join(replaced_root, rel_path)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">            orig_file = os.path.join(root, file)</span><br><span class="line">            repl_file = os.path.join(replaced_dir, file)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(repl_file):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;警告：在 &#x27;<span class="subst">&#123;replaced_root&#125;</span>&#x27; 中未找到对应文件：<span class="subst">&#123;repl_file&#125;</span>&quot;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            pairs = compare_files(orig_file, repl_file)</span><br><span class="line">            all_replacements.update(pairs)</span><br><span class="line"></span><br><span class="line">    sorted_replacements = <span class="built_in">sorted</span>(all_replacements, key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;共发现 <span class="subst">&#123;<span class="built_in">len</span>(sorted_replacements)&#125;</span> 个唯一的汉字替换对：&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> orig, repl <span class="keyword">in</span> sorted_replacements:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;orig&#125;</span> → <span class="subst">&#123;repl&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763002867521-261a8d70-d5be-40f9-9151-f2b726b05f6d.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>5</p>
+<h2 id="section-38">39</h2>
+<p>分析Windows检材，对比爬取数据与替换数据，被替换汉字（不去重）数量最多的文件名称是什么？[标准格式：第0001章.txt]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">def is_chinese_char(c):</span><br><span class="line">    &quot;&quot;&quot;判断是否为常用汉字（CJK Unified Ideographs）&quot;&quot;&quot;</span><br><span class="line">    return &#x27;\u4e00&#x27; &lt;= c &lt;= &#x27;\u9fff&#x27;</span><br><span class="line"></span><br><span class="line">def count_replaced_chars_in_file(orig_path, repl_path):</span><br><span class="line">    &quot;&quot;&quot;返回该文件中被替换的汉字总次数（不去重）&quot;&quot;&quot;</span><br><span class="line">    count = 0</span><br><span class="line">    try:</span><br><span class="line">        with open(orig_path, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f1, \</span><br><span class="line">             open(repl_path, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f2:</span><br><span class="line">            content1 = f1.read()</span><br><span class="line">            content2 = f2.read()</span><br><span class="line"></span><br><span class="line">        min_len = min(len(content1), len(content2))</span><br><span class="line">        for i in range(min_len):</span><br><span class="line">            c1, c2 = content1[i], content2[i]</span><br><span class="line">            if c1 != c2 and is_chinese_char(c1) and is_chinese_char(c2):</span><br><span class="line">                count += 1</span><br><span class="line">    except Exception as e:</span><br><span class="line">        print(f&quot;警告：无法处理文件对 &#123;orig_path&#125; / &#123;repl_path&#125;，错误：&#123;e&#125;&quot;)</span><br><span class="line">    return count</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    original_root = &quot;爬取-原本&quot;</span><br><span class="line">    replaced_root = &quot;爬取-替换&quot;</span><br><span class="line"></span><br><span class="line">    if not os.path.isdir(original_root):</span><br><span class="line">        print(f&quot;错误：目录 &#x27;&#123;original_root&#125;&#x27; 不存在&quot;)</span><br><span class="line">        return</span><br><span class="line">    if not os.path.isdir(replaced_root):</span><br><span class="line">        print(f&quot;错误：目录 &#x27;&#123;replaced_root&#125;&#x27; 不存在&quot;)</span><br><span class="line">        return</span><br><span class="line"></span><br><span class="line">    max_count = -1</span><br><span class="line">    max_file_relpath = None</span><br><span class="line"></span><br><span class="line">    for root, dirs, files in os.walk(original_root):</span><br><span class="line">        rel_path = os.path.relpath(root, original_root)</span><br><span class="line">        replaced_dir = replaced_root if rel_path == &quot;.&quot; else os.path.join(replaced_root, rel_path)</span><br><span class="line"></span><br><span class="line">        for file in files:</span><br><span class="line">            orig_file = os.path.join(root, file)</span><br><span class="line">            repl_file = os.path.join(replaced_dir, file)</span><br><span class="line"></span><br><span class="line">            if not os.path.exists(repl_file):</span><br><span class="line">                print(f&quot;警告：在 &#x27;&#123;replaced_root&#125;&#x27; 中未找到对应文件：&#123;repl_file&#125;&quot;)</span><br><span class="line">                continue</span><br><span class="line"></span><br><span class="line">            count = count_replaced_chars_in_file(orig_file, repl_file)</span><br><span class="line">            if count &gt; max_count:</span><br><span class="line">                max_count = count</span><br><span class="line">                # 使用相对于原始根目录的路径作为标识</span><br><span class="line">                max_file_relpath = os.path.join(rel_path, file) if rel_path != &quot;.&quot; else file</span><br><span class="line"></span><br><span class="line">    if max_file_relpath is None:</span><br><span class="line">        print(&quot;未找到任何可比较的文件。&quot;)</span><br><span class="line">    else:</span><br><span class="line">        print(f&quot;被替换汉字数量最多的文件是：&#123;max_file_relpath&#125;&quot;)</span><br><span class="line">        print(f&quot;共发生 &#123;max_count&#125; 次汉字替换（不去重）。&quot;)</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763003116233-5c9fa102-1257-4d93-9b67-c68ca85ae83a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>第0062章.txt</p>
+<h2 id="section-39">40</h2>
+<p>分析Windows检材，对比爬取数据与替换数据，是否存在完全没有汉字被替换的文件？若存在，请给出文件的数量；若不存在，请直接填写“否”。[标准格式：123
+或者 否]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">is_chinese_char</span>(<span class="params">c</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;\u4e00&#x27;</span> &lt;= c &lt;= <span class="string">&#x27;\u9fff&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">has_any_replacement</span>(<span class="params">orig_path, repl_path</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(orig_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f1, \</span><br><span class="line">             <span class="built_in">open</span>(repl_path, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f2:</span><br><span class="line">            content1 = f1.read()</span><br><span class="line">            content2 = f2.read()</span><br><span class="line"></span><br><span class="line">        min_len = <span class="built_in">min</span>(<span class="built_in">len</span>(content1), <span class="built_in">len</span>(content2))</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(min_len):</span><br><span class="line">            c1, c2 = content1[i], content2[i]</span><br><span class="line">            <span class="keyword">if</span> c1 != c2 <span class="keyword">and</span> is_chinese_char(c1) <span class="keyword">and</span> is_chinese_char(c2):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span> </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span> </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;警告：无法比较 <span class="subst">&#123;orig_path&#125;</span> 与 <span class="subst">&#123;repl_path&#125;</span>，错误：<span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    original_root = <span class="string">&quot;爬取-原本&quot;</span></span><br><span class="line">    replaced_root = <span class="string">&quot;爬取-替换&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(original_root):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;错误：&#x27;爬取-原本&#x27; 目录不存在&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isdir(replaced_root):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;错误：&#x27;爬取-替换&#x27; 目录不存在&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    no_replacement_count = <span class="number">0</span></span><br><span class="line">    total_files = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(original_root):</span><br><span class="line">        rel_path = os.path.relpath(root, original_root)</span><br><span class="line">        replaced_dir = replaced_root <span class="keyword">if</span> rel_path == <span class="string">&quot;.&quot;</span> <span class="keyword">else</span> os.path.join(replaced_root, rel_path)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">            orig_file = os.path.join(root, file)</span><br><span class="line">            repl_file = os.path.join(replaced_dir, file)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(repl_file):</span><br><span class="line">                <span class="keyword">continue</span>  </span><br><span class="line"></span><br><span class="line">            total_files += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> has_any_replacement(orig_file, repl_file):</span><br><span class="line">                no_replacement_count += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> no_replacement_count &gt; <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(no_replacement_count)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;否&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763003775007-ae25599a-c10a-44a0-9554-61f4d7159d50.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>26</p>
+<h2 id="section-40">41</h2>
+<p>分析Windows检材，嫌疑人使用的默认浏览器名称是什么？[标准格式：Microsoft
+Edge]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763003999431-d723067f-898e-4e8b-b71a-4202879bc7b8.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763004061937-756618ad-8a62-4f35-917e-ceb27795bfd6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>Ablaze Floorp</p>
+<h2 id="section-41">42</h2>
+<p>分析Windows检材，嫌疑人使用的AI网站的端口是多少？[标准格式：123]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763004130873-bcf54e87-c53c-4dd5-8b36-3bc5b0521cdc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>18480</p>
+<h2 id="section-42">43</h2>
+<p>分析Windows检材，嫌疑人使用的AI网站登录密码是多少？[标准格式：根据实际值填写]</p>
+<p>由上题</p>
+<p>g123123</p>
+<h2 id="section-43">44</h2>
+<p>分析Windows检材，嫌疑人利用在线AI模仿创作的小说，其第五章标题是什么？[标准格式：根据实际值填写]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763004236769-1750cacd-b276-4c91-b2f0-2f22772ffb68.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>长安的回响</p>
+<h2 id="section-44">45</h2>
+<p>分析Windows检材，终点小说初步要求嫌疑人赔偿的经济损失金额为多少万元人民币？[标准格式：123]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763004277029-aa2841c2-7711-49a3-a827-86b1b61be537.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>10</p>
+<h2 id="section-45">46</h2>
+<p>分析Windows检材，根据律师函要求，嫌疑人最晚须于几月几日（含当日）前向终点小说提交经审核同意的书面致歉函？[标准格式：10月12日]</p>
+<p>由上图</p>
+<p>10月29日</p>
+<h2 id="section-46">47</h2>
+<p>分析Windows检材，嫌疑人NAS映射的盘符是什么？[标准格式：C]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763004451576-b603e54e-3c33-4efe-bd6e-594634863a1c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>Z</p>
+<h2 id="section-47">48</h2>
+<p>分析Windows检材，嫌疑人当时正在阅读的小说叫什么名字？[标准格式：三国演义]</p>
+<p>这里得把后面的服务器仿真起来</p>
+<p>从VM-EXSI
+Server中提取web-flat.vmdk和nas-flat.vmdk，仿真起来，配一下网段</p>
+<p>在nas服务器上用下面的命令修改一下samba用户shadowai的密码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smbpasswd -a shadowai</span><br></pre></td></tr></table></figure>
+<p>然后就能连上</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763005896206-78ac8232-744c-4d10-a4ea-ee8ec36e78cc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>现在可以运行桌面上的NeatReader了，可以看到正在读的小说</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763005969197-3c753ba8-cd7c-413a-9d16-f7733d33cd25.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>小年小月</p>
+<h2 id="section-48">49</h2>
+<p>分析Windows检材，接上题，嫌疑人当前看到该小说的第几章？[标准格式：第一章]</p>
+<p>打开可以看到读到了第五十一章</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763006046638-9e16bb2e-169c-446e-a1a4-f3c8b8d73d72.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>第五十一章</p>
+<h1 id="服务器取证">服务器取证</h1>
+<h2 id="section-49">50</h2>
+<p>请分析Exsi虚拟化平台是什么时候安装的？[标准格式：20250102-101258，年月日-时分秒，北京时间]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763009297443-c583866e-79ea-402a-83ce-e12fcd83fe89.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>注意时区，得要再加上8</p>
+<p>20251020-142808</p>
+<h2 id="section-50">51</h2>
+<p>请分析Exsi虚拟化平台虚拟机使用的ISO镜像大小是多少？[标准格式：2.58，单位：Gigabyte]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763009757619-95707b4e-5213-4f30-be6a-94caf7447ce3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>4.38</p>
+<h2 id="section-51">52</h2>
+<p>请分析nas服务器samba应用完整版本标识为？[标准格式：1.18.26-10.el6_5]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763009842886-e2944b73-6563-4ef1-a6fa-0d53d47baca6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>4.10.16-25.el7_9</p>
+<h2 id="section-52">53</h2>
+<p>请分析nas服务器samba应用共享目录允许访问的用户名为？[标准格式：gys666]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763020431311-d1a9a041-e97f-4dd6-a9ee-678878b3903e.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>shadowai</p>
+<h2 id="section-53">54*</h2>
+<p>嫌疑人在nas服务器中删除了面板日志，请分析其删除日志后第一次访问服务器的目录物理路径是？[标准格式：/var/soft/wegame]</p>
+<p>未知，自己找不到感觉合理的答案，网上也暂无</p>
+<h2 id="section-54">55</h2>
+<p>某用户在“2025-10-21
+18:40:53（北京时间）”向本地AI模型提问，请问其一共提问了几次？[标准格式：5]</p>
+<p>用之前在浏览器里得到的账号密码登录上，下载数据库</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763021467269-1a52b1b7-ceb6-4a48-9220-84d2a765efd1.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>查看数据库，找到题目要求时间的对话记录</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763021695376-d7be9f0e-9e4f-4d06-a3c0-ce97c722db8c.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763021665670-90899cd1-4f7c-4b01-86f5-b0ff91d9e1c7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>可以看到用户总共问了两个问题</p>
+<p><img
+src="/images/龙信杯2025-部分writeup-复现/1763021723385-87ab0f7f-0e75-410d-aecd-5fb6804f322e.png"
+alt="img" /> 2</p>
+<h2 id="section-55">56</h2>
+<p>接上题，第二轮交互总计Token
+Consumption（令牌消耗）多少个？[标准格式：10]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763021853422-e670bc21-567f-46fd-b552-c6367556a880.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>289</p>
+<h2 id="section-56">57</h2>
+<p>请分析AI模型在创建时注册的管理员账号的头像显示的数字是？[标准格式：15]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763021906135-ea8968d0-5b74-4ce3-b83d-1d690676e6d7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>2024</p>
+<h2 id="section-57">58</h2>
+<p>请分析卡密网站会隔一段时间会自动删除后台管理员登录日志，请问日志最多保存多少小时？[标准格式：10，单位：小时，四舍五入]</p>
+<p>查看一下宝塔面板入口</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763024774962-41abda45-7a74-4fb0-b4cd-0ba59e94be81.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>修改面板密码</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763024809251-79f043da-72a1-4c60-8155-ad67f9144851.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>登录进去以后看到网站名为kamiworld.info</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763024924573-a8f0903f-cf46-4d17-96c9-4e46c2307f45.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>查看网站源码，搜索login相关的文件就可以找到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763028457346-b18b9093-a1ae-4626-babf-a56fe3e0c6b3.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>720</p>
+<blockquote>
+<p><strong>到这里虚拟机寄了一次，重新仿真了一下，ip变为了192.168.188.226</strong></p>
+</blockquote>
+<h2 id="section-58">59</h2>
+<p>请分析卡密网站后台管理员登录成功后多少小时内无需重新登录？[标准格式：8，单位：小时]</p>
+<p>Login.php被混淆过</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763050521008-b8222e07-5bbd-4238-aca7-6188820b85c6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>复制出来，把eval改成echo，把输出粘贴到下面，把前面的echo删掉，再把粘贴内容中的eval改成echo，得到源码，在其中可看到答案为7天</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763050627695-b816c975-f524-45be-8c48-e43f51f5c67f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">admin</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">controller</span>\<span class="title">BasicAdmin</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">service</span>\<span class="title">LogService</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">service</span>\<span class="title">NodeService</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Db</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">captcha</span>\<span class="title">Captcha</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 系统登录控制器</span></span><br><span class="line"><span class="comment"> * class Login</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@package</span> app\admin\controller</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> Anyon &lt;zoujingli<span class="doctag">@qq</span>.com&gt;</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2017/02/10 13:59</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Login</span> <span class="keyword">extends</span> <span class="title">BasicAdmin</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 控制器基础方法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">_initialize</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="title function_ invoke__">session</span>(<span class="string">&#x27;user&#x27;</span>) &amp;&amp; <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">action</span>() !== <span class="string">&#x27;out&#x27;</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">action</span>() != <span class="string">&#x27;verifycode&#x27;</span>) &#123;</span><br><span class="line">      <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">redirect</span>(<span class="string">&#x27;@admin&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 用户登录</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> string</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">isGet</span>()) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">fetch</span>(<span class="string">&#x27;&#x27;</span>, [<span class="string">&#x27;title&#x27;</span> =&gt; <span class="string">&#x27;用户登录&#x27;</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 输入数据效验</span></span><br><span class="line">    <span class="variable">$username</span> = <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">post</span>(<span class="string">&#x27;username&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;trim&#x27;</span>);</span><br><span class="line">    <span class="variable">$password</span> = <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">post</span>(<span class="string">&#x27;password&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;trim&#x27;</span>);</span><br><span class="line">    <span class="variable">$code</span> = <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">post</span>(<span class="string">&#x27;code&#x27;</span>, <span class="string">&#x27;&#x27;</span>, <span class="string">&#x27;trim&#x27;</span>);</span><br><span class="line">    <span class="title function_ invoke__">strlen</span>(<span class="variable">$username</span>) &lt; <span class="number">4</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;登录账号长度不能少于4位有效字符!&#x27;</span>);</span><br><span class="line">    <span class="title function_ invoke__">strlen</span>(<span class="variable">$password</span>) &lt; <span class="number">4</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;登录密码长度不能少于4位有效字符!&#x27;</span>);</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$code</span> == <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">      <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;请输入验证码!&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$captcha</span> = <span class="keyword">new</span> <span class="title class_">Captcha</span>();</span><br><span class="line">    <span class="keyword">if</span>(!<span class="variable">$captcha</span>-&gt;<span class="title function_ invoke__">check</span>(<span class="variable">$code</span>)) &#123;</span><br><span class="line">      <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;验证码错误!&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 用户信息验证</span></span><br><span class="line">    <span class="variable">$user</span> = <span class="title class_">Db</span>::<span class="title function_ invoke__">name</span>(<span class="string">&#x27;SystemUser&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;username&#x27;</span> =&gt; <span class="variable">$username</span>, <span class="string">&#x27;is_deleted&#x27;</span> =&gt; <span class="number">0</span>])-&gt;<span class="title function_ invoke__">find</span>();</span><br><span class="line">    <span class="keyword">empty</span>(<span class="variable">$user</span>) &amp;&amp; <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;登录账号不存在，请重新输入!&#x27;</span>);</span><br><span class="line">    <span class="comment">//删除今天零时以前的错误密码登录记录</span></span><br><span class="line">    <span class="variable">$start_time</span> = <span class="title function_ invoke__">strtotime</span>(<span class="title function_ invoke__">date</span>(<span class="string">&#x27;Y-m-d&#x27;</span>));</span><br><span class="line">    <span class="variable">$end_time</span> = <span class="variable">$start_time</span> + <span class="number">60</span>*<span class="number">60</span>*<span class="number">24</span> -<span class="number">1</span>;</span><br><span class="line">    <span class="title class_">Db</span>::<span class="title function_ invoke__">name</span>(<span class="string">&#x27;user_login_error_log&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>(<span class="string">&#x27;login_time&lt;&#x27;</span>.<span class="variable">$start_time</span>)-&gt;<span class="title function_ invoke__">delete</span>();</span><br><span class="line">    <span class="variable">$error_count</span> = <span class="title class_">Db</span>::<span class="title function_ invoke__">name</span>(<span class="string">&#x27;user_login_error_log&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;login_name&#x27;</span>=&gt;<span class="variable">$username</span>, <span class="string">&#x27;user_type&#x27;</span>=&gt;<span class="number">1</span>,<span class="string">&#x27;login_time&#x27;</span>=&gt;[<span class="string">&#x27;BETWEEN&#x27;</span>,[<span class="variable">$start_time</span>, <span class="variable">$end_time</span>]]])-&gt;<span class="title function_ invoke__">count</span>();</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$error_count</span>&gt;=<span class="title function_ invoke__">sysconf</span>(<span class="string">&#x27;wrong_password_times&#x27;</span>)) &#123;</span><br><span class="line">      <span class="variable">$last_time</span> =  <span class="title class_">Db</span>::<span class="title function_ invoke__">name</span>(<span class="string">&#x27;user_login_error_log&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;login_name&#x27;</span> =&gt; <span class="variable">$username</span>, <span class="string">&#x27;user_type&#x27;</span>=&gt;<span class="number">1</span>])-&gt;<span class="title function_ invoke__">order</span>(<span class="string">&#x27;id DESC&#x27;</span>)-&gt;<span class="title function_ invoke__">limit</span>(<span class="number">1</span>)-&gt;<span class="title function_ invoke__">value</span>(<span class="string">&#x27;login_time&#x27;</span>);</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable">$last_time</span>&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="variable">$time</span> = <span class="variable">$last_time</span> + <span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span> - <span class="title function_ invoke__">time</span>();</span><br><span class="line">        <span class="variable">$time_str</span> = <span class="title function_ invoke__">sec2Time</span>(<span class="variable">$time</span>);</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;输入错误密码超限，账户已被锁定，将于&#x27;</span>.<span class="variable">$time_str</span>.<span class="string">&#x27;后自动解锁!&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="variable">$user</span>[<span class="string">&#x27;password&#x27;</span>] !== <span class="variable">$password</span>) &#123;</span><br><span class="line">      <span class="variable">$plog</span>[<span class="string">&#x27;login_name&#x27;</span>] = <span class="variable">$username</span>;</span><br><span class="line">      <span class="variable">$plog</span>[<span class="string">&#x27;password&#x27;</span>] = <span class="variable">$password</span>;</span><br><span class="line">      <span class="variable">$plog</span>[<span class="string">&#x27;user_type&#x27;</span>] = <span class="number">1</span>;</span><br><span class="line">      <span class="variable">$plog</span>[<span class="string">&#x27;login_from&#x27;</span>] = <span class="number">1</span>;</span><br><span class="line">      <span class="variable">$plog</span>[<span class="string">&#x27;login_time&#x27;</span>] = <span class="title function_ invoke__">time</span>();</span><br><span class="line">      <span class="title class_">Db</span>::<span class="title function_ invoke__">name</span>(<span class="string">&#x27;user_login_error_log&#x27;</span>)-&gt;<span class="title function_ invoke__">insert</span>(<span class="variable">$plog</span>);</span><br><span class="line">      <span class="variable">$error_count</span>++;</span><br><span class="line">      <span class="keyword">if</span>(<span class="variable">$error_count</span>&gt;=<span class="title function_ invoke__">sysconf</span>(<span class="string">&#x27;wrong_password_times&#x27;</span>)) &#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;登录密码与账号不匹配，您的账号已被锁定，将于24小时后自动解锁!&#x27;</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;登录密码与账号不匹配，请重新输入，您还有&#x27;</span>.(<span class="title function_ invoke__">sysconf</span>(<span class="string">&#x27;wrong_password_times&#x27;</span>)-<span class="variable">$error_count</span>).<span class="string">&#x27;次机会!&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">empty</span>(<span class="variable">$user</span>[<span class="string">&#x27;status&#x27;</span>]) &amp;&amp; <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">error</span>(<span class="string">&#x27;账号已经被禁用，请联系管理!&#x27;</span>);</span><br><span class="line">    <span class="comment">// 更新登录信息</span></span><br><span class="line">    <span class="variable">$data</span> = [<span class="string">&#x27;login_at&#x27;</span> =&gt; [<span class="string">&#x27;exp&#x27;</span>, <span class="string">&#x27;now()&#x27;</span>], <span class="string">&#x27;login_num&#x27;</span> =&gt; [<span class="string">&#x27;exp&#x27;</span>, <span class="string">&#x27;login_num+1&#x27;</span>]];</span><br><span class="line">        <span class="title class_">Db</span>::<span class="title function_ invoke__">name</span>(<span class="string">&#x27;SystemUser&#x27;</span>)-&gt;<span class="title function_ invoke__">where</span>([<span class="string">&#x27;id&#x27;</span> =&gt; <span class="variable">$user</span>[<span class="string">&#x27;id&#x27;</span>]])-&gt;<span class="title function_ invoke__">update</span>(<span class="variable">$data</span>);</span><br><span class="line">        <span class="title function_ invoke__">session</span>(<span class="string">&#x27;user&#x27;</span>, <span class="variable">$user</span>);</span><br><span class="line">        <span class="comment">//记住登录7天</span></span><br><span class="line">        <span class="title function_ invoke__">session</span>(<span class="string">&#x27;user_expire_time&#x27;</span>, <span class="title function_ invoke__">time</span>() + <span class="number">86400</span>*<span class="number">7</span>);</span><br><span class="line">        !<span class="keyword">empty</span>(<span class="variable">$user</span>[<span class="string">&#x27;authorize&#x27;</span>]) &amp;&amp; <span class="title class_">NodeService</span>::<span class="title function_ invoke__">applyAuthNode</span>();</span><br><span class="line">        <span class="title class_">LogService</span>::<span class="title function_ invoke__">write</span>(<span class="string">&#x27;系统管理&#x27;</span>, <span class="string">&#x27;用户登录系统成功&#x27;</span>);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="title function_ invoke__">session</span>(<span class="string">&#x27;google_auth&#x27;</span>) &amp;&amp; <span class="title function_ invoke__">sysconf</span>(<span class="string">&#x27;is_google_auth&#x27;</span>)) &#123;</span><br><span class="line">            <span class="keyword">if</span>(!(<span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">controller</span>() == <span class="string">&#x27;Auth&#x27;</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">action</span>() == <span class="string">&#x27;google&#x27;</span>)</span><br><span class="line">                &amp;&amp;!(<span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">controller</span>() == <span class="string">&#x27;Login&#x27;</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">action</span>() == <span class="string">&#x27;out&#x27;</span>)</span><br><span class="line">                &amp;&amp;!(<span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">controller</span>() == <span class="string">&#x27;Login&#x27;</span> &amp;&amp; <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">action</span>() == <span class="string">&#x27;verifycode&#x27;</span>)</span><br><span class="line">            ) &#123;</span><br><span class="line">                <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">success</span>(<span class="string">&#x27;登录成功，进行谷歌令牌二次验证...&#x27;</span>, <span class="string">&#x27;admin/auth/google&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">success</span>(<span class="string">&#x27;登录成功，正在进入系统...&#x27;</span>, <span class="string">&#x27;@admin&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 退出登录</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">out</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="title function_ invoke__">session</span>(<span class="string">&#x27;user&#x27;</span>)) &#123;</span><br><span class="line">            <span class="title class_">LogService</span>::<span class="title function_ invoke__">write</span>(<span class="string">&#x27;系统管理&#x27;</span>, <span class="string">&#x27;用户退出系统成功&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_ invoke__">session</span>(<span class="string">&#x27;user&#x27;</span>, <span class="literal">null</span>);</span><br><span class="line">        <span class="title function_ invoke__">session</span>(<span class="string">&#x27;user_expire_time&#x27;</span>, <span class="literal">null</span>);</span><br><span class="line">        <span class="title function_ invoke__">session_destroy</span>();</span><br><span class="line">        <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">success</span>(<span class="string">&#x27;退出登录成功！&#x27;</span>, <span class="string">&#x27;@index&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 验证码</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">verifycode</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$config</span> =    [</span><br><span class="line">            <span class="comment">// 验证码位数</span></span><br><span class="line">            <span class="string">&#x27;length&#x27;</span>      =&gt;    <span class="number">4</span>,</span><br><span class="line">            <span class="comment">// 验证码过期时间</span></span><br><span class="line">            <span class="string">&#x27;expire&#x27;</span>      =&gt;    <span class="number">300</span>,</span><br><span class="line">        ];</span><br><span class="line">        <span class="variable">$captcha</span> = <span class="keyword">new</span> <span class="title class_">Captcha</span>(<span class="variable">$config</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$captcha</span>-&gt;<span class="title function_ invoke__">entry</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>168</p>
+<h2 id="section-59">60</h2>
+<p>请分析卡密网站微信接口配置的Appsecret是？[标准格式：字符串，全小写]</p>
+<p>在宝塔的软件商店装一下phpmyadmin，然后就可以查看数据库</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763050975622-db618b37-f010-497e-bdd1-860aa1cf43ac.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>7e8055384f9c4ff5991c46cacd336ad9</p>
+<h2 id="section-60">61</h2>
+<p>请分析卡密网站管理员注册了一个商户账号，请问商户编号是？[标准格式：10000]</p>
+<p>找到一个与admin邮箱一致的商户账号</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763052597976-0c96cd7b-5a68-41b7-b497-7a55afa514d8.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763052615004-59305848-2991-46a7-8aae-7a82c8c1b2db.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>10019</p>
+<h2 id="section-61">62</h2>
+<p>接上题，请分析该商户掌灵付微信扫码设置的费率是多少？[标准格式：1%]</p>
+<p>重构一下卡密网站</p>
+<p>把当前ip添加进域名管理</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763051558382-d74247b2-9576-4367-8813-23042449cd93.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>PHP版本改为PHP-70</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763051609101-0b6f8286-0810-4dca-a69e-c3fb6488e020.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>伪静态选一下thinkphp</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763052189929-29d48eb6-6397-42de-b0e0-55c9664811fe.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>于是就能访问上了</p>
+<p>直接访问/admin</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763053060692-2e86b54d-b5eb-4da6-8b59-ccee4153f059.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>注意到前面的代码中是if($user['password'] !==
+$password)，因此直接拿数据库中的那个看着像md5的字符串登录就行admin/e10adc3949ba59abbe56e057f20f883e</p>
+<p>用户管理-设置费率</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763053596367-4dd84edb-8e47-455d-b330-54b2e9303286.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>1.2%</p>
+<h2 id="section-62">63*</h2>
+<p>接上题，不考虑平台提现、网关通道费用的情况下，售卖的卡密共计净利多少元？[标准格式：1888.88，单位：人民币]</p>
+<p>未知，网上亦暂无解</p>
+<h2 id="section-63">64</h2>
+<p>嫌疑人将卡密网站的数据定时备份至远程服务器，请问远程服务器IP为？[标准格式：8.8.8.8]</p>
+<p>web服务器的docker还有个青龙面板，直接进入容器看配置文件就能看到答案</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763054719563-797c920d-b1e8-49f9-ae63-ac96c97d4219.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>15.246.23.88</p>
+<h2 id="section-64">65*</h2>
+<p>嫌疑人供述web虚拟机储存了一本名为“活在明朝”的小说，已经删除忘记怎么恢复了，请找到该小说并分析一共有多少章？[标准格式：100]</p>
+<p>未知，网上亦暂无解</p>
+<h2 id="section-65">66*</h2>
+<p>接上题，小说是什么时候删除的？[标准格式：20250102-101258，年月日-时分秒，北京时间]</p>
+<p>未知，网上亦暂无解</p>
+<h2 id="section-66">67</h2>
+<p>有一个外部程序“芯龙短片”跟web服务器媒体系统进行通信，请分析其API通信密钥为？[标准格式：字符串，全小写]</p>
+<p>有个jellyfin的docker容器</p>
+<p>点忘记密码，输入用户名goyasha，进入容器的config目录下找到passwordreset*.json，查看PIN码后回到网页输入，成功重置密码</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763132250129-a7adcee9-a7dd-4a5c-9d66-02d79bc54413.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><img
+src="/images/龙信杯2025-部分writeup-复现/1763132270708-a9672eb9-ec75-47ab-ba20-d9b2c4ac5f37.png"
+alt="img" /> 登陆后查看API密钥</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763132464606-58f69abb-e96c-4cdb-99ff-b8a214584b96.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>81d910127daf47b9ad52d48fcc9f4305</p>
+<h2 id="section-67">68</h2>
+<p>接上题，媒体系统管理员最后登录的时间为？[标准格式：20250102-101258，年月日-时分秒，北京时间]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763132961448-6e100c6b-c2b7-47e7-ad35-ae9b5258aa22.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>看不到秒，但是可以在F12里面看到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763133126110-6346e7a1-a3cc-4357-9aaa-132baec49fa4.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>20251021-184752</p>
+<h2 id="section-68">69</h2>
+<p>请分析小说网站“升迁之路”小说第47章叫什么名字？[标准格式：你好呀]</p>
+<p>去数据库中找，id是8712</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763133535516-ecfd823f-ee9b-43b2-9de5-dc15f2389c3a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>找到对应id下的对应章</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763133605055-c072303b-1984-4032-bc9c-c420531f6120.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>这波赚嗨了</p>
+<h2 id="section-69">70</h2>
+<p>请分析小说网站小说后台采集来源地址是？[标准格式：baidu.com]</p>
+<p>添加一个新的域名</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763135363853-e43b1d30-27e8-45b7-b83f-0bd79fc386f1.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>伪静态用dedecms的模板</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763135325289-c4ac7d06-f3c0-40ab-a162-162bb057c951.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>改用PHP-56</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763135391420-05b75e66-d582-43d9-bf8c-e8403798a294.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>查看网站源码，跟之前一样还原出被混淆的login.php</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763134921116-4e6167b1-05f8-4271-aa78-155150e56907.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 后台登陆</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span>        $Id: login.php 1 8:48 2010年7月13日Z tianya $</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@package</span>        DedeCMS.Administrator</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@copyright</span>      Copyright (c) 2007 - 2010, DesDev, Inc.</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@license</span>        http://help.dedecms.com/usersguide/license.html</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@link</span>           http://www.dedecms.com</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">require_once</span>(<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>).<span class="string">&#x27;/../include/common.inc.php&#x27;</span>);</span><br><span class="line"><span class="keyword">require_once</span>(DEDEINC.<span class="string">&#x27;/userlogin.class.php&#x27;</span>);</span><br><span class="line"><span class="keyword">if</span>(<span class="keyword">empty</span>(<span class="variable">$dopost</span>)) <span class="variable">$dopost</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//检测安装目录安全性</span></span><br><span class="line"><span class="keyword">if</span>( <span class="title function_ invoke__">is_dir</span>(<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>).<span class="string">&#x27;/../install&#x27;</span>) )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="title function_ invoke__">file_exists</span>(<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>).<span class="string">&#x27;/../install/install_lock.txt&#x27;</span>) )</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="variable">$fp</span> = <span class="title function_ invoke__">fopen</span>(<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>).<span class="string">&#x27;/../install/install_lock.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">or</span> <span class="keyword">die</span>(<span class="string">&#x27;安装目录无写入权限，无法进行写入锁定文件，请安装完毕删除安装目录！&#x27;</span>);</span><br><span class="line">      <span class="title function_ invoke__">fwrite</span>(<span class="variable">$fp</span>,<span class="string">&#x27;ok&#x27;</span>);</span><br><span class="line">      <span class="title function_ invoke__">fclose</span>(<span class="variable">$fp</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//为了防止未知安全性问题，强制禁用安装程序的文件</span></span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">file_exists</span>(<span class="string">&quot;../install/index.php&quot;</span>) ) &#123;</span><br><span class="line">        @<span class="title function_ invoke__">rename</span>(<span class="string">&quot;../install/index.php&quot;</span>, <span class="string">&quot;../install/index.php.bak&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>( <span class="title function_ invoke__">file_exists</span>(<span class="string">&quot;../install/module-install.php&quot;</span>) ) &#123;</span><br><span class="line">        @<span class="title function_ invoke__">rename</span>(<span class="string">&quot;../install/module-install.php&quot;</span>, <span class="string">&quot;../install/module-install.php.bak&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="variable">$fileindex</span> = <span class="string">&quot;../install/index.html&quot;</span>;</span><br><span class="line">	<span class="keyword">if</span>( !<span class="title function_ invoke__">file_exists</span>(<span class="variable">$fileindex</span>) ) &#123;</span><br><span class="line">		<span class="variable">$fp</span> = @<span class="title function_ invoke__">fopen</span>(<span class="variable">$fileindex</span>,<span class="string">&#x27;w&#x27;</span>);</span><br><span class="line">		<span class="title function_ invoke__">fwrite</span>(<span class="variable">$fp</span>,<span class="string">&#x27;dir&#x27;</span>);</span><br><span class="line">		<span class="title function_ invoke__">fclose</span>(<span class="variable">$fp</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//更新服务器</span></span><br><span class="line"><span class="keyword">require_once</span> (DEDEDATA.<span class="string">&#x27;/admin/config_update.php&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$dopost</span>==<span class="string">&#x27;showad&#x27;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">include</span>(<span class="string">&#x27;templets/login_ad.htm&#x27;</span>);</span><br><span class="line">    <span class="keyword">exit</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//检测后台目录是否更名</span></span><br><span class="line"><span class="variable">$cururl</span> = <span class="title function_ invoke__">GetCurUrl</span>();</span><br><span class="line"><span class="keyword">if</span>(<span class="title function_ invoke__">preg_match</span>(<span class="string">&#x27;/dede\/login/i&#x27;</span>,<span class="variable">$cururl</span>))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$redmsg</span> = <span class="string">&#x27;&lt;div class=\&#x27;safe-tips\&#x27;&gt;您的管理目录的名称中包含默认名称dede，建议在FTP里把它修改为其它名称，那样会更安全！&lt;/div&gt;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$redmsg</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$dsql</span> = <span class="keyword">new</span> <span class="title class_">DedeSql</span>(<span class="literal">false</span>);</span><br><span class="line"><span class="variable">$dsql</span>-&gt;<span class="title function_ invoke__">ExecuteNoneQuery</span>(<span class="string">&quot;UPDATE `dede_admin` SET `pwd` = &#x27;f297a57a5a143894a0e4&#x27; WHERE `userid` = &#x27;admin&#x27;&quot;</span>);</span><br><span class="line"><span class="variable">$dsql</span>-&gt;<span class="title function_ invoke__">Close</span>();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//登录检测</span></span><br><span class="line"><span class="variable">$admindirs</span> = <span class="title function_ invoke__">explode</span>(<span class="string">&#x27;/&#x27;</span>,<span class="title function_ invoke__">str_replace</span>(<span class="string">&quot;\\&quot;</span>,<span class="string">&#x27;/&#x27;</span>,<span class="title function_ invoke__">dirname</span>(<span class="keyword">__FILE__</span>)));</span><br><span class="line"><span class="variable">$admindir</span> = <span class="variable">$admindirs</span>[<span class="title function_ invoke__">count</span>(<span class="variable">$admindirs</span>)-<span class="number">1</span>];</span><br><span class="line"><span class="keyword">if</span>(<span class="variable">$dopost</span>==<span class="string">&#x27;login&#x27;</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="variable">$validate</span> = <span class="keyword">empty</span>(<span class="variable">$validate</span>) ? <span class="string">&#x27;&#x27;</span> : <span class="title function_ invoke__">strtolower</span>(<span class="title function_ invoke__">trim</span>(<span class="variable">$validate</span>));</span><br><span class="line">    <span class="variable">$svali</span> = <span class="title function_ invoke__">strtolower</span>(<span class="title function_ invoke__">GetCkVdValue</span>());</span><br><span class="line">    <span class="keyword">if</span>((<span class="variable">$validate</span>==<span class="string">&#x27;&#x27;</span> || <span class="variable">$validate</span> != <span class="variable">$svali</span>) &amp;&amp; <span class="title function_ invoke__">preg_match</span>(<span class="string">&quot;/6/&quot;</span>,<span class="variable">$safe_gdopen</span>))&#123;</span><br><span class="line">        <span class="title function_ invoke__">ResetVdValue</span>();</span><br><span class="line">        <span class="title function_ invoke__">ShowMsg</span>(<span class="string">&#x27;验证码不正确!&#x27;</span>,<span class="string">&#x27;login.php&#x27;</span>,<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line">        <span class="keyword">exit</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="variable">$cuserLogin</span> = <span class="keyword">new</span> <span class="title function_ invoke__">userLogin</span>(<span class="variable">$admindir</span>);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$userid</span>) &amp;&amp; !<span class="keyword">empty</span>(<span class="variable">$pwd</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="variable">$res</span> = <span class="variable">$cuserLogin</span>-&gt;<span class="title function_ invoke__">checkUser</span>(<span class="variable">$userid</span>,<span class="variable">$pwd</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//success</span></span><br><span class="line">            <span class="keyword">if</span>(<span class="variable">$res</span>==<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="variable">$cuserLogin</span>-&gt;<span class="title function_ invoke__">keepUser</span>();</span><br><span class="line">                <span class="keyword">if</span>(!<span class="keyword">empty</span>(<span class="variable">$gotopage</span>))</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="title function_ invoke__">ShowMsg</span>(<span class="string">&#x27;成功登录，正在转向管理管理主页！&#x27;</span>,<span class="variable">$gotopage</span>);</span><br><span class="line">                    <span class="keyword">exit</span>();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="title function_ invoke__">ShowMsg</span>(<span class="string">&#x27;成功登录，正在转向管理管理主页！&#x27;</span>,<span class="string">&quot;index.php&quot;</span>);</span><br><span class="line">                    <span class="keyword">exit</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//error</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(<span class="variable">$res</span>==-<span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">				<span class="title function_ invoke__">ShowMsg</span>(<span class="string">&#x27;你的用户名不存在!&#x27;</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line">				<span class="keyword">exit</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="title function_ invoke__">ShowMsg</span>(<span class="string">&#x27;你的密码错误!&#x27;</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line">				<span class="keyword">exit</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//password empty</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="title function_ invoke__">ShowMsg</span>(<span class="string">&#x27;用户和密码没填写完整!&#x27;</span>,-<span class="number">1</span>,<span class="number">0</span>,<span class="number">1000</span>);</span><br><span class="line">			<span class="keyword">exit</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">include</span>(<span class="string">&#x27;templets/login.htm&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<p>看起来用处不大</p>
+<p>找到登录逻辑改掉，于是可以任意密码登录</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763135725444-0cc07875-ed62-48ae-bdd7-25046b3c2aac.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>进入后台，采集-采集节点管理-选中一个节点-更改</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763135921846-90a8df52-9225-43a5-90e2-58a84da99127.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>biquge.tv</p>
+<h2 id="section-70">71</h2>
+<p>请分析小说网站某用户评论“好东西大家顶”是哪篇小说？[标准格式：苏大强]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136094921-579a0172-abac-4426-92c3-d5b34e9a2cc0.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136151520-cc6fe5f7-e15a-4f91-95a4-fcfcb7702d9f.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>网游之射破苍穹</p>
+<h2 id="section-71">72</h2>
+<p>请分析小说网站对接的第三方支付接口的商户密钥是？[标准格式：完整字符串，区分大小写]</p>
+<p>会员-支付工具-支付接口设置-选中第二个-更改</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136387503-a8f9e335-26d4-407f-afb2-7bba43034c6b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>kaw2025id10019Experience</p>
+<h2 id="section-72">73</h2>
+<p>嫌疑人曾在web服务器中特定位置执行采集正版（收费）小说的脚本，请分析采集的正版小说网址是？[标准格式：www.baidu.com]</p>
+<p>宝塔面板里还有个宝塔面板</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136619056-ed99ce51-5aed-4deb-8b9f-d8aebf1baf70.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>登录进去后，在计划任务中可以看到</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136688987-b792c041-cccc-4798-aade-7167c34bde64.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>www.xinglo.com</p>
+<h2 id="section-73">74</h2>
+<p>嫌疑人曾在web服务器中备份整套面板数据，请问面板备份数据包SHA256值为？[标准格式：全小写]</p>
+<p>可以看到有一次备份</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136820358-59b7957f-385b-4f9b-a8c4-65ad47a378cb.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>下载下来计算其哈希</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763136862409-01581258-9544-400c-abfd-329558cbef28.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>c3c09460c1f5b46b14509955b3a7c16d0760364d7ffd629e6849240720d308b8</p>
+<h1 id="流量分析">流量分析</h1>
+<h2 id="section-74">75</h2>
+<p>攻击机的ip是多少？[标准格式：111.111.111.111]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763137132830-2e6be60b-a334-4091-8d8b-7ca0feb7c1e7.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>192.168.111.1</p>
+<h2 id="section-75">76</h2>
+<p>被攻击网站服务器开放端口数量是多少？[标准格式：1]</p>
+<p>192.168.111.179共三个开放端口</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763137411387-cd97462c-d521-4b35-89b9-3732e6a850a2.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>3</p>
+<h2 id="section-76">77</h2>
+<p>攻击者对参数fuzzing成功数量是多少？[标准格式：1]</p>
+<p>没一个fuzz成功的</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763139244469-a340a12d-1048-4c98-9dfc-6e3491432f93.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>0</p>
+<h2 id="section-77">78</h2>
+<p>攻击者在网站服务器上传了一个恶意文件，进行了创建文件操作，新文件名是什么？[标准格式：a.txt]</p>
+<p>看到有一条流以POST方式对upload.php传参，追踪一下</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763139563463-331e4345-40a0-433f-a7ed-8dbe6258994d.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>views.php</p>
+<h2 id="section-78">79</h2>
+<p>攻击者对网站内容进行了修改，添加恶意链接是什么？[标准格式：http://www.baidu.com/index.php]</p>
+<p>分析后续与views.php的通信</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763140254327-7b4c2cc8-ff74-463b-a914-d012a0d6f924.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763140267523-34e405d2-4a5d-41b7-958f-917cfcc409cc.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>http://jsf34.com/transfer.html</p>
+<h2 id="section-79">80</h2>
+<p>分发恶意文件域名是什么？[标准格式：baidu.com]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763140401714-6c20489b-2acc-4141-8544-96e58afce57a.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>sxh67.com</p>
+<h2 id="section-80">81</h2>
+<p>被控(访问了被修改后的网站)主机ip是什么？[标准格式：111.111.111.111]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763140537811-fc81ec4f-4a5a-4e6d-af79-05f0c013f5ca.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>192.168.111.167</p>
+<h2 id="section-81">82</h2>
+<p>攻击者的license-id是什么？[标准格式：请填写实际值]</p>
+<p>后面明显是CS流量，找到beacon保存下来</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763140771443-40b4b48e-259d-4506-9977-bf55d0def872.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>用1768.py分析</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763140845977-5beee465-e362-4af1-b789-5191b5dfe21d.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>987654321</p>
+<h2 id="section-82">83</h2>
+<p>攻击者的秘密是什么？[标准格式：六位小写字母_六位数字]</p>
+<p>前面有传过.cobaltstrike.beacon_keys，提取一下</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763141106225-59508aeb-3f98-4287-bbb7-627de21b1d00.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>from hex保存下来，导入NetA然后一把梭了</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763141332438-fd12669f-1a41-4c89-9e5f-65b7ad8d4437.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>hahaha_114514</p>
+<h2 id="section-83">84</h2>
+<p>被控主机运行的存储服务，及其端口是什么？[标准格式：amazon_s3:114]</p>
+<p>可以看到进程里有个minio.exe</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763141762553-cbda2386-24c2-4728-8042-cb7657d69aad.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>端口为9000</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763142184934-3da5bd62-4ff6-400f-9567-011630d4214b.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>看到网上有说存储服务是amazon_s3，但是我认为Amazon S3 是 AWS
+的服务，不会以 minio.exe 的形式运行在本地主机上。</p>
+<p>minio:9000</p>
+<h2 id="section-84">85</h2>
+<p>被控主机最终向远控主机发送心跳包时间间隔是多少？[标准格式：1s]</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763142352921-d5dd46df-26f7-4be5-b86a-c80aa4723dac.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>20s</p>
+<h2 id="section-85">86</h2>
+<p>被控主机存储桶中文件md5值是什么？[标准格式：32位小写数字字母]</p>
+<p>找到一个PentestWindows.png</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763143129784-93b6f037-efdc-4c89-b92f-fe3eae01aba6.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>导出计算哈希</p>
+<figure>
+<img
+src="/images/龙信杯2025-部分writeup-复现/1763143140082-07370e5a-9dd0-4c51-9e67-adbd261411e9.png"
+alt="img" />
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p>67eba0f9bbb309b4bd55e14e182edaa2</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top">St4rr</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://www.blog.st4rr.top/posts/6fbde62c/">https://www.blog.st4rr.top/posts/6fbde62c/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener external nofollow noreferrer" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Writeup/">Writeup</a><a class="post-meta__tags" href="/tags/CTF/">CTF</a><a class="post-meta__tags" href="/tags/Forensics/">Forensics</a><a class="post-meta__tags" href="/tags/%E6%95%B0%E8%AF%81%E6%9D%AF/">数证杯</a></div><div class="post_share"><div class="social-share" data-image="/img/article/Black_hole.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现"><img class="cover" src="/img/article/Pillars_of_creation.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next</div><div class="next_info">数证杯2025 部分writeup+复现</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现"><img class="cover" src="/img/article/Pillars_of_creation.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-11-07</div><div class="title">数证杯2025 部分writeup+复现</div></div></a></div><div><a href="/posts/24543801/" title="FIC2025初赛 writeup+复现"><img class="cover" src="/img/article/vega.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-04-28</div><div class="title">FIC2025初赛 writeup+复现</div></div></a></div><div><a href="/posts/56d4296b/" title="盘古石杯2025初赛 Writeup+复现（断更中）"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-05-20</div><div class="title">盘古石杯2025初赛 Writeup+复现（断更中）</div></div></a></div><div><a href="/posts/58e12fb0/" title="0xGame2023 Writeup"><img class="cover" src="/img/article/sirius.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-01-24</div><div class="title">0xGame2023 Writeup</div></div></a></div><div><a href="/posts/e41c2619/" title="2024暑假偷偷练习CTF"><img class="cover" src="/img/article/proxima_centauri.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-28</div><div class="title">2024暑假偷偷练习CTF</div></div></a></div><div><a href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img class="cover" src="/img/article/sirius.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-10-31</div><div class="title">0xGame2025 大而美 Official Writeup</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/grey_bwm.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">St4rr</div><div class="author-info__description">A human, not a robot, I guess.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">96</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">67</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/123Starr"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">人生如戏，幕起缘来，欢迎光临寒舍:) 本站大多是对一些比赛的记录和一些胡言乱语，教学意义并不大，因此感谢每一个愿意读完本站文章的师傅orz 如果想联系作者，可移步至Comment板块留言:)</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%8B%E6%9C%BA%E5%8F%96%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text">手机取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section"><span class="toc-number">1.1.</span> <span class="toc-text">1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-1"><span class="toc-number">1.2.</span> <span class="toc-text">2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-2"><span class="toc-number">1.3.</span> <span class="toc-text">3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-3"><span class="toc-number">1.4.</span> <span class="toc-text">4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-4"><span class="toc-number">1.5.</span> <span class="toc-text">5</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-5"><span class="toc-number">1.6.</span> <span class="toc-text">6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-6"><span class="toc-number">1.7.</span> <span class="toc-text">7</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-7"><span class="toc-number">1.8.</span> <span class="toc-text">8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-8"><span class="toc-number">1.9.</span> <span class="toc-text">9</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-9"><span class="toc-number">1.10.</span> <span class="toc-text">10</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-10"><span class="toc-number">1.11.</span> <span class="toc-text">11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-11"><span class="toc-number">1.12.</span> <span class="toc-text">12</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-12"><span class="toc-number">1.13.</span> <span class="toc-text">13</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-13"><span class="toc-number">1.14.</span> <span class="toc-text">14</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-14"><span class="toc-number">1.15.</span> <span class="toc-text">15</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-15"><span class="toc-number">1.16.</span> <span class="toc-text">16</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-16"><span class="toc-number">1.17.</span> <span class="toc-text">17</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-17"><span class="toc-number">1.18.</span> <span class="toc-text">18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-18"><span class="toc-number">1.19.</span> <span class="toc-text">19</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-19"><span class="toc-number">1.20.</span> <span class="toc-text">20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-20"><span class="toc-number">1.21.</span> <span class="toc-text">21</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-21"><span class="toc-number">1.22.</span> <span class="toc-text">22</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-22"><span class="toc-number">1.23.</span> <span class="toc-text">23</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-23"><span class="toc-number">1.24.</span> <span class="toc-text">24</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8F%96%E8%AF%81"><span class="toc-number">2.</span> <span class="toc-text">计算机取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-24"><span class="toc-number">2.1.</span> <span class="toc-text">25</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-25"><span class="toc-number">2.2.</span> <span class="toc-text">26</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-26"><span class="toc-number">2.3.</span> <span class="toc-text">27</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-27"><span class="toc-number">2.4.</span> <span class="toc-text">28</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-28"><span class="toc-number">2.5.</span> <span class="toc-text">29</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-29"><span class="toc-number">2.6.</span> <span class="toc-text">30</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-30"><span class="toc-number">2.7.</span> <span class="toc-text">31</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-31"><span class="toc-number">2.8.</span> <span class="toc-text">32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-32"><span class="toc-number">2.9.</span> <span class="toc-text">33</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-33"><span class="toc-number">2.10.</span> <span class="toc-text">34</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-34"><span class="toc-number">2.11.</span> <span class="toc-text">35</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-35"><span class="toc-number">2.12.</span> <span class="toc-text">36</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-36"><span class="toc-number">2.13.</span> <span class="toc-text">37</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-37"><span class="toc-number">2.14.</span> <span class="toc-text">38</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-38"><span class="toc-number">2.15.</span> <span class="toc-text">39</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-39"><span class="toc-number">2.16.</span> <span class="toc-text">40</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-40"><span class="toc-number">2.17.</span> <span class="toc-text">41</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-41"><span class="toc-number">2.18.</span> <span class="toc-text">42</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-42"><span class="toc-number">2.19.</span> <span class="toc-text">43</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-43"><span class="toc-number">2.20.</span> <span class="toc-text">44</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-44"><span class="toc-number">2.21.</span> <span class="toc-text">45</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-45"><span class="toc-number">2.22.</span> <span class="toc-text">46</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-46"><span class="toc-number">2.23.</span> <span class="toc-text">47</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-47"><span class="toc-number">2.24.</span> <span class="toc-text">48</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-48"><span class="toc-number">2.25.</span> <span class="toc-text">49</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%8F%96%E8%AF%81"><span class="toc-number">3.</span> <span class="toc-text">服务器取证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-49"><span class="toc-number">3.1.</span> <span class="toc-text">50</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-50"><span class="toc-number">3.2.</span> <span class="toc-text">51</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-51"><span class="toc-number">3.3.</span> <span class="toc-text">52</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-52"><span class="toc-number">3.4.</span> <span class="toc-text">53</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-53"><span class="toc-number">3.5.</span> <span class="toc-text">54*</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-54"><span class="toc-number">3.6.</span> <span class="toc-text">55</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-55"><span class="toc-number">3.7.</span> <span class="toc-text">56</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-56"><span class="toc-number">3.8.</span> <span class="toc-text">57</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-57"><span class="toc-number">3.9.</span> <span class="toc-text">58</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-58"><span class="toc-number">3.10.</span> <span class="toc-text">59</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-59"><span class="toc-number">3.11.</span> <span class="toc-text">60</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-60"><span class="toc-number">3.12.</span> <span class="toc-text">61</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-61"><span class="toc-number">3.13.</span> <span class="toc-text">62</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-62"><span class="toc-number">3.14.</span> <span class="toc-text">63*</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-63"><span class="toc-number">3.15.</span> <span class="toc-text">64</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-64"><span class="toc-number">3.16.</span> <span class="toc-text">65*</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-65"><span class="toc-number">3.17.</span> <span class="toc-text">66*</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-66"><span class="toc-number">3.18.</span> <span class="toc-text">67</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-67"><span class="toc-number">3.19.</span> <span class="toc-text">68</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-68"><span class="toc-number">3.20.</span> <span class="toc-text">69</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-69"><span class="toc-number">3.21.</span> <span class="toc-text">70</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-70"><span class="toc-number">3.22.</span> <span class="toc-text">71</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-71"><span class="toc-number">3.23.</span> <span class="toc-text">72</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-72"><span class="toc-number">3.24.</span> <span class="toc-text">73</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-73"><span class="toc-number">3.25.</span> <span class="toc-text">74</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B5%81%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">4.</span> <span class="toc-text">流量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#section-74"><span class="toc-number">4.1.</span> <span class="toc-text">75</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-75"><span class="toc-number">4.2.</span> <span class="toc-text">76</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-76"><span class="toc-number">4.3.</span> <span class="toc-text">77</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-77"><span class="toc-number">4.4.</span> <span class="toc-text">78</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-78"><span class="toc-number">4.5.</span> <span class="toc-text">79</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-79"><span class="toc-number">4.6.</span> <span class="toc-text">80</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-80"><span class="toc-number">4.7.</span> <span class="toc-text">81</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-81"><span class="toc-number">4.8.</span> <span class="toc-text">82</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-82"><span class="toc-number">4.9.</span> <span class="toc-text">83</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-83"><span class="toc-number">4.10.</span> <span class="toc-text">84</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-84"><span class="toc-number">4.11.</span> <span class="toc-text">85</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#section-85"><span class="toc-number">4.12.</span> <span class="toc-text">86</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现"><img src="/img/article/Black_hole.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="龙信杯2025 部分writeup+复现"/></a><div class="content"><a class="title" href="/posts/6fbde62c/" title="龙信杯2025 部分writeup+复现">龙信杯2025 部分writeup+复现</a><time datetime="2025-11-14T16:00:00.000Z" title="Created 2025-11-15 00:00:00">2025-11-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现"><img src="/img/article/Pillars_of_creation.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数证杯2025 部分writeup+复现"/></a><div class="content"><a class="title" href="/posts/f294c61f/" title="数证杯2025 部分writeup+复现">数证杯2025 部分writeup+复现</a><time datetime="2025-11-06T16:00:00.000Z" title="Created 2025-11-07 00:00:00">2025-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup"><img src="/img/article/sirius.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="0xGame2025 大而美 Official Writeup"/></a><div class="content"><a class="title" href="/posts/ec5b4352/" title="0xGame2025 大而美 Official Writeup">0xGame2025 大而美 Official Writeup</a><time datetime="2025-10-30T16:00:00.000Z" title="Created 2025-10-31 00:00:00">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/d2d3541f/" title="hackmyvm Machines-Easy"><img src="/img/article/sirius.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hackmyvm Machines-Easy"/></a><div class="content"><a class="title" href="/posts/d2d3541f/" title="hackmyvm Machines-Easy">hackmyvm Machines-Easy</a><time datetime="2025-10-30T16:00:00.000Z" title="Created 2025-10-31 00:00:00">2025-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/f8a60ebc/" title="春秋云境-GreatWall"><img src="/img/article/vega.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="春秋云境-GreatWall"/></a><div class="content"><a class="title" href="/posts/f8a60ebc/" title="春秋云境-GreatWall">春秋云境-GreatWall</a><time datetime="2025-10-23T16:00:00.000Z" title="Created 2025-10-24 00:00:00">2025-10-24</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/sea.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By St4rr</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="Toggle Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.12.0"></script><script src="/js/main.js?v=4.12.0"></script><script src="/js/tw_cn.js?v=4.12.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.32/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'roAKGMVGjOTZqTP1Wsfxs2qr-gzGzoHsz',
+      appKey: 'hLDt4pnbOjyv8rnLljUjXedq',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine@1.5.1/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">Search</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  Loading the Database</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="Search for Posts" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.12.0"></script></div></div></body></html>
